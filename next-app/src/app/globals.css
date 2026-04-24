@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: var(--font-urbanist, 'Urbanist', sans-serif);
+  --font-body: var(--font-urbanist, 'Urbanist', sans-serif);
+  --color-primary: #134f89;
+  --color-accent: #ff825d;
+  --color-dark: #0a1e3d;
+}
+
+:root {
+  --font-display: var(--font-urbanist, 'Urbanist', sans-serif);
+  --font-body: var(--font-urbanist, 'Urbanist', sans-serif);
+  --primary: #134f89;
+  --accent: #ff825d;
+  --dark: #0a1e3d;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: #fff;
+  color: #0a1e3d;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseHorizontal {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+@keyframes pulseVertical {
+  0% { top: -100%; }
+  100% { top: 200%; }
+}
+
+@keyframes fillStats {
+  0% { width: 0%; opacity: 1; }
+  15% { width: 33.333%; opacity: 1; }
+  33% { width: 33.333%; opacity: 1; }
+  48% { width: 66.666%; opacity: 1; }
+  66% { width: 66.666%; opacity: 1; }
+  81% { width: 100%; opacity: 1; }
+  95% { width: 100%; opacity: 1; }
+  97% { width: 100%; opacity: 0; }
+  99% { width: 0%; opacity: 0; }
+  100% { width: 0%; opacity: 1; }
+}
+
+.hero-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.hero-btn-primary:hover {
+  background: #e06d4a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 130, 93, 0.3);
+}
+
+.hero-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.25s ease;
+}
+
+.hero-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.solution-card {
+  background: #fff !important;
+  color: #0a1e3d !important;
+  transition: all 0.35s ease !important;
+  border: 1px solid rgba(10, 30, 61, 0.1) !important;
+}
+
+.solution-card h3, .solution-card p {
+  color: #0a1e3d !important;
+}
+
+.solution-card svg * {
+  stroke: #0a1e3d !important;
+  fill: none;
+}
+
+.solution-card:hover {
+  background: #ff825d !important;
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(255, 130, 93, 0.3);
+  border-color: #ff825d !important;
+}
+
+.solution-card:hover h3, 
+.solution-card:hover p,
+.solution-card:hover svg * {
+  color: #fff !important;
+  stroke: #fff !important;
+}
+
+.solution-card:hover .icon-container {
+  background: rgba(255, 255, 255, 0.2) !important;
+}
