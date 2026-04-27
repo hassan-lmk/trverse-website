@@ -27,7 +27,7 @@ const Nav = () => {
 
   const navItems = [
     { label: 'About Us', href: '/#about-us' },
-    { label: 'Solution', href: '/solutions' },
+    { label: 'Solutions', href: '/solutions' },
     { label: 'Products', href: '/#products' },
     { label: 'Partners', href: '/#partners' },
     { label: 'Contact', href: '/#contact' },

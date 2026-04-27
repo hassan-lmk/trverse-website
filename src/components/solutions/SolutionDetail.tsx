@@ -282,15 +282,6 @@ const SolutionDetail = () => {
                   color: "#134f89",
                 }}
               >
-                <span style={{
-                  width: 20, height: 20,
-                  background: "linear-gradient(135deg, #134f89, var(--accent))",
-                  borderRadius: 6,
-                  display: "flex", alignItems: "center", justifyContent: "center",
-                  color: "#fff",
-                }}>
-                  {sol.icon}
-                </span>
                 {sol.tag} — {sol.subtitle.replace("TRVERSE ", "")}
               </div>
 
