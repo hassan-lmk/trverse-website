@@ -106,6 +106,29 @@ const SolutionsCTA = () => {
             backgroundSize: "40px 40px",
           }} />
 
+          {/* Decorative Background SVG */}
+          <div style={{
+            position: "absolute",
+            right: "-5%",
+            top: "50%",
+            transform: "translateY(-50%)",
+            width: "40%",
+            height: "100%",
+            opacity: 0.15,
+            pointerEvents: "none",
+            zIndex: 1,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+          }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="https://cdn.prod.website-files.com/62f0e3371ad4ab59bf6b21b0/62f9f57c95dcdd138d439fe0_Frame%2011.svg" 
+              alt="" 
+              style={{ width: "100%", height: "auto", maxWidth: "600px" }}
+            />
+          </div>
+
           <div style={{ position: "relative", zIndex: 2 }}>
             <span style={{
               display: "inline-block",
