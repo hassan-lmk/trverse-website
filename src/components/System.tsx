@@ -4,7 +4,7 @@ import React from 'react';
 
 const System = () => {
   return (
-    <section id="system" style={{ background: '#fff', padding: '120px 48px' }}>
+    <section id="products" style={{ background: '#fff', padding: '120px 48px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         {/* System capabilities & Stats */}
         <div style={{

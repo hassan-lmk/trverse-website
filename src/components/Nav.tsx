@@ -25,7 +25,7 @@ const Nav = () => {
     height: 72,
   };
 
-  const links = ['Transformation', 'Solutions', 'Impact', 'Contact'];
+  const links = ['About Us', 'Solution', 'Products', 'Partners', 'Contact'];
 
   return (
     <nav style={navStyle}>
@@ -36,7 +36,7 @@ const Nav = () => {
         </a>
         <div style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
           {links.map(l => (
-            <a key={l} href={`#${l.toLowerCase()}`} style={{
+            <a key={l} href={`#${l.toLowerCase().replace(/\s+/g, '-')}`} style={{
               color: 'rgba(255,255,255,0.8)', textDecoration: 'none',
               fontSize: 14, fontWeight: 500, letterSpacing: '0.02em',
               fontFamily: 'var(--font-body)',

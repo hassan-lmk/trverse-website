@@ -33,7 +33,7 @@ const Transformation = () => {
   const [activeTab, setActiveTab] = React.useState(0);
 
   return (
-    <section id="transformation" style={{ background: '#fff', padding: '120px 48px' }}>
+    <section id="about-us" style={{ background: '#fff', padding: '120px 48px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16, display: 'block' }}>Transformation</span>
