@@ -25,18 +25,24 @@ const Nav = () => {
     height: 72,
   };
 
-  const links = ['About Us', 'Solution', 'Products', 'Partners', 'Contact'];
+  const navItems = [
+    { label: 'About Us', href: '/#about-us' },
+    { label: 'Solution', href: '/solutions' },
+    { label: 'Products', href: '/#products' },
+    { label: 'Partners', href: '/#partners' },
+    { label: 'Contact', href: '/#contact' },
+  ];
 
   return (
     <nav style={navStyle}>
       <div style={innerStyle}>
-        <a href="#" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+        <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/logo.svg" alt="TRVERSE" style={{ height: 32, filter: 'brightness(0) invert(1)' }} />
         </a>
         <div style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
-          {links.map(l => (
-            <a key={l} href={`#${l.toLowerCase().replace(/\s+/g, '-')}`} style={{
+          {navItems.map(item => (
+            <a key={item.label} href={item.href} style={{
               color: 'rgba(255,255,255,0.8)', textDecoration: 'none',
               fontSize: 14, fontWeight: 500, letterSpacing: '0.02em',
               fontFamily: 'var(--font-body)',
@@ -44,7 +50,7 @@ const Nav = () => {
             }}
             onMouseEnter={e => e.currentTarget.style.color = 'var(--accent)'}
             onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.8)'}
-            >{l}</a>
+            >{item.label}</a>
           ))}
           <a href="#contact" style={{
             background: 'var(--accent)', color: '#fff', padding: '10px 24px',
