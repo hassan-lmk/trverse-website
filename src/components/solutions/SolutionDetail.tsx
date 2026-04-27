@@ -256,18 +256,6 @@ const SolutionDetail = () => {
 
       {solutions.map((sol, i) => (
         <section key={sol.id} id={sol.id} className="sol-detail-section">
-          {/* subtle decorative circle */}
-          <div style={{
-            position: "absolute",
-            [sol.reversed ? "left" : "right"]: -120,
-            top: "50%",
-            transform: "translateY(-50%)",
-            width: 400,
-            height: 400,
-            borderRadius: "50%",
-            background: `rgba(19,79,137,0.04)`,
-            pointerEvents: "none",
-          }} />
 
           <div
             className="sol-detail-grid"

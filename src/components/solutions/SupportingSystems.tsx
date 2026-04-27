@@ -115,8 +115,8 @@ const SupportingSystems = () => {
 
       <div style={{ maxWidth: 1280, margin: "0 auto", position: "relative", zIndex: 2 }}>
         {/* Header */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center", marginBottom: 72 }}>
-          <div>
+        <div style={{ textAlign: 'center', marginBottom: 72 }}>
+          <div style={{ maxWidth: 700, margin: '0 auto' }}>
             <span style={{
               display: "inline-block",
               fontFamily: "var(--font-body)",
@@ -133,11 +133,10 @@ const SupportingSystems = () => {
               fontWeight: 700,
               color: "#fff",
               lineHeight: 1.15,
-              margin: "0 0 20px",
+              margin: "0 0 24px",
               letterSpacing: "-0.01em",
             }}>
-              Beyond core transit<br />
-              <span style={{ color: "var(--accent)" }}>operations</span>
+              Beyond core transit operations
             </h2>
             <p style={{
               fontFamily: "var(--font-body)",
@@ -148,38 +147,6 @@ const SupportingSystems = () => {
             }}>
               TRVERSE also includes supporting systems that strengthen overall operations and infrastructure — filling the gaps that core transit modules don't cover.
             </p>
-          </div>
-          <div style={{
-            background: "rgba(255,255,255,0.03)",
-            border: "1px solid rgba(255,255,255,0.06)",
-            borderRadius: 20,
-            padding: "36px 40px",
-          }}>
-            {[
-              { label: "Systems integrated", value: "5+" },
-              { label: "Deployment model", value: "Modular" },
-              { label: "Interface type", value: "Web & Mobile" },
-            ].map((item, i) => (
-              <div key={i} style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                padding: "16px 0",
-                borderBottom: i < 2 ? "1px solid rgba(255,255,255,0.05)" : "none",
-              }}>
-                <span style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: 14,
-                  color: "rgba(255,255,255,0.45)",
-                }}>{item.label}</span>
-                <span style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: 16,
-                  fontWeight: 700,
-                  color: "#fff",
-                }}>{item.value}</span>
-              </div>
-            ))}
           </div>
         </div>
 
