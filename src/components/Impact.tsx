@@ -33,7 +33,7 @@ const Impact = () => {
   ];
 
   return (
-    <section id="impact" style={{ background: '#f7f9fc', padding: '120px 48px', position: 'relative', overflow: 'hidden', borderTopLeftRadius: 48, borderTopRightRadius: 48 }}>
+    <section id="partners" style={{ background: '#f7f9fc', padding: '120px 48px', position: 'relative', overflow: 'hidden', borderTopLeftRadius: 48, borderTopRightRadius: 48 }}>
       <style dangerouslySetInnerHTML={{__html: `
         .impact-card {
           background: #fff;
@@ -145,9 +145,7 @@ const Impact = () => {
           </a>
         </div>
 
-        <div id="partners">
-          <PartnerMarquee />
-        </div>
+        <PartnerMarquee />
 
       </div>
     </section>
