@@ -34,7 +34,8 @@ const Impact = () => {
 
   return (
     <section id="impact" style={{ background: '#f7f9fc', padding: '120px 48px', position: 'relative', overflow: 'hidden', borderTopLeftRadius: 48, borderTopRightRadius: 48 }}>
-      <style dangerouslySetInnerHTML={{__html: `
+      <style dangerouslySetInnerHTML={{
+        __html: `
         .impact-card {
           background: #fff;
           border-radius: 20px;
@@ -108,7 +109,7 @@ const Impact = () => {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={p.image} alt={p.name} className="impact-image" />
                 <div className="impact-overlay"></div>
-                
+
                 {/* Result Overlay on Image Area */}
                 <div className="result-overlay">
                   <div style={{ fontFamily: 'var(--font-body)', fontSize: 11, color: 'var(--accent)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 12 }}>Outcome & Result</div>
@@ -137,15 +138,15 @@ const Impact = () => {
             textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8,
             transition: 'gap 0.2s',
           }}
-          onMouseEnter={e => e.currentTarget.style.gap = '14px'}
-          onMouseLeave={e => e.currentTarget.style.gap = '8px'}
+            onMouseEnter={e => e.currentTarget.style.gap = '14px'}
+            onMouseLeave={e => e.currentTarget.style.gap = '8px'}
           >
             View All Client Stories
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
           </a>
         </div>
 
-        <div id="partners" style={{ scrollMarginTop: '100px' }}>
+        <div id="partners" style={{ scrollMarginTop: '200px' }}>
           <PartnerMarquee />
         </div>
 
