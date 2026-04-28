@@ -31,7 +31,7 @@ export const caseStudies: CaseStudy[] = [
     location: "Pakistan",
     summary:
       "A sustainable, cost-efficient mass transit system transforming mobility in Peshawar with a connected passenger and operator experience.",
-    heroImage: "/assets/BRT-Peshawar-.jpg",
+    heroImage: "/assets/BRT-Peshawar-.webp",
     overview:
       "Peshawar, a center of trade and commerce, has a population of 2.2 million people with no proper transportation system to serve the masses. To mitigate the transportation crisis, the Khyber Pakhtunkhwa government decided to provide a cost-efficient, sustainable mass transit system to transform mobility in the provincial capital of KP.\n\nUnder TRVERSE and its partners, an intelligent transport system was designed and successfully deployed in the city. The system, launched in 2020, was serving a daily ridership of more than 220,000 people in 2021.",
     challenge: [
@@ -53,7 +53,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     networkMap: {
       title: "BRT Network Map",
-      image: "/assets/brt-peshawar-map.png",
+      image: "/assets/brt-peshawar-map.webp",
       caption:
         "Zu Peshawar schematic: trunk, ZU Xpress, and feeder corridors with station numbering across the network.",
     },

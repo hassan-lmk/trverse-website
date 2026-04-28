@@ -23,7 +23,7 @@ export default function ContactPage() {
           </>
         }
         description="Reach out to the TRVERSE team to discuss smart mobility solutions, implementation planning, and platform demos."
-        backgroundImageSrc="/assets/contact-banner-v2.png"
+        backgroundImageSrc="/assets/contact-banner-v2.webp"
       />
       <ContactPageContent />
       <Footer />

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "TRVERSE — Better Mobility for Cities",
   description: "Smart Mobility Platform from fare collection to fleet control",
   icons: {
-    icon: "/favicon.jpg",
+    icon: "/favicon.webp",
   },
 };
 

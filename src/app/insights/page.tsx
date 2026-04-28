@@ -24,7 +24,7 @@ export default function InsightsPage() {
           </>
         }
         description="Explore TRVERSE updates, project highlights, and recognition from across the mobility ecosystem."
-        backgroundImageSrc="/insights/insights%20page.png"
+        backgroundImageSrc="/insights/insights-page.webp"
         primaryCta={{ label: "Browse articles", href: "#all-insights" }}
         secondaryCta={{ label: "Contact Us", href: "/contact" }}
       />

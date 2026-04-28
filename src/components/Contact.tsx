@@ -24,7 +24,7 @@ const Contact = () => {
             style={{
               position: "absolute",
               inset: 0,
-              backgroundImage: "url(/assets/cta-illustration.png)",
+              backgroundImage: "url(/assets/cta-illustration.webp)",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
               backgroundSize: "cover",

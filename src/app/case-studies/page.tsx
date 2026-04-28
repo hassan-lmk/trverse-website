@@ -24,7 +24,7 @@ export default function CaseStudiesPage() {
           </>
         }
         description="Explore how TRVERSE helps cities and operators improve passenger journeys, operational visibility, and network performance."
-        backgroundImageSrc="/assets/case-studies-banner.png"
+        backgroundImageSrc="/assets/case-studies-banner.webp"
         primaryCta={{ label: "View stories", href: "#all-case-studies" }}
         secondaryCta={{ label: "Contact Us", href: "/contact" }}
       />

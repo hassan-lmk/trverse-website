@@ -26,7 +26,7 @@ export const insights: InsightItem[] = [
     datePublishedIso: "2026-03-31",
     excerpt:
       "TRVERSE and TransPeshawar were named finalists for Best Behaviour Change & Public Engagement, recognizing BRT Peshawar's contribution to sustainable urban mobility.",
-    image: "/insights/trverse-peshawar-brt-finalist-2026.png",
+    image: "/insights/trverse-peshawar-brt-finalist-2026.webp",
     sourceUrl: "https://lmkr.com/insights/trverse-peshawar-brt-finalist-2026",
     intro:
       "TRVERSE, in collaboration with TransPeshawar, has been named a finalist at the Decarbonising Transport Awards 2026 in the category of Best Behaviour Change & Public Engagement.",
@@ -61,7 +61,7 @@ export const insights: InsightItem[] = [
     datePublishedIso: "2026-03-31",
     excerpt:
       "TRVERSE delivered the first electric BRT network at Masar Destination in Makkah, enabling cleaner and more efficient mobility at scale.",
-    image: "/insights/lmkr-delivers-electric-brt-network-masar-makkah.png",
+    image: "/insights/lmkr-delivers-electric-brt-network-masar-makkah.webp",
     sourceUrl: "https://lmkr.com/insights/lmkr-delivers-electric-brt-network-masar-makkah",
     intro:
       "TRVERSE has successfully delivered the first electric Bus Rapid Transit network at Masar Destination in Makkah, Saudi Arabia.",
@@ -96,7 +96,7 @@ export const insights: InsightItem[] = [
     datePublishedIso: "2022-01-01",
     excerpt:
       "Trverse continued its winning streak at the 18th P@SHA ICT Awards, with TRVERSE recognized across consumer, industrial, and public-sector categories.",
-    image: "/insights/trverse-wins-big-at-pasha-ict-awards.png",
+    image: "/insights/trverse-wins-big-at-pasha-ict-awards.webp",
     sourceUrl: "https://lmkr.com/insights/trverse-wins-big-at-pasha-ict-awards",
     intro:
       "Trverse stood out at the 18th P@SHA ICT Awards as TRVERSE secured wins in three categories, reinforcing the impact of its urban mobility solutions across Pakistan.",
@@ -173,7 +173,7 @@ export const insights: InsightItem[] = [
     datePublishedIso: "2023-08-29",
     excerpt:
       "TRVERSE, Mastercard, and Bank of Khyber partnered to introduce open-loop EMV transit payments, improving commuter convenience and financial inclusion.",
-    image: "/insights/lmkr-delivers-electric-brt-network-masar-makkah.png",
+    image: "/insights/lmkr-delivers-electric-brt-network-masar-makkah.webp",
     sourceUrl: "https://lmkr.com/insights/lmkr-mastercard-bok-peshawar-transit-partnership",
     intro:
       "TRVERSE, Mastercard, and Bank of Khyber partnered under the Mastercard Transit Partner Program Agreement to advance Pakistan's transit landscape.",
