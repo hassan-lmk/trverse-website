@@ -13,6 +13,9 @@ const SolutionsHero = () => {
         display: 'flex',
         alignItems: 'center',
         overflow: "hidden",
+        borderBottomLeftRadius: 48,
+        borderBottomRightRadius: 48,
+        boxShadow: "0 12px 40px rgba(0,0,0,0.05)",
       }}
     >
       <style dangerouslySetInnerHTML={{ __html: `
@@ -124,7 +127,7 @@ const SolutionsHero = () => {
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
-            <a href="#contact" className="hero-btn-secondary">Contact Us</a>
+            <a href="/contact" className="hero-btn-secondary">Contact Us</a>
           </div>
         </div>
       </div>

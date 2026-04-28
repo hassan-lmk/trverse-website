@@ -8,7 +8,7 @@ const Footer = () => (
       <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: 48, marginBottom: 48 }}>
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/logo.svg" alt="TRVERSE" style={{ height: 28, filter: 'brightness(0) invert(1)', marginBottom: 16 }} />
+          <img src="/assets/logo.svg" alt="TRVERSE" style={{ height: 28, marginBottom: 16 }} />
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.4)', lineHeight: 1.7, maxWidth: 280 }}>
             Connecting transit systems for better city mobility.
           </p>

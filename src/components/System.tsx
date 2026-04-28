@@ -16,34 +16,33 @@ const System = () => {
           position: 'relative',
           overflow: 'hidden'
         }}>
-          {/* Subtle decoration to match CTA style */}
-          <div style={{
-            position: 'absolute', right: -60, top: -60, width: 300, height: 300,
-            borderRadius: '50%', background: 'rgba(255,130,93,0.05)',
-          }}></div>
-
-          {/* Decorative Background SVG */}
-          <div style={{
-            position: "absolute",
-            right: "0",
-            top: "50%",
-            transform: "translateY(-50%)",
-            width: "40%",
-            height: "100%",
-            opacity: 0.1,
-            pointerEvents: "none",
-            zIndex: 1,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "flex-end",
-          }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="https://cdn.prod.website-files.com/62f0e3371ad4ab59bf6b21b0/62f9f57c95dcdd138d439fe0_Frame%2011.svg" 
-              alt="" 
-              style={{ width: "100%", height: "100%", objectFit: "contain", objectPosition: "right center" }}
-            />
-          </div>
+          <div
+            aria-hidden
+            style={{
+              position: "absolute",
+              inset: 0,
+              backgroundImage: "url(/assets/system-illustration-v2.png)",
+              backgroundRepeat: "no-repeat",
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+              opacity: 0.1,
+              mixBlendMode: "screen",
+              filter: "contrast(1.05) saturate(0.95)",
+              pointerEvents: "none",
+              zIndex: 1,
+            }}
+          />
+          <div
+            aria-hidden
+            style={{
+              position: "absolute",
+              inset: 0,
+              background:
+                "linear-gradient(90deg, rgba(10,30,61,0.9) 0%, rgba(10,30,61,0.68) 42%, rgba(10,30,61,0.2) 100%)",
+              pointerEvents: "none",
+              zIndex: 1,
+            }}
+          />
 
           <style dangerouslySetInnerHTML={{__html: `
             .feature-item {

@@ -1,0 +1,163 @@
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import InsightsHero from "@/components/insights/InsightsHero";
+import { insights } from "@/data/insights";
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const item = insights.find((x) => x.slug === slug);
+  if (!item) return { title: "Insight — TRVERSE" };
+
+  return {
+    title: `${item.title} — TRVERSE`,
+    description: item.excerpt,
+  };
+}
+
+export default async function InsightDetailPage({ params }: Props) {
+  const { slug } = await params;
+  const item = insights.find((x) => x.slug === slug);
+  if (!item) notFound();
+
+  return (
+    <main>
+      <Nav />
+      <InsightsHero
+        badge={`${item.category} • ${item.date}`}
+        title={
+          <>
+            {item.title.split(" ").slice(0, 7).join(" ")}
+            <br />
+            <span style={{ color: "var(--accent)" }}>{item.title.split(" ").slice(7).join(" ")}</span>
+          </>
+        }
+        description={item.excerpt}
+        backgroundImageSrc={item.image}
+        primaryCta={{ label: "Read story", href: "#insight-content" }}
+        secondaryCta={{ label: "All insights", href: "/insights" }}
+      />
+
+      <section id="insight-content" style={{ background: "#fff", padding: "110px 48px" }}>
+        <div style={{ maxWidth: 980, margin: "0 auto" }}>
+          <div style={{ marginBottom: 40 }}>
+            <div
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 12,
+                color: "#7a8797",
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                fontWeight: 700,
+                marginBottom: 12,
+              }}
+            >
+              {item.category} • {item.date}
+            </div>
+            <h1
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(34px, 3.6vw, 46px)",
+                fontWeight: 700,
+                color: "#0a1e3d",
+                lineHeight: 1.18,
+                margin: "0 0 16px",
+                letterSpacing: "-0.01em",
+              }}
+            >
+              {item.title}
+            </h1>
+            <p style={{ fontFamily: "var(--font-body)", fontSize: 18, color: "#5a6a7e", lineHeight: 1.8, margin: 0 }}>
+              {item.intro}
+            </p>
+          </div>
+
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={item.image}
+            alt={item.title}
+            style={{
+              width: "100%",
+              height: 420,
+              objectFit: "cover",
+              borderRadius: 18,
+              border: "1px solid rgba(19, 79, 137, 0.10)",
+              boxShadow: "0 18px 60px rgba(10, 30, 61, 0.10)",
+              marginBottom: 40,
+            }}
+          />
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+            {item.sections.map((section, idx) => (
+              <div key={`${item.slug}-${idx}`}>
+                <h2
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: 26,
+                    fontWeight: 650,
+                    color: "#0a1e3d",
+                    margin: "0 0 12px",
+                  }}
+                >
+                  {section.heading}
+                </h2>
+                {section.paragraphs.map((p, pIdx) => (
+                  <p
+                    key={`${item.slug}-${idx}-${pIdx}`}
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: 16.5,
+                      color: "#5a6a7e",
+                      lineHeight: 1.85,
+                      margin: "0 0 12px",
+                    }}
+                  >
+                    {p}
+                  </p>
+                ))}
+
+                {section.bullets?.length ? (
+                  <ul style={{ margin: "10px 0 0", paddingLeft: 18, color: "#5a6a7e" }}>
+                    {section.bullets.map((b, bIdx) => (
+                      <li
+                        key={`${item.slug}-${idx}-b-${bIdx}`}
+                        style={{ fontFamily: "var(--font-body)", fontSize: 16.5, lineHeight: 1.75, margin: "8px 0" }}
+                      >
+                        {b}
+                      </li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+            ))}
+          </div>
+
+          <div style={{ marginTop: 60, paddingTop: 28, borderTop: "1px solid rgba(10, 30, 61, 0.08)" }}>
+            <a
+              href={item.sourceUrl}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 14,
+                fontWeight: 600,
+                color: "var(--accent)",
+                textDecoration: "none",
+              }}
+            >
+              Source article
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </main>
+  );
+}
+

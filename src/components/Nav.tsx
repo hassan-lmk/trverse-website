@@ -28,9 +28,10 @@ const Nav = () => {
   const navItems = [
     { label: 'About Us', href: '/#about-us' },
     { label: 'Solutions', href: '/solutions' },
-    { label: 'Products', href: '/#products' },
+    { label: 'Case Studies', href: '/case-studies' },
     { label: 'Partners', href: '/#partners' },
-    { label: 'Contact', href: '/#contact' },
+    { label: 'Insights', href: '/insights' },
+    { label: 'Contact', href: '/contact' },
   ];
 
   return (
@@ -52,7 +53,7 @@ const Nav = () => {
             onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.8)'}
             >{item.label}</a>
           ))}
-          <a href="#contact" style={{
+          <a href="/contact" style={{
             background: 'var(--accent)', color: '#fff', padding: '10px 24px',
             borderRadius: 6, fontSize: 14, fontWeight: 600, textDecoration: 'none',
             fontFamily: 'var(--font-body)', letterSpacing: '0.01em',

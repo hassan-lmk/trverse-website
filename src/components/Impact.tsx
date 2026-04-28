@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Link from "next/link";
 import PartnerMarquee from './PartnerMarquee';
 
 
@@ -133,7 +134,7 @@ const Impact = () => {
         </div>
 
         <div style={{ textAlign: 'center', marginTop: 64 }}>
-          <a href="#" style={{
+          <Link href="/case-studies" style={{
             fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 600, color: 'var(--accent)',
             textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8,
             transition: 'gap 0.2s',
@@ -143,7 +144,7 @@ const Impact = () => {
           >
             View All Client Stories
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" /></svg>
-          </a>
+          </Link>
         </div>
 
         <div id="partners" style={{ scrollMarginTop: '200px' }}>

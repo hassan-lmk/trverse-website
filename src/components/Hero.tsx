@@ -108,7 +108,7 @@ const Hero = () => {
             transition: 'all 0.7s ease 0.8s',
           }}>
             <a href="#solutions" className="hero-btn-primary">Explore Solutions</a>
-            <a href="#contact" className="hero-btn-secondary">Talk to Us</a>
+            <a href="/contact" className="hero-btn-secondary">Talk to Us</a>
           </div>
         </div>
       </div>
