@@ -83,7 +83,7 @@ const SolutionsOverview = () => {
             fontWeight: 700,
             color: "#0a1e3d",
             margin: "0 0 16px",
-          }}>Five integrated modules.<br />One connected platform.</h2>
+          }}>Fully integrated modules.<br />One connected system.</h2>
           <p style={{
             fontFamily: "var(--font-body)",
             fontSize: 16,

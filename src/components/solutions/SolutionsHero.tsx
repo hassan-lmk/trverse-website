@@ -46,7 +46,7 @@ const SolutionsHero = () => {
         position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 0
       }}>
         <iframe
-          src="https://www.youtube.com/embed/5u6hFlV80G4?autoplay=1&mute=1&controls=0&loop=1&playlist=5u6hFlV80G4&showinfo=0&modestbranding=1&rel=0&disablekb=1"
+          src="https://www.youtube.com/embed/3LwWDp61Q1s?autoplay=1&mute=1&controls=0&loop=1&playlist=3LwWDp61Q1s&showinfo=0&modestbranding=1&rel=0&disablekb=1"
           style={{
             position: 'absolute',
             top: '50%',
@@ -79,13 +79,6 @@ const SolutionsHero = () => {
 
       <div style={{ maxWidth: 1280, margin: "0 auto", position: "relative", zIndex: 2, width: '100%' }}>
         <div style={{ maxWidth: 780 }}>
-          <div className="sol-hero-badge">
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <circle cx="6" cy="6" r="4" fill="var(--accent)" />
-            </svg>
-            Solutions Portfolio
-          </div>
-
           <h1 style={{
             fontFamily: "var(--font-display)",
             fontSize: "clamp(40px, 5vw, 68px)",
@@ -95,8 +88,7 @@ const SolutionsHero = () => {
             margin: "0 0 28px",
             letterSpacing: "-0.02em",
           }}>
-            Technology that powers<br />
-            <span style={{ color: "var(--accent)" }}>better transport</span>
+            <span style={{ color: "#fff" }}>Technology that powers transport better</span>
           </h1>
 
           <p style={{
@@ -104,20 +96,10 @@ const SolutionsHero = () => {
             fontSize: 18,
             color: "rgba(255,255,255,0.65)",
             lineHeight: 1.75,
-            margin: "0 0 20px",
-            maxWidth: 640,
-          }}>
-            Designed to improve how transport systems operate, scale, and serve passengers.
-          </p>
-          <p style={{
-            fontFamily: "var(--font-body)",
-            fontSize: 16,
-            color: "rgba(255,255,255,0.5)",
-            lineHeight: 1.75,
             margin: "0 0 60px",
             maxWidth: 640,
           }}>
-            Transport systems depend on both public experience and operational performance. TRVERSE solutions address both through connected systems that bring together payments, planning, and control.
+            Connected systems for fare collection, fleet operations, and passenger information.
           </p>
 
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>

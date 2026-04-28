@@ -23,7 +23,7 @@ const Solutions = () => {
     { 
       title: 'AI-Based Bus Scheduling', 
       desc: 'Plan and adjust services using real-time and historical data for optimized fleet utilization.', 
-      banner: '/solutions/scheduling.png',
+      banner: '/solutions/abs-ai-scheduling-v3.webp',
       icon: (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 20l5-6 4 3 5-8 6 7" stroke="var(--accent)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/><circle cx="9" cy="14" r="2" fill="var(--accent)" opacity="0.3"/><circle cx="18" cy="9" r="2" fill="var(--accent)" opacity="0.3"/></svg>
       )
@@ -31,7 +31,7 @@ const Solutions = () => {
     { 
       title: 'Control Room Management', 
       desc: 'Manage operations from a single command environment with live tracking and insights.', 
-      banner: '/solutions/control_room.png',
+      banner: '/solutions/crm-control-room-v2.webp',
       icon: (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="4" width="24" height="16" rx="2" stroke="var(--accent)" strokeWidth="1.8"/><line x1="8" y1="24" x2="20" y2="24" stroke="var(--accent)" strokeWidth="1.8" strokeLinecap="round"/><line x1="14" y1="20" x2="14" y2="24" stroke="var(--accent)" strokeWidth="1.8"/></svg>
       )
@@ -39,7 +39,7 @@ const Solutions = () => {
     { 
       title: 'Micro-Mobility Integration', 
       desc: 'Extend transit with connected first and last mile services integrated into the core backbone.', 
-      banner: '/solutions/micro_mobility.png',
+      banner: '/solutions/mmi-micro-mobility-v2.webp',
       icon: (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="8" cy="20" r="4" stroke="var(--accent)" strokeWidth="1.8"/><circle cx="22" cy="20" r="4" stroke="var(--accent)" strokeWidth="1.8"/><path d="M8 16l6-10h4l2 10" stroke="var(--accent)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
       )

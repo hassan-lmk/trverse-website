@@ -69,7 +69,7 @@ const solutions = [
     subtitle: "TRVERSE AI-Based Scheduling",
     description:
       "Uses real-time and historical data to optimize routes, schedules, and fleet allocation. It allows operators to adjust services based on demand and changing conditions.",
-    image: "/solutions/scheduling.png",
+    image: "/solutions/abs-ai-scheduling-v3.webp",
     accent: "#134f89",
     capabilities: [
       "Dynamic schedule updates",
@@ -98,7 +98,7 @@ const solutions = [
     subtitle: "TRVERSE Control Room Management",
     description:
       "Brings all operational data into one place. It enables centralized monitoring, faster decision-making, and coordinated response across the network.",
-    image: "/solutions/control_room.png",
+    image: "/solutions/crm-control-room-v2.webp",
     accent: "#0a1e3d",
     capabilities: [
       "Real-time monitoring and tracking",
@@ -127,7 +127,7 @@ const solutions = [
     subtitle: "TRVERSE Micro-Mobility Integration",
     description:
       "Connects additional transport modes such as bike-sharing and on-demand services into the wider system, improving first and last mile access.",
-    image: "/solutions/micro_mobility.png",
+    image: "/solutions/mmi-micro-mobility-v2.webp",
     accent: "#134f89",
     capabilities: [
       "Integration with bike-sharing systems",
@@ -238,7 +238,7 @@ const SolutionDetail = () => {
         }
         .sol-image-wrapper img {
           width: 100%;
-          height: 320px;
+          height: 420px;
           object-fit: cover;
           display: block;
           transition: transform 0.6s ease;
@@ -345,24 +345,6 @@ const SolutionDetail = () => {
                 <img src={sol.image} alt={sol.subtitle} />
                 <div className="sol-image-overlay" />
 
-                {/* Tag badge on image */}
-                <div style={{
-                  position: "absolute",
-                  top: 20,
-                  left: 20,
-                  padding: "6px 14px",
-                  background: "rgba(10,30,61,0.75)",
-                  backdropFilter: "blur(8px)",
-                  borderRadius: 8,
-                  fontFamily: "var(--font-body)",
-                  fontSize: 11,
-                  fontWeight: 700,
-                  color: "#fff",
-                  letterSpacing: "0.08em",
-                  textTransform: "uppercase",
-                }}>
-                  {sol.subtitle}
-                </div>
               </div>
 
               {/* Number indicator */}
