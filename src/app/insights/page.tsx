@@ -18,14 +18,8 @@ export default function InsightsPage() {
       <Nav />
       <InsightsHero
         badge="Insights Hub"
-        title={
-          <>
-            News & case studies from
-            <br />
-            <span style={{ color: "var(--accent)" }}>TRVERSE</span>
-          </>
-        }
-        description="Explore TRVERSE updates, project highlights, and recognition from across the mobility ecosystem."
+        title="Insights & Success Stories"
+        description="Explore TRVERSE highlights, key updates, and recognition from across the mobility ecosystem."
         backgroundImageSrc="/insights/insights-page.webp"
         primaryCta={{ label: "Browse articles", href: "#all-insights" }}
         secondaryCta={{ label: "Contact Us", href: "/contact" }}

@@ -596,32 +596,32 @@ export default function ProductsContent() {
 
                 <div className="product-split">
                   <div style={{ minWidth: 0 }}>
-                    <p
-                      style={{
-                        fontFamily: "var(--font-body)",
-                        fontSize: 12,
-                        fontWeight: 700,
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        color: "var(--accent)",
-                        margin: "0 0 12px",
-                      }}
-                    >
-                      {p.name}
-                    </p>
                     <h3
                       style={{
                         fontFamily: "var(--font-display)",
-                        fontSize: "clamp(26px, 3.2vw, 36px)",
+                        fontSize: "clamp(30px, 3.6vw, 44px)",
                         fontWeight: 700,
                         color: "#0a1e3d",
-                        margin: "0 0 16px",
+                        margin: "0 0 10px",
                         letterSpacing: "-0.03em",
-                        lineHeight: 1.12,
+                        lineHeight: 1.08,
+                      }}
+                    >
+                      {p.name}
+                    </h3>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: "clamp(13px, 1.2vw, 16px)",
+                        fontWeight: 700,
+                        letterSpacing: "0.06em",
+                        textTransform: "uppercase",
+                        color: "var(--accent)",
+                        margin: "0 0 18px",
                       }}
                     >
                       {p.tagline}
-                    </h3>
+                    </p>
                     <p
                       style={{
                         fontFamily: "var(--font-body)",
