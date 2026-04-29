@@ -41,7 +41,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         description={item.summary}
         backgroundImageSrc={item.heroImage}
         primaryCta={{ label: "Jump to story", href: "#case-study-content" }}
-        secondaryCta={{ label: "All case studies", href: "/case-studies" }}
+        secondaryCta={{ label: "All case studies", href: "/insights#all-case-studies" }}
       />
 
       <CaseStudyDetailBody item={item} />

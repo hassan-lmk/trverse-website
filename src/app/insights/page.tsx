@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import InsightsHero from "@/components/insights/InsightsHero";
 import { insights } from "@/data/insights";
 import InsightsGrid from "@/components/insights/InsightsGrid";
+import CaseStudiesInInsights from "@/components/insights/CaseStudiesInInsights";
+import { caseStudies } from "@/data/caseStudies";
 
 export const metadata: Metadata = {
   title: "Insights — TRVERSE",
@@ -28,6 +30,8 @@ export default function InsightsPage() {
         primaryCta={{ label: "Browse articles", href: "#all-insights" }}
         secondaryCta={{ label: "Contact Us", href: "/contact" }}
       />
+
+      <CaseStudiesInInsights studies={caseStudies} />
 
       <section id="all-insights" style={{ background: "#fff", padding: "110px 48px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>

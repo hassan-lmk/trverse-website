@@ -5,10 +5,18 @@ import Link from "next/link";
 import { insights } from "@/data/insights";
 
 const Insights = () => {
+  const [viewportWidth, setViewportWidth] = React.useState(1280);
   const homeInsights = [...insights]
     .sort((a, b) => new Date(b.datePublishedIso).getTime() - new Date(a.datePublishedIso).getTime())
     .slice(0, 8);
-  const visibleCount = 3;
+  React.useEffect(() => {
+    const update = () => setViewportWidth(window.innerWidth);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const visibleCount = viewportWidth < 760 ? 1 : viewportWidth < 1080 ? 2 : 3;
   const maxStartIndex = Math.max(0, homeInsights.length - visibleCount);
   const [startIndex, setStartIndex] = React.useState(0);
 
@@ -21,9 +29,27 @@ const Insights = () => {
   };
 
   return (
-    <section id="insights" style={{ background: "#fff", padding: "120px 48px" }}>
+    <section id="insights" className="home-insights-section" style={{ background: "#fff", padding: "120px 48px" }}>
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 1024px) {
+          .home-insights-section {
+            padding: 96px 28px !important;
+          }
+          .home-insights-head {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            margin-bottom: 36px !important;
+          }
+        }
+        @media (max-width: 700px) {
+          .home-insights-section {
+            padding: 84px 20px !important;
+          }
+        }
+      ` }} />
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         <div
+          className="home-insights-head"
           style={{
             display: "flex",
             alignItems: "flex-end",
@@ -133,7 +159,7 @@ const Insights = () => {
             style={{
               display: "flex",
               gap: 24,
-              transform: `translateX(calc(-${startIndex} * ((100% - 48px) / 3 + 24px)))`,
+              transform: `translateX(calc(-${startIndex} * ((100% - ${(visibleCount - 1) * 24}px) / ${visibleCount} + 24px)))`,
               transition: "transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)",
               willChange: "transform",
             }}
@@ -148,7 +174,7 @@ const Insights = () => {
                   border: "1px solid rgba(19, 79, 137, 0.08)",
                   display: "flex",
                   flexDirection: "column",
-                  flex: "0 0 calc((100% - 48px) / 3)",
+                  flex: `0 0 calc((100% - ${(visibleCount - 1) * 24}px) / ${visibleCount})`,
                 }}
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}

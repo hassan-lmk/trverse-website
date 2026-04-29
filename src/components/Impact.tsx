@@ -3,40 +3,57 @@
 import React from 'react';
 import Link from "next/link";
 import PartnerMarquee from './PartnerMarquee';
+import { caseStudies } from "@/data/caseStudies";
 
+const impactColors = ['#134f89', '#0a1e3d', '#1a5c9e'] as const;
 
 const Impact = () => {
-  const projects = [
-    {
-      name: 'Peshawar BRT',
-      location: 'Pakistan',
-      image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800',
-      detail: '27 km system with feeder routes serving over 350,000 passengers daily.',
-      result: '50% reduction in travel time and improved coordination across routes',
-      color: '#134f89',
-    },
-    {
-      name: 'Masar Destination BRT',
-      location: 'Saudi Arabia',
-      image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800',
-      detail: 'Large-scale system built for high passenger volumes and smart city integration.',
-      result: 'Integrated payments, operations, and system visibility',
-      color: '#0a1e3d',
-    },
-    {
-      name: 'Lahore Metrobus',
-      location: 'Pakistan',
-      image: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&q=80&w=800',
-      detail: 'High-demand urban corridor with continuous passenger flow.',
-      result: 'Reliable fare processing and efficient passenger movement',
-      color: '#1a5c9e',
-    },
+  const homePriorityOrder = [
+    "masar-makkah-electric-brt",
+    "peshawar-brt",
+    "lahore-metro",
   ];
 
+  const projects = homePriorityOrder
+    .map((slug) => caseStudies.find((item) => item.slug === slug))
+    .filter((item): item is (typeof caseStudies)[number] => Boolean(item))
+    .map((item, idx) => {
+    const topStat = item.stats?.[0];
+    return {
+      name: item.title,
+      location: item.location,
+      image: item.heroImage,
+      detail: item.summary,
+      result: topStat ? `${topStat.value} ${topStat.label}` : item.benefits?.[0]?.title ?? item.summary,
+      color: impactColors[idx % impactColors.length],
+      slug: item.slug,
+    };
+  });
+
   return (
-    <section id="impact" style={{ background: '#f7f9fc', padding: '120px 48px', position: 'relative', overflow: 'hidden', borderTopLeftRadius: 48, borderTopRightRadius: 48 }}>
+    <section id="impact" className="home-impact-section" style={{ background: '#f7f9fc', padding: '120px 48px', position: 'relative', overflow: 'hidden', borderTopLeftRadius: 48, borderTopRightRadius: 48 }}>
       <style dangerouslySetInnerHTML={{
         __html: `
+        @media (max-width: 1024px) {
+          .home-impact-section {
+            padding: 96px 28px !important;
+          }
+          .home-impact-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            gap: 20px !important;
+          }
+        }
+        @media (max-width: 700px) {
+          .home-impact-section {
+            padding: 84px 20px !important;
+            border-top-left-radius: 28px !important;
+            border-top-right-radius: 28px !important;
+          }
+          .home-impact-grid {
+            grid-template-columns: 1fr !important;
+            gap: 16px !important;
+          }
+        }
         .impact-card {
           background: #fff;
           border-radius: 20px;
@@ -103,9 +120,10 @@ const Impact = () => {
           </p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
-          {projects.map((p, i) => (
-            <div key={i} className="impact-card">
+        <div className="home-impact-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 32 }}>
+          {projects.map((p) => (
+            <Link key={p.slug} href={`/case-studies/${p.slug}`} style={{ textDecoration: 'none' }}>
+              <div className="impact-card">
               <div className="impact-image-container">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={p.image} alt={p.name} className="impact-image" />
@@ -117,24 +135,38 @@ const Impact = () => {
                   <p style={{ fontFamily: 'var(--font-body)', fontSize: 15, color: '#fff', lineHeight: 1.6, fontWeight: 500, margin: 0 }}>{p.result}</p>
                 </div>
 
-                <div style={{
-                  position: 'absolute', top: 20, right: 20, padding: '4px 12px',
-                  background: 'rgba(255,130,93,0.95)', borderRadius: 100,
-                  fontFamily: 'var(--font-body)', fontSize: 11, color: '#fff', fontWeight: 700,
-                  textTransform: 'uppercase', letterSpacing: '0.05em', zIndex: 10
-                }}>{p.location}</div>
+                <div
+                  style={{
+                    position: 'absolute',
+                    top: 20,
+                    right: 20,
+                    padding: '4px 12px',
+                    background: 'rgba(255,130,93,0.95)',
+                    borderRadius: 100,
+                    fontFamily: 'var(--font-body)',
+                    fontSize: 11,
+                    color: '#fff',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.05em',
+                    zIndex: 10,
+                  }}
+                >
+                  {p.location}
+                </div>
               </div>
 
               <div style={{ padding: '28px' }}>
                 <h3 style={{ fontFamily: 'var(--font-display)', fontSize: 22, fontWeight: 600, color: '#0a1e3d', margin: '0 0 12px' }}>{p.name}</h3>
                 <p style={{ fontFamily: 'var(--font-body)', fontSize: 14.5, color: '#5a6a7e', lineHeight: 1.6, margin: 0 }}>{p.detail}</p>
               </div>
-            </div>
+              </div>
+            </Link>
           ))}
         </div>
 
         <div style={{ textAlign: 'center', marginTop: 64 }}>
-          <Link href="/case-studies" style={{
+          <Link href="/insights#all-case-studies" style={{
             fontFamily: 'var(--font-body)', fontSize: 14, fontWeight: 600, color: 'var(--accent)',
             textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 8,
             transition: 'gap 0.2s',

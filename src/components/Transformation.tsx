@@ -33,7 +33,28 @@ const Transformation = () => {
   const [activeTab, setActiveTab] = React.useState(0);
 
   return (
-    <section id="about-us" style={{ background: '#fff', padding: '120px 48px' }}>
+    <section id="about-us" className="home-transformation-section" style={{ background: '#fff', padding: '120px 48px' }}>
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 1024px) {
+          .home-transformation-section {
+            padding: 96px 28px !important;
+          }
+          .home-transform-tabs,
+          .home-transform-trunk,
+          .home-transform-cards {
+            grid-template-columns: 1fr !important;
+            gap: 14px !important;
+          }
+          .home-transform-trunk {
+            display: none !important;
+          }
+        }
+        @media (max-width: 700px) {
+          .home-transformation-section {
+            padding: 84px 20px !important;
+          }
+        }
+      ` }} />
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
           <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16, display: 'block' }}>Transformation</span>
@@ -47,7 +68,7 @@ const Transformation = () => {
         <div style={{ display: 'flex', flexDirection: 'column', maxWidth: 1100, margin: '0 auto', position: 'relative' }}>
           
           {/* TOP ROW: Tabs */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, width: '100%', position: 'relative', zIndex: 2 }}>
+          <div className="home-transform-tabs" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, width: '100%', position: 'relative', zIndex: 2 }}>
             {pairs.map((p, i) => (
               <div key={i} style={{ display: 'flex', justifyContent: 'center' }}>
                 <button onClick={() => setActiveTab(i)} style={{
@@ -68,7 +89,7 @@ const Transformation = () => {
           </div>
 
           {/* MIDDLE ROW: The Connection Trunk */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, width: '100%', height: 60, position: 'relative' }}>
+          <div className="home-transform-trunk" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, width: '100%', height: 60, position: 'relative' }}>
             {[0, 1, 2].map(i => (
               <div key={`trunk-${i}`} style={{ position: 'relative' }}>
                 {/* Horizontal branch connecting leftwards (if not the first column) */}
@@ -95,7 +116,7 @@ const Transformation = () => {
           </div>
 
           {/* BOTTOM ROW: The Cards */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, width: '100%', paddingTop: 20 }}>
+          <div className="home-transform-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, width: '100%', paddingTop: 20 }}>
             {pairs[activeTab].items.map((item, i) => (
               <div key={`card-${activeTab}-${i}`} style={{
                 background: '#f7f9fc', borderRadius: 12, padding: '32px 24px',

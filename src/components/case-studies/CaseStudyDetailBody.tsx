@@ -234,7 +234,7 @@ const CaseStudyDetailBody = ({ item }: Props) => {
                   ))}
                 </div>
                 <Link
-                  href="/case-studies"
+                  href="/insights#all-case-studies"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -711,7 +711,7 @@ const CaseStudyDetailBody = ({ item }: Props) => {
                   Contact TRVERSE
                 </Link>
                 <Link
-                  href="/case-studies"
+                  href="/insights#all-case-studies"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",

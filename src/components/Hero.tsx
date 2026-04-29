@@ -7,12 +7,35 @@ const Hero = () => {
   React.useEffect(() => { setTimeout(() => setLoaded(true), 100); }, []);
 
   return (
-    <section style={{
+    <section className="home-hero-section" style={{
       position: 'relative', height: '80vh', minHeight: '80vh', display: 'flex', alignItems: 'center',
       overflow: 'hidden', background: '#040e1f',
       borderBottomLeftRadius: 48, borderBottomRightRadius: 48,
       boxShadow: '0 12px 40px rgba(0,0,0,0.05)'
     }}>
+      <style dangerouslySetInnerHTML={{ __html: `
+        @media (max-width: 1024px) {
+          .home-hero-section {
+            min-height: 72vh !important;
+            border-bottom-left-radius: 32px !important;
+            border-bottom-right-radius: 32px !important;
+          }
+          .home-hero-container {
+            padding: 0 28px !important;
+          }
+        }
+        @media (max-width: 700px) {
+          .home-hero-section {
+            min-height: 68vh !important;
+          }
+          .home-hero-container {
+            padding: 0 20px !important;
+          }
+          .home-hero-copy {
+            max-width: 100% !important;
+          }
+        }
+      ` }} />
       {/* YouTube Background Video */}
       <div style={{
         position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 0
@@ -66,11 +89,11 @@ const Hero = () => {
         backgroundSize: '20px 20px',
       }}></div>
 
-      <div style={{
+      <div className="home-hero-container" style={{
         position: 'relative', zIndex: 2, maxWidth: 1280, margin: '0 auto', padding: '0 48px',
         width: '100%',
       }}>
-        <div style={{ maxWidth: 680 }}>
+        <div className="home-hero-copy" style={{ maxWidth: 680 }}>
           <div style={{
             display: 'inline-block', padding: '6px 16px', borderRadius: 20,
             background: 'rgba(255,130,93,0.12)', border: '1px solid rgba(255,130,93,0.25)',

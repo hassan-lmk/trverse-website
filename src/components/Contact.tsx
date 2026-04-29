@@ -5,14 +5,34 @@ import ContactForm from "@/components/contact/ContactForm";
 
 const Contact = () => {
   return (
-    <section id="contact" style={{ background: '#fff', padding: '120px 48px' }}>
+    <section id="contact" className="home-contact-section" style={{ background: '#fff', padding: '120px 48px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         <div style={{
           background: 'linear-gradient(135deg, #0a1e3d 0%, #134f89 100%)',
           borderRadius: 20, padding: '72px 64px', display: 'grid',
           gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center',
           position: 'relative', overflow: 'hidden',
-        }}>
+        }} className="home-contact-grid">
+          <style dangerouslySetInnerHTML={{ __html: `
+            @media (max-width: 1024px) {
+              .home-contact-section {
+                padding: 96px 28px !important;
+              }
+              .home-contact-grid {
+                grid-template-columns: 1fr !important;
+                gap: 36px !important;
+                padding: 48px 32px !important;
+              }
+            }
+            @media (max-width: 700px) {
+              .home-contact-section {
+                padding: 84px 20px !important;
+              }
+              .home-contact-grid {
+                padding: 36px 20px !important;
+              }
+            }
+          ` }} />
           <div style={{
             position: 'absolute', inset: 0,
             backgroundImage: 'radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px)',

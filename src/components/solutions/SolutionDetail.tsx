@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React from "react";
 
 const solutions = [
@@ -164,6 +165,14 @@ const ArrowIcon = () => (
 );
 
 const SolutionDetail = () => {
+  const hrefById: Record<string, string> = {
+    afc: "/solutions/Automated-fare-collection",
+    its: "/solutions/Intelligent-transport-systems",
+    scheduling: "/solutions/AI-based-bus-scheduling",
+    control: "/solutions/Control-room-management",
+    micro: "/solutions/Micro-mobility-integration",
+  };
+
   return (
     <div style={{ background: "#fff" }}>
       <style dangerouslySetInnerHTML={{ __html: `
@@ -293,6 +302,27 @@ const SolutionDetail = () => {
                 margin: "0 0 40px",
               }}>
                 {sol.description}
+              </p>
+
+              <p style={{ margin: "0 0 36px" }}>
+                <Link
+                  href={hrefById[sol.id] ?? "/solutions"}
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: 14,
+                    fontWeight: 700,
+                    color: "#134f89",
+                    textDecoration: "none",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: 8,
+                    borderBottom: "2px solid rgba(19,79,137,0.2)",
+                    paddingBottom: 2,
+                  }}
+                >
+                  Learn more
+                  <ArrowIcon />
+                </Link>
               </p>
 
               {/* Capabilities */}

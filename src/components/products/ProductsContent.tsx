@@ -1,0 +1,977 @@
+import Link from "next/link";
+import type { CSSProperties } from "react";
+
+const PLACEHOLDER = "/products/placeholder-product.svg";
+
+type IconId =
+  | "card"
+  | "coins"
+  | "wallet"
+  | "map"
+  | "shield"
+  | "gauge"
+  | "calendar"
+  | "route"
+  | "fleet"
+  | "dashboard"
+  | "alert"
+  | "radio"
+  | "clock"
+  | "users"
+  | "screens"
+  | "chart"
+  | "layers"
+  | "pie"
+  | "activity"
+  | "binary"
+  | "package"
+  | "tool"
+  | "lock";
+
+type SoftwareProduct = {
+  slug: string;
+  name: string;
+  shortName: string;
+  tagline: string;
+  description: string;
+  listTitle: "Key capabilities" | "Includes";
+  capabilities: { text: string; icon: IconId }[];
+};
+
+const softwareProducts: SoftwareProduct[] = [
+  {
+    slug: "meridian",
+    name: "TRVERSE Meridian",
+    shortName: "Meridian",
+    tagline: "Payments that keep moving",
+    description:
+      "Manages payments across stations, vehicles, and digital channels with support for multiple fare models.",
+    listTitle: "Key capabilities",
+    capabilities: [
+      { icon: "card", text: "Open-loop and closed-loop payments" },
+      { icon: "coins", text: "Central clearing and revenue management" },
+      { icon: "wallet", text: "Mobile ticketing and digital wallet support" },
+    ],
+  },
+  {
+    slug: "vector",
+    name: "TRVERSE Vector",
+    shortName: "Vector",
+    tagline: "See every movement. Stay ahead.",
+    description:
+      "Tracks vehicle movement, performance, and operational status across the network.",
+    listTitle: "Key capabilities",
+    capabilities: [
+      { icon: "map", text: "GPS-based tracking and monitoring" },
+      { icon: "shield", text: "Driver behavior and safety tracking" },
+      { icon: "gauge", text: "Vehicle diagnostics and performance data" },
+    ],
+  },
+  {
+    slug: "orbit",
+    name: "TRVERSE Orbit",
+    shortName: "Orbit",
+    tagline: "Schedules that move with demand",
+    description:
+      "Optimizes routes, schedules, and fleet allocation using real-time and historical data.",
+    listTitle: "Key capabilities",
+    capabilities: [
+      { icon: "calendar", text: "Dynamic scheduling updates" },
+      { icon: "route", text: "Demand-based route planning" },
+      { icon: "fleet", text: "Fleet utilization tracking" },
+    ],
+  },
+  {
+    slug: "command",
+    name: "TRVERSE Command",
+    shortName: "Command",
+    tagline: "Unified control across your network",
+    description:
+      "Brings monitoring, communication, and system coordination into one environment.",
+    listTitle: "Key capabilities",
+    capabilities: [
+      { icon: "dashboard", text: "Live dashboards and system monitoring" },
+      { icon: "alert", text: "Incident and disruption management" },
+      { icon: "radio", text: "Dispatch and coordination tools" },
+    ],
+  },
+  {
+    slug: "signal",
+    name: "TRVERSE Signal",
+    shortName: "Signal",
+    tagline: "Clarity at every stop",
+    description:
+      "Delivers service updates and travel information across stations and vehicles.",
+    listTitle: "Key capabilities",
+    capabilities: [
+      { icon: "clock", text: "Real-time arrival and service updates" },
+      { icon: "users", text: "Passenger information systems" },
+      { icon: "screens", text: "Onboard and station display integration" },
+    ],
+  },
+  {
+    slug: "insight",
+    name: "TRVERSE Insight",
+    shortName: "Insight",
+    tagline: "Know more. Decide faster",
+    description:
+      "Provides reporting, analytics, and performance visibility across the network.",
+    listTitle: "Key capabilities",
+    capabilities: [
+      { icon: "chart", text: "Ridership and performance reporting" },
+      { icon: "layers", text: "Operational analytics" },
+      { icon: "pie", text: "System-wide dashboards" },
+    ],
+  },
+  {
+    slug: "flow",
+    name: "TRVERSE Flow",
+    shortName: "Flow",
+    tagline: "Understand how people move",
+    description: "Captures ridership patterns and passenger movement across the network.",
+    listTitle: "Key capabilities",
+    capabilities: [
+      { icon: "users", text: "Passenger counting and monitoring" },
+      { icon: "activity", text: "Demand analysis" },
+      { icon: "binary", text: "Usage trend tracking" },
+    ],
+  },
+  {
+    slug: "core",
+    name: "TRVERSE Core",
+    shortName: "Core",
+    tagline: "The systems behind everything that works",
+    description:
+      "Manages operational infrastructure and administrative workflows.",
+    listTitle: "Includes",
+    capabilities: [
+      { icon: "package", text: "Asset and inventory management" },
+      { icon: "tool", text: "Fault and incident tracking" },
+      { icon: "lock", text: "Access control and attendance systems" },
+    ],
+  },
+];
+
+const fareDevices = [
+  "Ticket Vending Machine (TVM)",
+  "Validators (fixed and handheld)",
+  "Fare Gates / Flap Gates",
+  "Point of Sale (POS) systems",
+];
+
+const pisDevices = [
+  "Passenger Information Displays (station and onboard)",
+  "Infotainment and announcement systems",
+];
+
+const onboardDevices = [
+  "Driver console systems",
+  "GPS and tracking units",
+  "AI-based monitoring and dashcam systems",
+];
+
+/** Device hero art: 512×512 PNG from Freepik Icons API (downscaled in UI; files ~8–25KB, not 2K photos). */
+const deviceCategoryImages = {
+  fare: { src: "/products/devices/fare-collection.png", alt: "Ticket machine and fare collection" },
+  pis: { src: "/products/devices/passenger-information.png", alt: "Passenger information displays" },
+  onboard: { src: "/products/devices/onboard-operational.png", alt: "Fleet and onboard operational tech" },
+} as const;
+
+function CapabilityGlyph({ id }: { id: IconId }) {
+  const common = { width: 22, height: 22, viewBox: "0 0 24 24", fill: "none" as const, stroke: "currentColor", strokeWidth: 1.65, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+  switch (id) {
+    case "card":
+      return (
+        <svg {...common}>
+          <rect x="3" y="5" width="18" height="14" rx="2" />
+          <path d="M3 10h18" />
+        </svg>
+      );
+    case "coins":
+      return (
+        <svg {...common}>
+          <circle cx="9" cy="9" r="6" />
+          <circle cx="15" cy="15" r="6" />
+        </svg>
+      );
+    case "wallet":
+      return (
+        <svg {...common}>
+          <path d="M20 12V8a2 2 0 00-2-2H6a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2v-6" />
+          <circle cx="16" cy="14" r="1" />
+        </svg>
+      );
+    case "map":
+      return (
+        <svg {...common}>
+          <polygon points="1 6 9 4 17 8 23 7 23 19 17 21 10 17 4 21 4 13 1 9 1 6" />
+        </svg>
+      );
+    case "shield":
+      return (
+        <svg {...common}>
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>
+      );
+    case "gauge":
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 15v4M12 12l3-3" />
+        </svg>
+      );
+    case "calendar":
+      return (
+        <svg {...common}>
+          <rect x="3" y="4" width="18" height="18" rx="2" />
+          <path d="M16 2v4M8 2v4M3 10h18" />
+        </svg>
+      );
+    case "route":
+      return (
+        <svg {...common}>
+          <circle cx="7" cy="18" r="2" />
+          <circle cx="17" cy="7" r="2" />
+          <path d="M10 17L15 11" />
+        </svg>
+      );
+    case "fleet":
+      return (
+        <svg {...common}>
+          <rect x="4" y="8" width="16" height="9" rx="2" />
+          <path d="M7 21v-4M17 21v-4M6 17h12" />
+        </svg>
+      );
+    case "dashboard":
+      return (
+        <svg {...common}>
+          <rect x="3" y="3" width="7" height="9" rx="1" />
+          <rect x="14" y="3" width="7" height="5" rx="1" />
+          <rect x="14" y="11" width="7" height="10" rx="1" />
+          <rect x="3" y="15" width="7" height="6" rx="1" />
+        </svg>
+      );
+    case "alert":
+      return (
+        <svg {...common}>
+          <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+          <path d="M12 9v4M12 17h.01" />
+        </svg>
+      );
+    case "radio":
+      return (
+        <svg {...common}>
+          <path d="M4.93 19.93A10 10 0 019 22M19.07 19.07A10 10 0 0115 22" />
+          <circle cx="12" cy="12" r="3" />
+          <path d="M17.93 17.93A10 10 0 019 2" />
+        </svg>
+      );
+    case "clock":
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="9" />
+          <path d="M12 7v6l4 2" />
+        </svg>
+      );
+    case "users":
+      return (
+        <svg {...common}>
+          <circle cx="9" cy="8" r="3" />
+          <circle cx="17" cy="9" r="2.5" />
+          <path d="M4 21v-1a4 4 0 014-4h2M14 21v-1a5 5 0 015-5" />
+        </svg>
+      );
+    case "screens":
+      return (
+        <svg {...common}>
+          <rect x="2" y="3" width="20" height="14" rx="2" />
+          <path d="M8 21h8M12 17v4" />
+        </svg>
+      );
+    case "chart":
+      return (
+        <svg {...common}>
+          <path d="M3 20h18M5 17l4-8 5 10 6-17" />
+        </svg>
+      );
+    case "layers":
+      return (
+        <svg {...common}>
+          <path d="M12 2L2 7l10 5 10-5-10-5z" />
+          <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg>
+      );
+    case "pie":
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="9" opacity="0.25" />
+          <path d="M12 12V3a9 9 0 019 9z" fill="currentColor" stroke="none" />
+        </svg>
+      );
+    case "activity":
+      return (
+        <svg {...common}>
+          <path d="M22 12h-4l-3 9L9 3l-3 12H2" />
+        </svg>
+      );
+    case "binary":
+      return (
+        <svg {...common}>
+          <path d="M11 13H9M13 17H9M9 17a3 3 0 013-3" />
+          <path d="M15 13h2m0 8h4M17 17h6" />
+          <circle cx="6" cy="7" r="2" />
+        </svg>
+      );
+    case "package":
+      return (
+        <svg {...common}>
+          <path d="M12 22V12M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+          <polyline points="3.29 7 12 12 20.71 7" />
+        </svg>
+      );
+    case "tool":
+      return (
+        <svg {...common}>
+          <path d="M14.7 6.3a4.2 4.2 0 013 7.6L8 21l-4-4 7.7-10.8a4.2 4.2 0 019-1z" />
+        </svg>
+      );
+    case "lock":
+      return (
+        <svg {...common}>
+          <rect x="5" y="11" width="14" height="10" rx="2" />
+          <path d="M8 11V8a4 4 0 018 0v3" />
+        </svg>
+      );
+    default:
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="9" />
+        </svg>
+      );
+  }
+}
+
+function ProductMockupFrame({ slug, label }: { slug: string; label: string }) {
+  return (
+    <div
+      style={{
+        position: "relative",
+        borderRadius: 28,
+        padding: 12,
+        background: "linear-gradient(145deg, rgba(10,30,61,0.06) 0%, rgba(19,79,137,0.08) 100%)",
+        border: "1px solid rgba(19,79,137,0.12)",
+      }}
+    >
+      <div
+        style={{
+          borderRadius: 20,
+          overflow: "hidden",
+          border: "1px solid rgba(10,30,61,0.08)",
+          background: "#fff",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: 8,
+            padding: "12px 16px",
+            background: "linear-gradient(180deg, #fafbfd 0%, #f4f7fb 100%)",
+            borderBottom: "1px solid rgba(19,79,137,0.08)",
+          }}
+        >
+          <span style={{ display: "flex", gap: 6 }}>
+            {["#ff5f57", "#febc2e", "#28c840"].map((c) => (
+              <span key={c} style={{ width: 10, height: 10, borderRadius: "50%", background: c, opacity: 0.92 }} />
+            ))}
+          </span>
+          <div
+            style={{
+              flex: 1,
+              marginLeft: 8,
+              height: 28,
+              borderRadius: 8,
+              background: "rgba(10,30,61,0.04)",
+              border: "1px solid rgba(10,30,61,0.06)",
+              fontFamily: "var(--font-body)",
+              fontSize: 11,
+              color: "#7a8797",
+              display: "flex",
+              alignItems: "center",
+              paddingLeft: 12,
+            }}
+          >
+            trverse.io / {slug}
+          </div>
+        </div>
+        <div style={{ position: "relative", aspectRatio: "4 / 3", background: "#0a1628" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={PLACEHOLDER}
+            alt=""
+            style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.95 }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              inset: 0,
+              background: "linear-gradient(135deg, rgba(10,30,61,0.15) 0%, transparent 50%, rgba(255,130,93,0.08) 100%)",
+              pointerEvents: "none",
+            }}
+          />
+          <div
+            style={{
+              position: "absolute",
+              bottom: 20,
+              left: 20,
+              right: 20,
+              padding: "14px 16px",
+              borderRadius: 14,
+              background: "rgba(255,255,255,0.92)",
+              backdropFilter: "blur(12px)",
+              border: "1px solid rgba(255,255,255,0.55)",
+              fontFamily: "var(--font-body)",
+              fontSize: 13,
+              fontWeight: 600,
+              color: "#0a1e3d",
+            }}
+          >
+            <span style={{ color: "var(--accent)", fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", display: "block", marginBottom: 4 }}>
+              Product preview
+            </span>
+            {label} — UI mockup
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function ProductsContent() {
+  return (
+    <>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+          .products-section-inner { max-width: 1200px; margin: 0 auto; }
+          .product-split {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            gap: clamp(36px, 5vw, 72px);
+            align-items: center;
+          }
+          .devices-cols {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+          }
+          @media (max-width: 1024px) {
+            .product-split {
+              grid-template-columns: 1fr;
+              gap: 40px;
+            }
+          }
+          @media (max-width: 1100px) {
+            .devices-cols { grid-template-columns: 1fr; }
+          }
+
+          /* Sticky stacking cards — desktop only */
+          .product-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+          }
+          @media (min-width: 1025px) {
+            .product-sticky-slot {
+              position: sticky;
+              margin-bottom: clamp(48px, 11vh, 148px);
+              /* Stagger so each card settles slightly lower than the prior (deck effect) */
+              top: calc(88px + var(--stack) * clamp(14px, 2.2vw, 28px));
+              z-index: calc(40 + var(--stack));
+            }
+            .product-stack > .product-sticky-slot:last-child {
+              margin-bottom: clamp(72px, 16vh, 180px);
+            }
+          }
+          @media (max-width: 1024px) {
+            .product-sticky-slot {
+              position: relative !important;
+              top: auto !important;
+              z-index: auto !important;
+              margin-bottom: 24px;
+            }
+            .product-sticky-slot:last-child {
+              margin-bottom: 0;
+            }
+          }
+        `,
+        }}
+      />
+
+      <section
+        id="software-products"
+        style={{
+          background: "linear-gradient(180deg, #fafbfd 0%, #eef2f8 42%, #f7f9fc 100%)",
+          padding: "clamp(72px, 12vw, 120px) 48px",
+        }}
+      >
+        <div className="products-section-inner">
+          <div style={{ textAlign: "center", marginBottom: 72, maxWidth: 680, marginLeft: "auto", marginRight: "auto" }}>
+            <span
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 11,
+                fontWeight: 800,
+                color: "var(--accent)",
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                display: "inline-block",
+                marginBottom: 20,
+                padding: "8px 16px",
+                borderRadius: 999,
+                background: "rgba(255,130,93,0.12)",
+                border: "1px solid rgba(255,130,93,0.22)",
+              }}
+            >
+              Software products
+            </span>
+            <h2
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(32px, 4vw, 46px)",
+                fontWeight: 700,
+                color: "#0a1e3d",
+                margin: "0 0 16px",
+                letterSpacing: "-0.035em",
+                lineHeight: 1.08,
+              }}
+            >
+              Software systems for{" "}
+              <span style={{ color: "#134f89" }}>transit operations</span>
+            </h2>
+            <div
+              style={{
+                width: 48,
+                height: 4,
+                borderRadius: 4,
+                background: "linear-gradient(90deg, var(--accent), #134f89)",
+                margin: "0 auto",
+                opacity: 0.9,
+              }}
+            />
+          </div>
+
+          <div className="product-stack">
+            {softwareProducts.map((p, idx) => (
+              <div
+                key={p.slug}
+                className="product-sticky-slot"
+                style={{ ["--stack" as string]: idx } as CSSProperties}
+              >
+                <article
+                  className="product-stack-card-inner"
+                  id={p.slug}
+                  style={{
+                    position: "relative",
+                    borderRadius: 36,
+                    background: idx % 2 === 0 ? "#ffffff" : "linear-gradient(155deg, #ffffff 0%, #fbfcfe 65%, #f6f9fd 100%)",
+                    border: "1px solid rgba(19,79,137,0.09)",
+                    padding: "clamp(32px, 5vw, 56px)",
+                  }}
+                >
+                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 28, gap: 16 }}>
+                  <span
+                    style={{
+                      fontFamily: "var(--font-mono, monospace)",
+                      fontSize: 13,
+                      fontWeight: 600,
+                      color: "#134f89",
+                      opacity: 0.45,
+                      letterSpacing: "0.12em",
+                    }}
+                  >
+                    {String(idx + 1).padStart(2, "0")}
+                  </span>
+                </div>
+
+                <div className="product-split">
+                  <div style={{ minWidth: 0 }}>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: 12,
+                        fontWeight: 700,
+                        letterSpacing: "0.14em",
+                        textTransform: "uppercase",
+                        color: "var(--accent)",
+                        margin: "0 0 12px",
+                      }}
+                    >
+                      {p.name}
+                    </p>
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-display)",
+                        fontSize: "clamp(26px, 3.2vw, 36px)",
+                        fontWeight: 700,
+                        color: "#0a1e3d",
+                        margin: "0 0 16px",
+                        letterSpacing: "-0.03em",
+                        lineHeight: 1.12,
+                      }}
+                    >
+                      {p.tagline}
+                    </h3>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: 16,
+                        color: "#5f6e82",
+                        lineHeight: 1.75,
+                        margin: "0 0 32px",
+                        maxWidth: 520,
+                      }}
+                    >
+                      {p.description}
+                    </p>
+
+                    <p
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: 11,
+                        fontWeight: 800,
+                        letterSpacing: "0.14em",
+                        textTransform: "uppercase",
+                        color: "#0a1e3d",
+                        margin: "0 0 14px",
+                        opacity: 0.85,
+                      }}
+                    >
+                      {p.listTitle}
+                    </p>
+                    <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
+                      {p.capabilities.map((cap) => (
+                        <li
+                          key={cap.text}
+                          style={{
+                            display: "flex",
+                            alignItems: "flex-start",
+                            gap: 14,
+                            padding: "14px 16px",
+                            borderRadius: 14,
+                            background: "linear-gradient(135deg, rgba(19,79,137,0.04) 0%, rgba(255,130,93,0.04) 100%)",
+                            border: "1px solid rgba(19,79,137,0.08)",
+                          }}
+                        >
+                          <span
+                            style={{
+                              flexShrink: 0,
+                              width: 44,
+                              height: 44,
+                              borderRadius: 14,
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              background: "linear-gradient(155deg, #0a1e3d 0%, #1a5f9e 55%, #134f89 100%)",
+                              color: "#fff",
+                            }}
+                          >
+                            <CapabilityGlyph id={cap.icon} />
+                          </span>
+                          <span
+                            style={{
+                              fontFamily: "var(--font-body)",
+                              fontSize: 14.5,
+                              color: "#3d4d62",
+                              lineHeight: 1.55,
+                              fontWeight: 500,
+                              paddingTop: 2,
+                            }}
+                          >
+                            {cap.text}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="product-mockup-col" style={{ minWidth: 0 }}>
+                    <ProductMockupFrame slug={p.slug} label={p.shortName} />
+                  </div>
+                </div>
+              </article>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="devices" style={{ background: "#fff", padding: "clamp(72px, 11vw, 112px) 48px" }}>
+        <div className="products-section-inner">
+          <div style={{ textAlign: "center", marginBottom: 56, maxWidth: 720, marginLeft: "auto", marginRight: "auto" }}>
+            <span
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 11,
+                fontWeight: 800,
+                color: "var(--accent)",
+                letterSpacing: "0.22em",
+                textTransform: "uppercase",
+                display: "inline-block",
+                marginBottom: 20,
+                padding: "8px 16px",
+                borderRadius: 999,
+                background: "rgba(255,130,93,0.1)",
+                border: "1px solid rgba(255,130,93,0.2)",
+              }}
+            >
+              Devices
+            </span>
+            <h2
+              style={{
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(28px, 3.6vw, 42px)",
+                fontWeight: 700,
+                color: "#0a1e3d",
+                margin: "0 0 18px",
+                letterSpacing: "-0.03em",
+              }}
+            >
+              Built for real-world transit environments
+            </h2>
+            <p
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 17,
+                color: "#5f6e82",
+                lineHeight: 1.75,
+                margin: 0,
+              }}
+            >
+              TRVERSE devices support fare collection, passenger interaction, and operational systems across stations and
+              vehicles. Designed for continuous use, they integrate directly with TRVERSE software systems.
+            </p>
+          </div>
+
+          <div className="devices-cols">
+            {(
+              [
+                {
+                  title: "Fare collection devices",
+                  icon: "card" as IconId,
+                  image: deviceCategoryImages.fare,
+                  items: fareDevices,
+                },
+                {
+                  title: "Passenger information systems",
+                  icon: "screens" as IconId,
+                  image: deviceCategoryImages.pis,
+                  items: pisDevices,
+                },
+                {
+                  title: "Onboard and operational devices",
+                  icon: "map" as IconId,
+                  image: deviceCategoryImages.onboard,
+                  items: onboardDevices,
+                },
+              ] as const
+            ).map((col) => (
+              <div
+                key={col.title}
+                style={{
+                  borderRadius: 24,
+                  padding: "28px 24px",
+                  background: "linear-gradient(165deg, #fbfcfe 0%, #f2f6fb 100%)",
+                  border: "1px solid rgba(19,79,137,0.1)",
+                }}
+              >
+                <div
+                  style={{
+                    borderRadius: 18,
+                    marginBottom: 22,
+                    border: "1px solid rgba(19,79,137,0.08)",
+                    height: 170,
+                    background: "linear-gradient(180deg, #f5f8fc 0%, #eef3f9 100%)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    padding: 20,
+                  }}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={col.image.src}
+                    alt={col.image.alt}
+                    width={160}
+                    height={160}
+                    style={{
+                      width: "clamp(120px, 40%, 160px)",
+                      height: "auto",
+                      maxHeight: 130,
+                      objectFit: "contain",
+                      display: "block",
+                    }}
+                  />
+                </div>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+                  <span
+                    style={{
+                      width: 44,
+                      height: 44,
+                      borderRadius: 14,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      background: "linear-gradient(155deg, #0a1e3d, #134f89)",
+                      color: "#fff",
+                      flexShrink: 0,
+                    }}
+                  >
+                    <CapabilityGlyph id={col.icon} />
+                  </span>
+                  <h3
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: 18,
+                      fontWeight: 700,
+                      color: "#0a1e3d",
+                      margin: 0,
+                      lineHeight: 1.25,
+                    }}
+                  >
+                    {col.title}
+                  </h3>
+                </div>
+                <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+                  {col.items.map((item) => (
+                    <li
+                      key={item}
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: 14.5,
+                        color: "#5f6e82",
+                        lineHeight: 1.6,
+                        padding: "10px 0",
+                        borderBottom: "1px solid rgba(19,79,137,0.07)",
+                      }}
+                    >
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          <p
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: 16,
+              color: "#5f6e82",
+              lineHeight: 1.8,
+              textAlign: "center",
+              marginTop: 52,
+              maxWidth: 900,
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+          >
+            All devices are integrated with TRVERSE software systems, ensuring consistent data flow across payments,
+            operations, and passenger services.
+          </p>
+        </div>
+      </section>
+
+      <section id="cta" style={{ background: "linear-gradient(180deg, #f7f9fc 0%, #eef1f7 100%)", padding: "96px 48px 120px" }}>
+        <div className="products-section-inner">
+          <div
+            style={{
+              background: "linear-gradient(145deg, #071428 0%, #0a1e3d 40%, #134f89 100%)",
+              borderRadius: 32,
+              padding: "72px 48px",
+              position: "relative",
+              overflow: "hidden",
+              textAlign: "center",
+              border: "1px solid rgba(255,255,255,0.06)",
+            }}
+          >
+            <div
+              style={{
+                position: "absolute",
+                top: "-20%",
+                right: "-10%",
+                width: 420,
+                height: 420,
+                borderRadius: "50%",
+                background: "radial-gradient(circle, rgba(255,130,93,0.22) 0%, transparent 68%)",
+              }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                backgroundImage: "radial-gradient(circle, rgba(255,255,255,0.05) 1px, transparent 1px)",
+                backgroundSize: "36px 36px",
+                opacity: 0.9,
+              }}
+            />
+            <div style={{ position: "relative", zIndex: 1 }}>
+              <h2
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(26px, 3.2vw, 40px)",
+                  fontWeight: 700,
+                  color: "#fff",
+                  margin: "0 0 16px",
+                  letterSpacing: "-0.025em",
+                }}
+              >
+                Deploy the right products for your network
+              </h2>
+              <p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 17,
+                  color: "rgba(255,255,255,0.7)",
+                  lineHeight: 1.75,
+                  maxWidth: 520,
+                  margin: "0 auto 32px",
+                }}
+              >
+                Talk to TRVERSE about building a connected transit system.
+              </p>
+              <Link
+                href="/contact"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 10,
+                  padding: "16px 32px",
+                  borderRadius: 12,
+                  background: "var(--accent)",
+                  color: "#fff",
+                  fontFamily: "var(--font-body)",
+                  fontSize: 15,
+                  fontWeight: 700,
+                  textDecoration: "none",
+                  transition: "background 0.2s ease, transform 0.2s ease",
+                }}
+              >
+                Contact TRVERSE
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+                  <path
+                    d="M3 8h10M9 4l4 4-4 4"
+                    stroke="#fff"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}
