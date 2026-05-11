@@ -3,6 +3,15 @@ import type { CSSProperties } from "react";
 
 const PLACEHOLDER = "/products/placeholder-product.svg";
 
+const PRODUCT_MOCKUPS: Record<string, string> = {
+  meridian: "/products/Meridian.png",
+  vector: "/products/vector.png",
+  orbit: "/products/orbit.png",
+  command: "/products/command.png",
+  insight: "/products/insight.png",
+  flow: "/products/flow.png",
+};
+
 type IconId =
   | "card"
   | "coins"
@@ -351,7 +360,7 @@ function CapabilityGlyph({ id }: { id: IconId }) {
   }
 }
 
-function ProductMockupFrame({ slug, label }: { slug: string; label: string }) {
+function ProductMockupFrame({ slug }: { slug: string; label?: string }) {
   return (
     <div
       style={{
@@ -407,7 +416,7 @@ function ProductMockupFrame({ slug, label }: { slug: string; label: string }) {
         <div style={{ position: "relative", aspectRatio: "4 / 3", background: "#0a1628" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={PLACEHOLDER}
+            src={PRODUCT_MOCKUPS[slug] ?? PLACEHOLDER}
             alt=""
             style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.95 }}
           />
@@ -419,28 +428,6 @@ function ProductMockupFrame({ slug, label }: { slug: string; label: string }) {
               pointerEvents: "none",
             }}
           />
-          <div
-            style={{
-              position: "absolute",
-              bottom: 20,
-              left: 20,
-              right: 20,
-              padding: "14px 16px",
-              borderRadius: 14,
-              background: "rgba(255,255,255,0.92)",
-              backdropFilter: "blur(12px)",
-              border: "1px solid rgba(255,255,255,0.55)",
-              fontFamily: "var(--font-body)",
-              fontSize: 13,
-              fontWeight: 600,
-              color: "#0a1e3d",
-            }}
-          >
-            <span style={{ color: "var(--accent)", fontSize: 11, letterSpacing: "0.06em", textTransform: "uppercase", display: "block", marginBottom: 4 }}>
-              Product preview
-            </span>
-            {label} — UI mockup
-          </div>
         </div>
       </div>
     </div>
