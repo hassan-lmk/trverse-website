@@ -365,15 +365,15 @@ function ProductMockupFrame({ slug }: { slug: string; label?: string }) {
     <div
       style={{
         position: "relative",
-        borderRadius: 28,
-        padding: 12,
+        borderRadius: 22,
+        padding: 4,
         background: "linear-gradient(145deg, rgba(10,30,61,0.06) 0%, rgba(19,79,137,0.08) 100%)",
         border: "1px solid rgba(19,79,137,0.12)",
       }}
     >
       <div
         style={{
-          borderRadius: 20,
+          borderRadius: 18,
           overflow: "hidden",
           border: "1px solid rgba(10,30,61,0.08)",
           background: "#fff",
@@ -413,20 +413,12 @@ function ProductMockupFrame({ slug }: { slug: string; label?: string }) {
             trverse.io / {slug}
           </div>
         </div>
-        <div style={{ position: "relative", aspectRatio: "4 / 3", background: "#0a1628" }}>
+        <div style={{ position: "relative", aspectRatio: "16 / 10", background: "#f4f7fb" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={PRODUCT_MOCKUPS[slug] ?? PLACEHOLDER}
             alt=""
-            style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.95 }}
-          />
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              background: "linear-gradient(135deg, rgba(10,30,61,0.15) 0%, transparent 50%, rgba(255,130,93,0.08) 100%)",
-              pointerEvents: "none",
-            }}
+            style={{ width: "100%", height: "100%", objectFit: "contain", display: "block" }}
           />
         </div>
       </div>
