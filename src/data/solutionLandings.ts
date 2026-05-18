@@ -37,8 +37,8 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     heroTagline: "Payments that keep moving",
     heroIntro:
       "TRVERSE Meridian manages fare collection across your network, connecting payments from stations, vehicles, and digital channels into one system.",
-    heroImage: "/assets/magnific_a-lowangle-eyelevel-shot-_2888068777.webp",
-    highlightsAsideImage: "/assets/magnific_a-young-woman-with-headph_2888043190.webp",
+    heroImage: "/assets/automate-fare-collection.webp",
+    highlightsAsideImage: "/assets/automate-fare-collection.webp",
     highlightsAsideImageAlt: "",
     highlightsHeading: "Key highlights",
     highlightsSubheading:
@@ -85,8 +85,8 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     heroTagline: "See every movement. Stay ahead.",
     heroIntro:
       "TRVERSE Vector provides real-time visibility across vehicles, routes, and passenger systems, helping operators monitor performance and respond as needed.",
-    heroImage: "/solutions/its.png",
-    highlightsAsideImage: "/solutions/its.png",
+    heroImage: "/assets/intelligent-transportation.webp",
+    highlightsAsideImage: "/assets/intelligent-transportation.webp",
     highlightsAsideImageAlt: "",
     highlightsHeading: "Key highlights",
     highlightsSubheading:
@@ -133,8 +133,8 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     heroTagline: "Schedules that move with demand",
     heroIntro:
       "TRVERSE Orbit helps plan and adjust services based on demand, using real-time and historical data to improve efficiency across the network.",
-    heroImage: "/solutions/abs-ai-scheduling-v3.webp",
-    highlightsAsideImage: "/solutions/abs-ai-scheduling-v3.webp",
+    heroImage: "/assets/ai-based-scheduling.webp",
+    highlightsAsideImage: "/assets/ai-based-scheduling.webp",
     highlightsAsideImageAlt: "",
     highlightsHeading: "Key Highlights",
     highlightsSubheading:
@@ -178,8 +178,8 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     heroTagline: "Unified control across your network",
     heroIntro:
       "TRVERSE Command brings operational systems into one environment, allowing teams to monitor, coordinate, and manage transit operations from a single place.",
-    heroImage: "/solutions/crm-control-room-v2.webp",
-    highlightsAsideImage: "/solutions/crm-control-room-v2.webp",
+    heroImage: "/assets/control-room-maangement.webp",
+    highlightsAsideImage: "/assets/control-room-maangement.webp",
     highlightsAsideImageAlt: "",
     highlightsHeading: "Key Highlights",
     highlightsSubheading:
@@ -224,8 +224,8 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     heroTagline: "Clarity at every stop",
     heroIntro:
       "TRVERSE extends transit networks by connecting first and last mile services, enabling a more complete and accessible system.",
-    heroImage: "/solutions/mmi-micro-mobility-v2.webp",
-    highlightsAsideImage: "/solutions/mmi-micro-mobility-v2.webp",
+    heroImage: "/assets/micro-mobility.webp",
+    highlightsAsideImage: "/assets/micro-mobility.webp",
     highlightsAsideImageAlt: "",
     highlightsHeading: "Key Highlights",
     highlightsSubheading:
@@ -269,8 +269,8 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     heroTagline: "Know more. Decide faster",
     heroIntro:
       "TRVERSE Insight provides visibility into system performance, helping operators track operations, analyze trends, and make informed decisions.",
-    heroImage: "/solutions/performance.png",
-    highlightsAsideImage: "/solutions/performance.png",
+    heroImage: "/assets/perfomance-monitoring.webp",
+    highlightsAsideImage: "/assets/perfomance-monitoring.webp",
     highlightsAsideImageAlt: "",
     highlightsHeading: "Key Highlights",
     highlightsSubheading:

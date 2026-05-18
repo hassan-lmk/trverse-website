@@ -8,8 +8,10 @@ const PRODUCT_MOCKUPS: Record<string, string> = {
   vector: "/products/vector.png",
   orbit: "/products/orbit.png",
   command: "/products/command.png",
+  signal: "/products/signal.png",
   insight: "/products/insight.png",
   flow: "/products/flow.png",
+  core: "/products/core.png",
 };
 
 type IconId =
