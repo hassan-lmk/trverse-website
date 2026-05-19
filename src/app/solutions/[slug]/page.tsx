@@ -40,7 +40,7 @@ export default async function SolutionLandingPage({ params }: Props) {
         badge={`${doc.productLine} • ${doc.eyebrowCategory}`}
         title={doc.heroTagline}
         description={doc.heroIntro}
-        backgroundImageSrc={doc.heroImage}
+        backgroundImageSrc={doc.heroBackgroundImage}
         primaryCta={{ label: "Contact us", href: "/contact" }}
         secondaryCta={{ label: "All solutions", href: "/solutions" }}
       />

@@ -13,6 +13,9 @@ export type SolutionLandingDoc = {
   productLine: string;
   heroTagline: string;
   heroIntro: string;
+  /** Full-bleed background on `/solutions/[slug]` hero */
+  heroBackgroundImage: string;
+  /** Card banners and in-page imagery */
   heroImage: string;
   /** Shown beside key highlights (defaults to site placeholder SVG if omitted). */
   highlightsAsideImage?: string;
@@ -23,6 +26,34 @@ export type SolutionLandingDoc = {
   highlights: string[];
   featuresHeading: string;
   features: SolutionFeatureBlock[];
+};
+
+/** Matches home `#solution` card order; every slug must exist in `solutionLandingsBySlug`. */
+export const HOME_SOLUTION_LANDING_ORDER = [
+  "Automated-fare-collection",
+  "Intelligent-transport-systems",
+  "AI-based-bus-scheduling",
+  "Control-room-management",
+  "Micro-mobility-integration",
+  "Performance-monitoring",
+] as const;
+
+/** Same tint as `.solution-banner-container` overlay on home solution cards — use on landing heroes. */
+export const SOLUTION_CARD_SCRIM_BACKGROUND =
+  "linear-gradient(to bottom, transparent, rgba(10,30,61,0.2))";
+
+/** Full-width hero backgrounds under `public/solutions/*-full.png`. */
+export const solutionHeroBackgroundImages: Record<
+  (typeof HOME_SOLUTION_LANDING_ORDER)[number],
+  string
+> = {
+  "Automated-fare-collection": `/solutions/${encodeURIComponent("automated fare collection-full.png")}`,
+  "Intelligent-transport-systems":
+    "/solutions/intelligent-transport-system-full.png",
+  "AI-based-bus-scheduling": "/solutions/AI-based-scheduling-full.png",
+  "Control-room-management": "/solutions/control-room-managmeent-full.png",
+  "Micro-mobility-integration": "/solutions/micro-mobility-full.png",
+  "Performance-monitoring": "/solutions/performance-monitoring-full.png",
 };
 
 export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
@@ -37,6 +68,8 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     heroTagline: "Payments that keep moving",
     heroIntro:
       "TRVERSE Meridian manages fare collection across your network, connecting payments from stations, vehicles, and digital channels into one system.",
+    heroBackgroundImage:
+      solutionHeroBackgroundImages["Automated-fare-collection"],
     heroImage: "/assets/automate-fare-collection.webp",
     highlightsAsideImage: "/assets/automate-fare-collection.webp",
     highlightsAsideImageAlt: "",
@@ -85,6 +118,8 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     heroTagline: "See every movement. Stay ahead.",
     heroIntro:
       "TRVERSE Vector provides real-time visibility across vehicles, routes, and passenger systems, helping operators monitor performance and respond as needed.",
+    heroBackgroundImage:
+      solutionHeroBackgroundImages["Intelligent-transport-systems"],
     heroImage: "/assets/intelligent-transportation.webp",
     highlightsAsideImage: "/assets/intelligent-transportation.webp",
     highlightsAsideImageAlt: "",
@@ -133,6 +168,8 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     heroTagline: "Schedules that move with demand",
     heroIntro:
       "TRVERSE Orbit helps plan and adjust services based on demand, using real-time and historical data to improve efficiency across the network.",
+    heroBackgroundImage:
+      solutionHeroBackgroundImages["AI-based-bus-scheduling"],
     heroImage: "/assets/ai-based-scheduling.webp",
     highlightsAsideImage: "/assets/ai-based-scheduling.webp",
     highlightsAsideImageAlt: "",
@@ -178,6 +215,8 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     heroTagline: "Unified control across your network",
     heroIntro:
       "TRVERSE Command brings operational systems into one environment, allowing teams to monitor, coordinate, and manage transit operations from a single place.",
+    heroBackgroundImage:
+      solutionHeroBackgroundImages["Control-room-management"],
     heroImage: "/assets/control-room-maangement.webp",
     highlightsAsideImage: "/assets/control-room-maangement.webp",
     highlightsAsideImageAlt: "",
@@ -224,6 +263,8 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     heroTagline: "Clarity at every stop",
     heroIntro:
       "TRVERSE extends transit networks by connecting first and last mile services, enabling a more complete and accessible system.",
+    heroBackgroundImage:
+      solutionHeroBackgroundImages["Micro-mobility-integration"],
     heroImage: "/assets/micro-mobility.webp",
     highlightsAsideImage: "/assets/micro-mobility.webp",
     highlightsAsideImageAlt: "",
@@ -269,6 +310,8 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     heroTagline: "Know more. Decide faster",
     heroIntro:
       "TRVERSE Insight provides visibility into system performance, helping operators track operations, analyze trends, and make informed decisions.",
+    heroBackgroundImage:
+      solutionHeroBackgroundImages["Performance-monitoring"],
     heroImage: "/assets/perfomance-monitoring.webp",
     highlightsAsideImage: "/assets/perfomance-monitoring.webp",
     highlightsAsideImageAlt: "",
