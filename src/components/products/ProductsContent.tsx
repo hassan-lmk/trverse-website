@@ -453,6 +453,26 @@ export default function ProductsContent() {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
+            align-items: stretch;
+          }
+          .devices-col-reveal {
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+            height: 100%;
+          }
+          .devices-col-card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+            width: 100%;
+          }
+          .devices-col-list {
+            flex: 1;
+            margin: 0;
+            padding: 0;
+            list-style: none;
           }
           @media (max-width: 1024px) {
             .product-split {
@@ -780,8 +800,9 @@ export default function ProductsContent() {
                 },
               ] as const
             ).map((col) => (
+              <div key={col.title} className="devices-col-reveal">
               <div
-                key={col.title}
+                className="devices-col-card"
                 style={{
                   borderRadius: 24,
                   padding: "28px 24px",
@@ -800,6 +821,7 @@ export default function ProductsContent() {
                 <div
                   style={{
                     display: "flex",
+                    flexDirection: "column",
                     alignItems: "flex-start",
                     gap: 14,
                     marginBottom: 16,
@@ -845,23 +867,38 @@ export default function ProductsContent() {
                     {col.title}
                   </h3>
                 </div>
-                <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
+                <ul className="devices-col-list">
                   {col.items.map((item) => (
                     <li
                       key={item}
                       style={{
+                        display: "flex",
+                        alignItems: "flex-start",
+                        gap: 12,
                         fontFamily: "var(--font-body)",
                         fontSize: 14.5,
                         color: "#5f6e82",
                         lineHeight: 1.6,
-                        padding: "10px 0",
-                        borderBottom: "1px solid rgba(19,79,137,0.07)",
+                        padding: "8px 0",
                       }}
                     >
-                      {item}
+                      <span
+                        aria-hidden
+                        style={{
+                          width: 8,
+                          height: 8,
+                          minWidth: 8,
+                          marginTop: "0.5em",
+                          borderRadius: "50%",
+                          background: "var(--accent)",
+                          boxShadow: "0 0 0 1px rgba(255,130,93,0.2)",
+                        }}
+                      />
+                      <span style={{ flex: 1, minWidth: 0 }}>{item}</span>
                     </li>
                   ))}
                 </ul>
+              </div>
               </div>
             ))}
           </div>

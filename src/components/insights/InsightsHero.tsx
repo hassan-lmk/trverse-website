@@ -1,10 +1,8 @@
-"use client";
-
-import React from "react";
+import type { ReactNode } from "react";
 
 type Props = {
   badge?: string;
-  title: React.ReactNode;
+  title: ReactNode;
   description?: string;
   backgroundImageSrc: string;
   primaryCta?: { label: string; href: string };
@@ -57,7 +55,6 @@ const InsightsHero = ({
         }}
       />
 
-      {/* Static background image (dummy) */}
       <div style={{ position: "absolute", inset: 0, overflow: "hidden", zIndex: 0 }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
@@ -76,7 +73,6 @@ const InsightsHero = ({
         <div style={{ position: "absolute", inset: 0, background: "rgba(4, 14, 31, 0.75)" }} />
       </div>
 
-      {/* Grid pattern overlay */}
       <div
         style={{
           position: "absolute",
