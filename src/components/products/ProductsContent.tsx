@@ -181,11 +181,19 @@ const onboardDevices = [
   "AI-based monitoring and dashcam systems",
 ];
 
-/** Device hero art: 512×512 PNG from Freepik Icons API (downscaled in UI; files ~8–25KB, not 2K photos). */
 const deviceCategoryImages = {
-  fare: { src: "/products/devices/fare-collection.png", alt: "Ticket machine and fare collection" },
-  pis: { src: "/products/devices/passenger-information.png", alt: "Passenger information displays" },
-  onboard: { src: "/products/devices/onboard-operational.png", alt: "Fleet and onboard operational tech" },
+  fare: {
+    src: "/fare-collection-device.png",
+    alt: "Ticket vending machine and fare collection devices at a transit station",
+  },
+  pis: {
+    src: "/passenger-information-system.png",
+    alt: "Passenger information displays in a metro station",
+  },
+  onboard: {
+    src: "/onboarding-operation-device.png",
+    alt: "Onboard driver console with navigation and operational systems",
+  },
 } as const;
 
 function CapabilityGlyph({ id }: { id: IconId }) {
@@ -454,6 +462,21 @@ export default function ProductsContent() {
           }
           @media (max-width: 1100px) {
             .devices-cols { grid-template-columns: 1fr; }
+          }
+          .device-category-image-wrap {
+            border-radius: 18px;
+            margin-bottom: 22px;
+            border: 1px solid rgba(19,79,137,0.08);
+            height: 200px;
+            overflow: hidden;
+            background: #e8eef5;
+          }
+          .device-category-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
           }
 
           /* Sticky stacking cards — desktop only */
@@ -739,19 +762,16 @@ export default function ProductsContent() {
               [
                 {
                   title: "Fare collection devices",
-                  icon: "card" as IconId,
                   image: deviceCategoryImages.fare,
                   items: fareDevices,
                 },
                 {
                   title: "Passenger information systems",
-                  icon: "screens" as IconId,
                   image: deviceCategoryImages.pis,
                   items: pisDevices,
                 },
                 {
                   title: "Onboard and operational devices",
-                  icon: "map" as IconId,
                   image: deviceCategoryImages.onboard,
                   items: onboardDevices,
                 },
@@ -766,63 +786,26 @@ export default function ProductsContent() {
                   border: "1px solid rgba(19,79,137,0.1)",
                 }}
               >
-                <div
-                  style={{
-                    borderRadius: 18,
-                    marginBottom: 22,
-                    border: "1px solid rgba(19,79,137,0.08)",
-                    height: 170,
-                    background: "linear-gradient(180deg, #f5f8fc 0%, #eef3f9 100%)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: 20,
-                  }}
-                >
+                <div className="device-category-image-wrap">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={col.image.src}
                     alt={col.image.alt}
-                    width={160}
-                    height={160}
-                    style={{
-                      width: "clamp(120px, 40%, 160px)",
-                      height: "auto",
-                      maxHeight: 130,
-                      objectFit: "contain",
-                      display: "block",
-                    }}
+                    className="device-category-image"
                   />
                 </div>
-                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
-                  <span
-                    style={{
-                      width: 44,
-                      height: 44,
-                      borderRadius: 14,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      background: "linear-gradient(155deg, #0a1e3d, #134f89)",
-                      color: "#fff",
-                      flexShrink: 0,
-                    }}
-                  >
-                    <CapabilityGlyph id={col.icon} />
-                  </span>
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      fontSize: 18,
-                      fontWeight: 700,
-                      color: "#0a1e3d",
-                      margin: 0,
-                      lineHeight: 1.25,
-                    }}
-                  >
-                    {col.title}
-                  </h3>
-                </div>
+                <h3
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontSize: 18,
+                    fontWeight: 700,
+                    color: "#0a1e3d",
+                    margin: "0 0 16px",
+                    lineHeight: 1.25,
+                  }}
+                >
+                  {col.title}
+                </h3>
                 <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
                   {col.items.map((item) => (
                     <li

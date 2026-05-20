@@ -44,7 +44,7 @@ const Solutions = () => {
     { 
       title: 'Micro-Mobility Integration', 
       desc: 'Extend transit with connected first and last mile services integrated into the core backbone.', 
-      banner: '/solutions/micro-mobility-full.png',
+      banner: '/solutions/micro-mobility-card.png',
       href: '/solutions/Micro-mobility-integration',
       icon: (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="8" cy="20" r="4" stroke="var(--accent)" strokeWidth="1.8"/><circle cx="22" cy="20" r="4" stroke="var(--accent)" strokeWidth="1.8"/><path d="M8 16l6-10h4l2 10" stroke="var(--accent)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -53,7 +53,7 @@ const Solutions = () => {
     { 
       title: 'Performance Monitoring', 
       desc: 'Comprehensive analytics for operators to track network health and efficiency in real-time.', 
-      banner: '/solutions/performance-monitoring-full.png',
+      banner: '/solutions/performance-monitoring-card.png',
       href: '/solutions/Performance-monitoring',
       icon: (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="14" width="4" height="10" rx="1" fill="var(--accent)" opacity="0.3"/><rect x="12" y="8" width="4" height="16" rx="1" fill="var(--accent)" opacity="0.5"/><rect x="20" y="4" width="4" height="20" rx="1" fill="var(--accent)" opacity="0.7"/></svg>
@@ -144,9 +144,9 @@ const Solutions = () => {
               width: 100%;
               height: 100%;
               object-fit: cover;
-              object-position: top center;
+              object-position: bottom center;
               transition: transform 0.5s ease;
-              transform-origin: top center;
+              transform-origin: bottom center;
             }
             .solution-card:hover .solution-banner {
               transform: scale(1.1);

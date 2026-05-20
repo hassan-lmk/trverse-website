@@ -21,7 +21,7 @@ const System = () => {
             style={{
               position: "absolute",
               inset: 0,
-              backgroundImage: "url(/assets/system-illustration-v2.webp)",
+              backgroundImage: "url(/CTA-BG.webp)",
               backgroundRepeat: "no-repeat",
               backgroundPosition: "center",
               backgroundSize: "cover",
