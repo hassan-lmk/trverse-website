@@ -41,12 +41,17 @@ const SolutionsHero = () => {
         }
       `}} />
 
-      {/* YouTube Background Video */}
+      {/* Background video (Cloudinary) */}
       <div style={{
         position: 'absolute', inset: 0, overflow: 'hidden', zIndex: 0
       }}>
-        <iframe
-          src="https://www.youtube.com/embed/3LwWDp61Q1s?autoplay=1&mute=1&controls=0&loop=1&playlist=3LwWDp61Q1s&showinfo=0&modestbranding=1&rel=0&disablekb=1"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-label="Background video"
           style={{
             position: 'absolute',
             top: '50%',
@@ -58,10 +63,14 @@ const SolutionsHero = () => {
             transform: 'translate(-50%, -50%)',
             pointerEvents: 'none',
             border: 'none',
+            objectFit: 'cover',
           }}
-          allow="autoplay; encrypted-media"
-          title="Background Video"
-        />
+        >
+          <source
+            src="https://res.cloudinary.com/dl3ulxgq4/video/upload/v1779262657/YTDown_YouTube_Solution-page-trverse-web-banner-1_Media_3LwWDp61Q1s_001_1080p_h19d4u.mp4"
+            type="video/mp4"
+          />
+        </video>
         {/* Dark overlay to ensure text readability */}
         <div style={{
           position: 'absolute', inset: 0,

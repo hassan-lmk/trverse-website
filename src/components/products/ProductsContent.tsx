@@ -762,16 +762,19 @@ export default function ProductsContent() {
               [
                 {
                   title: "Fare collection devices",
+                  iconSrc: "/assets/fare-collection-icon.png",
                   image: deviceCategoryImages.fare,
                   items: fareDevices,
                 },
                 {
                   title: "Passenger information systems",
+                  iconSrc: "/assets/passenger-info-icon.png",
                   image: deviceCategoryImages.pis,
                   items: pisDevices,
                 },
                 {
                   title: "Onboard and operational devices",
+                  iconSrc: "/assets/onboarding-icon.png",
                   image: deviceCategoryImages.onboard,
                   items: onboardDevices,
                 },
@@ -794,18 +797,54 @@ export default function ProductsContent() {
                     className="device-category-image"
                   />
                 </div>
-                <h3
+                <div
                   style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: 18,
-                    fontWeight: 700,
-                    color: "#0a1e3d",
-                    margin: "0 0 16px",
-                    lineHeight: 1.25,
+                    display: "flex",
+                    alignItems: "flex-start",
+                    gap: 14,
+                    marginBottom: 16,
                   }}
                 >
-                  {col.title}
-                </h3>
+                  <div
+                    aria-hidden
+                    style={{
+                      width: 52,
+                      height: 52,
+                      flexShrink: 0,
+                      borderRadius: 14,
+                      background: "var(--accent)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      boxShadow: "0 8px 20px rgba(255,130,93,0.28)",
+                    }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={col.iconSrc}
+                      alt=""
+                      width={28}
+                      height={28}
+                      style={{
+                        display: "block",
+                        objectFit: "contain",
+                        mixBlendMode: "screen",
+                      }}
+                    />
+                  </div>
+                  <h3
+                    style={{
+                      fontFamily: "var(--font-display)",
+                      fontSize: 18,
+                      fontWeight: 700,
+                      color: "#0a1e3d",
+                      margin: 0,
+                      lineHeight: 1.25,
+                    }}
+                  >
+                    {col.title}
+                  </h3>
+                </div>
                 <ul style={{ margin: 0, padding: 0, listStyle: "none" }}>
                   {col.items.map((item) => (
                     <li
@@ -871,6 +910,22 @@ export default function ProductsContent() {
               }}
             />
             <div
+              aria-hidden
+              style={{
+                position: "absolute",
+                inset: 0,
+                backgroundImage: "url(/CTA-BG.webp)",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                opacity: 0.2,
+                mixBlendMode: "screen",
+                filter: "contrast(1.05) saturate(0.95)",
+                pointerEvents: "none",
+              }}
+            />
+            <div
+              aria-hidden
               style={{
                 position: "absolute",
                 inset: 0,
