@@ -19,6 +19,79 @@ export type InsightItem = {
 
 export const insights: InsightItem[] = [
   {
+    slug: "trverse-gitex-africa-2026-real-time-transit",
+    title: "TRVERSE at GITEX Africa 2026: Transit systems are being judged by how well they respond in real time",
+    category: "TRVERSE",
+    date: "April 2026",
+    datePublishedIso: "2026-04-09",
+    excerpt:
+      "At GITEX Africa 2026 in Marrakech, TRVERSE highlighted how real-time visibility, coordination, and faster decision-making are becoming baseline expectations for modern public transport.",
+    image: "/solutions/gitex-africa.png",
+    sourceUrl: "https://www.linkedin.com/feed/update/urn:li:activity:7448196754816090112/",
+    intro:
+      "TRVERSE participated in GITEX Africa 2026, held from 7 to 9 April in Marrakech, Morocco, where governments, transport authorities, technology providers, and startups explored the future of digital infrastructure and urban mobility.",
+    sections: [
+      {
+        heading: "A New Benchmark for Transit Performance",
+        paragraphs: [
+          "One clear takeaway from the event was that transit systems are increasingly evaluated by their ability to respond in real time.",
+          "Across network operations and passenger experience, visibility, coordination, and faster decision-making were presented as baseline expectations rather than long-term goals.",
+        ],
+      },
+      {
+        heading: "Conversations with City and Mobility Leaders",
+        paragraphs: [
+          "TRVERSE engaged with city leaders and mobility professionals throughout the event, reinforcing the case for integrated, data-driven transport systems.",
+          "The focus remained on connecting every operational layer so operators can sustain a consistently responsive service.",
+        ],
+      },
+      {
+        heading: "How This Aligns with TRVERSE Solutions",
+        paragraphs: [
+          "This direction closely aligns with TRVERSE's smart mobility approach, centered on real-time operational control and reliable, seamless passenger journeys.",
+          "The discussions at GITEX Africa reflected how quickly this standard is becoming universal across emerging and mature mobility ecosystems.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "trverse-transit-ticketing-fare-collection-mena-2025",
+    title: "TRVERSE at Transit Ticketing and Fare Collection MENA 2025",
+    category: "TRVERSE",
+    date: "September 2025",
+    datePublishedIso: "2025-09-17",
+    excerpt:
+      "At Transit Ticketing and Fare Collection MENA 2025 in Dubai, TRVERSE showcased smart mobility solutions and reinforced the value of integrated, interoperable fare systems for a cashless connected ecosystem.",
+    image: "/solutions/fare-collection-mena.jpg",
+    sourceUrl:
+      "https://www.linkedin.com/posts/trverse-official_trverse-smartmobility-transit-activity-7374037843888881664-fX76?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAArVS_YBUaEW9wnrgbDlUAN4ID2jmywxGt0",
+    intro:
+      "TRVERSE showcased its smart mobility solutions at Transit Ticketing and Fare Collection MENA 2025 in Dubai and also served as coffee sponsor for the conference's fifth edition, held on 16 and 17 September at the Anantara Downtown Dubai Hotel.",
+    sections: [
+      {
+        heading: "Regional Forum for Future Fare Infrastructure",
+        paragraphs: [
+          "The event brought together public transport authorities, operators, and technology leaders from across MENA to shape the future of mobility.",
+          "Discussions covered open-loop payments, EV charging integration, AI-driven ticketing, and nationwide fare systems, signaling rapid movement toward a fully cashless and connected ecosystem.",
+        ],
+      },
+      {
+        heading: "Why the Conference Matters",
+        paragraphs: [
+          "Transit Ticketing and Fare Collection MENA is a key platform for advancing automated fare collection across the region.",
+          "It convenes the public and private sector stakeholders responsible for designing and deploying next-generation payment infrastructure.",
+        ],
+      },
+      {
+        heading: "TRVERSE Perspective",
+        paragraphs: [
+          "For TRVERSE, the focus on integrated and interoperable fare systems reflects core work across smart mobility programs.",
+          "The event enabled valuable engagement with partners, city leaders, and innovators, and further validated the need to keep building accessible and future-ready mobility solutions for MENA and beyond.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "trverse-peshawar-brt-finalist-2026",
     title: "TRVERSE and TransPeshawar Named Finalists at Decarbonising Transport Awards 2026",
     category: "TRVERSE",
@@ -167,16 +240,16 @@ export const insights: InsightItem[] = [
   },
   {
     slug: "lmkr-mastercard-bok-peshawar-transit-partnership",
-    title: "TRVERSE, Mastercard and BOK Revolutionize Transit Solutions in Peshawar",
+    title: "LMKR, Mastercard and BOK Revolutionize Transit Solutions in Peshawar with Innovative Partnership",
     category: "TRVERSE",
     date: "August 29, 2023",
     datePublishedIso: "2023-08-29",
     excerpt:
-      "TRVERSE, Mastercard, and Bank of Khyber partnered to introduce open-loop EMV transit payments, improving commuter convenience and financial inclusion.",
-    image: "/insights/lmkr-delivers-electric-brt-network-masar-makkah.webp",
+      "LMK Resources Pakistan (Private) Limited, Mastercard, and Bank of Khyber partnered to introduce open-loop EMV transit payments, improving commuter convenience and financial inclusion.",
+    image: "/solutions/master-card.jpg",
     sourceUrl: "https://lmkr.com/insights/lmkr-mastercard-bok-peshawar-transit-partnership",
     intro:
-      "TRVERSE, Mastercard, and Bank of Khyber partnered under the Mastercard Transit Partner Program Agreement to advance Pakistan's transit landscape.",
+      "LMK Resources Pakistan (Private) Limited, Mastercard, and Bank of Khyber partnered under the Mastercard Transit Partner Program Agreement to advance Pakistan's transit landscape.",
     sections: [
       {
         heading: "Partnership Scope",
