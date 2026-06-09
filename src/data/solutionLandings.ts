@@ -48,8 +48,7 @@ export const solutionHeroBackgroundImages: Record<
   string
 > = {
   "Automated-fare-collection": `/solutions/${encodeURIComponent("automated fare collection-full.png")}`,
-  "Intelligent-transport-systems":
-    "/solutions/intelligent-transport-system-full.png",
+  "Intelligent-transport-systems": "/intelligent-transport.png",
   "AI-based-bus-scheduling": "/solutions/AI-based-scheduling-full.png",
   "Control-room-management": "/solutions/control-room-managmeent-full.png",
   "Micro-mobility-integration": "/solutions/micro-mobility-full.png",

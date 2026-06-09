@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import React from "react";
+import { solutionHeroBackgroundImages } from "@/data/solutionLandings";
 
 const solutions = [
   {
@@ -11,7 +12,7 @@ const solutions = [
     subtitle: "TRVERSE Automated Fare Collection",
     description:
       "Enables fast, secure, and accessible payments across your network. It supports contactless ticketing, mobile payments, and open-loop systems, allowing passengers to pay using bank cards, smart cards, or QR codes.",
-    image: "/solutions/fare.png",
+    image: solutionHeroBackgroundImages["Automated-fare-collection"],
     accent: "#134f89",
     capabilities: [
       "Contactless and mobile ticketing",
@@ -41,7 +42,7 @@ const solutions = [
     subtitle: "TRVERSE Intelligent Transport Systems",
     description:
       "Provide continuous monitoring and control across vehicles, routes, and passenger services. Operators can track fleet activity, monitor performance, and respond to issues as they happen.",
-    image: "/solutions/its.png",
+    image: solutionHeroBackgroundImages["Intelligent-transport-systems"],
     accent: "#0a1e3d",
     capabilities: [
       "Fleet tracking and GPS-based monitoring",
@@ -70,7 +71,7 @@ const solutions = [
     subtitle: "TRVERSE AI-Based Scheduling",
     description:
       "Uses real-time and historical data to optimize routes, schedules, and fleet allocation. It allows operators to adjust services based on demand and changing conditions.",
-    image: "/solutions/abs-ai-scheduling-v3.webp",
+    image: solutionHeroBackgroundImages["AI-based-bus-scheduling"],
     accent: "#134f89",
     capabilities: [
       "Dynamic schedule updates",
@@ -99,7 +100,7 @@ const solutions = [
     subtitle: "TRVERSE Control Room Management",
     description:
       "Brings all operational data into one place. It enables centralized monitoring, faster decision-making, and coordinated response across the network.",
-    image: "/solutions/crm-control-room-v2.webp",
+    image: solutionHeroBackgroundImages["Control-room-management"],
     accent: "#0a1e3d",
     capabilities: [
       "Real-time monitoring and tracking",
@@ -128,7 +129,7 @@ const solutions = [
     subtitle: "TRVERSE Micro-Mobility Integration",
     description:
       "Connects additional transport modes such as bike-sharing and on-demand services into the wider system, improving first and last mile access.",
-    image: "/solutions/mmi-micro-mobility-v2.webp",
+    image: solutionHeroBackgroundImages["Micro-mobility-integration"],
     accent: "#134f89",
     capabilities: [
       "Integration with bike-sharing systems",
@@ -148,6 +149,36 @@ const solutions = [
       </svg>
     ),
     reversed: false,
+  },
+  {
+    id: "performance",
+    tag: "PM",
+    title: "Know more. Decide faster",
+    subtitle: "TRVERSE Performance Monitoring",
+    description:
+      "Provides visibility into system performance, helping operators track operations, analyze trends, and make informed decisions across the network.",
+    image: solutionHeroBackgroundImages["Performance-monitoring"],
+    accent: "#0a1e3d",
+    capabilities: [
+      "Real-time dashboards",
+      "Ridership and revenue reporting",
+      "KPI tracking",
+      "Operational analytics",
+      "Historical trend analysis",
+    ],
+    improvements: [
+      "Data-driven planning and service improvements",
+      "Clear visibility into network performance",
+      "Faster, more informed operational decisions",
+    ],
+    icon: (
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <rect x="4" y="14" width="4" height="10" rx="1" stroke="currentColor" strokeWidth="1.8"/>
+        <rect x="12" y="8" width="4" height="16" rx="1" stroke="currentColor" strokeWidth="1.8"/>
+        <rect x="20" y="4" width="4" height="20" rx="1" stroke="currentColor" strokeWidth="1.8"/>
+      </svg>
+    ),
+    reversed: true,
   },
 ];
 
@@ -171,6 +202,7 @@ const SolutionDetail = () => {
     scheduling: "/solutions/AI-based-bus-scheduling",
     control: "/solutions/Control-room-management",
     micro: "/solutions/Micro-mobility-integration",
+    performance: "/solutions/Performance-monitoring",
   };
 
   return (

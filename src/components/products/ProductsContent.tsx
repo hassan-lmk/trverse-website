@@ -510,8 +510,11 @@ export default function ProductsContent() {
           .product-split {
             display: grid;
             grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-            gap: clamp(36px, 5vw, 72px);
+            gap: clamp(28px, 4vw, 56px);
             align-items: center;
+          }
+          .product-stack-card-inner {
+            padding: clamp(24px, 4vw, 40px);
           }
           .devices-cols {
             display: grid;
@@ -624,13 +627,28 @@ export default function ProductsContent() {
           @media (min-width: 1025px) {
             .product-sticky-slot {
               position: sticky;
-              margin-bottom: clamp(48px, 11vh, 148px);
+              margin-bottom: clamp(24px, 5vh, 72px);
               /* Stagger so each card settles slightly lower than the prior (deck effect) */
-              top: calc(88px + var(--stack) * clamp(14px, 2.2vw, 28px));
+              top: calc(72px + var(--stack) * clamp(8px, 1.2vw, 14px));
               z-index: calc(40 + var(--stack));
             }
             .product-stack > .product-sticky-slot:last-child {
-              margin-bottom: clamp(72px, 16vh, 180px);
+              margin-bottom: clamp(40px, 8vh, 96px);
+            }
+          }
+          @media (min-width: 1025px) and (max-height: 860px) {
+            .product-sticky-slot {
+              margin-bottom: clamp(16px, 3vh, 40px);
+              top: calc(64px + var(--stack) * clamp(5px, 0.7vh, 9px));
+            }
+            .product-stack > .product-sticky-slot:last-child {
+              margin-bottom: clamp(28px, 5vh, 56px);
+            }
+            .product-stack-card-inner {
+              padding: clamp(20px, 3vw, 28px);
+            }
+            .product-split {
+              gap: clamp(20px, 3vw, 36px);
             }
           }
           @media (max-width: 1024px) {
@@ -702,7 +720,6 @@ export default function ProductsContent() {
                     borderRadius: 36,
                     background: idx % 2 === 0 ? "#ffffff" : "linear-gradient(155deg, #ffffff 0%, #fbfcfe 65%, #f6f9fd 100%)",
                     border: "1px solid rgba(19,79,137,0.09)",
-                    padding: "clamp(32px, 5vw, 56px)",
                   }}
                 >
                 <div className="product-split">

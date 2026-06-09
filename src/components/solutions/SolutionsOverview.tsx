@@ -8,6 +8,7 @@ const tabs = [
   { id: "scheduling", label: "AI Scheduling", short: "ABS" },
   { id: "control", label: "Control Room", short: "CRM" },
   { id: "micro", label: "Micro-Mobility", short: "MMI" },
+  { id: "performance", label: "Performance", short: "PM" },
 ];
 
 const SolutionsOverview = () => {
