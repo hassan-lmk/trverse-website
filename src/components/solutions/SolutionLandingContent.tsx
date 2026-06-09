@@ -277,19 +277,34 @@ export default function SolutionLandingContent({ doc }: Props) {
           background: linear-gradient(90deg, var(--accent), #134f89);
           opacity: 0.85;
         }
-        .sol-landing-cta-primary {
+        .sol-landing-cta-group {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          align-items: stretch;
+          width: max-content;
+          min-width: 200px;
+        }
+        .sol-landing-cta-primary,
+        .sol-landing-cta-outline {
           display: inline-flex;
           align-items: center;
+          justify-content: center;
           gap: 10px;
+          width: 100%;
+          box-sizing: border-box;
           padding: 16px 32px;
-          background: var(--accent);
-          color: #fff;
           font-family: var(--font-body);
           font-size: 15px;
           font-weight: 700;
           text-decoration: none;
           border-radius: 10px;
           transition: all 0.25s ease;
+        }
+        .sol-landing-cta-primary {
+          background: var(--accent);
+          color: #fff;
+          border: 2px solid transparent;
         }
         .sol-landing-cta-primary:hover {
           background: #e06d4a;
@@ -297,19 +312,9 @@ export default function SolutionLandingContent({ doc }: Props) {
           box-shadow: 0 12px 28px rgba(255,130,93,0.35);
         }
         .sol-landing-cta-outline {
-          display: inline-flex;
-          align-items: center;
-          gap: 10px;
-          padding: 16px 32px;
           background: transparent;
           color: #fff;
-          font-family: var(--font-body);
-          font-size: 15px;
-          font-weight: 700;
-          text-decoration: none;
-          border-radius: 10px;
           border: 2px solid rgba(255,255,255,0.35);
-          transition: all 0.25s ease;
         }
         .sol-landing-cta-outline:hover {
           border-color: #fff;
@@ -550,14 +555,7 @@ export default function SolutionLandingContent({ doc }: Props) {
                   Ask about Meridian for your corridors, fleets, and digital channels.
                 </p>
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: 12,
-                  justifyContent: "flex-start",
-                }}
-              >
+              <div className="sol-landing-cta-group">
                 <Link href="/contact" className="sol-landing-cta-primary">
                   Contact us
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>

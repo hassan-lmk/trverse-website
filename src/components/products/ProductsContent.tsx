@@ -4,14 +4,14 @@ import type { CSSProperties } from "react";
 const PLACEHOLDER = "/products/placeholder-product.svg";
 
 const PRODUCT_MOCKUPS: Record<string, string> = {
-  meridian: "/products/Meridian.png",
-  vector: "/products/vector.png",
-  orbit: "/products/orbit.png",
-  command: "/products/command.png",
-  signal: "/products/signal.png",
-  insight: "/products/insight.png",
-  flow: "/products/flow.png",
-  core: "/products/core.png",
+  meridian: "/products/Meridian.webp",
+  vector: "/products/vector.webp",
+  orbit: "/products/orbit.webp",
+  command: "/products/command.webp",
+  signal: "/products/signal.webp",
+  insight: "/products/insight.webp",
+  flow: "/products/flow.webp",
+  core: "/products/core.webp",
 };
 
 type IconId =
@@ -163,38 +163,93 @@ const softwareProducts: SoftwareProduct[] = [
   },
 ];
 
-const fareDevices = [
-  "Ticket Vending Machine (TVM)",
-  "Validators (fixed and handheld)",
-  "Fare Gates / Flap Gates",
-  "Point of Sale (POS) systems",
-];
+type HardwareDevice = {
+  label: string;
+  description: string;
+};
 
-const pisDevices = [
-  "Passenger Information Displays (station and onboard)",
-  "Infotainment and announcement systems",
-];
+type HardwareCategory = {
+  title: string;
+  tagline: string;
+  description: string;
+  iconSrc: string;
+  image: { src: string; alt: string };
+  items: HardwareDevice[];
+};
 
-const onboardDevices = [
-  "Driver console systems",
-  "GPS and tracking units",
-  "AI-based monitoring and dashcam systems",
+const hardwareCategories: HardwareCategory[] = [
+  {
+    title: "Automated Fare Collection (AFC)",
+    tagline: "Powering seamless passenger journeys.",
+    description:
+      "Our AFC hardware suite simplifies ticketing, optimizes gate throughput, and ensures secure revenue collection across your entire network.",
+    iconSrc: "/assets/fare-collection-icon.webp",
+    image: {
+      src: "/fare-collection-device.webp",
+      alt: "Passenger tapping a card at a transit fare gate",
+    },
+    items: [
+      {
+        label: "Fare Validators",
+        description:
+          "High-speed contactless validation for both bus environments and station fare gates.",
+      },
+      {
+        label: "Fare Gates",
+        description:
+          "Reliable, high-throughput flap gates designed for rapid passenger flow and secure access control.",
+      },
+      {
+        label: "TVM (Ticket Vending Machine)",
+        description:
+          "Intuitive, 24/7 self-service kiosks for purchasing and recharging transit credentials.",
+      },
+      {
+        label: "POS Terminals",
+        description:
+          "Desktop and handheld Point-of-Sale solutions for versatile on-site ticketing and top-ups.",
+      },
+      {
+        label: "RTPI (Real-Time Passenger Information)",
+        description:
+          "Dynamic display hardware for both stations and buses, providing travelers with live, accurate service updates.",
+      },
+      {
+        label: "Handheld Validators",
+        description:
+          "Portable validation tools for mobile ticket inspection and on-board checks.",
+      },
+    ],
+  },
+  {
+    title: "Intelligent Transport Systems (ITS)",
+    tagline: "Visibility, safety, and control in every vehicle.",
+    description:
+      "Our ITS hardware provides operators with the critical data and surveillance needed to maintain fleet safety and operational excellence.",
+    iconSrc: "/assets/onboarding-icon.webp",
+    image: {
+      src: "/onboarding-operation-device.webp",
+      alt: "Driver interacting with an onboard console and fleet monitoring systems",
+    },
+    items: [
+      {
+        label: "Driver Console",
+        description:
+          "A centralized, ergonomic interface for real-time communication, navigation, and system monitoring.",
+      },
+      {
+        label: "AI Cameras",
+        description:
+          "Intelligent edge-processing cameras for passenger counting, safety monitoring, and proactive incident detection.",
+      },
+      {
+        label: "CCTV",
+        description:
+          "High-definition video surveillance systems providing full interior and exterior fleet coverage for enhanced security.",
+      },
+    ],
+  },
 ];
-
-const deviceCategoryImages = {
-  fare: {
-    src: "/fare-collection-device.png",
-    alt: "Ticket vending machine and fare collection devices at a transit station",
-  },
-  pis: {
-    src: "/passenger-information-system.png",
-    alt: "Passenger information displays in a metro station",
-  },
-  onboard: {
-    src: "/onboarding-operation-device.png",
-    alt: "Onboard driver console with navigation and operational systems",
-  },
-} as const;
 
 function CapabilityGlyph({ id }: { id: IconId }) {
   const common = { width: 22, height: 22, viewBox: "0 0 24 24", fill: "none" as const, stroke: "currentColor", strokeWidth: 1.65, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
@@ -451,8 +506,8 @@ export default function ProductsContent() {
           }
           .devices-cols {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
             align-items: stretch;
           }
           .devices-col-reveal {
@@ -470,9 +525,61 @@ export default function ProductsContent() {
           }
           .devices-col-list {
             flex: 1;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
             margin: 0;
             padding: 0;
             list-style: none;
+            align-content: start;
+          }
+          .devices-feature-item {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            padding: 14px 14px 16px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(19,79,137,0.04) 0%, rgba(255,130,93,0.04) 100%);
+            border: 1px solid rgba(19,79,137,0.08);
+            min-height: 100%;
+          }
+          .devices-feature-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-body);
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #0a1e3d;
+            line-height: 1.35;
+          }
+          .devices-feature-label::before {
+            content: "";
+            width: 7px;
+            height: 7px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 1px rgba(255,130,93,0.2);
+          }
+          .devices-feature-desc {
+            margin: 0;
+            padding-left: 15px;
+            font-family: var(--font-body);
+            font-size: 13px;
+            color: #5f6e82;
+            line-height: 1.55;
+          }
+          .devices-feature-item:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
+          }
+          @media (max-width: 640px) {
+            .devices-col-list {
+              grid-template-columns: 1fr;
+            }
+            .devices-feature-item:last-child:nth-child(odd) {
+              grid-column: auto;
+            }
           }
           @media (max-width: 1024px) {
             .product-split {
@@ -480,14 +587,14 @@ export default function ProductsContent() {
               gap: 40px;
             }
           }
-          @media (max-width: 1100px) {
+          @media (max-width: 900px) {
             .devices-cols { grid-template-columns: 1fr; }
           }
           .device-category-image-wrap {
             border-radius: 18px;
             margin-bottom: 22px;
             border: 1px solid rgba(19,79,137,0.08);
-            height: 200px;
+            height: 220px;
             overflow: hidden;
             background: #e8eef5;
           }
@@ -772,34 +879,14 @@ export default function ProductsContent() {
                 margin: 0,
               }}
             >
-              TRVERSE devices support fare collection, passenger interaction, and operational systems across stations and
-              vehicles. Designed for continuous use, they integrate directly with TRVERSE software systems.
+              TRVERSE hardware is engineered for the rigors of high-traffic transit operations. From seamless fare
+              transactions to onboard intelligence, our devices are designed for durability, ease of use, and full
+              integration with the TRVERSE software ecosystem.
             </p>
           </div>
 
           <div className="devices-cols">
-            {(
-              [
-                {
-                  title: "Fare collection devices",
-                  iconSrc: "/assets/fare-collection-icon.png",
-                  image: deviceCategoryImages.fare,
-                  items: fareDevices,
-                },
-                {
-                  title: "Passenger information systems",
-                  iconSrc: "/assets/passenger-info-icon.png",
-                  image: deviceCategoryImages.pis,
-                  items: pisDevices,
-                },
-                {
-                  title: "Onboard and operational devices",
-                  iconSrc: "/assets/onboarding-icon.png",
-                  image: deviceCategoryImages.onboard,
-                  items: onboardDevices,
-                },
-              ] as const
-            ).map((col) => (
+            {hardwareCategories.map((col) => (
               <div key={col.title} className="devices-col-reveal">
               <div
                 className="devices-col-card"
@@ -866,35 +953,37 @@ export default function ProductsContent() {
                   >
                     {col.title}
                   </h3>
+                  <p
+                    style={{
+                      fontFamily: "var(--font-body)",
+                      fontSize: 12,
+                      fontWeight: 700,
+                      letterSpacing: "0.06em",
+                      textTransform: "uppercase",
+                      color: "var(--accent)",
+                      margin: "10px 0 0",
+                      lineHeight: 1.4,
+                    }}
+                  >
+                    {col.tagline}
+                  </p>
                 </div>
+                <p
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: 14.5,
+                    color: "#5f6e82",
+                    lineHeight: 1.65,
+                    margin: "0 0 20px",
+                  }}
+                >
+                  {col.description}
+                </p>
                 <ul className="devices-col-list">
                   {col.items.map((item) => (
-                    <li
-                      key={item}
-                      style={{
-                        display: "flex",
-                        alignItems: "flex-start",
-                        gap: 12,
-                        fontFamily: "var(--font-body)",
-                        fontSize: 14.5,
-                        color: "#5f6e82",
-                        lineHeight: 1.6,
-                        padding: "8px 0",
-                      }}
-                    >
-                      <span
-                        aria-hidden
-                        style={{
-                          width: 8,
-                          height: 8,
-                          minWidth: 8,
-                          marginTop: "0.5em",
-                          borderRadius: "50%",
-                          background: "var(--accent)",
-                          boxShadow: "0 0 0 1px rgba(255,130,93,0.2)",
-                        }}
-                      />
-                      <span style={{ flex: 1, minWidth: 0 }}>{item}</span>
+                    <li key={item.label} className="devices-feature-item">
+                      <span className="devices-feature-label">{item.label}</span>
+                      <p className="devices-feature-desc">{item.description}</p>
                     </li>
                   ))}
                 </ul>
