@@ -41,6 +41,7 @@ type IconId =
 
 type SoftwareProduct = {
   slug: string;
+  categoryHeading: string;
   name: string;
   shortName: string;
   tagline: string;
@@ -52,8 +53,9 @@ type SoftwareProduct = {
 const softwareProducts: SoftwareProduct[] = [
   {
     slug: "meridian",
-    name: "TRVERSE Meridian",
-    shortName: "Meridian",
+    categoryHeading: "Fare Collection & Revenue",
+    name: "TRVERSE Pay",
+    shortName: "Pay",
     tagline: "Payments that keep moving",
     description:
       "Manages payments across stations, vehicles, and digital channels with support for multiple fare models.",
@@ -66,8 +68,9 @@ const softwareProducts: SoftwareProduct[] = [
   },
   {
     slug: "vector",
-    name: "TRVERSE Vector",
-    shortName: "Vector",
+    categoryHeading: "Fleet Monitoring & Tracking",
+    name: "TRVERSE Fleet",
+    shortName: "Fleet",
     tagline: "See every movement. Stay ahead.",
     description:
       "Tracks vehicle movement, performance, and operational status across the network.",
@@ -80,8 +83,9 @@ const softwareProducts: SoftwareProduct[] = [
   },
   {
     slug: "orbit",
-    name: "TRVERSE Orbit",
-    shortName: "Orbit",
+    categoryHeading: "Scheduling & Route Optimization",
+    name: "TRVERSE Plan",
+    shortName: "Plan",
     tagline: "Schedules that move with demand",
     description:
       "Optimizes routes, schedules, and fleet allocation using real-time and historical data.",
@@ -94,8 +98,9 @@ const softwareProducts: SoftwareProduct[] = [
   },
   {
     slug: "command",
-    name: "TRVERSE Command",
-    shortName: "Command",
+    categoryHeading: "Operations & Dispatch",
+    name: "TRVERSE Control",
+    shortName: "Control",
     tagline: "Unified control across your network",
     description:
       "Brings monitoring, communication, and system coordination into one environment.",
@@ -108,8 +113,9 @@ const softwareProducts: SoftwareProduct[] = [
   },
   {
     slug: "signal",
-    name: "TRVERSE Signal",
-    shortName: "Signal",
+    categoryHeading: "Passenger Information Systems",
+    name: "TRVERSE Info",
+    shortName: "Info",
     tagline: "Clarity at every stop",
     description:
       "Delivers service updates and travel information across stations and vehicles.",
@@ -122,8 +128,9 @@ const softwareProducts: SoftwareProduct[] = [
   },
   {
     slug: "insight",
-    name: "TRVERSE Insight",
-    shortName: "Insight",
+    categoryHeading: "Reporting & Business Intelligence",
+    name: "TRVERSE Metrics",
+    shortName: "Metrics",
     tagline: "Know more. Decide faster",
     description:
       "Provides reporting, analytics, and performance visibility across the network.",
@@ -136,8 +143,9 @@ const softwareProducts: SoftwareProduct[] = [
   },
   {
     slug: "flow",
-    name: "TRVERSE Flow",
-    shortName: "Flow",
+    categoryHeading: "Ridership Analysis",
+    name: "TRVERSE Count",
+    shortName: "Count",
     tagline: "Understand how people move",
     description: "Captures ridership patterns and passenger movement across the network.",
     listTitle: "Key capabilities",
@@ -149,12 +157,13 @@ const softwareProducts: SoftwareProduct[] = [
   },
   {
     slug: "core",
-    name: "TRVERSE Core",
-    shortName: "Core",
+    categoryHeading: "Operational Infrastructure",
+    name: "TRVERSE Base",
+    shortName: "Base",
     tagline: "The systems behind everything that works",
     description:
-      "Manages operational infrastructure and administrative workflows.",
-    listTitle: "Includes",
+      "Manages operational infrastructure, asset inventory, and administrative workflows.",
+    listTitle: "Key capabilities",
     capabilities: [
       { icon: "package", text: "Asset and inventory management" },
       { icon: "tool", text: "Fault and incident tracking" },
@@ -664,22 +673,8 @@ export default function ProductsContent() {
                 border: "1px solid rgba(255,130,93,0.22)",
               }}
             >
-              Software products
+              Software Products
             </span>
-            <h2
-              style={{
-                fontFamily: "var(--font-display)",
-                fontSize: "clamp(32px, 4vw, 46px)",
-                fontWeight: 700,
-                color: "#0a1e3d",
-                margin: "0 0 16px",
-                letterSpacing: "-0.035em",
-                lineHeight: 1.08,
-              }}
-            >
-              Software systems for{" "}
-              <span style={{ color: "#134f89" }}>transit operations</span>
-            </h2>
             <div
               style={{
                 width: 48,
@@ -710,23 +705,22 @@ export default function ProductsContent() {
                     padding: "clamp(32px, 5vw, 56px)",
                   }}
                 >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 28, gap: 16 }}>
-                  <span
-                    style={{
-                      fontFamily: "var(--font-mono, monospace)",
-                      fontSize: 13,
-                      fontWeight: 600,
-                      color: "#134f89",
-                      opacity: 0.45,
-                      letterSpacing: "0.12em",
-                    }}
-                  >
-                    {String(idx + 1).padStart(2, "0")}
-                  </span>
-                </div>
-
                 <div className="product-split">
                   <div style={{ minWidth: 0 }}>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: 12,
+                        fontWeight: 800,
+                        letterSpacing: "0.1em",
+                        textTransform: "uppercase",
+                        color: "#134f89",
+                        margin: "0 0 14px",
+                        opacity: 0.75,
+                      }}
+                    >
+                      {String(idx + 1).padStart(2, "0")}. {p.categoryHeading}
+                    </p>
                     <h3
                       style={{
                         fontFamily: "var(--font-display)",
