@@ -26,6 +26,66 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
+    slug: "masar-makkah-electric-brt",
+    title: "Masar Electric BRT",
+    location: "Makkah, Saudi Arabia",
+    summary:
+      "LMKR and TRVERSE delivered the first electric BRT network at Masar Destination in Makkah, enabling cleaner, high-capacity mobility aligned with Vision 2030.",
+    heroImage: "/assets/masar.png",
+    overview:
+      "LMKR, through its mobility division TRVERSE, delivered the first electric Bus Rapid Transit network at Masar Destination in Makkah, Saudi Arabia. Developed in collaboration with Electromin, the system provides cleaner and more efficient urban mobility for visitors and residents while supporting Saudi Arabia's Vision 2030 objectives.\n\nThe network is designed for high passenger throughput with integrated digital operations, giving transport teams better visibility and control while improving day-to-day passenger experience.",
+    challenge: [
+      "Makkah requires reliable, high-capacity mobility solutions that can support large passenger volumes while maintaining service quality during peak travel periods.",
+      "Conventional bus operations in dense urban corridors face pressure from emissions, congestion, and operational coordination complexity across operators and infrastructure.",
+      "A modern transit program was needed to connect key destinations with a scalable, low-emission model aligned to national sustainability goals.",
+    ],
+    solution: [
+      "LMKR and TRVERSE delivered an integrated electric BRT stack for Masar Destination, combining operational systems and passenger-facing services in one coordinated environment.",
+      "The project includes automated fare collection, intelligent transport systems, fleet monitoring, and real-time passenger information to support safer, more predictable service delivery.",
+      "The network includes 2 main stations and 11 stops over an approximately 4-kilometer corridor, connecting major movement nodes and enabling efficient passenger flow.",
+    ],
+    solutionKeyComponents: [
+      "Automated fare collection across the corridor",
+      "Intelligent transport systems and real-time fleet visibility",
+      "Live passenger information and service updates",
+      "Operational dashboards and monitoring for control teams",
+    ],
+    stats: [
+      { value: "2", label: "Main stations" },
+      { value: "11", label: "Stops" },
+      { value: "4KM", label: "Electric BRT corridor" },
+      { value: "125M+", label: "Projected passengers (15 years)" },
+      { value: "31.5M KG", label: "Estimated CO2 reduction impact" },
+      { value: "15.8M+", label: "Projected operational kilometers" },
+    ],
+    benefits: [
+      {
+        title: "Vision 2030-Aligned Infrastructure",
+        description:
+          "The deployment supports Saudi Arabia's transition toward cleaner, smarter, and more sustainable urban transport systems.",
+      },
+      {
+        title: "Cleaner Mobility at Scale",
+        description:
+          "Electric BRT operations reduce transport-related emissions while supporting high passenger demand across key movement corridors.",
+      },
+      {
+        title: "Operational Control & Visibility",
+        description:
+          "Integrated monitoring and dashboard-driven operations help teams coordinate services, track performance, and respond faster to disruptions.",
+      },
+      {
+        title: "Regional Benchmark",
+        description:
+          "As the first electric BRT network of its kind in the region, Masar sets a practical reference point for future high-capacity, low-emission transit programs.",
+      },
+    ],
+    additionalNotes: [
+      "Publicly reported project figures indicate expected service to millions of travelers annually over the operating horizon.",
+      "The program was developed with Electromin and positioned as a flagship sustainable mobility initiative within Masar Destination.",
+    ],
+  },
+  {
     slug: "peshawar-brt",
     title: "Peshawar BRT",
     location: "Pakistan",
@@ -370,66 +430,6 @@ export const caseStudies: CaseStudy[] = [
         description:
           "Live service updates and station-facing information help commuters plan airport and intercity journeys with greater confidence.",
       },
-    ],
-  },
-  {
-    slug: "masar-makkah-electric-brt",
-    title: "Masar Electric BRT",
-    location: "Makkah, Saudi Arabia",
-    summary:
-      "LMKR and TRVERSE delivered the first electric BRT network at Masar Destination in Makkah, enabling cleaner, high-capacity mobility aligned with Vision 2030.",
-    heroImage: "/assets/masar.png",
-    overview:
-      "LMKR, through its mobility division TRVERSE, delivered the first electric Bus Rapid Transit network at Masar Destination in Makkah, Saudi Arabia. Developed in collaboration with Electromin, the system provides cleaner and more efficient urban mobility for visitors and residents while supporting Saudi Arabia's Vision 2030 objectives.\n\nThe network is designed for high passenger throughput with integrated digital operations, giving transport teams better visibility and control while improving day-to-day passenger experience.",
-    challenge: [
-      "Makkah requires reliable, high-capacity mobility solutions that can support large passenger volumes while maintaining service quality during peak travel periods.",
-      "Conventional bus operations in dense urban corridors face pressure from emissions, congestion, and operational coordination complexity across operators and infrastructure.",
-      "A modern transit program was needed to connect key destinations with a scalable, low-emission model aligned to national sustainability goals.",
-    ],
-    solution: [
-      "LMKR and TRVERSE delivered an integrated electric BRT stack for Masar Destination, combining operational systems and passenger-facing services in one coordinated environment.",
-      "The project includes automated fare collection, intelligent transport systems, fleet monitoring, and real-time passenger information to support safer, more predictable service delivery.",
-      "The network includes 2 main stations and 11 stops over an approximately 4-kilometer corridor, connecting major movement nodes and enabling efficient passenger flow.",
-    ],
-    solutionKeyComponents: [
-      "Automated fare collection across the corridor",
-      "Intelligent transport systems and real-time fleet visibility",
-      "Live passenger information and service updates",
-      "Operational dashboards and monitoring for control teams",
-    ],
-    stats: [
-      { value: "2", label: "Main stations" },
-      { value: "11", label: "Stops" },
-      { value: "4KM", label: "Electric BRT corridor" },
-      { value: "125M+", label: "Projected passengers (15 years)" },
-      { value: "31.5M KG", label: "Estimated CO2 reduction impact" },
-      { value: "15.8M+", label: "Projected operational kilometers" },
-    ],
-    benefits: [
-      {
-        title: "Vision 2030-Aligned Infrastructure",
-        description:
-          "The deployment supports Saudi Arabia's transition toward cleaner, smarter, and more sustainable urban transport systems.",
-      },
-      {
-        title: "Cleaner Mobility at Scale",
-        description:
-          "Electric BRT operations reduce transport-related emissions while supporting high passenger demand across key movement corridors.",
-      },
-      {
-        title: "Operational Control & Visibility",
-        description:
-          "Integrated monitoring and dashboard-driven operations help teams coordinate services, track performance, and respond faster to disruptions.",
-      },
-      {
-        title: "Regional Benchmark",
-        description:
-          "As the first electric BRT network of its kind in the region, Masar sets a practical reference point for future high-capacity, low-emission transit programs.",
-      },
-    ],
-    additionalNotes: [
-      "Publicly reported project figures indicate expected service to millions of travelers annually over the operating horizon.",
-      "The program was developed with Electromin and positioned as a flagship sustainable mobility initiative within Masar Destination.",
     ],
   },
 ];

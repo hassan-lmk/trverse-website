@@ -75,7 +75,7 @@ const Contact = () => {
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               {[
-                { icon: '◎', text: 'DSO, Dubai, UAE' },
+                { icon: '◎', text: 'Dubai, UAE' },
                 { icon: '◎', text: 'Houston, Texas, USA' },
               ].map((loc, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>

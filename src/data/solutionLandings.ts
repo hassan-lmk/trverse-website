@@ -32,10 +32,10 @@ export type SolutionLandingDoc = {
 export const HOME_SOLUTION_LANDING_ORDER = [
   "Automated-fare-collection",
   "Intelligent-transport-systems",
-  "AI-based-bus-scheduling",
-  "Control-room-management",
+  "advanced-scheduling-system",
+  "fleet-management",
   "Micro-mobility-integration",
-  "Performance-monitoring",
+  "ai-monitoring-and-control",
 ] as const;
 
 /** Same tint as `.solution-banner-container` overlay on home solution cards — use on landing heroes. */
@@ -49,10 +49,10 @@ export const solutionHeroBackgroundImages: Record<
 > = {
   "Automated-fare-collection": `/solutions/${encodeURIComponent("automated fare collection-full.png")}`,
   "Intelligent-transport-systems": "/intelligent-transport.png",
-  "AI-based-bus-scheduling": "/solutions/AI-based-scheduling-full.png",
-  "Control-room-management": "/solutions/control-room-managmeent-full.png",
+  "advanced-scheduling-system": "/solutions/AI-based-scheduling-full.png",
+  "fleet-management": "/solutions/control-room-managmeent-full.png",
   "Micro-mobility-integration": "/solutions/micro-mobility-full.png",
-  "Performance-monitoring": "/solutions/performance-monitoring-full.png",
+  "ai-monitoring-and-control": "/solutions/performance-monitoring-full.png",
 };
 
 export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
@@ -156,19 +156,19 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       },
     ],
   },
-  "AI-based-bus-scheduling": {
-    slug: "AI-based-bus-scheduling",
-    metaTitle: "TRVERSE Orbit — AI-Based Bus Scheduling — TRVERSE",
+  "advanced-scheduling-system": {
+    slug: "advanced-scheduling-system",
+    metaTitle: "TRVERSE Orbit — Advanced scheduling system — TRVERSE",
     metaDescription:
       "TRVERSE Orbit optimizes routes and schedules using real-time and historical demand data, improving efficiency and service coverage across your network.",
     badge: "Solution",
-    eyebrowCategory: "AI-based bus scheduling",
+    eyebrowCategory: "Advanced scheduling system",
     productLine: "TRVERSE Orbit",
     heroTagline: "Schedules that move with demand",
     heroIntro:
       "TRVERSE Orbit helps plan and adjust services based on demand, using real-time and historical data to improve efficiency across the network.",
     heroBackgroundImage:
-      solutionHeroBackgroundImages["AI-based-bus-scheduling"],
+      solutionHeroBackgroundImages["advanced-scheduling-system"],
     heroImage: "/assets/ai-based-scheduling.webp",
     highlightsAsideImage: "/assets/ai-based-scheduling.webp",
     highlightsAsideImageAlt: "",
@@ -203,19 +203,19 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       },
     ],
   },
-  "Control-room-management": {
-    slug: "Control-room-management",
-    metaTitle: "TRVERSE Command — Control Room Management — TRVERSE",
+  "fleet-management": {
+    slug: "fleet-management",
+    metaTitle: "TRVERSE Command — Fleet management — TRVERSE",
     metaDescription:
       "TRVERSE Command unifies operational systems so teams can monitor, coordinate, and manage transit activities from a single environment.",
     badge: "Solution",
-    eyebrowCategory: "Control room management",
+    eyebrowCategory: "Fleet management",
     productLine: "TRVERSE Command",
     heroTagline: "Unified control across your network",
     heroIntro:
       "TRVERSE Command brings operational systems into one environment, allowing teams to monitor, coordinate, and manage transit operations from a single place.",
     heroBackgroundImage:
-      solutionHeroBackgroundImages["Control-room-management"],
+      solutionHeroBackgroundImages["fleet-management"],
     heroImage: "/assets/control-room-maangement.webp",
     highlightsAsideImage: "/assets/control-room-maangement.webp",
     highlightsAsideImageAlt: "",
@@ -298,19 +298,19 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       },
     ],
   },
-  "Performance-monitoring": {
-    slug: "Performance-monitoring",
-    metaTitle: "TRVERSE Insight — Performance Monitoring — TRVERSE",
+  "ai-monitoring-and-control": {
+    slug: "ai-monitoring-and-control",
+    metaTitle: "TRVERSE Insight — AI monitoring and control — TRVERSE",
     metaDescription:
       "TRVERSE Insight provides visibility into system performance so operators can track operations, analyze trends, and make informed decisions.",
     badge: "Solution",
-    eyebrowCategory: "Performance monitoring",
+    eyebrowCategory: "AI monitoring and control",
     productLine: "TRVERSE Insight",
     heroTagline: "Know more. Decide faster",
     heroIntro:
       "TRVERSE Insight provides visibility into system performance, helping operators track operations, analyze trends, and make informed decisions.",
     heroBackgroundImage:
-      solutionHeroBackgroundImages["Performance-monitoring"],
+      solutionHeroBackgroundImages["ai-monitoring-and-control"],
     heroImage: "/assets/perfomance-monitoring.webp",
     highlightsAsideImage: "/assets/perfomance-monitoring.webp",
     highlightsAsideImageAlt: "",

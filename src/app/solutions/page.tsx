@@ -10,7 +10,7 @@ import SolutionsCTA from "@/components/solutions/SolutionsCTA";
 export const metadata: Metadata = {
   title: "Solutions — TRVERSE",
   description:
-    "Discover TRVERSE solutions: Automated Fare Collection, Intelligent Transport Systems, AI Scheduling, Control Room Management, Micro-Mobility Integration, and Performance Monitoring.",
+    "Discover TRVERSE solutions: Automated Fare Collection, Intelligent Transport Systems, Advanced scheduling system, Fleet management, Micro-Mobility Integration, and AI monitoring and control.",
 };
 
 export default function SolutionsPage() {

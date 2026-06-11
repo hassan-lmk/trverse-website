@@ -5,8 +5,9 @@ import React from "react";
 const solutionOptions = [
   "Automated Fare Collection",
   "Intelligent Transport Systems",
-  "AI Scheduling",
-  "Control Room Management",
+  "Advanced scheduling system",
+  "Fleet management",
+  "AI monitoring and control",
   "Micro-Mobility Integration",
   "Open-Loop Payments",
   "Custom Mobility Platform",

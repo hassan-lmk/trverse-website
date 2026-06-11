@@ -66,12 +66,12 @@ const solutions = [
   },
   {
     id: "scheduling",
-    tag: "ABS",
+    tag: "ADV",
     title: "Smarter planning, better service delivery",
-    subtitle: "TRVERSE AI-Based Scheduling",
+    subtitle: "Advanced scheduling system",
     description:
       "Uses real-time and historical data to optimize routes, schedules, and fleet allocation. It allows operators to adjust services based on demand and changing conditions.",
-    image: solutionHeroBackgroundImages["AI-based-bus-scheduling"],
+    image: solutionHeroBackgroundImages["advanced-scheduling-system"],
     accent: "#134f89",
     capabilities: [
       "Dynamic schedule updates",
@@ -95,12 +95,12 @@ const solutions = [
   },
   {
     id: "control",
-    tag: "CRM",
+    tag: "FLM",
     title: "Central command for transit operations",
-    subtitle: "TRVERSE Control Room Management",
+    subtitle: "Fleet management",
     description:
       "Brings all operational data into one place. It enables centralized monitoring, faster decision-making, and coordinated response across the network.",
-    image: solutionHeroBackgroundImages["Control-room-management"],
+    image: solutionHeroBackgroundImages["fleet-management"],
     accent: "#0a1e3d",
     capabilities: [
       "Real-time monitoring and tracking",
@@ -152,12 +152,12 @@ const solutions = [
   },
   {
     id: "performance",
-    tag: "PM",
+    tag: "AIC",
     title: "Know more. Decide faster",
-    subtitle: "TRVERSE Performance Monitoring",
+    subtitle: "AI monitoring and control",
     description:
       "Provides visibility into system performance, helping operators track operations, analyze trends, and make informed decisions across the network.",
-    image: solutionHeroBackgroundImages["Performance-monitoring"],
+    image: solutionHeroBackgroundImages["ai-monitoring-and-control"],
     accent: "#0a1e3d",
     capabilities: [
       "Real-time dashboards",
@@ -199,10 +199,10 @@ const SolutionDetail = () => {
   const hrefById: Record<string, string> = {
     afc: "/solutions/Automated-fare-collection",
     its: "/solutions/Intelligent-transport-systems",
-    scheduling: "/solutions/AI-based-bus-scheduling",
-    control: "/solutions/Control-room-management",
+    scheduling: "/solutions/advanced-scheduling-system",
+    control: "/solutions/fleet-management",
     micro: "/solutions/Micro-mobility-integration",
-    performance: "/solutions/Performance-monitoring",
+    performance: "/solutions/ai-monitoring-and-control",
   };
 
   return (

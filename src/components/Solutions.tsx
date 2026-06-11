@@ -24,19 +24,19 @@ const Solutions = () => {
       )
     },
     { 
-      title: 'AI-Based Bus Scheduling', 
+      title: 'Advanced scheduling system', 
       desc: 'Plan and adjust services using real-time and historical data for optimized fleet utilization.', 
       banner: '/solutions/AI-based-scheduling.png',
-      href: '/solutions/AI-based-bus-scheduling',
+      href: '/solutions/advanced-scheduling-system',
       icon: (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M4 20l5-6 4 3 5-8 6 7" stroke="var(--accent)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/><circle cx="9" cy="14" r="2" fill="var(--accent)" opacity="0.3"/><circle cx="18" cy="9" r="2" fill="var(--accent)" opacity="0.3"/></svg>
       )
     },
     { 
-      title: 'Control Room Management', 
+      title: 'Fleet management', 
       desc: 'Manage operations from a single command environment with live tracking and insights.', 
       banner: '/solutions/control-room-managmeent.png',
-      href: '/solutions/Control-room-management',
+      href: '/solutions/fleet-management',
       icon: (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="2" y="4" width="24" height="16" rx="2" stroke="var(--accent)" strokeWidth="1.8"/><line x1="8" y1="24" x2="20" y2="24" stroke="var(--accent)" strokeWidth="1.8" strokeLinecap="round"/><line x1="14" y1="20" x2="14" y2="24" stroke="var(--accent)" strokeWidth="1.8"/></svg>
       )
@@ -51,10 +51,10 @@ const Solutions = () => {
       )
     },
     { 
-      title: 'Performance Monitoring', 
+      title: 'AI monitoring and control', 
       desc: 'Comprehensive analytics for operators to track network health and efficiency in real-time.', 
       banner: '/solutions/performance-monitoring-card.png',
-      href: '/solutions/Performance-monitoring',
+      href: '/solutions/ai-monitoring-and-control',
       icon: (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect x="4" y="14" width="4" height="10" rx="1" fill="var(--accent)" opacity="0.3"/><rect x="12" y="8" width="4" height="16" rx="1" fill="var(--accent)" opacity="0.5"/><rect x="20" y="4" width="4" height="20" rx="1" fill="var(--accent)" opacity="0.7"/></svg>
       )

@@ -5,10 +5,10 @@ import React from "react";
 const tabs = [
   { id: "afc", label: "Fare Collection", short: "AFC" },
   { id: "its", label: "Transport Systems", short: "ITS" },
-  { id: "scheduling", label: "AI Scheduling", short: "ABS" },
-  { id: "control", label: "Control Room", short: "CRM" },
+  { id: "scheduling", label: "Advanced scheduling system", short: "ADV" },
+  { id: "control", label: "Fleet management", short: "FLM" },
   { id: "micro", label: "Micro-Mobility", short: "MMI" },
-  { id: "performance", label: "Performance", short: "PM" },
+  { id: "performance", label: "AI monitoring and control", short: "AIC" },
 ];
 
 const SolutionsOverview = () => {
