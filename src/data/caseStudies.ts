@@ -107,7 +107,7 @@ export const caseStudies: CaseStudy[] = [
   },
   {
     slug: "lahore-metro",
-    title: "Lahore Metro",
+    title: "Lahore MetroBus",
     location: "Pakistan",
     summary:
       "Ensuring optimum services and security of commuters across Lahore Metrobus feeder operations through integrated surveillance, monitoring, and control.",
@@ -161,8 +161,62 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
   {
+    slug: "lahore-orange-line",
+    title: "Lahore Orange Line Metro Train",
+    location: "Pakistan",
+    summary:
+      "Pakistan's first urban mass rapid transit rail system — a 27 km elevated and underground electric line across Lahore.",
+    heroImage: "/assets/lahore-orange-line.jpg",
+    overview:
+      "The Lahore Orange Line Metro Train is Pakistan's first urban mass rapid transit rail system — a 27-kilometer elevated and underground electric line with 26 stations connecting Ali Town to Dera Gujran across Lahore. Inaugurated in October 2020 as a flagship CPEC infrastructure project, it gave the city a high-capacity alternative to road-based transport on one of its busiest corridors.\n\nTRVERSE delivered the digital payments layer for the network — automated fare collection, payment application development, and Mastercard and Visa payment certifications — supporting cashless, card-ready access across stations and gates.",
+    challenge: [
+      "Lahore's population and vehicle growth placed severe pressure on road networks, with commuters facing long, unpredictable journeys through congested corridors with limited reliable public transport options.",
+      "Informal and fragmented bus services could not absorb rising demand, pushing more residents toward private cars and motorcycles and deepening pollution and travel-time inequality across the city.",
+      "Authorities needed Pakistan's first urban rail line to move high passenger volumes efficiently while meeting modern standards for electronic fare collection and bank-card payments at station scale.",
+    ],
+    solution: [
+      "The Punjab Mass Transit Authority developed the Orange Line as an electric rapid transit corridor with elevated and underground sections, 26 stations, and purpose-built rolling stock designed for high-frequency urban service.",
+      "TRVERSE implemented automated fare collection across the line, including station gates, ticketing infrastructure, and smart validation aligned to heavy daily ridership.",
+      "TRVERSE developed the payment application layer and secured Mastercard and Visa certifications, extending familiar card-based payment options alongside the metro train's fare products.",
+    ],
+    solutionKeyComponents: [
+      "Automated fare collection",
+      "Payment application development",
+      "Mastercard and Visa payment certifications",
+    ],
+    stats: [
+      { value: "27KM", label: "Electric rail corridor" },
+      { value: "26", label: "Stations" },
+      { value: "2020", label: "Year inaugurated" },
+      { value: "Electric", label: "Zero-emission operation" },
+      { value: "First", label: "Urban MRT in Pakistan" },
+    ],
+    benefits: [
+      {
+        title: "Automated Fare Collection",
+        description:
+          "Electronic ticketing and gate validation streamline station access and reduce cash handling across the 26-station corridor.",
+      },
+      {
+        title: "Payment Application Development",
+        description:
+          "A purpose-built payments application supports metro fare products, top-ups, and commuter transactions across the rail network.",
+      },
+      {
+        title: "Card Payment Certifications",
+        description:
+          "Mastercard and Visa certifications enable bank-card acceptance, giving riders trusted, secure payment options at stations and gates.",
+      },
+      {
+        title: "Modern Rail Transit",
+        description:
+          "Electric rapid transit moves large passenger volumes on dedicated right-of-way, reducing reliance on private vehicles along Lahore's core corridor.",
+      },
+    ],
+  },
+  {
     slug: "multan-metro",
-    title: "Multan Metro",
+    title: "Multan MetroBus",
     location: "Pakistan",
     summary: "Ensuring optimum services and security of commuters across Metro Bus Multan through integrated security and monitoring.",
     heroImage: "/assets/multan-metro.jpg",
@@ -206,6 +260,115 @@ export const caseStudies: CaseStudy[] = [
         title: "Secure, Hassle-Free Journeys",
         description:
           "Integrated security, communications, KPI monitoring, and helpdesk support deliver a safer day-to-day commute.",
+      },
+    ],
+  },
+  {
+    slug: "islamabad-rawalpindi-metrobus",
+    title: "Islamabad–Rawalpindi MetroBus",
+    location: "Pakistan",
+    summary:
+      "A vital 22.5 km link connecting the twin cities with high-capacity stations and optimized ridership flow.",
+    heroImage: "/assets/rwl-metrobus.jpg",
+    overview:
+      "The Islamabad–Rawalpindi MetroBus Red Line is Pakistan's flagship intercity bus rapid transit corridor, running 22.5 kilometers between Pak Secretariat in Islamabad and Saddar in Rawalpindi along dedicated lanes with 24 stations. Launched in 2015, it gave millions of commuters in the twin cities a faster, more predictable alternative to informal transport and private vehicles.\n\nTRVERSE delivered the digital payments foundation for the network — automated fare collection, payment application development, and Mastercard and Visa payment certifications — enabling cashless, card-ready journeys across high-volume stations.",
+    challenge: [
+      "Rawalpindi and Islamabad form one of Pakistan's largest metropolitan areas, yet for years commuters moved between the twin cities through fragmented, informal transport with little reliability or fare transparency.",
+      "Rising traffic congestion on the Murree Road and Islamabad Expressway corridors increased travel times and pushed more residents toward private vehicles, straining road capacity on both sides of the capital.",
+      "Authorities needed a high-capacity metro bus link that could move large passenger volumes efficiently while supporting modern electronic fare collection and bank-card payments at scale.",
+    ],
+    solution: [
+      "The Punjab Mass Transit Authority and Capital Development Authority developed the Red Line as a dedicated-lane metro bus service with 24 stations linking government, commercial, and residential hubs across Islamabad and Rawalpindi.",
+      "TRVERSE implemented automated fare collection across the corridor, including station turnstiles, ticketing infrastructure, and smart-card validation aligned to high daily ridership.",
+      "TRVERSE also developed the payment application layer and secured Mastercard and Visa certifications, giving commuters trusted card-based payment options alongside traditional metro bus ticketing.",
+    ],
+    solutionKeyComponents: [
+      "Automated fare collection",
+      "Payment application development",
+      "Mastercard and Visa payment certifications",
+    ],
+    stats: [
+      { value: "22.5KM", label: "Dedicated corridor" },
+      { value: "24", label: "Stations" },
+      { value: "68", label: "Buses" },
+      { value: "2015", label: "Year inaugurated" },
+      { value: "Twin cities", label: "Intercity connectivity" },
+    ],
+    benefits: [
+      {
+        title: "Automated Fare Collection",
+        description:
+          "Electronic ticketing and turnstile validation streamline boarding at high-capacity stations and reduce cash handling across the corridor.",
+      },
+      {
+        title: "Payment Application Development",
+        description:
+          "A purpose-built payments application supports metro bus fare products, top-ups, and day-to-day commuter transactions across the network.",
+      },
+      {
+        title: "Card Payment Certifications",
+        description:
+          "Mastercard and Visa certifications enable bank-card acceptance, giving riders familiar, secure payment options at stations and gates.",
+      },
+      {
+        title: "Intercity Ridership Flow",
+        description:
+          "Dedicated lanes and station spacing optimize passenger throughput between Islamabad and Rawalpindi, cutting unpredictable travel times on key corridors.",
+      },
+    ],
+  },
+  {
+    slug: "islamabad-orange-line",
+    title: "Islamabad Orange Line MetroBus",
+    location: "Pakistan",
+    summary:
+      "A 25.6 km dedicated metro bus corridor linking central Islamabad to the international airport with integrated fare collection, scheduling, and passenger information.",
+    heroImage: "/assets/isl-orangeline.jpg",
+    overview:
+      "The Islamabad Orange Line MetroBus extends the Rawalpindi–Islamabad metro bus network from Faiz Ahmed Faiz Station to New Islamabad International Airport along a dedicated 25.6 km corridor. Inaugurated in April 2022, the line gives residents and travelers a fast, affordable alternative to private vehicles on one of the capital's busiest movement corridors.\n\nTRVERSE delivered the operational technology stack for the corridor — automated fare collection, intelligent transport and scheduling, control room and data center management, and real-time passenger information — giving the Capital Development Authority a unified platform to run reliable airport-linked service.",
+    challenge: [
+      "Islamabad's rapid growth and the relocation of the international airport outside the city core created strong demand for dependable public transport between central sectors and the airport.",
+      "Traffic on the Srinagar Highway corridor was increasingly congested, with commuters relying on private cars, ride-hailing, and informal transport that offered little predictability for airport-bound travel.",
+      "Authorities needed a modern metro bus line that could integrate with the existing Red Line network, support high passenger throughput at stations, and operate with the same digital standards as Pakistan's leading BRT programs.",
+    ],
+    solution: [
+      "The Capital Development Authority developed the Orange Line as a dedicated-lane metro bus service with seven stations from Faiz Ahmed Faiz interchange through NUST, Golra Morr, and onward to Islamabad International Airport.",
+      "TRVERSE provided, integrated, and commissioned the corridor's core systems — aligning automated fare collection, fleet scheduling, control room operations, and passenger information within a single operational environment.",
+      "The deployment connects airport-bound riders to the wider twin-cities metro bus network while giving control teams real-time visibility over vehicles, stations, and service performance across the corridor.",
+    ],
+    solutionKeyComponents: [
+      "Automated fare collection",
+      "Intelligent transportation and scheduling system",
+      "Control room and data center management",
+      "Real-time passenger information management system",
+    ],
+    stats: [
+      { value: "25.6KM", label: "Dedicated corridor" },
+      { value: "7", label: "Stations" },
+      { value: "15", label: "Buses at launch" },
+      { value: "2022", label: "Year inaugurated" },
+      { value: "Airport", label: "End-to-end connectivity" },
+    ],
+    benefits: [
+      {
+        title: "Automated Fare Collection",
+        description:
+          "Electronic ticketing, turnstiles, and smart-card validation streamline boarding and reduce cash handling across stations on the corridor.",
+      },
+      {
+        title: "Intelligent Scheduling",
+        description:
+          "ITS-backed dispatch and scheduling keep buses on headway targets and give operators the tools to coordinate service during peaks and disruptions.",
+      },
+      {
+        title: "Centralized Control",
+        description:
+          "A dedicated control room and data center environment unifies monitoring of corridor operations, infrastructure, and incident response.",
+      },
+      {
+        title: "Real-Time Passenger Information",
+        description:
+          "Live service updates and station-facing information help commuters plan airport and intercity journeys with greater confidence.",
       },
     ],
   },

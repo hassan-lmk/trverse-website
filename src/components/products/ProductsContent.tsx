@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
+import { DeviceItemsCarousel } from "@/components/products/DeviceItemsCarousel";
 
 const PLACEHOLDER = "/products/placeholder-product.svg";
 
@@ -175,6 +176,8 @@ const softwareProducts: SoftwareProduct[] = [
 type HardwareDevice = {
   label: string;
   description: string;
+  imageSrc?: string;
+  imageAlt?: string;
 };
 
 type HardwareCategory = {
@@ -202,31 +205,43 @@ const hardwareCategories: HardwareCategory[] = [
         label: "Fare Validators",
         description:
           "High-speed contactless validation for both bus environments and station fare gates.",
+        imageSrc: "/products/devices/fare-validator.png",
+        imageAlt: "TRVERSE fare validator mounted on a transit bus",
       },
       {
         label: "Fare Gates",
         description:
           "Reliable, high-throughput flap gates designed for rapid passenger flow and secure access control.",
+        imageSrc: "/products/devices/fare-gates.png",
+        imageAlt: "Transit fare gates at a station entrance",
       },
       {
         label: "TVM (Ticket Vending Machine)",
         description:
           "Intuitive, 24/7 self-service kiosks for purchasing and recharging transit credentials.",
+        imageSrc: "/products/devices/tvm.png",
+        imageAlt: "Ticket vending machine at a station",
       },
       {
         label: "POS Terminals",
         description:
           "Desktop and handheld Point-of-Sale solutions for versatile on-site ticketing and top-ups.",
+        imageSrc: "/products/devices/pos.png",
+        imageAlt: "Point-of-sale terminal for transit ticketing",
       },
       {
         label: "RTPI (Real-Time Passenger Information)",
         description:
           "Dynamic display hardware for both stations and buses, providing travelers with live, accurate service updates.",
+        imageSrc: "/products/devices/rtpi.png",
+        imageAlt: "Real-time passenger information display",
       },
       {
         label: "Handheld Validators",
         description:
           "Portable validation tools for mobile ticket inspection and on-board checks.",
+        imageSrc: "/products/devices/handheld-validators.png",
+        imageAlt: "Handheld fare validation device",
       },
     ],
   },
@@ -245,16 +260,22 @@ const hardwareCategories: HardwareCategory[] = [
         label: "Driver Console",
         description:
           "A centralized, ergonomic interface for real-time communication, navigation, and system monitoring.",
+        imageSrc: "/products/devices/driver-console.png",
+        imageAlt: "Driver console with digital cluster, CCTV monitor, and route tablet",
       },
       {
         label: "AI Cameras",
         description:
           "Intelligent edge-processing cameras for passenger counting, safety monitoring, and proactive incident detection.",
+        imageSrc: "/products/devices/ai-camera.jpg",
+        imageAlt: "Dual-lens AI camera for passenger counting at bus doors",
       },
       {
         label: "CCTV",
         description:
           "High-definition video surveillance systems providing full interior and exterior fleet coverage for enhanced security.",
+        imageSrc: "/products/devices/bus-cctv.jpg",
+        imageAlt: "Dome CCTV camera mounted inside a transit bus",
       },
     ],
   },
@@ -527,71 +548,18 @@ export default function ProductsContent() {
             flex-direction: column;
             min-height: 100%;
             height: 100%;
+            min-width: 0;
+            max-width: 100%;
           }
           .devices-col-card {
             flex: 1;
             display: flex;
             flex-direction: column;
             min-height: 0;
+            min-width: 0;
             width: 100%;
-          }
-          .devices-col-list {
-            flex: 1;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 14px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            align-content: start;
-          }
-          .devices-feature-item {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            padding: 14px 14px 16px;
-            border-radius: 14px;
-            background: linear-gradient(135deg, rgba(19,79,137,0.04) 0%, rgba(255,130,93,0.04) 100%);
-            border: 1px solid rgba(19,79,137,0.08);
-            min-height: 100%;
-          }
-          .devices-feature-label {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--font-body);
-            font-size: 13.5px;
-            font-weight: 700;
-            color: #0a1e3d;
-            line-height: 1.35;
-          }
-          .devices-feature-label::before {
-            content: "";
-            width: 7px;
-            height: 7px;
-            flex-shrink: 0;
-            border-radius: 50%;
-            background: var(--accent);
-            box-shadow: 0 0 0 1px rgba(255,130,93,0.2);
-          }
-          .devices-feature-desc {
-            margin: 0;
-            padding-left: 15px;
-            font-family: var(--font-body);
-            font-size: 13px;
-            color: #5f6e82;
-            line-height: 1.55;
-          }
-          .devices-feature-item:last-child:nth-child(odd) {
-            grid-column: 1 / -1;
-          }
-          @media (max-width: 640px) {
-            .devices-col-list {
-              grid-template-columns: 1fr;
-            }
-            .devices-feature-item:last-child:nth-child(odd) {
-              grid-column: auto;
-            }
+            max-width: 100%;
+            overflow: hidden;
           }
           @media (max-width: 1024px) {
             .product-split {
@@ -990,14 +958,7 @@ export default function ProductsContent() {
                 >
                   {col.description}
                 </p>
-                <ul className="devices-col-list">
-                  {col.items.map((item) => (
-                    <li key={item.label} className="devices-feature-item">
-                      <span className="devices-feature-label">{item.label}</span>
-                      <p className="devices-feature-desc">{item.description}</p>
-                    </li>
-                  ))}
-                </ul>
+                <DeviceItemsCarousel items={col.items} categoryLabel={col.title} />
               </div>
               </div>
             ))}
