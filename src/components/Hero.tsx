@@ -62,7 +62,7 @@ const Hero = () => {
           }}
         >
           <source
-            src="https://res.cloudinary.com/dl3ulxgq4/video/upload/v1779262667/YTDown_YouTube_trverse-web-banner-1_Media_5u6hFlV80G4_001_1080p_itdlrq.mp4"
+            src="https://res.cloudinary.com/dl3ulxgq4/video/upload/trverse-web-banner_2_t4ikrn.mp4"
             type="video/mp4"
           />
         </video>
