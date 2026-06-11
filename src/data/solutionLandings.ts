@@ -62,7 +62,7 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     metaDescription:
       "TRVERSE Meridian unifies fare collection across stations, vehicles, and digital channels. Open-loop and closed-loop payments, central clearing, flexible pricing, and high-volume throughput.",
     badge: "Solution",
-    eyebrowCategory: "Automated fare collection",
+    eyebrowCategory: "Automated Fare Collection",
     productLine: "TRVERSE Meridian",
     heroTagline: "Payments that keep moving",
     heroIntro:
@@ -112,7 +112,7 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     metaDescription:
       "TRVERSE Vector delivers real-time visibility across vehicles, routes, and passenger systems with KPI dashboards, safety monitoring, and continuous operational supervision.",
     badge: "Solution",
-    eyebrowCategory: "Intelligent transport systems",
+    eyebrowCategory: "Intelligent Transport Systems",
     productLine: "TRVERSE Vector",
     heroTagline: "See every movement. Stay ahead.",
     heroIntro:
@@ -158,11 +158,11 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
   },
   "advanced-scheduling-system": {
     slug: "advanced-scheduling-system",
-    metaTitle: "TRVERSE Orbit — Advanced scheduling system — TRVERSE",
+    metaTitle: "TRVERSE Orbit — Advanced Scheduling System — TRVERSE",
     metaDescription:
       "TRVERSE Orbit optimizes routes and schedules using real-time and historical demand data, improving efficiency and service coverage across your network.",
     badge: "Solution",
-    eyebrowCategory: "Advanced scheduling system",
+    eyebrowCategory: "Advanced Scheduling System",
     productLine: "TRVERSE Orbit",
     heroTagline: "Schedules that move with demand",
     heroIntro:
@@ -205,11 +205,11 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
   },
   "fleet-management": {
     slug: "fleet-management",
-    metaTitle: "TRVERSE Command — Fleet management — TRVERSE",
+    metaTitle: "TRVERSE Command — Fleet Management — TRVERSE",
     metaDescription:
       "TRVERSE Command unifies operational systems so teams can monitor, coordinate, and manage transit activities from a single environment.",
     badge: "Solution",
-    eyebrowCategory: "Fleet management",
+    eyebrowCategory: "Fleet Management",
     productLine: "TRVERSE Command",
     heroTagline: "Unified control across your network",
     heroIntro:
@@ -257,7 +257,7 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     metaDescription:
       "TRVERSE Signal extends transit networks by connecting first and last mile services, enabling a more complete and accessible system.",
     badge: "Solution",
-    eyebrowCategory: "Micro-mobility integration",
+    eyebrowCategory: "Micro-Mobility Integration",
     productLine: "TRVERSE Signal",
     heroTagline: "Clarity at every stop",
     heroIntro:
@@ -300,11 +300,11 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
   },
   "ai-monitoring-and-control": {
     slug: "ai-monitoring-and-control",
-    metaTitle: "TRVERSE Insight — AI monitoring and control — TRVERSE",
+    metaTitle: "TRVERSE Insight — AI Monitoring and Control — TRVERSE",
     metaDescription:
       "TRVERSE Insight provides visibility into system performance so operators can track operations, analyze trends, and make informed decisions.",
     badge: "Solution",
-    eyebrowCategory: "AI monitoring and control",
+    eyebrowCategory: "AI Monitoring and Control",
     productLine: "TRVERSE Insight",
     heroTagline: "Know more. Decide faster",
     heroIntro:

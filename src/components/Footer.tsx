@@ -39,7 +39,7 @@ const Footer = () => (
           </p>
         </div>
         {[
-          { title: 'Solutions', links: ['Fare Collection', 'Fleet Operations', 'Scheduling', 'Fleet management'] },
+          { title: 'Solutions', links: ['Fare Collection', 'Fleet Operations', 'Scheduling', 'Fleet Management'] },
           { title: 'Company', links: ['Client Stories', 'Technology', 'About'] },
           { title: 'Contact', links: ['Dubai, UAE', 'Houston, USA'] },
         ].map((col, i) => (

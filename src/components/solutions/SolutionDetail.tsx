@@ -68,7 +68,7 @@ const solutions = [
     id: "scheduling",
     tag: "ADV",
     title: "Smarter planning, better service delivery",
-    subtitle: "Advanced scheduling system",
+    subtitle: "Advanced Scheduling System",
     description:
       "Uses real-time and historical data to optimize routes, schedules, and fleet allocation. It allows operators to adjust services based on demand and changing conditions.",
     image: solutionHeroBackgroundImages["advanced-scheduling-system"],
@@ -97,7 +97,7 @@ const solutions = [
     id: "control",
     tag: "FLM",
     title: "Central command for transit operations",
-    subtitle: "Fleet management",
+    subtitle: "Fleet Management",
     description:
       "Brings all operational data into one place. It enables centralized monitoring, faster decision-making, and coordinated response across the network.",
     image: solutionHeroBackgroundImages["fleet-management"],
@@ -154,7 +154,7 @@ const solutions = [
     id: "performance",
     tag: "AIC",
     title: "Know more. Decide faster",
-    subtitle: "AI monitoring and control",
+    subtitle: "AI Monitoring and Control",
     description:
       "Provides visibility into system performance, helping operators track operations, analyze trends, and make informed decisions across the network.",
     image: solutionHeroBackgroundImages["ai-monitoring-and-control"],

@@ -168,7 +168,7 @@ const Nav = () => {
                   }}
                 >
                   <div style={{ fontWeight: 500, opacity: 0.72, marginTop: 4 }}>
-                    Automated fare collection
+                    Automated Fare Collection
                   </div>
                 </a>
 
@@ -196,7 +196,7 @@ const Nav = () => {
                   }}
                 >
                   <div style={{ fontWeight: 500, opacity: 0.72, marginTop: 4 }}>
-                    Intelligent transport systems
+                    Intelligent Transport Systems
                   </div>
                 </a>
 
@@ -227,7 +227,7 @@ const Nav = () => {
                   }}
                 >
                   <div style={{ fontWeight: 500, opacity: 0.72, marginTop: 4 }}>
-                    Advanced scheduling system
+                    Advanced Scheduling System
                   </div>
                 </a>
 
@@ -258,7 +258,7 @@ const Nav = () => {
                   }}
                 >
                   <div style={{ fontWeight: 500, opacity: 0.72, marginTop: 4 }}>
-                    Fleet management
+                    Fleet Management
                   </div>
                 </a>
 
@@ -289,7 +289,7 @@ const Nav = () => {
                   }}
                 >
                   <div style={{ fontWeight: 500, opacity: 0.72, marginTop: 4 }}>
-                    Micro-mobility integration
+                    Micro-Mobility Integration
                   </div>
                 </a>
 
@@ -320,7 +320,7 @@ const Nav = () => {
                   }}
                 >
                   <div style={{ fontWeight: 500, opacity: 0.72, marginTop: 4 }}>
-                    AI monitoring and control
+                    AI Monitoring and Control
                   </div>
                 </a>
 
@@ -407,12 +407,12 @@ const Nav = () => {
           }}
         >
           <a href="/solutions" style={{ color: '#fff', textDecoration: 'none', padding: '10px 0', fontFamily: 'var(--font-body)', fontWeight: 600 }}>Solutions</a>
-          <a href="/solutions/Automated-fare-collection" style={{ color: 'rgba(255,255,255,0.78)', textDecoration: 'none', padding: '6px 0 6px 12px', fontFamily: 'var(--font-body)', fontSize: 14 }}>Automated fare collection</a>
-          <a href="/solutions/Intelligent-transport-systems" style={{ color: 'rgba(255,255,255,0.78)', textDecoration: 'none', padding: '6px 0 6px 12px', fontFamily: 'var(--font-body)', fontSize: 14 }}>Intelligent transport systems</a>
-          <a href="/solutions/advanced-scheduling-system" style={{ color: 'rgba(255,255,255,0.78)', textDecoration: 'none', padding: '6px 0 6px 12px', fontFamily: 'var(--font-body)', fontSize: 14 }}>Advanced scheduling system</a>
-          <a href="/solutions/fleet-management" style={{ color: 'rgba(255,255,255,0.78)', textDecoration: 'none', padding: '6px 0 6px 12px', fontFamily: 'var(--font-body)', fontSize: 14 }}>Fleet management</a>
-          <a href="/solutions/Micro-mobility-integration" style={{ color: 'rgba(255,255,255,0.78)', textDecoration: 'none', padding: '6px 0 6px 12px', fontFamily: 'var(--font-body)', fontSize: 14 }}>Micro-mobility integration</a>
-          <a href="/solutions/ai-monitoring-and-control" style={{ color: 'rgba(255,255,255,0.78)', textDecoration: 'none', padding: '6px 0 6px 12px', fontFamily: 'var(--font-body)', fontSize: 14 }}>AI monitoring and control</a>
+          <a href="/solutions/Automated-fare-collection" style={{ color: 'rgba(255,255,255,0.78)', textDecoration: 'none', padding: '6px 0 6px 12px', fontFamily: 'var(--font-body)', fontSize: 14 }}>Automated Fare Collection</a>
+          <a href="/solutions/Intelligent-transport-systems" style={{ color: 'rgba(255,255,255,0.78)', textDecoration: 'none', padding: '6px 0 6px 12px', fontFamily: 'var(--font-body)', fontSize: 14 }}>Intelligent Transport Systems</a>
+          <a href="/solutions/advanced-scheduling-system" style={{ color: 'rgba(255,255,255,0.78)', textDecoration: 'none', padding: '6px 0 6px 12px', fontFamily: 'var(--font-body)', fontSize: 14 }}>Advanced Scheduling System</a>
+          <a href="/solutions/fleet-management" style={{ color: 'rgba(255,255,255,0.78)', textDecoration: 'none', padding: '6px 0 6px 12px', fontFamily: 'var(--font-body)', fontSize: 14 }}>Fleet Management</a>
+          <a href="/solutions/Micro-mobility-integration" style={{ color: 'rgba(255,255,255,0.78)', textDecoration: 'none', padding: '6px 0 6px 12px', fontFamily: 'var(--font-body)', fontSize: 14 }}>Micro-Mobility Integration</a>
+          <a href="/solutions/ai-monitoring-and-control" style={{ color: 'rgba(255,255,255,0.78)', textDecoration: 'none', padding: '6px 0 6px 12px', fontFamily: 'var(--font-body)', fontSize: 14 }}>AI Monitoring and Control</a>
           {navItems.map((item) => (
             <a key={item.label} href={item.href} style={{ color: '#fff', textDecoration: 'none', padding: '10px 0', fontFamily: 'var(--font-body)', fontWeight: 500 }}>
               {item.label}

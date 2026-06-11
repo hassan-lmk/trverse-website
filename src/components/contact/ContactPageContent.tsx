@@ -17,7 +17,7 @@ const offices = [
   },
   {
     region: "United Arab Emirates",
-    company: "LMKR Corporate Headquarters",
+    company: "LMKR Holdings",
     address: [
       "Office No 512, 5th floor, CNPC Building 1,",
       "Emaar Business Park, Sheikh Zayed Road,",

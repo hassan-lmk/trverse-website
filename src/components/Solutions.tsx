@@ -24,7 +24,7 @@ const Solutions = () => {
       )
     },
     { 
-      title: 'Advanced scheduling system', 
+      title: 'Advanced Scheduling System', 
       desc: 'Plan and adjust services using real-time and historical data for optimized fleet utilization.', 
       banner: '/solutions/AI-based-scheduling.png',
       href: '/solutions/advanced-scheduling-system',
@@ -33,7 +33,7 @@ const Solutions = () => {
       )
     },
     { 
-      title: 'Fleet management', 
+      title: 'Fleet Management', 
       desc: 'Manage operations from a single command environment with live tracking and insights.', 
       banner: '/solutions/control-room-managmeent.png',
       href: '/solutions/fleet-management',
@@ -51,7 +51,7 @@ const Solutions = () => {
       )
     },
     { 
-      title: 'AI monitoring and control', 
+      title: 'AI Monitoring and Control', 
       desc: 'Comprehensive analytics for operators to track network health and efficiency in real-time.', 
       banner: '/solutions/performance-monitoring-card.png',
       href: '/solutions/ai-monitoring-and-control',

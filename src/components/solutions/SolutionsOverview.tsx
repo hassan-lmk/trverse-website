@@ -3,12 +3,12 @@
 import React from "react";
 
 const tabs = [
-  { id: "afc", label: "Fare Collection", short: "AFC" },
-  { id: "its", label: "Transport Systems", short: "ITS" },
-  { id: "scheduling", label: "Advanced scheduling system", short: "ADV" },
-  { id: "control", label: "Fleet management", short: "FLM" },
-  { id: "micro", label: "Micro-Mobility", short: "MMI" },
-  { id: "performance", label: "AI monitoring and control", short: "AIC" },
+  { id: "afc", label: "Automated Fare Collection", short: "AFC" },
+  { id: "its", label: "Intelligent Transport Systems", short: "ITS" },
+  { id: "scheduling", label: "Advanced Scheduling System", short: "ADV" },
+  { id: "control", label: "Fleet Management", short: "FLM" },
+  { id: "micro", label: "Micro-Mobility Integration", short: "MMI" },
+  { id: "performance", label: "AI Monitoring and Control", short: "AIC" },
 ];
 
 const SolutionsOverview = () => {
