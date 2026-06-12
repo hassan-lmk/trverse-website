@@ -196,9 +196,6 @@ const ContactPageContent = () => {
                   <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#5a6a7e", lineHeight: 1.7, margin: 0 }}>
                     <strong style={{ color: "#0a1e3d" }}>Phone:</strong> {office.phone}
                   </p>
-                  <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#5a6a7e", lineHeight: 1.7, margin: 0 }}>
-                    <strong style={{ color: "#0a1e3d" }}>Fax:</strong> {office.fax ?? "—"}
-                  </p>
                   {office.email ? (
                     <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#5a6a7e", lineHeight: 1.7, margin: 0 }}>
                       <strong style={{ color: "#0a1e3d" }}>Email:</strong> {office.email}

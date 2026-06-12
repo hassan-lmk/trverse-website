@@ -3,15 +3,29 @@
 import React from "react";
 import Link from "next/link";
 import type { InsightItem } from "@/data/insights";
+import Pagination, { ITEMS_PER_PAGE } from "@/components/insights/Pagination";
 
 type Props = {
   items: InsightItem[];
 };
 
 const InsightsGrid = ({ items }: Props) => {
+  const gridRef = React.useRef<HTMLDivElement>(null);
+  const [currentPage, setCurrentPage] = React.useState(1);
+
+  const totalPages = Math.ceil(items.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const visibleItems = items.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
-      {items.map((item) => (
+    <div ref={gridRef} style={{ scrollMarginTop: 120 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24 }}>
+        {visibleItems.map((item) => (
         <Link key={item.slug} href={`/insights/${item.slug}`} style={{ textDecoration: "none" }}>
           <article
             style={{
@@ -37,7 +51,7 @@ const InsightsGrid = ({ items }: Props) => {
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={item.image} alt={item.title} style={{ width: "100%", height: 210, objectFit: "cover" }} />
+            <img src={item.image} alt={item.title} style={{ width: "100%", height: 260, objectFit: "cover" }} />
             <div style={{ padding: 24, display: "flex", flexDirection: "column", gap: 12, flex: 1 }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
                 <span
@@ -103,7 +117,15 @@ const InsightsGrid = ({ items }: Props) => {
             </div>
           </article>
         </Link>
-      ))}
+        ))}
+      </div>
+
+      <Pagination
+        currentPage={currentPage}
+        totalPages={totalPages}
+        onPageChange={handlePageChange}
+        label="Insights pagination"
+      />
     </div>
   );
 };

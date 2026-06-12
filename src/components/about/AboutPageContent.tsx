@@ -150,7 +150,7 @@ const AboutPageContent = () => {
                 margin: 0,
               }}
             >
-              From LMKR to TRVERSE
+            Growth & Evolution
             </h2>
           </div>
 

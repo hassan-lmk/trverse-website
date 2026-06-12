@@ -1,7 +1,9 @@
 "use client";
 
+import React from "react";
 import Link from "next/link";
 import type { CaseStudy } from "@/data/caseStudies";
+import Pagination, { ITEMS_PER_PAGE } from "@/components/insights/Pagination";
 
 type Props = {
   studies: CaseStudy[];
@@ -20,6 +22,17 @@ const IconArrowRight = () => (
 );
 
 const CaseStudiesInInsights = ({ studies }: Props) => {
+  const gridRef = React.useRef<HTMLDivElement>(null);
+  const [currentPage, setCurrentPage] = React.useState(1);
+  const totalPages = Math.ceil(studies.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const visibleStudies = studies.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   if (!studies.length) return null;
 
   return (
@@ -66,8 +79,9 @@ const CaseStudiesInInsights = ({ studies }: Props) => {
           </p>
         </div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: 24 }}>
-          {studies.map((item) => (
+        <div ref={gridRef} style={{ scrollMarginTop: 120 }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: 24 }}>
+            {visibleStudies.map((item) => (
             <Link key={item.slug} href={`/case-studies/${item.slug}`} style={{ textDecoration: "none" }}>
               <article
                 style={{
@@ -162,7 +176,15 @@ const CaseStudiesInInsights = ({ studies }: Props) => {
                 </div>
               </article>
             </Link>
-          ))}
+            ))}
+          </div>
+
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+            label="Case studies pagination"
+          />
         </div>
       </div>
     </section>

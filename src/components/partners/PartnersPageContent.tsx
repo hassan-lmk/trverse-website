@@ -72,8 +72,8 @@ const PartnersPageContent = () => {
         className="partners-section"
         style={{ background: "#fff", padding: "90px 48px 100px" }}
       >
-        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto", marginBottom: 48 }}>
+          <div style={{ textAlign: "center" }}>
             <span
               style={{
                 fontFamily: "var(--font-body)",
@@ -101,8 +101,8 @@ const PartnersPageContent = () => {
               Technology and domain leaders we collaborate with
             </h2>
           </div>
-          <PartnersLogoGrid />
         </div>
+        <PartnersLogoGrid />
       </section>
 
       <section
@@ -315,8 +315,8 @@ const PartnersPageContent = () => {
         className="partners-section"
         style={{ background: "#fff", padding: "100px 48px 110px" }}
       >
-        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <div style={{ textAlign: "center", marginBottom: 48 }}>
+        <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
+          <div style={{ marginBottom: 48 }}>
             <span
               style={{
                 fontFamily: "var(--font-body)",
@@ -429,7 +429,7 @@ const PartnersPageContent = () => {
             >
               Built on trust. Driven by outcomes. Designed for scale.
             </p>
-            <a href="/contact" className="hero-btn-primary">
+            <a href="#partner-form" className="hero-btn-primary">
               Become a Partner
             </a>
           </div>
@@ -472,20 +472,22 @@ const PartnersPageContent = () => {
           margin-bottom: 18px;
         }
         .partners-focus-list {
-          display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           gap: 16px;
-          max-width: 900px;
-          margin: 0 auto;
         }
         .partners-focus-item {
-          display: flex;
+          display: inline-flex;
           align-items: center;
+          justify-content: center;
           gap: 12px;
+          width: 100%;
+          max-width: 520px;
           background: #f7f9fc;
           border: 1px solid rgba(19, 79, 137, 0.08);
           border-radius: 14px;
-          padding: 18px 20px;
+          padding: 18px 24px;
         }
         .partners-focus-dot {
           width: 8px;
@@ -500,8 +502,7 @@ const PartnersPageContent = () => {
             padding-right: 28px !important;
           }
           .partners-why-grid,
-          .partners-steps-grid,
-          .partners-focus-list {
+          .partners-steps-grid {
             grid-template-columns: 1fr !important;
           }
           .partners-closing-panel {
