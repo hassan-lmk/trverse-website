@@ -41,8 +41,8 @@ const Nav = () => {
 
   const navItems = [
     { label: 'Products', href: '/products' },
-    { label: 'Partners', href: '/#partners' },
-    { label: 'About Us', href: '/#about-us' },
+    { label: 'Partners', href: '/partners' },
+    { label: 'About Us', href: '/about' },
     { label: 'Insights', href: '/insights' },
   ];
 

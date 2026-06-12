@@ -2,33 +2,7 @@
 
 import React from "react";
 import ContactForm from "@/components/contact/ContactForm";
-
-const offices = [
-  {
-    region: "United States",
-    company: "LMK Resources Inc.",
-    address: [
-      "6051 North Course Drive, Suite 300,",
-      "Houston, TX 77072, USA",
-    ],
-    phone: "+1.281.495.5657",
-    fax: "+1.281.568.7315",
-    mapUrl: "https://maps.app.goo.gl/nrGaZzjxQf7w2urf6",
-  },
-  {
-    region: "United Arab Emirates",
-    company: "LMKR Holdings",
-    address: [
-      "Office No 512, 5th floor, CNPC Building 1,",
-      "Emaar Business Park, Sheikh Zayed Road,",
-      "Dubai, UAE.",
-    ],
-    phone: "+971 4 3209565",
-    fax: "+971 4 2394099",
-    email: "office@lmkr.com",
-    mapUrl: "https://maps.app.goo.gl/A1Zgp6kVU1hmEX5D8",
-  },
-];
+import { offices } from "@/data/offices";
 
 const ContactPageContent = () => {
   return (
@@ -174,10 +148,16 @@ const ContactPageContent = () => {
             </h3>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 24 }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: 24,
+            }}
+          >
             {offices.map((office) => (
               <article
-                key={office.region}
+                key={`${office.region}-${office.city}`}
                 style={{
                   background: "#f7f9fc",
                   borderRadius: 20,
@@ -198,17 +178,6 @@ const ContactPageContent = () => {
                 >
                   {office.region}
                 </div>
-                <h4
-                  style={{
-                    fontFamily: "var(--font-display)",
-                    fontSize: 24,
-                    fontWeight: 650,
-                    color: "#0a1e3d",
-                    margin: "0 0 16px",
-                  }}
-                >
-                  {office.company}
-                </h4>
                 <div style={{ display: "grid", gap: 10 }}>
                   <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#5a6a7e", lineHeight: 1.75, margin: 0 }}>
                     {office.address.map((line) => (
@@ -217,34 +186,42 @@ const ContactPageContent = () => {
                         <br />
                       </React.Fragment>
                     ))}
+                    {office.postalCode ? (
+                      <>
+                        Postal Code: {office.postalCode}
+                        <br />
+                      </>
+                    ) : null}
                   </p>
                   <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#5a6a7e", lineHeight: 1.7, margin: 0 }}>
                     <strong style={{ color: "#0a1e3d" }}>Phone:</strong> {office.phone}
                   </p>
                   <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#5a6a7e", lineHeight: 1.7, margin: 0 }}>
-                    <strong style={{ color: "#0a1e3d" }}>Fax:</strong> {office.fax}
+                    <strong style={{ color: "#0a1e3d" }}>Fax:</strong> {office.fax ?? "—"}
                   </p>
                   {office.email ? (
                     <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#5a6a7e", lineHeight: 1.7, margin: 0 }}>
                       <strong style={{ color: "#0a1e3d" }}>Email:</strong> {office.email}
                     </p>
                   ) : null}
-                  <p style={{ margin: "6px 0 0" }}>
-                    <a
-                      href={office.mapUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      style={{
-                        fontFamily: "var(--font-body)",
-                        fontSize: 14,
-                        fontWeight: 600,
-                        color: "var(--accent)",
-                        textDecoration: "none",
-                      }}
-                    >
-                      View on map
-                    </a>
-                  </p>
+                  {office.mapUrl ? (
+                    <p style={{ margin: "6px 0 0" }}>
+                      <a
+                        href={office.mapUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{
+                          fontFamily: "var(--font-body)",
+                          fontSize: 14,
+                          fontWeight: 600,
+                          color: "var(--accent)",
+                          textDecoration: "none",
+                        }}
+                      >
+                        View on map
+                      </a>
+                    </p>
+                  ) : null}
                 </div>
               </article>
             ))}

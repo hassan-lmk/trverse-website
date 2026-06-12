@@ -5,6 +5,7 @@ type Props = {
   title: ReactNode;
   description?: string;
   backgroundImageSrc: string;
+  backgroundImageAlt?: string;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
 };
@@ -14,6 +15,7 @@ const InsightsHero = ({
   title,
   description,
   backgroundImageSrc,
+  backgroundImageAlt = "",
   primaryCta,
   secondaryCta,
 }: Props) => {
@@ -59,7 +61,7 @@ const InsightsHero = ({
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={backgroundImageSrc}
-          alt=""
+          alt={backgroundImageAlt}
           style={{
             position: "absolute",
             inset: 0,

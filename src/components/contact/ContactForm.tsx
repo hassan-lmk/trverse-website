@@ -11,6 +11,7 @@ const solutionOptions = [
   "Micro-Mobility Integration",
   "Open-Loop Payments",
   "Custom Mobility Platform",
+  "Other",
 ];
 
 type Props = {

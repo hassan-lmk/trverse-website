@@ -1,16 +1,7 @@
 "use client";
 
 import React from 'react';
-
-const partners = [
-  { name: 'Hikvision', logo: '/partners-logo/hikvision.png' },
-  { name: 'Huawei', logo: '/partners-logo/HUAWEI.png' },
-  { name: 'Mastercard', logo: '/partners-logo/mastercard-logo.svg' },
-  { name: 'Amazon Web Services', logo: '/partners-logo/AWS-LOGO.svg' },
-  { name: 'Dell', logo: '/partners-logo/DELL-LOGO.svg' },
-  { name: 'Microsoft', logo: '/partners-logo/Microsoft_logo_(2012).svg' },
-  { name: 'UITP', logo: '/partners-logo/UITP.svg' }
-];
+import { partnerLogos } from '@/data/partners';
 
 const PartnerMarquee = () => {
   return (
@@ -73,7 +64,7 @@ const PartnerMarquee = () => {
           }
         `}} />
         <div className="marquee-track">
-          {[...partners, ...partners, ...partners].map((partner, index) => (
+          {[...partnerLogos, ...partnerLogos, ...partnerLogos].map((partner, index) => (
             <div key={index} className="partner-logo-box">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img 

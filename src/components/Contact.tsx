@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ContactForm from "@/components/contact/ContactForm";
+import { officeFooterLabels } from "@/data/offices";
 
 const Contact = () => {
   return (
@@ -74,13 +75,10 @@ const Contact = () => {
               Talk to TRVERSE about building a connected mobility system for your city.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
-              {[
-                { icon: '◎', text: 'Dubai, UAE' },
-                { icon: '◎', text: 'Houston, Texas, USA' },
-              ].map((loc, i) => (
-                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                  <span style={{ color: 'var(--accent)', fontSize: 12 }}>{loc.icon}</span>
-                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.7)' }}>{loc.text}</span>
+              {officeFooterLabels.map((loc) => (
+                <div key={loc.label} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                  <span style={{ color: 'var(--accent)', fontSize: 12 }}>◎</span>
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.7)' }}>{loc.label}</span>
                 </div>
               ))}
             </div>
