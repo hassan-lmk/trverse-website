@@ -24,7 +24,6 @@ export type SolutionLandingDoc = {
   /** Section headline under the eyebrow — value statement, not the product name. */
   highlightsSubheading?: string;
   highlights: string[];
-  featuresHeading: string;
   features: SolutionFeatureBlock[];
 };
 
@@ -83,7 +82,6 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       "Integrated ticketing across multiple routes and operators",
       "Designed for high-volume passenger flow",
     ],
-    featuresHeading: "Feature blocks",
     features: [
       {
         title: "Flexible payment support",
@@ -133,7 +131,6 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       "KPI dashboards and reporting",
       "Continuous system monitoring",
     ],
-    featuresHeading: "Feature Blocks",
     features: [
       {
         title: "Fleet Monitoring",
@@ -183,7 +180,6 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       "Schedule adherence tracking",
       "Scenario-based planning",
     ],
-    featuresHeading: "Feature Blocks",
     features: [
       {
         title: "Dynamic Scheduling",
@@ -230,7 +226,6 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       "System-wide coordination",
       "Performance tracking",
     ],
-    featuresHeading: "Feature Blocks",
     features: [
       {
         title: "Unified Dashboard",
@@ -278,7 +273,6 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       "Scalable across cities",
       "Works alongside core transit systems",
     ],
-    featuresHeading: "Feature Blocks",
     features: [
       {
         title: "Multi-Modal Integration",
@@ -325,7 +319,6 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       "Historical trend analysis",
       "Data-driven decision support",
     ],
-    featuresHeading: "Feature Blocks",
     features: [
       {
         title: "Operational Dashboards",

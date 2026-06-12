@@ -32,30 +32,30 @@ const systems = [
       </svg>
     ),
     title: "Access Control & Attendance",
-    desc: "Manage staff access and track attendance across depots, stations, and control centres.",
+    desc: "Manage staff access and track attendance across depots, stations, and control centers.",
   },
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-        <rect x="2" y="3" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.8"/>
-        <path d="M7 19h8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-        <path d="M11 17v2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-        <path d="M6 9h10M6 12h6" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity="0.5"/>
+        <path d="M4 5h14v12H4V5z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+        <path d="M8 9h6M8 12h4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M11 16v2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
       </svg>
     ),
-    title: "Passenger Information Displays",
-    desc: "Real-time platform displays, digital boards, and in-vehicle information systems.",
+    title: "Grievance Management",
+    desc: "Capture, track, and resolve employee and customer grievances through a structured workflow.",
   },
   {
     icon: (
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-        <rect x="5" y="1" width="12" height="20" rx="3" stroke="currentColor" strokeWidth="1.8"/>
-        <path d="M9 17h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/>
-        <rect x="8" y="5" width="6" height="8" rx="1" fill="currentColor" opacity="0.1" stroke="currentColor" strokeWidth="1.2"/>
+        <rect x="2" y="4" width="18" height="11" rx="2" stroke="currentColor" strokeWidth="1.8" />
+        <path d="M7 19h8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        <path d="M11 15v4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        <path d="M6 8h10M6 11h7" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" opacity="0.5" />
       </svg>
     ),
-    title: "Mobile Apps & Digital Wallets",
-    desc: "Passenger-facing apps for journey planning, mobile ticketing, and digital payments.",
+    title: "Infotainment System",
+    desc: "Deliver real-time passenger information and targeted digital advertising across the stations.",
   },
 ];
 
@@ -102,11 +102,6 @@ const SupportingSystems = () => {
       `}} />
 
       {/* Decoration */}
-      <div style={{
-        position: "absolute", right: -80, top: -80, width: 360, height: 360,
-        borderRadius: "50%", background: "rgba(255,130,93,0.05)",
-        pointerEvents: "none",
-      }} />
       <div style={{
         position: "absolute", left: -60, bottom: -60, width: 280, height: 280,
         borderRadius: "50%", background: "rgba(255,255,255,0.02)",

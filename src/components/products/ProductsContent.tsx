@@ -159,8 +159,8 @@ const softwareProducts: SoftwareProduct[] = [
   {
     slug: "core",
     categoryHeading: "Operational Infrastructure",
-    name: "TRVERSE Base",
-    shortName: "Base",
+    name: "TRVERSE Core",
+    shortName: "Core",
     tagline: "The systems behind everything that works",
     description:
       "Manages operational infrastructure, asset inventory, and administrative workflows.",
@@ -205,7 +205,7 @@ const hardwareCategories: HardwareCategory[] = [
         label: "Fare Validators",
         description:
           "High-speed contactless validation for both bus environments and station fare gates.",
-        imageSrc: "/products/devices/fare-validator.png",
+        imageSrc: "/products/devices/fare-validator.jpg",
         imageAlt: "TRVERSE fare validator mounted on a transit bus",
       },
       {
@@ -1049,7 +1049,7 @@ export default function ProductsContent() {
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: 17,
-                  color: "rgba(255,255,255,0.7)",
+                  color: "#fff",
                   lineHeight: 1.75,
                   maxWidth: 520,
                   margin: "0 auto 32px",

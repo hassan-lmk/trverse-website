@@ -417,20 +417,6 @@ export default function SolutionLandingContent({ doc }: Props) {
       >
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 56 }}>
-            <span
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: 12,
-                fontWeight: 800,
-                color: "#134f89",
-                letterSpacing: "0.14em",
-                textTransform: "uppercase",
-                display: "block",
-                marginBottom: 14,
-              }}
-            >
-              {doc.featuresHeading}
-            </span>
             <h2
               style={{
                 fontFamily: "var(--font-display)",
@@ -441,7 +427,7 @@ export default function SolutionLandingContent({ doc }: Props) {
                 letterSpacing: "-0.02em",
               }}
             >
-              {doc.productLine}
+              Key Features
             </h2>
           </div>
 
@@ -546,7 +532,7 @@ export default function SolutionLandingContent({ doc }: Props) {
                   style={{
                     fontFamily: "var(--font-body)",
                     fontSize: 16,
-                    color: "rgba(255,255,255,0.72)",
+                    color: "#fff",
                     margin: 0,
                     lineHeight: 1.65,
                     maxWidth: 480,

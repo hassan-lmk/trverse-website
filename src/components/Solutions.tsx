@@ -44,7 +44,8 @@ const Solutions = () => {
     { 
       title: 'Micro-Mobility Integration', 
       desc: 'Extend transit with connected first and last mile services integrated into the core backbone.', 
-      banner: '/solutions/micro-mobility-card.png',
+      banner: '/assets/micro-mobility-bike-sharing.webp',
+      bannerPosition: 'top center',
       href: '/solutions/Micro-mobility-integration',
       icon: (
         <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><circle cx="8" cy="20" r="4" stroke="var(--accent)" strokeWidth="1.8"/><circle cx="22" cy="20" r="4" stroke="var(--accent)" strokeWidth="1.8"/><path d="M8 16l6-10h4l2 10" stroke="var(--accent)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -184,7 +185,16 @@ const Solutions = () => {
               </div>
               <div className="solution-banner-container">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={s.banner} alt={s.title} className="solution-banner" />
+                <img
+                  src={s.banner}
+                  alt={s.title}
+                  className="solution-banner"
+                  style={
+                    "bannerPosition" in s && s.bannerPosition
+                      ? { objectPosition: s.bannerPosition, transformOrigin: s.bannerPosition }
+                      : undefined
+                  }
+                />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent, rgba(10,30,61,0.2))' }}></div>
               </div>
               <div className="solution-content">

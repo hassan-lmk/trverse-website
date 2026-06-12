@@ -687,7 +687,7 @@ const CaseStudyDetailBody = ({ item }: Props) => {
               <h2 style={{ fontFamily: displayFont, fontSize: "clamp(28px, 3.2vw, 40px)", fontWeight: 700, margin: "0 0 14px", lineHeight: 1.15 }}>
                 Ready for a similar outcome?
               </h2>
-              <p style={{ fontFamily: bodyFont, fontSize: 17, color: "rgba(255,255,255,0.65)", lineHeight: 1.75, margin: "0 0 28px" }}>
+              <p style={{ fontFamily: bodyFont, fontSize: 17, color: "#fff", lineHeight: 1.75, margin: "0 0 28px" }}>
                 Tell us about your corridor, fleet, and timeline — we’ll map the right TRVERSE stack to your network.
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>

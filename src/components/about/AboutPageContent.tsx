@@ -423,7 +423,7 @@ const AboutPageContent = () => {
               style={{
                 fontFamily: "var(--font-body)",
                 fontSize: 17,
-                color: "rgba(255,255,255,0.75)",
+                color: "#fff",
                 lineHeight: 1.8,
                 margin: "0 0 20px",
               }}
@@ -436,7 +436,7 @@ const AboutPageContent = () => {
               style={{
                 fontFamily: "var(--font-body)",
                 fontSize: 17,
-                color: "rgba(255,255,255,0.75)",
+                color: "#fff",
                 lineHeight: 1.8,
                 margin: "0 0 36px",
               }}

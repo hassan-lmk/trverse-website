@@ -76,7 +76,7 @@ const ContactPageContent = () => {
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: 17,
-                  color: "rgba(255,255,255,0.62)",
+                  color: "#fff",
                   lineHeight: 1.8,
                   margin: "0 0 36px",
                   maxWidth: 560,
@@ -105,7 +105,7 @@ const ContactPageContent = () => {
                       style={{
                         fontFamily: "var(--font-body)",
                         fontSize: 15,
-                        color: "rgba(255,255,255,0.76)",
+                        color: "#fff",
                       }}
                     >
                       {item}

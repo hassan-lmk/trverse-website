@@ -162,7 +162,7 @@ const SolutionsCTA = () => {
             <p style={{
               fontFamily: "var(--font-body)",
               fontSize: 17,
-              color: "rgba(255,255,255,0.55)",
+              color: "#fff",
               lineHeight: 1.75,
               margin: "0 auto 56px",
               maxWidth: 520,
@@ -183,7 +183,7 @@ const SolutionsCTA = () => {
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-              <a href="/contact" className="cta-btn-outline" style={{ color: "rgba(255,255,255,0.8)", border: "2px solid rgba(255,255,255,0.2)" }}
+              <a href="/contact" className="cta-btn-outline" style={{ color: "#fff", border: "2px solid rgba(255,255,255,0.2)" }}
                 onMouseEnter={e => {
                   e.currentTarget.style.background = "rgba(255,255,255,0.06)";
                   e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)";
@@ -211,9 +211,9 @@ const SolutionsCTA = () => {
               {[
                 "Proven across multiple cities",
                 "Modular and scalable platform",
-                "End-to-end implementation support",
+                "Implementation and operations management",
               ].map((item, i) => (
-                <div key={i} className="trust-item" style={{ color: "rgba(255,255,255,0.45)" }}>
+                <div key={i} className="trust-item" style={{ color: "#fff" }}>
                   <div className="trust-dot" />
                   {item}
                 </div>

@@ -71,14 +71,14 @@ const Contact = () => {
             <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 36, fontWeight: 600, color: '#fff', margin: '0 0 20px', lineHeight: 1.2 }}>
               Let's improve how your transit system runs
             </h2>
-            <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, margin: '0 0 32px' }}>
+            <p style={{ fontFamily: 'var(--font-body)', fontSize: 16, color: '#fff', lineHeight: 1.7, margin: '0 0 32px' }}>
               Talk to TRVERSE about building a connected mobility system for your city.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
               {officeFooterLabels.map((loc) => (
                 <div key={loc.label} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
                   <span style={{ color: 'var(--accent)', fontSize: 12 }}>◎</span>
-                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: 'rgba(255,255,255,0.7)' }}>{loc.label}</span>
+                  <span style={{ fontFamily: 'var(--font-body)', fontSize: 14, color: '#fff' }}>{loc.label}</span>
                 </div>
               ))}
             </div>

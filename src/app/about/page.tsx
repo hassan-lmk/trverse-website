@@ -29,8 +29,8 @@ export default function AboutPage() {
           </>
         }
         description="TRVERSE is built on the deep experience and global technology foundation of LMKR — helping organizations turn complex systems into connected, intelligent ecosystems."
-        backgroundImageSrc="/assets/brt-bicycle-station.webp"
-        backgroundImageAlt="Passenger using TRVERSE bicycle-sharing station at a smart mobility hub"
+        backgroundImageSrc="/assets/control-room-maangement.webp"
+        backgroundImageAlt="TRVERSE operations control room with real-time fleet and network monitoring"
       />
       <AboutPageContent />
       <Footer />

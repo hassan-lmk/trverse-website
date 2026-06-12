@@ -11,7 +11,7 @@ const Impact = () => {
   const homePriorityOrder = [
     "masar-makkah-electric-brt",
     "peshawar-brt",
-    "lahore-metro",
+    "islamabad-rawalpindi-metrobus",
   ];
 
   const projects = homePriorityOrder

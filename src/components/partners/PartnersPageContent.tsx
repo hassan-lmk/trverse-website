@@ -315,8 +315,8 @@ const PartnersPageContent = () => {
         className="partners-section"
         style={{ background: "#fff", padding: "100px 48px 110px" }}
       >
-        <div style={{ maxWidth: 760, margin: "0 auto", textAlign: "center" }}>
-          <div style={{ marginBottom: 48 }}>
+        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+          <div style={{ textAlign: "center", marginBottom: 48 }}>
             <span
               style={{
                 fontFamily: "var(--font-body)",
@@ -472,22 +472,39 @@ const PartnersPageContent = () => {
           margin-bottom: 18px;
         }
         .partners-focus-list {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          grid-auto-rows: 1fr;
+          align-items: stretch;
           gap: 16px;
+          max-width: 1080px;
+          margin: 0 auto;
         }
         .partners-focus-item {
-          display: inline-flex;
+          grid-column: span 2;
+          display: flex;
           align-items: center;
           justify-content: center;
           gap: 12px;
-          width: 100%;
-          max-width: 520px;
+          height: 100%;
+          text-align: center;
           background: #f7f9fc;
           border: 1px solid rgba(19, 79, 137, 0.08);
           border-radius: 14px;
-          padding: 18px 24px;
+          padding: 18px 20px;
+        }
+        .partners-focus-item > span:last-child {
+          line-height: 1.45;
+          min-height: calc(1.45em * 2);
+          text-align: center;
+          display: grid;
+          place-items: center;
+        }
+        .partners-focus-item:nth-child(4) {
+          grid-column: 2 / span 2;
+        }
+        .partners-focus-item:nth-child(5) {
+          grid-column: 4 / span 2;
         }
         .partners-focus-dot {
           width: 8px;
@@ -504,6 +521,14 @@ const PartnersPageContent = () => {
           .partners-why-grid,
           .partners-steps-grid {
             grid-template-columns: 1fr !important;
+          }
+          .partners-focus-list {
+            grid-template-columns: 1fr !important;
+          }
+          .partners-focus-item,
+          .partners-focus-item:nth-child(4),
+          .partners-focus-item:nth-child(5) {
+            grid-column: auto !important;
           }
           .partners-closing-panel {
             padding: 48px 32px !important;
