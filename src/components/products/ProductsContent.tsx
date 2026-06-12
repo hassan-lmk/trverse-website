@@ -260,7 +260,7 @@ const hardwareCategories: HardwareCategory[] = [
         label: "Driver Console",
         description:
           "A centralized, ergonomic interface for real-time communication, navigation, and system monitoring.",
-        imageSrc: "/products/devices/driver-console.png",
+        imageSrc: "/products/devices/driver-console.webp",
         imageAlt: "Driver console with digital cluster, CCTV monitor, and route tablet",
       },
       {

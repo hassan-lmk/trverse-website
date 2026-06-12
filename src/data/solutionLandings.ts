@@ -50,7 +50,7 @@ export const solutionHeroBackgroundImages: Record<
   "Intelligent-transport-systems": "/intelligent-transport.png",
   "advanced-scheduling-system": "/solutions/AI-based-scheduling-full.png",
   "fleet-management": "/solutions/control-room-managmeent-full.png",
-  "Micro-mobility-integration": "/assets/brt-bicycle-station.webp",
+  "Micro-mobility-integration": "/assets/micro-mobility-bike-sharing.webp",
   "ai-monitoring-and-control": "/solutions/performance-monitoring-full.png",
 };
 
