@@ -268,7 +268,7 @@ const hardwareCategories: HardwareCategory[] = [
         description:
           "Intelligent edge-processing cameras for passenger counting, safety monitoring, and proactive incident detection.",
         imageSrc: "/products/devices/ai-camera.webp",
-        imageAlt: "Dual-lens AI camera for passenger counting at bus doors",
+        imageAlt: "AI camera monitoring passengers inside a transit bus with real-time analytics",
       },
       {
         label: "CCTV",
