@@ -277,13 +277,42 @@ export default function SolutionLandingContent({ doc }: Props) {
           background: linear-gradient(90deg, var(--accent), #134f89);
           opacity: 0.85;
         }
+        .sol-landing-cta-inner {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: space-between;
+          gap: 32px 40px;
+        }
+        .sol-landing-cta-copy {
+          flex: 1 1 320px;
+          max-width: 640px;
+        }
         .sol-landing-cta-group {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
+          flex-wrap: wrap;
           gap: 12px;
-          align-items: stretch;
-          width: max-content;
-          min-width: 200px;
+          align-items: center;
+          justify-content: flex-end;
+          flex: 0 0 auto;
+        }
+        @media (max-width: 700px) {
+          .sol-landing-cta-inner {
+            flex-direction: column;
+            align-items: stretch;
+          }
+          .sol-landing-cta-copy {
+            max-width: none;
+          }
+          .sol-landing-cta-group {
+            flex-direction: column;
+            align-items: stretch;
+          }
+          .sol-landing-cta-primary,
+          .sol-landing-cta-outline {
+            width: 100%;
+          }
         }
         .sol-landing-cta-primary,
         .sol-landing-cta-outline {
@@ -291,9 +320,9 @@ export default function SolutionLandingContent({ doc }: Props) {
           align-items: center;
           justify-content: center;
           gap: 10px;
-          width: 100%;
           box-sizing: border-box;
           padding: 16px 32px;
+          white-space: nowrap;
           font-family: var(--font-body);
           font-size: 15px;
           font-weight: 700;
@@ -505,17 +534,8 @@ export default function SolutionLandingContent({ doc }: Props) {
                 pointerEvents: "none",
               }}
             />
-            <div
-              style={{
-                position: "relative",
-                zIndex: 1,
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-                gap: 32,
-                alignItems: "center",
-              }}
-            >
-              <div>
+            <div className="sol-landing-cta-inner" style={{ position: "relative", zIndex: 1 }}>
+              <div className="sol-landing-cta-copy">
                 <h2
                   style={{
                     fontFamily: "var(--font-display)",
@@ -535,7 +555,6 @@ export default function SolutionLandingContent({ doc }: Props) {
                     color: "#fff",
                     margin: 0,
                     lineHeight: 1.65,
-                    maxWidth: 480,
                   }}
                 >
                   Ask about Meridian for your corridors, fleets, and digital channels.

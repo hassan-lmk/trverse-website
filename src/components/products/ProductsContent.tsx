@@ -226,15 +226,15 @@ const hardwareCategories: HardwareCategory[] = [
         label: "POS Terminals",
         description:
           "Desktop and handheld Point-of-Sale solutions for versatile on-site ticketing and top-ups.",
-        imageSrc: "/products/devices/pos.png",
-        imageAlt: "Point-of-sale terminal for transit ticketing",
+        imageSrc: "/products/devices/pos.webp",
+        imageAlt: "Sunmi POS terminal for on-board and station transit ticketing",
       },
       {
         label: "RTPI (Real-Time Passenger Information)",
         description:
           "Dynamic display hardware for both stations and buses, providing travelers with live, accurate service updates.",
-        imageSrc: "/products/devices/rtpi.png",
-        imageAlt: "Real-time passenger information display",
+        imageSrc: "/products/devices/rtpi.webp",
+        imageAlt: "In-vehicle RTPI screens showing next station and route map inside a transit bus",
       },
       {
         label: "Handheld Validators",
@@ -267,14 +267,14 @@ const hardwareCategories: HardwareCategory[] = [
         label: "AI Cameras",
         description:
           "Intelligent edge-processing cameras for passenger counting, safety monitoring, and proactive incident detection.",
-        imageSrc: "/products/devices/ai-camera.jpg",
+        imageSrc: "/products/devices/ai-camera.webp",
         imageAlt: "Dual-lens AI camera for passenger counting at bus doors",
       },
       {
         label: "CCTV",
         description:
           "High-definition video surveillance systems providing full interior and exterior fleet coverage for enhanced security.",
-        imageSrc: "/products/devices/bus-cctv.jpg",
+        imageSrc: "/products/devices/bus-cctv.webp",
         imageAlt: "Dome CCTV camera mounted inside a transit bus",
       },
     ],

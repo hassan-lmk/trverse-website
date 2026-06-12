@@ -55,7 +55,7 @@ const Nav = () => {
             height: 64px !important;
           }
           .home-nav-logo {
-            height: 36px !important;
+            height: 40px !important;
           }
           .home-nav-desktop {
             display: none !important;
@@ -68,7 +68,7 @@ const Nav = () => {
       <div className="home-nav-inner" style={innerStyle}>
         <a href="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/assets/logo.svg" alt="TRVERSE" className="home-nav-logo" style={{ height: 40, filter: 'brightness(0) invert(1)' }} />
+          <img src="/assets/logo.svg" alt="TRVERSE" className="home-nav-logo" style={{ height: 48, filter: 'brightness(0) invert(1)' }} />
         </a>
         <div className="home-nav-desktop" style={{ display: 'flex', alignItems: 'center', gap: 36 }}>
           <div

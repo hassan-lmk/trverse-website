@@ -130,7 +130,7 @@ export function DeviceItemsCarousel({ items, categoryLabel }: Props) {
         }
         .device-carousel-image-wrap {
           position: relative;
-          height: 140px;
+          height: 200px;
           overflow: hidden;
           background: #e8eef5;
         }
@@ -140,6 +140,11 @@ export function DeviceItemsCarousel({ items, categoryLabel }: Props) {
           object-fit: cover;
           object-position: center;
           display: block;
+        }
+        @media (min-width: 1024px) {
+          .device-carousel-image-wrap {
+            height: 220px;
+          }
         }
         .device-carousel-image-placeholder {
           width: 100%;
@@ -246,7 +251,7 @@ export function DeviceItemsCarousel({ items, categoryLabel }: Props) {
         }
         @media (max-width: 520px) {
           .device-carousel-image-wrap {
-            height: 112px;
+            height: 128px;
           }
           .device-carousel-label {
             font-size: 13px;

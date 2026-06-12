@@ -67,7 +67,7 @@ const SolutionsHero = () => {
           }}
         >
           <source
-            src="https://res.cloudinary.com/dl3ulxgq4/video/upload/v1779262657/YTDown_YouTube_Solution-page-trverse-web-banner-1_Media_3LwWDp61Q1s_001_1080p_h19d4u.mp4"
+            src="https://res.cloudinary.com/dl3ulxgq4/video/upload/v1781268595/trverse-solution-page-web-banner_li4mcg.mp4"
             type="video/mp4"
           />
         </video>
