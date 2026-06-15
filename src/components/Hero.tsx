@@ -2,13 +2,6 @@
 
 import React from 'react';
 
-const heroStats = [
-  { val: "500M+", label: "Annual rides processed" },
-  { val: "6", label: "Cities deployed" },
-  { val: "99.9%", label: "Platform uptime SLA" },
-  { val: "30 yrs", label: "LMKR enterprise heritage" },
-];
-
 const Hero = () => {
   const [loaded, setLoaded] = React.useState(false);
   React.useEffect(() => { setTimeout(() => setLoaded(true), 100); }, []);
@@ -90,29 +83,7 @@ const Hero = () => {
           line-height: 1.7;
           color: rgba(255,255,255,0.75);
           max-width: 640px;
-          margin: 0 0 36px;
-        }
-        .home-hero-stats {
-          display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
-          gap: 24px;
-          margin-bottom: 40px;
-          padding-top: 28px;
-          border-top: 1px solid rgba(255,255,255,0.12);
-        }
-        .home-hero-stat-value {
-          font-family: var(--font-display);
-          font-size: clamp(28px, 3vw, 36px);
-          font-weight: 700;
-          color: #fff;
-          margin-bottom: 6px;
-          letter-spacing: -0.02em;
-        }
-        .home-hero-stat-label {
-          font-family: var(--font-body);
-          font-size: 13px;
-          color: rgba(255,255,255,0.65);
-          line-height: 1.45;
+          margin: 0 0 40px;
         }
         .home-hero-actions {
           display: flex;
@@ -148,12 +119,6 @@ const Hero = () => {
             max-width: 100%;
             margin-bottom: 32px;
           }
-          .home-hero-stats {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 24px 20px;
-            margin-bottom: 32px;
-            padding-top: 24px;
-          }
         }
 
         @media (max-width: 700px) {
@@ -182,20 +147,6 @@ const Hero = () => {
             font-size: 15px;
             line-height: 1.65;
             margin-bottom: 28px;
-          }
-          .home-hero-stats {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 20px 16px;
-            margin-bottom: 28px;
-            padding-top: 20px;
-          }
-          .home-hero-stat-value {
-            font-size: clamp(24px, 7vw, 30px);
-            margin-bottom: 4px;
-          }
-          .home-hero-stat-label {
-            font-size: 12px;
-            line-height: 1.4;
           }
           .home-hero-actions {
             flex-direction: column;
@@ -281,16 +232,7 @@ const Hero = () => {
             TRVERSE connects automated fare collection, intelligent transport systems, fleet management, and AI analytics into a single, integrated platform — built for the operational demands of modern mass transit.
           </p>
 
-          <div className="home-hero-stats" style={reveal('0.7s')}>
-            {heroStats.map((stat) => (
-              <div key={stat.label}>
-                <div className="home-hero-stat-value">{stat.val}</div>
-                <div className="home-hero-stat-label">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-
-          <div className="home-hero-actions" style={reveal('0.9s')}>
+          <div className="home-hero-actions" style={reveal('0.8s')}>
             <a href="#solutions" className="hero-btn-primary">Explore Solutions</a>
             <a href="/contact" className="hero-btn-secondary">Talk to Us</a>
           </div>
