@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
 
@@ -9,8 +10,9 @@ const urbanist = Urbanist({
 });
 
 export const metadata: Metadata = {
-  title: "TRVERSE — Better Mobility for Cities",
-  description: "Smart Mobility Platform from fare collection to fleet control",
+  title: "TRVERSE | Mass Transit AFC, ITS & AI Platform | Global Leader",
+  description:
+    "TRVERSE delivers end-to-end automated fare collection, intelligent transport systems, fleet management, and AI monitoring for mass transit networks worldwide. Backed by LMKR's 30-year enterprise legacy.",
   icons: {
     icon: "/favicon.webp",
   },
@@ -26,7 +28,21 @@ export default function RootLayout({
       lang="en"
       className={`${urbanist.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-6015NQ5BW5"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-6015NQ5BW5');
+          `}
+        </Script>
+        {children}
+      </body>
     </html>
   );
 }
