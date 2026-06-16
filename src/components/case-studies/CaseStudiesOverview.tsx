@@ -407,7 +407,7 @@ const CaseStudiesOverview = ({ studies }: Props) => {
             Planning a similar deployment?
           </p>
           <Link
-            href="/contact"
+            href="/get-a-demo"
             style={{
               display: "inline-flex",
               alignItems: "center",
@@ -423,7 +423,7 @@ const CaseStudiesOverview = ({ studies }: Props) => {
               boxShadow: "0 10px 28px rgba(255,130,93,0.35)",
             }}
           >
-            Talk to our team
+            Get a Demo
             <IconArrowRight />
           </Link>
         </div>

@@ -204,7 +204,7 @@ const CaseStudyDetailBody = ({ item }: Props) => {
                 >
                   {item.title}
                 </h2>
-                {item.headline ? (
+                {item.headline && !overviewParagraphs.length ? (
                   <p
                     style={{
                       fontFamily: displayFont,
@@ -417,6 +417,20 @@ const CaseStudyDetailBody = ({ item }: Props) => {
                   Challenge
                 </h2>
               </div>
+              {item.challengeLead ? (
+                <p
+                  style={{
+                    fontFamily: displayFont,
+                    fontSize: 18,
+                    fontWeight: 600,
+                    color: "#134f89",
+                    lineHeight: 1.45,
+                    margin: "0 0 20px",
+                  }}
+                >
+                  {item.challengeLead}
+                </p>
+              ) : null}
               <div style={{ display: "grid", gap: 16 }}>
                 {item.challenge.map((paragraph) => (
                   <p key={paragraph.slice(0, 50)} style={{ fontFamily: bodyFont, fontSize: 16.5, color: "#5a6a7e", lineHeight: 1.82, margin: 0 }}>
@@ -793,7 +807,7 @@ const CaseStudyDetailBody = ({ item }: Props) => {
               </p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
                 <Link
-                  href="/contact"
+                  href="/get-a-demo"
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
@@ -809,7 +823,7 @@ const CaseStudyDetailBody = ({ item }: Props) => {
                     boxShadow: "0 10px 28px rgba(255,130,93,0.35)",
                   }}
                 >
-                  Contact TRVERSE
+                  Get a Demo
                 </Link>
                 <Link
                   href="/insights#all-case-studies"

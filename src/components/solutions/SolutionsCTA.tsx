@@ -177,13 +177,13 @@ const SolutionsCTA = () => {
               flexWrap: "wrap",
               marginBottom: 48,
             }}>
-              <a href="/contact" className="cta-btn-primary">
-                Contact Us
+              <a href="/get-a-demo" className="cta-btn-primary">
+                Get a Demo
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-              <a href="/contact" className="cta-btn-outline" style={{ color: "#fff", border: "2px solid rgba(255,255,255,0.2)" }}
+              <a href="/get-a-demo" className="cta-btn-outline" style={{ color: "#fff", border: "2px solid rgba(255,255,255,0.2)" }}
                 onMouseEnter={e => {
                   e.currentTarget.style.background = "rgba(255,255,255,0.06)";
                   e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)";

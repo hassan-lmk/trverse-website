@@ -55,5 +55,5 @@ const regionShortLabel: Record<string, string> = {
 
 export const officeFooterLabels = offices.map((office) => ({
   label: `${office.city}, ${regionShortLabel[office.region] ?? office.region}`,
-  href: "/contact",
+  href: "/get-a-demo#offices",
 }));

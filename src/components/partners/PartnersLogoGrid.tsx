@@ -9,7 +9,6 @@ type Props = {
 const PartnersLogoGrid = ({ variant = "light" }: Props) => {
   const isMuted = variant === "muted";
   const fadeColor = isMuted ? "#f7f9fc" : "#fff";
-  const boxBackground = isMuted ? "#fff" : "#f7f9fc";
 
   return (
     <div
@@ -63,18 +62,14 @@ const PartnersLogoGrid = ({ variant = "light" }: Props) => {
             width: 200px;
             height: 100px;
             margin: 0 24px;
-            border: 1px solid rgba(19, 79, 137, 0.08);
-            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 24px;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            transition: transform 0.25s ease;
           }
           .partners-logo-marquee-item:hover {
             transform: translateY(-4px);
-            border-color: rgba(255, 130, 93, 0.3) !important;
-            box-shadow: 0 14px 32px rgba(10, 30, 61, 0.08);
           }
           .partners-logo-marquee-img {
             max-height: 52px;
@@ -90,7 +85,6 @@ const PartnersLogoGrid = ({ variant = "light" }: Props) => {
               key={`${partner.name}-${index}`}
               role="listitem"
               className="partners-logo-marquee-item"
-              style={{ background: boxBackground }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img

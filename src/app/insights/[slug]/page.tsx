@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import InsightsHero from "@/components/insights/InsightsHero";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { insights } from "@/data/insights";
 
 type Props = {
@@ -41,6 +42,14 @@ export default async function InsightDetailPage({ params }: Props) {
         backgroundImageSrc={item.image}
         primaryCta={{ label: "Read story", href: "#insight-content" }}
         secondaryCta={{ label: "All insights", href: "/insights" }}
+      />
+
+      <PageBreadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Insights", href: "/insights" },
+          { label: item.title },
+        ]}
       />
 
       <section id="insight-content" style={{ background: "#fff", padding: "110px 48px" }}>

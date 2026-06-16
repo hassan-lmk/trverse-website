@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import InsightsHero from "@/components/insights/InsightsHero";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import AboutPageContent from "@/components/about/AboutPageContent";
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function AboutPage() {
         backgroundImageSrc="/assets/about-hero-banner.webp"
         backgroundImageAlt="Connected smart mobility network over a nighttime highway interchange"
       />
+      <PageBreadcrumb items={[{ label: "Home", href: "/" }, { label: "About" }]} />
       <AboutPageContent />
       <Footer />
     </main>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import SolutionsHero from "@/components/solutions/SolutionsHero";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import SolutionsOverview from "@/components/solutions/SolutionsOverview";
 import SolutionDetail from "@/components/solutions/SolutionDetail";
 import SupportingSystems from "@/components/solutions/SupportingSystems";
@@ -18,6 +19,7 @@ export default function SolutionsPage() {
     <main>
       <Nav />
       <SolutionsHero />
+      <PageBreadcrumb items={[{ label: "Home", href: "/" }, { label: "Solutions" }]} />
       <SolutionsOverview />
       <SolutionDetail />
       <SupportingSystems />

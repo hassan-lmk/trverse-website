@@ -83,17 +83,6 @@ export default function SolutionLandingContent({ doc }: Props) {
       <style
         dangerouslySetInnerHTML={{
           __html: `
-        .sol-landing-crumb {
-          font-family: var(--font-body);
-          font-size: 13px;
-          color: #6a7a8e;
-        }
-        .sol-landing-crumb a {
-          color: #134f89;
-          text-decoration: none;
-          font-weight: 600;
-        }
-        .sol-landing-crumb a:hover { text-decoration: underline; color: var(--accent); }
         /* Key highlights redesign: heading+image row, then bullet cards */
         .sol-highlights-top {
           display: grid;
@@ -436,29 +425,6 @@ export default function SolutionLandingContent({ doc }: Props) {
         }}
       />
 
-      {/* Breadcrumb */}
-      <section
-        style={{
-          background: "#fff",
-          padding: "28px 48px 0",
-          marginTop: -24,
-          position: "relative",
-          zIndex: 3,
-        }}
-      >
-        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <nav className="sol-landing-crumb" aria-label="Breadcrumb">
-            <Link href="/">Home</Link>
-            <span aria-hidden="true"> / </span>
-            <Link href="/solutions">Solutions</Link>
-            <span aria-hidden="true"> / </span>
-            <span style={{ color: "#0a1e3d", fontWeight: 600 }}>
-              {doc.eyebrowCategory}
-            </span>
-          </nav>
-        </div>
-      </section>
-
       {/* Highlights: heading (left) + image (right), bullets in cards (below) */}
       <section
         style={{
@@ -705,10 +671,10 @@ export default function SolutionLandingContent({ doc }: Props) {
               </div>
               <div className="sol-landing-cta-group">
                 <Link
-                  href={doc.primaryCta?.href ?? "/contact"}
+                  href={doc.primaryCta?.href ?? "/get-a-demo"}
                   className="sol-landing-cta-primary"
                 >
-                  {doc.primaryCta?.label ?? "Contact us"}
+                  {doc.primaryCta?.label ?? "Get a demo"}
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
                     <path
                       d="M3 8h10M9 4l4 4-4 4"

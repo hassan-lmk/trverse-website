@@ -63,20 +63,6 @@ export default function AudienceLandingContent({ doc }: Props) {
       <style
         dangerouslySetInnerHTML={{
           __html: `
-        .audience-crumb {
-          font-family: var(--font-body);
-          font-size: 13px;
-          color: #6a7a8e;
-        }
-        .audience-crumb a {
-          color: #134f89;
-          text-decoration: none;
-          font-weight: 600;
-        }
-        .audience-crumb a:hover {
-          text-decoration: underline;
-          color: var(--accent);
-        }
         .audience-cap-grid {
           display: grid;
           grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -481,26 +467,6 @@ export default function AudienceLandingContent({ doc }: Props) {
       `,
         }}
       />
-
-      <section
-        style={{
-          background: "#fff",
-          padding: "28px 48px 0",
-          marginTop: -24,
-          position: "relative",
-          zIndex: 3,
-        }}
-      >
-        <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-          <nav className="audience-crumb" aria-label="Breadcrumb">
-            <Link href="/">Home</Link>
-            <span aria-hidden="true"> / </span>
-            <Link href="/#about-us">Who we serve</Link>
-            <span aria-hidden="true"> / </span>
-            <span style={{ color: "#0a1e3d", fontWeight: 600 }}>{doc.label}</span>
-          </nav>
-        </div>
-      </section>
 
       <section style={{ background: "#fff", padding: "56px 48px 80px" }}>
         <div style={{ maxWidth: 900, margin: "0 auto" }}>

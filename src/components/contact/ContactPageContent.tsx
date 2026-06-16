@@ -1,14 +1,42 @@
 "use client";
 
 import React from "react";
-import ContactForm from "@/components/contact/ContactForm";
+import DemoRequestForm from "@/components/contact/DemoRequestForm";
 import { offices } from "@/data/offices";
+
+const whatToExpect = [
+  "60-minute live session with a TRVERSE solutions engineer",
+  "Platform walkthrough configured to your network type — BRT, metro, intermodal",
+  "Live AFC transaction demonstration and real-time operations dashboard",
+  "Q&A with a technical expert on integration, deployment, and certification",
+  "Follow-up: tailored solution brief and relevant case studies within 48 hours",
+];
 
 const ContactPageContent = () => {
   return (
-    <section style={{ background: "#fff", padding: "110px 48px" }}>
+    <section className="demo-page-section" style={{ background: "#fff", padding: "110px 48px" }}>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            @media (max-width: 1024px) {
+              .demo-page-grid {
+                grid-template-columns: 1fr !important;
+              }
+              .demo-page-panel {
+                min-height: auto !important;
+              }
+            }
+            @media (max-width: 640px) {
+              .demo-page-section {
+                padding: 80px 20px !important;
+              }
+            }
+          `,
+        }}
+      />
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         <div
+          className="demo-page-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1.05fr 0.95fr",
@@ -18,6 +46,7 @@ const ContactPageContent = () => {
           }}
         >
           <div
+            className="demo-page-panel"
             style={{
               background: "linear-gradient(135deg, #0a1e3d 0%, #134f89 100%)",
               borderRadius: 24,
@@ -54,44 +83,38 @@ const ContactPageContent = () => {
                   marginBottom: 24,
                 }}
               >
-                Get in Touch
+                What to expect
               </span>
 
               <h2
                 style={{
                   fontFamily: "var(--font-display)",
-                  fontSize: "clamp(34px, 4vw, 48px)",
+                  fontSize: "clamp(30px, 3.5vw, 42px)",
                   fontWeight: 700,
                   color: "#fff",
-                  lineHeight: 1.12,
+                  lineHeight: 1.15,
                   margin: "0 0 20px",
                 }}
               >
-                Let&apos;s build a better
-                <br />
-                <span style={{ color: "var(--accent)" }}>mobility system</span>
+                A demo built around your network
               </h2>
 
               <p
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: 17,
-                  color: "#fff",
+                  color: "rgba(255,255,255,0.82)",
                   lineHeight: 1.8,
                   margin: "0 0 36px",
                   maxWidth: 560,
                 }}
               >
-                Share what you&apos;re planning and the TRVERSE team will reach out with the right solution for your network.
+                Every TRVERSE demonstration is configured for your network&apos;s context. Tell us about your city and your current challenges, and we will show you exactly how the platform addresses them.
               </p>
 
               <div style={{ display: "grid", gap: 18 }}>
-                {[
-                  "Platform planning for cities and operators",
-                  "Connected fare, fleet, and control systems",
-                  "Support for pilots, rollouts, and scaling",
-                ].map((item) => (
-                  <div key={item} style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                {whatToExpect.map((item) => (
+                  <div key={item} style={{ display: "flex", alignItems: "flex-start", gap: 12 }}>
                     <span
                       style={{
                         width: 10,
@@ -99,6 +122,7 @@ const ContactPageContent = () => {
                         borderRadius: "50%",
                         background: "var(--accent)",
                         flexShrink: 0,
+                        marginTop: 7,
                       }}
                     />
                     <span
@@ -106,6 +130,7 @@ const ContactPageContent = () => {
                         fontFamily: "var(--font-body)",
                         fontSize: 15,
                         color: "#fff",
+                        lineHeight: 1.65,
                       }}
                     >
                       {item}
@@ -116,10 +141,10 @@ const ContactPageContent = () => {
             </div>
           </div>
 
-          <ContactForm />
+          <DemoRequestForm />
         </div>
 
-        <div>
+        <div id="offices">
           <div style={{ marginBottom: 28 }}>
             <span
               style={{
@@ -144,7 +169,7 @@ const ContactPageContent = () => {
                 margin: 0,
               }}
             >
-              Contact our teams
+              Company addresses
             </h3>
           </div>
 
@@ -199,24 +224,6 @@ const ContactPageContent = () => {
                   {office.email ? (
                     <p style={{ fontFamily: "var(--font-body)", fontSize: 15, color: "#5a6a7e", lineHeight: 1.7, margin: 0 }}>
                       <strong style={{ color: "#0a1e3d" }}>Email:</strong> {office.email}
-                    </p>
-                  ) : null}
-                  {office.mapUrl ? (
-                    <p style={{ margin: "6px 0 0" }}>
-                      <a
-                        href={office.mapUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        style={{
-                          fontFamily: "var(--font-body)",
-                          fontSize: 14,
-                          fontWeight: 600,
-                          color: "var(--accent)",
-                          textDecoration: "none",
-                        }}
-                      >
-                        View on map
-                      </a>
                     </p>
                   ) : null}
                 </div>

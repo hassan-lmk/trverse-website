@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import InsightsHero from "@/components/insights/InsightsHero";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import SolutionLandingContent from "@/components/solutions/SolutionLandingContent";
 import {
   getSolutionLanding,
@@ -54,8 +55,15 @@ export default async function SolutionLandingPage({ params }: Props) {
         title={doc.heroTagline}
         description={doc.heroIntro}
         backgroundImageSrc={doc.heroBackgroundImage}
-        primaryCta={doc.primaryCta ?? { label: "Contact us", href: "/contact" }}
+        primaryCta={doc.primaryCta ?? { label: "Get a demo", href: "/get-a-demo" }}
         secondaryCta={doc.secondaryCta ?? { label: "All solutions", href: "/solutions" }}
+      />
+      <PageBreadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Solutions", href: "/solutions" },
+          { label: doc.eyebrowCategory },
+        ]}
       />
       <SolutionLandingContent doc={doc} />
       <Footer />

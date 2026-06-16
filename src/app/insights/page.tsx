@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import InsightsHero from "@/components/insights/InsightsHero";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import { insights } from "@/data/insights";
 import InsightsGrid from "@/components/insights/InsightsGrid";
 import CaseStudiesInInsights from "@/components/insights/CaseStudiesInInsights";
@@ -22,8 +23,10 @@ export default function InsightsPage() {
         description="Explore TRVERSE highlights, key updates, and recognition from across the mobility ecosystem."
         backgroundImageSrc="/insights/insights-page.webp"
         primaryCta={{ label: "Browse articles", href: "#all-insights" }}
-        secondaryCta={{ label: "Contact Us", href: "/contact" }}
+        secondaryCta={{ label: "Get a Demo", href: "/get-a-demo" }}
       />
+
+      <PageBreadcrumb items={[{ label: "Home", href: "/" }, { label: "Insights" }]} />
 
       <CaseStudiesInInsights studies={caseStudies} />
 

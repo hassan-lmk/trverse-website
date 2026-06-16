@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import InsightsHero from "@/components/insights/InsightsHero";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import AudienceLandingContent from "@/components/audiences/AudienceLandingContent";
 import {
   getAudienceLanding,
@@ -43,6 +44,13 @@ export default async function AudienceLandingPage({ params }: Props) {
         backgroundImageSrc={doc.heroBackgroundImage}
         primaryCta={doc.primaryCta}
         secondaryCta={doc.secondaryCta}
+      />
+      <PageBreadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Who we serve", href: "/#about-us" },
+          { label: doc.label },
+        ]}
       />
       <AudienceLandingContent doc={doc} />
       <Footer />

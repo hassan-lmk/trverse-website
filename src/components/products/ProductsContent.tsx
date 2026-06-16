@@ -1058,7 +1058,7 @@ export default function ProductsContent() {
                 Talk to TRVERSE about building a connected transit system.
               </p>
               <Link
-                href="/contact"
+                href="/get-a-demo"
                 style={{
                   display: "inline-flex",
                   alignItems: "center",
@@ -1074,7 +1074,7 @@ export default function ProductsContent() {
                   transition: "background 0.2s ease, transform 0.2s ease",
                 }}
               >
-                Contact TRVERSE
+                Get a Demo
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
                   <path
                     d="M3 8h10M9 4l4 4-4 4"

@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import InsightsHero from "@/components/insights/InsightsHero";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import CaseStudyDetailBody from "@/components/case-studies/CaseStudyDetailBody";
 import { caseStudies } from "@/data/caseStudies";
 
@@ -46,6 +47,14 @@ export default async function CaseStudyDetailPage({ params }: Props) {
         backgroundImageSrc={item.heroImage}
         primaryCta={{ label: "Jump to story", href: "#case-study-content" }}
         secondaryCta={{ label: "All case studies", href: "/insights#all-case-studies" }}
+      />
+
+      <PageBreadcrumb
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Case studies", href: "/insights#all-case-studies" },
+          { label: item.title },
+        ]}
       />
 
       <CaseStudyDetailBody item={item} />

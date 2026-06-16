@@ -73,6 +73,9 @@ const Transformation = () => {
           .home-transformation-section {
             padding: 84px 20px !important;
           }
+          .home-transform-description {
+            padding: 28px 22px 24px !important;
+          }
         }
       ` }} />
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
@@ -133,8 +136,34 @@ const Transformation = () => {
             ))}
           </div>
 
+          <div
+            className="home-transform-description"
+            style={{
+              marginTop: 8,
+              padding: "36px 40px 32px",
+              background: "#f7f9fc",
+              borderRadius: 20,
+              border: "1px solid rgba(19,79,137,0.08)",
+              textAlign: "center",
+            }}
+          >
+            <p
+              key={activeSegment.slug}
+              style={{
+                fontFamily: "var(--font-body)",
+                fontSize: 17,
+                color: "#5a6a7e",
+                lineHeight: 1.8,
+                margin: "0 auto",
+                maxWidth: 760,
+              }}
+            >
+              {activeSegment.description}
+            </p>
+          </div>
+
           {activeHasPage ? (
-            <div style={{ textAlign: "center", marginTop: 32 }}>
+            <div style={{ textAlign: "center", marginTop: 28 }}>
               <Link
                 href={`/who-we-serve/${activeSegment.slug}`}
                 style={{

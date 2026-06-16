@@ -87,11 +87,11 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
     },
     primaryCta: {
       label: "Request a briefing for transport authorities",
-      href: "/contact",
+      href: "/get-a-demo",
     },
     secondaryCta: {
-      label: "Contact us",
-      href: "/contact",
+      label: "Get a demo",
+      href: "/get-a-demo",
     },
     ctaHeading: "Ready To Modernise Your Network?",
     ctaBody:
@@ -149,11 +149,11 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
     proofImage: "/assets/masar.webp",
     primaryCta: {
       label: "Speak to our urban mobility team",
-      href: "/contact",
+      href: "/get-a-demo",
     },
     secondaryCta: {
-      label: "Contact us",
-      href: "/contact",
+      label: "Get a demo",
+      href: "/get-a-demo",
     },
     ctaHeading: "Ready To Build Data-Led Urban Mobility?",
     ctaBody:
@@ -199,11 +199,11 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
     ],
     primaryCta: {
       label: "Request an ROI assessment",
-      href: "/contact",
+      href: "/get-a-demo",
     },
     secondaryCta: {
-      label: "Contact us",
-      href: "/contact",
+      label: "Get a demo",
+      href: "/get-a-demo",
     },
     ctaHeading: "Ready To Capture Every Point Of Efficiency?",
     ctaBody:
@@ -211,20 +211,17 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
   },
 };
 
-export const audienceSegments = [
-  {
-    slug: "transport-authorities",
-    label: "Transport Authorities",
-  },
-  {
-    slug: "city-governments",
-    label: "City Governments",
-  },
-  {
-    slug: "private-operators",
-    label: "Private Operators",
-  },
-] as const;
+export const audienceSegments = (
+  [
+    "transport-authorities",
+    "city-governments",
+    "private-operators",
+  ] as const
+).map((slug) => ({
+  slug,
+  label: audienceLandingsBySlug[slug].label,
+  description: audienceLandingsBySlug[slug].heroSubheadline,
+}));
 
 export function getAudienceLanding(slug: string): AudienceLandingDoc | undefined {
   return audienceLandingsBySlug[slug];

@@ -44,7 +44,7 @@ const Solutions = () => {
     { 
       title: 'Micro-Mobility Integration', 
       desc: 'Extend transit with connected first and last mile services integrated into the core backbone.', 
-      banner: '/assets/micro-mobility-bike-sharing.webp',
+      banner: '/solutions/micro-mobility-integration.webp',
       bannerPosition: 'center center',
       href: '/solutions/Micro-mobility-integration',
       icon: (

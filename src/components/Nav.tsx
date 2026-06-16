@@ -364,7 +364,7 @@ const Nav = () => {
             onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.8)'}
             >{item.label}</a>
           ))}
-          <a href="/contact" style={{
+          <a href="/get-a-demo" style={{
             background: 'var(--accent)', color: '#fff', padding: '10px 24px',
             borderRadius: 6, fontSize: 14, fontWeight: 600, textDecoration: 'none',
             fontFamily: 'var(--font-body)', letterSpacing: '0.01em',
@@ -372,7 +372,7 @@ const Nav = () => {
           }}
           onMouseEnter={e => e.currentTarget.style.background = '#e06d4a'}
           onMouseLeave={e => e.currentTarget.style.background = 'var(--accent)'}
-          >Talk to Us</a>
+          >Get a Demo</a>
         </div>
         <button
           type="button"
@@ -421,7 +421,7 @@ const Nav = () => {
               {item.label}
             </a>
           ))}
-          <a href="/contact" style={{ marginTop: 8, background: 'var(--accent)', color: '#fff', padding: '10px 16px', borderRadius: 8, fontFamily: 'var(--font-body)', textDecoration: 'none', fontWeight: 600, width: 'fit-content' }}>Talk to Us</a>
+          <a href="/get-a-demo" style={{ marginTop: 8, background: 'var(--accent)', color: '#fff', padding: '10px 16px', borderRadius: 8, fontFamily: 'var(--font-body)', textDecoration: 'none', fontWeight: 600, width: 'fit-content' }}>Get a Demo</a>
         </div>
       ) : null}
     </nav>

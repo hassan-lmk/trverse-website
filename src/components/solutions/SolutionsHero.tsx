@@ -118,7 +118,7 @@ const SolutionsHero = () => {
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
-            <a href="/contact" className="hero-btn-secondary">Contact Us</a>
+            <a href="/get-a-demo" className="hero-btn-secondary">Get a Demo</a>
           </div>
         </div>
       </div>

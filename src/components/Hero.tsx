@@ -235,7 +235,7 @@ const Hero = () => {
 
           <div className="home-hero-actions" style={reveal('0.8s')}>
             <a href="#solutions" className="hero-btn-primary">Explore Solutions</a>
-            <a href="/contact" className="hero-btn-secondary">Talk to Us</a>
+            <a href="/get-a-demo" className="hero-btn-secondary">Get a Demo</a>
           </div>
         </div>
       </div>

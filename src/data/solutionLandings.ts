@@ -64,7 +64,7 @@ export const solutionHeroBackgroundImages: Record<
   "Intelligent-transport-systems": "/intelligent-transport.png",
   "advanced-scheduling-system": "/solutions/AI-based-scheduling-full.png",
   "fleet-management": "/solutions/control-room-managmeent-full.png",
-  "Micro-mobility-integration": "/assets/micro-mobility-bike-sharing.webp",
+  "Micro-mobility-integration": "/solutions/micro-mobility-integration.webp",
   "ai-monitoring-and-control": "/solutions/performance-monitoring-full.png",
 };
 
@@ -199,15 +199,11 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     ],
     primaryCta: {
       label: "Request ITS demonstration",
-      href: "/contact",
-    },
-    secondaryCta: {
-      label: "Download ITS datasheet",
-      href: "/contact",
+      href: "/get-a-demo",
     },
     ctaHeading: "See TRVERSE ITS In Action",
     ctaBody:
-      "Request a demonstration or download the ITS datasheet to explore AVL, passenger information, and control centre capabilities.",
+      "Request a demonstration to explore AVL, passenger information, and control centre capabilities.",
   },
   "advanced-scheduling-system": {
     slug: "advanced-scheduling-system",
@@ -326,8 +322,8 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       "The journeys that matter most to passengers often begin and end outside the core transit network. TRVERSE extends your platform to e-bikes, e-scooters, and shared mobility services — unified under one fare, one app, and one data environment.",
     heroBackgroundImage:
       solutionHeroBackgroundImages["Micro-mobility-integration"],
-    heroImage: "/assets/micro-mobility-bike-sharing.webp",
-    highlightsAsideImage: "/assets/micro-mobility-bike-sharing.webp",
+    heroImage: "/solutions/micro-mobility-integration.webp",
+    highlightsAsideImage: "/solutions/micro-mobility-integration.webp",
     highlightsAsideImageAlt: "",
     highlightsHeading: "Micro-Mobility Integration",
     highlightsDescription:

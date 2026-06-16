@@ -444,8 +444,8 @@ const AboutPageContent = () => {
               We are not just digitizing operations — we are redefining how connected ecosystems
               think, move, and perform.
             </p>
-            <a href="/contact" className="hero-btn-primary">
-              Talk to TRVERSE
+            <a href="/get-a-demo" className="hero-btn-primary">
+              Get a Demo
             </a>
           </div>
         </div>

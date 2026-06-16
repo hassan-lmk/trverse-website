@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import InsightsHero from "@/components/insights/InsightsHero";
+import PageBreadcrumb from "@/components/PageBreadcrumb";
 import PartnersPageContent from "@/components/partners/PartnersPageContent";
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function PartnersPage() {
         primaryCta={{ label: "Become a Partner", href: "#partner-form" }}
         secondaryCta={{ label: "About TRVERSE", href: "/about" }}
       />
+      <PageBreadcrumb items={[{ label: "Home", href: "/" }, { label: "Partners" }]} />
       <PartnersPageContent />
       <Footer />
     </main>
