@@ -119,24 +119,11 @@ type Props = {
 const CaseStudyDetailBody = ({ item }: Props) => {
   const overviewParagraphs = item.overview.split("\n\n").map((p) => p.trim()).filter(Boolean);
 
-  const anchors = [
-    { id: "cs-overview", label: "Overview" },
-    { id: "cs-impact", label: "Impact" },
-    { id: "cs-challenge", label: "Challenge" },
-    { id: "cs-solution", label: "Solution" },
-    ...(item.networkMap ? [{ id: "cs-map", label: "Network" }] : []),
-    { id: "cs-benefits", label: "Benefits" },
-    ...(item.additionalNotes?.length ? [{ id: "cs-more", label: "More" }] : []),
-  ];
-
   return (
     <>
       <style
         dangerouslySetInnerHTML={{
           __html: `
-            .cs-anchor-wrap { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 48px; }
-            .cs-anchor { font-family: ${bodyFont}; font-size: 13px; font-weight: 600; color: #5a6a7e; text-decoration: none; padding: 8px 16px; border-radius: 999px; border: 1px solid rgba(19,79,137,0.12); background: #fff; transition: color 0.2s, border-color 0.2s, background 0.2s; }
-            .cs-anchor:hover { color: var(--accent); border-color: rgba(255,130,93,0.4); background: rgba(255,130,93,0.06); }
             .cs-stats-grid { display: grid; gap: 14px; grid-template-columns: repeat(4, 1fr); }
             @media (max-width: 1024px) { .cs-stats-grid { grid-template-columns: repeat(3, 1fr) !important; } }
             @media (max-width: 720px) { .cs-stats-grid { grid-template-columns: repeat(2, 1fr) !important; } }
@@ -144,6 +131,13 @@ const CaseStudyDetailBody = ({ item }: Props) => {
             @media (max-width: 900px) { .cs-two-col { grid-template-columns: 1fr !important; } }
             .cs-benefits-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, 1fr); }
             @media (max-width: 720px) { .cs-benefits-grid { grid-template-columns: 1fr !important; } }
+            .cs-fact-grid { display: grid; gap: 1px; grid-template-columns: repeat(3, 1fr); background: rgba(19,79,137,0.10); border-radius: 18px; overflow: hidden; border: 1px solid rgba(19,79,137,0.10); }
+            @media (max-width: 900px) { .cs-fact-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+            @media (max-width: 560px) { .cs-fact-grid { grid-template-columns: 1fr !important; } }
+            .cs-fact-cell { background: #fff; padding: 22px 24px; }
+            .cs-outcome-row { display: grid; grid-template-columns: minmax(180px, 0.8fr) 1.6fr; gap: 24px; padding: 20px 28px; border-bottom: 1px solid rgba(19,79,137,0.08); align-items: baseline; }
+            .cs-outcome-row:last-child { border-bottom: none; }
+            @media (max-width: 640px) { .cs-outcome-row { grid-template-columns: 1fr !important; gap: 6px; padding: 18px 22px; } }
           `,
         }}
       />
@@ -178,15 +172,8 @@ const CaseStudyDetailBody = ({ item }: Props) => {
         />
 
         <div style={{ maxWidth: 1180, margin: "0 auto", position: "relative", zIndex: 1 }}>
-          <nav className="cs-anchor-wrap" aria-label="On this page">
-            {anchors.map((a) => (
-              <a key={a.id} href={`#${a.id}`} className="cs-anchor">
-                {a.label}
-              </a>
-            ))}
-          </nav>
-
           {/* Overview */}
+          {overviewParagraphs.length ? (
           <div id="cs-overview" style={{ scrollMarginTop: 100, marginBottom: 64 }}>
             <div className="cs-two-col">
               <div>
@@ -217,6 +204,20 @@ const CaseStudyDetailBody = ({ item }: Props) => {
                 >
                   {item.title}
                 </h2>
+                {item.headline ? (
+                  <p
+                    style={{
+                      fontFamily: displayFont,
+                      fontSize: "clamp(18px, 1.7vw, 22px)",
+                      fontWeight: 600,
+                      color: "#134f89",
+                      lineHeight: 1.4,
+                      margin: "0 0 20px",
+                    }}
+                  >
+                    {item.headline}
+                  </p>
+                ) : null}
                 <div style={{ display: "grid", gap: 16 }}>
                   {overviewParagraphs.map((p) => (
                     <p
@@ -269,8 +270,46 @@ const CaseStudyDetailBody = ({ item }: Props) => {
               </div>
             </div>
           </div>
+          ) : null}
+
+          {/* Fact sheet */}
+          {item.factSheet?.length ? (
+            <div id="cs-facts" style={{ scrollMarginTop: 100, marginBottom: 64 }}>
+              <div className="cs-fact-grid">
+                {item.factSheet.map((fact) => (
+                  <div key={fact.label} className="cs-fact-cell">
+                    <div
+                      style={{
+                        fontFamily: bodyFont,
+                        fontSize: 11,
+                        color: "var(--accent)",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.09em",
+                        fontWeight: 700,
+                        marginBottom: 8,
+                      }}
+                    >
+                      {fact.label}
+                    </div>
+                    <div
+                      style={{
+                        fontFamily: displayFont,
+                        fontSize: 16,
+                        color: "#0a1e3d",
+                        fontWeight: 600,
+                        lineHeight: 1.45,
+                      }}
+                    >
+                      {fact.value}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null}
 
           {/* Stats */}
+          {item.stats.length ? (
           <div id="cs-impact" style={{ scrollMarginTop: 100, marginBottom: 64 }}>
             <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 24, flexWrap: "wrap" }}>
               <span
@@ -345,6 +384,7 @@ const CaseStudyDetailBody = ({ item }: Props) => {
               })}
             </div>
           </div>
+          ) : null}
 
           {/* Challenge */}
           <div id="cs-challenge" style={{ scrollMarginTop: 100, marginBottom: 32 }}>
@@ -490,6 +530,65 @@ const CaseStudyDetailBody = ({ item }: Props) => {
             </div>
           </div>
 
+          {/* Outcomes */}
+          {item.outcomes?.length ? (
+            <div id="cs-outcomes" style={{ scrollMarginTop: 100, marginBottom: 64 }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 24 }}>
+                <span
+                  style={{
+                    width: 44,
+                    height: 44,
+                    borderRadius: 12,
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    background: "linear-gradient(145deg, #0a1e3d, #134f89)",
+                    color: "#fff",
+                  }}
+                >
+                  <IconGauge />
+                </span>
+                <div>
+                  <h2 style={{ fontFamily: displayFont, fontSize: "clamp(26px, 2.8vw, 34px)", fontWeight: 700, color: "#0a1e3d", margin: 0 }}>
+                    Outcomes
+                  </h2>
+                  <p style={{ fontFamily: bodyFont, fontSize: 15, color: "#7a8797", margin: "4px 0 0" }}>
+                    Measurable results delivered in production
+                  </p>
+                </div>
+              </div>
+              <div
+                style={{
+                  background: "#fff",
+                  borderRadius: 20,
+                  border: "1px solid rgba(19,79,137,0.10)",
+                  boxShadow: "0 16px 48px rgba(10,30,61,0.06)",
+                  overflow: "hidden",
+                }}
+              >
+                {item.outcomes.map((outcome) => (
+                  <div key={outcome.metric} className="cs-outcome-row">
+                    <div
+                      style={{
+                        fontFamily: displayFont,
+                        fontSize: 15,
+                        fontWeight: 700,
+                        color: "#0a1e3d",
+                        textTransform: "uppercase",
+                        letterSpacing: "0.04em",
+                      }}
+                    >
+                      {outcome.metric}
+                    </div>
+                    <div style={{ fontFamily: bodyFont, fontSize: 16, color: "#3a4a5e", lineHeight: 1.7 }}>
+                      {outcome.result}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ) : null}
+
           {/* Network map */}
           {item.networkMap ? (
             <div id="cs-map" style={{ scrollMarginTop: 100, marginBottom: 64 }}>
@@ -567,6 +666,7 @@ const CaseStudyDetailBody = ({ item }: Props) => {
           ) : null}
 
           {/* Benefits */}
+          {item.benefits.length ? (
           <div id="cs-benefits" style={{ scrollMarginTop: 100, marginBottom: 64 }}>
             <h2
               style={{
@@ -629,6 +729,7 @@ const CaseStudyDetailBody = ({ item }: Props) => {
               })}
             </div>
           </div>
+          ) : null}
 
           {/* Additional */}
           {item.additionalNotes?.length ? (

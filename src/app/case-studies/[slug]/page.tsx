@@ -32,11 +32,15 @@ export default async function CaseStudyDetailPage({ params }: Props) {
       <InsightsHero
         badge={`Case study • ${item.location}`}
         title={
-          <>
-            <span style={{ color: "#fff" }}>{item.title}</span>
-            <br />
-            <span style={{ color: "var(--accent)" }}>Connected mobility</span>
-          </>
+          item.headline ? (
+            <span style={{ color: "#fff" }}>{item.headline}</span>
+          ) : (
+            <>
+              <span style={{ color: "#fff" }}>{item.title}</span>
+              <br />
+              <span style={{ color: "var(--accent)" }}>Connected mobility</span>
+            </>
+          )
         }
         description={item.summary}
         backgroundImageSrc={item.heroImage}
