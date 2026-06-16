@@ -3,6 +3,11 @@ export type SolutionFeatureBlock = {
   description: string;
 };
 
+export type SolutionSpecification = {
+  label: string;
+  detail: string;
+};
+
 export type SolutionLandingDoc = {
   slug: string;
   metaTitle: string;
@@ -23,8 +28,17 @@ export type SolutionLandingDoc = {
   highlightsHeading: string;
   /** Section headline under the eyebrow — value statement, not the product name. */
   highlightsSubheading?: string;
+  /** When set, replaces the highlight bullet cards with a prose introduction. */
+  highlightsDescription?: string;
   highlights: string[];
+  featuresHeading?: string;
   features: SolutionFeatureBlock[];
+  specificationsHeading?: string;
+  specifications?: SolutionSpecification[];
+  primaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+  ctaHeading?: string;
+  ctaBody?: string;
 };
 
 /** Matches home `#solution` card order; every slug must exist in `solutionLandingsBySlug`. */
@@ -59,282 +73,346 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     slug: "Automated-fare-collection",
     metaTitle: "TRVERSE Meridian — Automated Fare Collection — TRVERSE",
     metaDescription:
-      "TRVERSE Meridian unifies fare collection across stations, vehicles, and digital channels. Open-loop and closed-loop payments, central clearing, flexible pricing, and high-volume throughput.",
+      "TRVERSE Meridian supports open-loop and closed-loop fare collection across every transit mode — EMV contactless, mobile wallets, multi-operator clearing, and sub-300ms validator processing.",
     badge: "Solution",
     eyebrowCategory: "Automated Fare Collection",
     productLine: "TRVERSE Meridian",
-    heroTagline: "Payments that keep moving",
+    heroTagline: "Open-loop fare collection, built for real-world transit.",
     heroIntro:
-      "TRVERSE Meridian manages fare collection across your network, connecting payments from stations, vehicles, and digital channels into one system.",
+      "TRVERSE Meridian supports every payment method passengers carry — contactless bank cards, mobile wallets, and closed-loop transit cards — across any transit mode. No proprietary lock-in. No barriers to adoption.",
     heroBackgroundImage:
       solutionHeroBackgroundImages["Automated-fare-collection"],
     heroImage: "/assets/automate-fare-collection.webp",
     highlightsAsideImage: "/assets/automate-fare-collection.webp",
     highlightsAsideImageAlt: "",
-    highlightsHeading: "Key highlights",
-    highlightsSubheading:
-      "Stations, vehicles, and digital channels unified into one clearing pipeline.",
-    highlights: [
-      "Supports open-loop and closed-loop payments",
-      "Works across cards, QR, and mobile wallets",
-      "Central clearing and revenue management",
-      "Flexible fare structures and pricing models",
-      "Integrated ticketing across multiple routes and operators",
-      "Designed for high-volume passenger flow",
-    ],
+    highlightsHeading: "Automated Fare Collection",
+    highlightsDescription:
+      "Fare collection is the financial backbone of your network. TRVERSE Meridian is engineered for the full complexity of mass transit — from high-throughput BRT stations to multi-modal interchanges where passengers move seamlessly between bus, metro, and micro-mobility.",
+    highlights: [],
+    featuresHeading: "Key Capabilities",
     features: [
       {
-        title: "Flexible payment support",
+        title: "EMV open-loop acceptance",
         description:
-          "Accept bank cards, smart cards, and mobile payments across all touchpoints.",
+          "Contactless Visa, Mastercard, Amex, Apple Pay, and Google Pay.",
       },
       {
-        title: "Central clearing house",
-        description:
-          "Manage transactions, reconciliation, and revenue distribution in one place.",
+        title: "Closed-loop transit card management",
+        description: "Top-up, blocking, and balance enquiry.",
       },
       {
-        title: "Fare configuration",
-        description:
-          "Set distance-based, flat, or time-based pricing with full control.",
+        title: "Multi-operator fare agreements",
+        description: "Revenue apportionment across operators and corridors.",
       },
       {
-        title: "Passenger apps & wallets",
-        description: "Enable digital ticketing, recharge, and travel tracking.",
+        title: "Real-time transaction processing",
+        description: "Sub-300ms validator response time.",
+      },
+      {
+        title: "Offline resilience",
+        description: "Validators continue operating during connectivity loss.",
+      },
+      {
+        title: "Concessionary and time-based fare rules",
+        description: "Configurable without downtime.",
+      },
+      {
+        title: "Full audit trail",
+        description:
+          "Every transaction recorded — compliant with financial regulators.",
       },
     ],
   },
   "Intelligent-transport-systems": {
     slug: "Intelligent-transport-systems",
-    metaTitle: "TRVERSE Vector — Intelligent Transport Systems — TRVERSE",
+    metaTitle: "TRVERSE ITS — Intelligent Transport Systems — TRVERSE",
     metaDescription:
-      "TRVERSE Vector delivers real-time visibility across vehicles, routes, and passenger systems with KPI dashboards, safety monitoring, and continuous operational supervision.",
+      "TRVERSE ITS delivers real-time network intelligence — AVL, passenger information, GTFS-RT, signal priority, incident management, and control centre dashboards in one integrated platform.",
     badge: "Solution",
     eyebrowCategory: "Intelligent Transport Systems",
-    productLine: "TRVERSE Vector",
-    heroTagline: "See every movement. Stay ahead.",
+    productLine: "TRVERSE ITS",
+    heroTagline: "Real-time intelligence for every vehicle, route, and passenger.",
     heroIntro:
-      "TRVERSE Vector provides real-time visibility across vehicles, routes, and passenger systems, helping operators monitor performance and respond as needed.",
+      "TRVERSE ITS gives operators and city authorities a live view of the entire network — from vehicle location and passenger loads to signal priority and passenger information — in a single integrated platform.",
     heroBackgroundImage:
       solutionHeroBackgroundImages["Intelligent-transport-systems"],
     heroImage: "/assets/intelligent-transportation.webp",
     highlightsAsideImage: "/assets/intelligent-transportation.webp",
     highlightsAsideImageAlt: "",
-    highlightsHeading: "Key highlights",
-    highlightsSubheading:
-      "Live operational awareness across your network—at vehicle, route, and passenger level.",
-    highlights: [
-      "GPS-based fleet tracking",
-      "Real-time passenger information",
-      "Driver behavior monitoring",
-      "Vehicle diagnostics and health tracking",
-      "KPI dashboards and reporting",
-      "Continuous system monitoring",
-    ],
+    highlightsHeading: "Intelligent Transport Systems",
+    highlightsDescription:
+      "TRVERSE ITS gives operators and city authorities a live view of the entire network — from vehicle location and passenger loads to signal priority and passenger information — in a single integrated platform.",
+    highlights: [],
+    featuresHeading: "Key Capabilities",
     features: [
       {
-        title: "Fleet Monitoring",
-        description: "Track vehicle movement and route adherence in real time.",
+        title: "Automatic vehicle location (AVL)",
+        description: "GPS and dead-reckoning.",
       },
       {
-        title: "Driver & Safety Systems",
-        description:
-          "Monitor driving patterns and detect operational risks.",
+        title: "Passenger information systems",
+        description: "On-board, at-stop, and digital channel feeds.",
       },
       {
-        title: "Vehicle Health Data",
-        description:
-          "Capture system-level data to support maintenance and performance.",
+        title: "GTFS and GTFS-RT publishing",
+        description: "Third-party app integration.",
       },
       {
-        title: "Live Dashboards",
-        description:
-          "View network performance with clear, real-time insights.",
+        title: "Traffic signal priority (TSP) integration",
+        description: "NTCIP/UTMC protocols.",
+      },
+      {
+        title: "Passenger counting",
+        description: "Automatic with load forecasting.",
+      },
+      {
+        title: "Incident management",
+        description: "Automated detection, operator alerting, resolution tracking.",
+      },
+      {
+        title: "Control centre dashboards",
+        description: "Configurable alerting thresholds.",
       },
     ],
+    specificationsHeading: "Specification",
+    specifications: [
+      {
+        label: "Position update frequency",
+        detail: "Every 5 seconds (configurable)",
+      },
+      {
+        label: "Data protocols",
+        detail: "GTFS-RT, SIRI, NTCIP, UTMC, NeTEx",
+      },
+      {
+        label: "Passenger information channels",
+        detail: "On-board displays, shelter signs, web, app, SMS",
+      },
+      {
+        label: "Integration",
+        detail: "Open APIs — REST/JSON, SOAP/XML legacy support",
+      },
+      {
+        label: "Infrastructure",
+        detail: "Cloud-native (AWS), on-premise deployment available",
+      },
+    ],
+    primaryCta: {
+      label: "Request ITS demonstration",
+      href: "/contact",
+    },
+    secondaryCta: {
+      label: "Download ITS datasheet",
+      href: "/contact",
+    },
+    ctaHeading: "See TRVERSE ITS In Action",
+    ctaBody:
+      "Request a demonstration or download the ITS datasheet to explore AVL, passenger information, and control centre capabilities.",
   },
   "advanced-scheduling-system": {
     slug: "advanced-scheduling-system",
-    metaTitle: "TRVERSE Orbit — Advanced Scheduling System — TRVERSE",
+    metaTitle: "TRVERSE Advanced Scheduling — TRVERSE",
     metaDescription:
-      "TRVERSE Orbit optimizes routes and schedules using real-time and historical demand data, improving efficiency and service coverage across your network.",
+      "TRVERSE Advanced Scheduling combines historical ridership data with live network conditions to optimise timetables, forecasting, rostering, and service delivery in real time.",
     badge: "Solution",
-    eyebrowCategory: "Advanced Scheduling System",
-    productLine: "TRVERSE Orbit",
-    heroTagline: "Schedules that move with demand",
+    eyebrowCategory: "Advanced Scheduling",
+    productLine: "TRVERSE Advanced Scheduling",
+    heroTagline: "Schedules optimised by data. Adjusted in real time.",
     heroIntro:
-      "TRVERSE Orbit helps plan and adjust services based on demand, using real-time and historical data to improve efficiency across the network.",
+      "Static timetables designed months in advance cannot keep pace with demand that changes by the hour. TRVERSE Advanced Scheduling combines historical ridership data with live network conditions to continuously optimise service delivery.",
     heroBackgroundImage:
       solutionHeroBackgroundImages["advanced-scheduling-system"],
     heroImage: "/assets/ai-based-scheduling.webp",
     highlightsAsideImage: "/assets/ai-based-scheduling.webp",
     highlightsAsideImageAlt: "",
-    highlightsHeading: "Key Highlights",
-    highlightsSubheading:
-      "Demand-driven planning and optimization for smarter scheduling.",
-    highlights: [
-      "Dynamic scheduling updates",
-      "Demand-based planning",
-      "Route optimization",
-      "Fleet allocation management",
-      "Schedule adherence tracking",
-      "Scenario-based planning",
-    ],
+    highlightsHeading: "Advanced Scheduling",
+    highlightsDescription:
+      "Static timetables designed months in advance cannot keep pace with demand that changes by the hour. TRVERSE Advanced Scheduling combines historical ridership data with live network conditions to continuously optimise service delivery.",
+    highlights: [],
+    featuresHeading: "Key Capabilities",
     features: [
       {
-        title: "Dynamic Scheduling",
-        description: "Adjust routes and timings as conditions change.",
+        title: "AI-assisted timetable generation",
+        description: "Using multi-year ridership history.",
       },
       {
-        title: "Demand-Based Planning",
-        description: "Use ridership patterns to optimize services.",
+        title: "Demand forecasting",
+        description: "By route, time period, day type, and special event.",
       },
       {
-        title: "Route Optimization",
-        description: "Improve coverage and reduce inefficiencies.",
+        title: "Real-time schedule adherence monitoring",
+        description: "With automated crew alerts.",
       },
       {
-        title: "Fleet Allocation",
-        description: "Assign vehicles based on real-time needs.",
+        title: "Automated duty rostering",
+        description: "Driver assignment optimisation.",
+      },
+      {
+        title: "What-if scenario modelling",
+        description: "For service change evaluation.",
+      },
+      {
+        title: "Integration with fleet management",
+        description: "Vehicle availability.",
+      },
+      {
+        title: "Compliance reporting",
+        description: "For contracted service level agreements.",
       },
     ],
   },
   "fleet-management": {
     slug: "fleet-management",
-    metaTitle: "TRVERSE Command — Fleet Management — TRVERSE",
+    metaTitle: "TRVERSE Fleet Management — TRVERSE",
     metaDescription:
-      "TRVERSE Command unifies operational systems so teams can monitor, coordinate, and manage transit activities from a single environment.",
+      "TRVERSE Fleet Management gives operators real-time visibility and control over every asset — live tracking, driver analytics, predictive maintenance, fuel management, and incident response.",
     badge: "Solution",
     eyebrowCategory: "Fleet Management",
-    productLine: "TRVERSE Command",
-    heroTagline: "Unified control across your network",
+    productLine: "TRVERSE Fleet Management",
+    heroTagline: "Every vehicle. Every moment. One command environment.",
     heroIntro:
-      "TRVERSE Command brings operational systems into one environment, allowing teams to monitor, coordinate, and manage transit operations from a single place.",
+      "TRVERSE Fleet Management gives operators real-time visibility and control over every asset in their network — from live tracking and driver performance to maintenance scheduling and fuel management.",
     heroBackgroundImage:
       solutionHeroBackgroundImages["fleet-management"],
     heroImage: "/assets/control-room-maangement.webp",
     highlightsAsideImage: "/assets/control-room-maangement.webp",
     highlightsAsideImageAlt: "",
-    highlightsHeading: "Key Highlights",
-    highlightsSubheading:
-      "Centralized monitoring and coordinated response for operations at scale.",
-    highlights: [
-      "Centralized monitoring and control",
-      "Incident and disruption management",
-      "Dispatch and communication systems",
-      "Real-time dashboards",
-      "System-wide coordination",
-      "Performance tracking",
-    ],
+    highlightsHeading: "Fleet Management",
+    highlightsDescription:
+      "TRVERSE Fleet Management gives operators real-time visibility and control over every asset in their network — from live tracking and driver performance to maintenance scheduling and fuel management.",
+    highlights: [],
+    featuresHeading: "Key Capabilities",
     features: [
       {
-        title: "Unified Dashboard",
-        description: "View all operational systems in one interface.",
+        title: "Real-time vehicle tracking",
+        description: "Geofence alerts and route deviation detection.",
       },
       {
-        title: "Incident Management",
-        description: "Track and respond to disruptions quickly.",
+        title: "Driver behaviour analytics",
+        description: "Speeding, harsh braking, idling, and fuel consumption.",
       },
       {
-        title: "Dispatch & Communication",
-        description:
-          "Coordinate teams and vehicles in real time.",
+        title: "Predictive maintenance",
+        description: "Fault code analysis and service interval optimisation.",
       },
       {
-        title: "Performance Monitoring",
-        description: "Measure and manage system performance continuously.",
+        title: "Fuel management",
+        description: "Consumption monitoring and supplier integration.",
+      },
+      {
+        title: "Incident management",
+        description: "Collision detection, breakdown response, CCTV retrieval.",
+      },
+      {
+        title: "Asset lifecycle management",
+        description: "Procurement, depreciation, and disposal tracking.",
+      },
+      {
+        title: "Multi-depot operations support",
+        description: "Centralised and distributed management.",
       },
     ],
   },
   "Micro-mobility-integration": {
     slug: "Micro-mobility-integration",
-    metaTitle: "TRVERSE Signal — Micro-Mobility Integration — TRVERSE",
+    metaTitle: "TRVERSE Micro-Mobility Integration — TRVERSE",
     metaDescription:
-      "TRVERSE Signal extends transit networks by connecting first and last mile services, enabling a more complete and accessible system.",
+      "TRVERSE extends your platform to e-bikes, e-scooters, and shared mobility — unified under one fare, one app, and one data environment.",
     badge: "Solution",
     eyebrowCategory: "Micro-Mobility Integration",
-    productLine: "TRVERSE Signal",
-    heroTagline: "Clarity at every stop",
+    productLine: "TRVERSE Micro-Mobility Integration",
+    heroTagline: "First mile. Last mile. Every mile — connected.",
     heroIntro:
-      "TRVERSE extends transit networks by connecting first and last mile services, enabling a more complete and accessible system.",
+      "The journeys that matter most to passengers often begin and end outside the core transit network. TRVERSE extends your platform to e-bikes, e-scooters, and shared mobility services — unified under one fare, one app, and one data environment.",
     heroBackgroundImage:
       solutionHeroBackgroundImages["Micro-mobility-integration"],
-    heroImage: "/assets/micro-mobility.webp",
-    highlightsAsideImage: "/assets/micro-mobility.webp",
+    heroImage: "/assets/micro-mobility-bike-sharing.webp",
+    highlightsAsideImage: "/assets/micro-mobility-bike-sharing.webp",
     highlightsAsideImageAlt: "",
-    highlightsHeading: "Key Highlights",
-    highlightsSubheading:
-      "Connected first/last mile experiences across multiple modes.",
-    highlights: [
-      "Integration with bike-sharing systems",
-      "Support for feeder and on-demand services",
-      "Multi-modal journey connectivity",
-      "Unified passenger experience",
-      "Scalable across cities",
-      "Works alongside core transit systems",
-    ],
+    highlightsHeading: "Micro-Mobility Integration",
+    highlightsDescription:
+      "The journeys that matter most to passengers often begin and end outside the core transit network. TRVERSE extends your platform to e-bikes, e-scooters, and shared mobility services — unified under one fare, one app, and one data environment.",
+    highlights: [],
+    featuresHeading: "Key Capabilities",
     features: [
       {
-        title: "Multi-Modal Integration",
-        description: "Connect buses, bikes, and on-demand services.",
+        title: "Single-account payment",
+        description: "Across transit and micro-mobility.",
       },
       {
-        title: "First & Last Mile Coverage",
-        description: "Improve accessibility across the network.",
+        title: "Combined trip data",
+        description: "For journey planning and demand analytics.",
       },
       {
-        title: "Unified Experience",
-        description: "Keep journeys consistent across transport modes.",
+        title: "Geo-fenced docking zone management",
+        description: "Real-time availability feeds.",
       },
       {
-        title: "Scalable Deployment",
-        description: "Expand services without disrupting core systems.",
+        title: "Operator API integration",
+        description:
+          "Compatible with major e-bike and e-scooter platforms.",
+      },
+      {
+        title: "Combined ridership reporting",
+        description: "For government and environmental compliance.",
+      },
+      {
+        title: "Incentive and loyalty programme integration",
+        description: "Unified rewards across mobility modes.",
       },
     ],
   },
   "ai-monitoring-and-control": {
     slug: "ai-monitoring-and-control",
-    metaTitle: "TRVERSE Insight — AI Monitoring and Control — TRVERSE",
+    metaTitle: "TRVERSE AI Monitoring — AI Monitoring and Control — TRVERSE",
     metaDescription:
-      "TRVERSE Insight provides visibility into system performance so operators can track operations, analyze trends, and make informed decisions.",
+      "TRVERSE AI Monitoring analyses fare, fleet, passenger, and system data to surface anomalies, predict failures, and recommend interventions before problems escalate.",
     badge: "Solution",
     eyebrowCategory: "AI Monitoring and Control",
-    productLine: "TRVERSE Insight",
-    heroTagline: "Know more. Decide faster",
+    productLine: "TRVERSE AI Monitoring",
+    heroTagline: "From reactive to predictive. Network intelligence that acts.",
     heroIntro:
-      "TRVERSE Insight provides visibility into system performance, helping operators track operations, analyze trends, and make informed decisions.",
+      "TRVERSE AI Monitoring analyses every data stream across your network — fare transactions, vehicle telemetry, passenger flows, and system events — to surface anomalies, predict failures, and recommend interventions before problems escalate.",
     heroBackgroundImage:
       solutionHeroBackgroundImages["ai-monitoring-and-control"],
     heroImage: "/assets/perfomance-monitoring.webp",
     highlightsAsideImage: "/assets/perfomance-monitoring.webp",
     highlightsAsideImageAlt: "",
-    highlightsHeading: "Key Highlights",
-    highlightsSubheading:
-      "Data visibility that improves planning, execution, and service quality.",
-    highlights: [
-      "Real-time dashboards",
-      "Ridership and revenue reporting",
-      "KPI tracking",
-      "Operational analytics",
-      "Historical trend analysis",
-      "Data-driven decision support",
-    ],
+    highlightsHeading: "AI Monitoring and Control",
+    highlightsDescription:
+      "TRVERSE AI Monitoring analyses every data stream across your network — fare transactions, vehicle telemetry, passenger flows, and system events — to surface anomalies, predict failures, and recommend interventions before problems escalate.",
+    highlights: [],
+    featuresHeading: "Key Capabilities",
     features: [
       {
-        title: "Operational Dashboards",
-        description: "Track network performance in real time.",
+        title: "Real-time network health scoring",
+        description: "Composite KPI across all platform components.",
       },
       {
-        title: "Reporting & Analytics",
-        description: "Analyze ridership, revenue, and system trends.",
+        title: "Anomaly detection",
+        description:
+          "Statistical deviation alerting across fare, fleet, and ITS data.",
       },
       {
-        title: "KPI Tracking",
-        description: "Measure service quality and operational metrics.",
+        title: "Revenue leakage detection",
+        description:
+          "Pattern recognition across transaction and gateline data.",
       },
       {
-        title: "Decision Support",
-        description: "Use data to guide planning and improvements.",
+        title: "Predictive maintenance alerts",
+        description: "Vehicle and infrastructure fault prediction.",
+      },
+      {
+        title: "Automated reporting",
+        description: "Scheduled and on-demand across all KPI dimensions.",
+      },
+      {
+        title: "Natural language query interface",
+        description: "Operational data exploration.",
+      },
+      {
+        title: "Custom alert thresholds and escalation workflows",
+        description: "Per operator.",
       },
     ],
   },

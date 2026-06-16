@@ -86,34 +86,19 @@ const Transformation = () => {
 
         <div style={{ display: "flex", flexDirection: "column", maxWidth: 1100, margin: "0 auto", position: "relative" }}>
           <div className="home-transform-tabs" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, width: "100%", position: "relative", zIndex: 2 }}>
-            {audienceSegments.map((audience, i) => {
-              const hasPage = audiencePageExists(audience.slug);
-              const isActive = activeTab === i;
-
-              if (hasPage) {
-                return (
-                  <div key={audience.slug} style={{ display: "flex", justifyContent: "center" }}>
-                    <Link
-                      href={`/who-we-serve/${audience.slug}`}
-                      onClick={() => setActiveTab(i)}
-                      style={tabButtonStyle(isActive)}
-                    >
-                      {audienceIcons[i]}
-                      {audience.label}
-                    </Link>
-                  </div>
-                );
-              }
-
-              return (
-                <div key={audience.slug} style={{ display: "flex", justifyContent: "center" }}>
-                  <button type="button" onClick={() => setActiveTab(i)} style={tabButtonStyle(isActive)}>
-                    {audienceIcons[i]}
-                    {audience.label}
-                  </button>
-                </div>
-              );
-            })}
+            {audienceSegments.map((audience, i) => (
+              <div key={audience.slug} style={{ display: "flex", justifyContent: "center" }}>
+                <button
+                  type="button"
+                  onClick={() => setActiveTab(i)}
+                  aria-pressed={activeTab === i}
+                  style={tabButtonStyle(activeTab === i)}
+                >
+                  {audienceIcons[i]}
+                  {audience.label}
+                </button>
+              </div>
+            ))}
           </div>
 
           <div className="home-transform-trunk" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 24, width: "100%", height: 40, position: "relative" }}>

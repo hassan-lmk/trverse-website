@@ -41,8 +41,8 @@ export default async function SolutionLandingPage({ params }: Props) {
         title={doc.heroTagline}
         description={doc.heroIntro}
         backgroundImageSrc={doc.heroBackgroundImage}
-        primaryCta={{ label: "Contact us", href: "/contact" }}
-        secondaryCta={{ label: "All solutions", href: "/solutions" }}
+        primaryCta={doc.primaryCta ?? { label: "Contact us", href: "/contact" }}
+        secondaryCta={doc.secondaryCta ?? { label: "All solutions", href: "/solutions" }}
       />
       <SolutionLandingContent doc={doc} />
       <Footer />

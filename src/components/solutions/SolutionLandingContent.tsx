@@ -125,6 +125,14 @@ export default function SolutionLandingContent({ doc }: Props) {
           object-fit: cover;
           display: block;
         }
+        .sol-highlights-description {
+          margin: 20px 0 0;
+          max-width: 920px;
+          font-family: var(--font-body);
+          font-size: 17px;
+          color: #5a6a7e;
+          line-height: 1.75;
+        }
         .sol-highlights-cardGrid {
           margin-top: 32px;
           display: grid;
@@ -349,6 +357,81 @@ export default function SolutionLandingContent({ doc }: Props) {
           border-color: #fff;
           background: rgba(255,255,255,0.06);
         }
+        .sol-spec-table {
+          width: 100%;
+          border-collapse: separate;
+          border-spacing: 0;
+          border: 1px solid rgba(10,30,61,0.08);
+          border-radius: 20px;
+          overflow: hidden;
+          background: #fff;
+        }
+        .sol-spec-table th,
+        .sol-spec-table td {
+          padding: 18px 24px;
+          text-align: left;
+          vertical-align: top;
+          border-bottom: 1px solid rgba(10,30,61,0.06);
+        }
+        .sol-spec-table tr:last-child th,
+        .sol-spec-table tr:last-child td {
+          border-bottom: none;
+        }
+        .sol-spec-table thead th {
+          background: #f7f9fc;
+          font-family: var(--font-body);
+          font-size: 12px;
+          font-weight: 800;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: #6a7a8e;
+        }
+        .sol-spec-table tbody th {
+          width: 36%;
+          font-family: var(--font-display);
+          font-size: 16px;
+          font-weight: 700;
+          color: #0a1e3d;
+          background: #fff;
+        }
+        .sol-spec-table tbody td {
+          font-family: var(--font-body);
+          font-size: 15px;
+          color: #5a6a7e;
+          line-height: 1.65;
+        }
+        .sol-spec-cards {
+          display: none;
+        }
+        @media (max-width: 767px) {
+          .sol-spec-table-wrap {
+            display: none;
+          }
+          .sol-spec-cards {
+            display: grid;
+            gap: 14px;
+          }
+          .sol-spec-card {
+            background: #fff;
+            border: 1px solid rgba(10,30,61,0.08);
+            border-radius: 16px;
+            padding: 18px 20px;
+          }
+          .sol-spec-card h3 {
+            margin: 0 0 8px;
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            color: #0a1e3d;
+          }
+          .sol-spec-card p {
+            margin: 0;
+            font-family: var(--font-body);
+            font-size: 15px;
+            color: #5a6a7e;
+            line-height: 1.65;
+          }
+        }
       `,
         }}
       />
@@ -377,7 +460,12 @@ export default function SolutionLandingContent({ doc }: Props) {
       </section>
 
       {/* Highlights: heading (left) + image (right), bullets in cards (below) */}
-      <section style={{ background: "#fff", padding: "64px 48px 96px" }}>
+      <section
+        style={{
+          background: "#fff",
+          padding: doc.highlightsDescription ? "56px 48px 56px" : "64px 48px 96px",
+        }}
+      >
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div className="sol-highlights-top">
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
@@ -410,6 +498,9 @@ export default function SolutionLandingContent({ doc }: Props) {
                   {doc.highlightsSubheading}
                 </h2>
               ) : null}
+              {doc.highlightsDescription ? (
+                <p className="sol-highlights-description">{doc.highlightsDescription}</p>
+              ) : null}
             </div>
 
             <div>
@@ -424,6 +515,7 @@ export default function SolutionLandingContent({ doc }: Props) {
             </div>
           </div>
 
+          {doc.highlightsDescription ? null : (
           <div className="sol-highlights-cardGrid" role="list" aria-label="Key highlights">
             {doc.highlights.slice(0, 5).map((text, i) => (
               <article key={i} className="sol-highlight-bullet-card" role="listitem">
@@ -432,6 +524,7 @@ export default function SolutionLandingContent({ doc }: Props) {
               </article>
             ))}
           </div>
+          )}
         </div>
       </section>
 
@@ -439,7 +532,9 @@ export default function SolutionLandingContent({ doc }: Props) {
       <section
         style={{
           background: "#f7f9fc",
-          padding: "96px 48px 120px",
+          padding: doc.specifications?.length
+            ? "96px 48px 72px"
+            : "96px 48px 120px",
           borderTopLeftRadius: 40,
           borderTopRightRadius: 40,
         }}
@@ -456,7 +551,7 @@ export default function SolutionLandingContent({ doc }: Props) {
                 letterSpacing: "-0.02em",
               }}
             >
-              Key Features
+              {doc.featuresHeading ?? "Key Features"}
             </h2>
           </div>
 
@@ -513,6 +608,53 @@ export default function SolutionLandingContent({ doc }: Props) {
         </div>
       </section>
 
+      {doc.specifications && doc.specifications.length > 0 ? (
+        <section style={{ background: "#fff", padding: "0 48px 80px" }}>
+          <div style={{ maxWidth: 1280, margin: "0 auto" }}>
+            <div style={{ textAlign: "center", marginBottom: 40 }}>
+              <h2
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(24px, 2.6vw, 34px)",
+                  fontWeight: 700,
+                  color: "#0a1e3d",
+                  margin: 0,
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                {doc.specificationsHeading ?? "Specification"}
+              </h2>
+            </div>
+            <div className="sol-spec-table-wrap">
+              <table className="sol-spec-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Specification</th>
+                    <th scope="col">Detail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {doc.specifications.map((row) => (
+                    <tr key={row.label}>
+                      <th scope="row">{row.label}</th>
+                      <td>{row.detail}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <div className="sol-spec-cards" aria-label="Specification">
+              {doc.specifications.map((row) => (
+                <article key={row.label} className="sol-spec-card">
+                  <h3>{row.label}</h3>
+                  <p>{row.detail}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {/* CTA */}
       <section style={{ background: "#fff", padding: "0 48px 120px" }}>
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
@@ -546,7 +688,7 @@ export default function SolutionLandingContent({ doc }: Props) {
                     lineHeight: 1.2,
                   }}
                 >
-                  Plan your fare strategy with TRVERSE
+                  {doc.ctaHeading ?? "Plan your fare strategy with TRVERSE"}
                 </h2>
                 <p
                   style={{
@@ -557,12 +699,16 @@ export default function SolutionLandingContent({ doc }: Props) {
                     lineHeight: 1.65,
                   }}
                 >
-                  Ask about Meridian for your corridors, fleets, and digital channels.
+                  {doc.ctaBody ??
+                    "Ask about Meridian for your corridors, fleets, and digital channels."}
                 </p>
               </div>
               <div className="sol-landing-cta-group">
-                <Link href="/contact" className="sol-landing-cta-primary">
-                  Contact us
+                <Link
+                  href={doc.primaryCta?.href ?? "/contact"}
+                  className="sol-landing-cta-primary"
+                >
+                  {doc.primaryCta?.label ?? "Contact us"}
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
                     <path
                       d="M3 8h10M9 4l4 4-4 4"
@@ -573,8 +719,11 @@ export default function SolutionLandingContent({ doc }: Props) {
                     />
                   </svg>
                 </Link>
-                <Link href="/solutions" className="sol-landing-cta-outline">
-                  All solutions
+                <Link
+                  href={doc.secondaryCta?.href ?? "/solutions"}
+                  className="sol-landing-cta-outline"
+                >
+                  {doc.secondaryCta?.label ?? "All solutions"}
                 </Link>
               </div>
             </div>

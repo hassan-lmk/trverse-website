@@ -17,6 +17,7 @@ const Hero = () => {
       <style dangerouslySetInnerHTML={{ __html: `
         .home-hero-section {
           position: relative;
+          z-index: 2;
           min-height: 88vh;
           display: flex;
           align-items: center;

@@ -5,6 +5,58 @@ type Props = {
   doc: AudienceLandingDoc;
 };
 
+function CapabilityIcon({ index }: { index: number }) {
+  const common = {
+    width: 26,
+    height: 26,
+    viewBox: "0 0 28 28",
+    fill: "none" as const,
+    stroke: "currentColor",
+    strokeWidth: 1.6,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+  };
+
+  switch (index % 5) {
+    case 0:
+      return (
+        <svg {...common}>
+          <rect x="4" y="7" width="20" height="14" rx="2" />
+          <path d="M4 11h20" />
+          <path d="M8 17h6" />
+        </svg>
+      );
+    case 1:
+      return (
+        <svg {...common}>
+          <circle cx="14" cy="14" r="9" />
+          <path d="M14 9v5l3 2" />
+        </svg>
+      );
+    case 2:
+      return (
+        <svg {...common}>
+          <path d="M14 4l2.2 6.8H23l-5.4 3.9 2.1 6.8L14 17.6 8.3 21.5l2.1-6.8L5 10.8h6.8L14 4z" />
+        </svg>
+      );
+    case 3:
+      return (
+        <svg {...common}>
+          <ellipse cx="14" cy="7" rx="8" ry="3" />
+          <path d="M6 7v6c0 1.7 3.6 3 8 3s8-1.3 8-3V7" />
+          <path d="M6 13v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" />
+        </svg>
+      );
+    default:
+      return (
+        <svg {...common}>
+          <path d="M14 4l8 3v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V7l8-3z" />
+          <path d="M10.5 14l2 2 5-5" />
+        </svg>
+      );
+  }
+}
+
 export default function AudienceLandingContent({ doc }: Props) {
   return (
     <>
@@ -25,79 +77,97 @@ export default function AudienceLandingContent({ doc }: Props) {
           text-decoration: underline;
           color: var(--accent);
         }
-        .audience-cap-table {
-          width: 100%;
-          border-collapse: separate;
-          border-spacing: 0;
-          border: 1px solid rgba(10,30,61,0.08);
-          border-radius: 20px;
-          overflow: hidden;
+        .audience-cap-grid {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 20px;
+        }
+        .audience-cap-card {
           background: #fff;
+          border: 1px solid rgba(10, 30, 61, 0.08);
+          border-radius: 20px;
+          padding: 28px 26px 30px;
+          position: relative;
+          overflow: hidden;
+          transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          min-height: 100%;
         }
-        .audience-cap-table th,
-        .audience-cap-table td {
-          padding: 20px 24px;
-          text-align: left;
-          vertical-align: top;
-          border-bottom: 1px solid rgba(10,30,61,0.06);
+        .audience-cap-card::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: linear-gradient(90deg, var(--accent), #134f89);
+          opacity: 0;
+          transition: opacity 0.22s ease;
         }
-        .audience-cap-table tr:last-child th,
-        .audience-cap-table tr:last-child td {
-          border-bottom: none;
+        .audience-cap-card:hover {
+          border-color: rgba(255, 130, 93, 0.35);
+          box-shadow: 0 16px 48px rgba(10, 30, 61, 0.08);
+          transform: translateY(-3px);
         }
-        .audience-cap-table thead th {
-          background: #f7f9fc;
-          font-family: var(--font-body);
-          font-size: 12px;
-          font-weight: 800;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: #6a7a8e;
+        .audience-cap-card:hover::before {
+          opacity: 1;
         }
-        .audience-cap-table tbody th {
-          width: 34%;
+        .audience-cap-card-icon {
+          width: 52px;
+          height: 52px;
+          border-radius: 14px;
+          background: linear-gradient(145deg, rgba(255, 130, 93, 0.14) 0%, rgba(19, 79, 137, 0.1) 100%);
+          border: 1px solid rgba(255, 130, 93, 0.2);
+          color: #134f89;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-shrink: 0;
+        }
+        .audience-cap-card h3 {
+          margin: 0;
           font-family: var(--font-display);
-          font-size: 17px;
+          font-size: 18px;
           font-weight: 700;
           color: #0a1e3d;
-          background: #fff;
+          line-height: 1.3;
+          letter-spacing: -0.01em;
         }
-        .audience-cap-table tbody td {
+        .audience-cap-card p {
+          margin: 0;
           font-family: var(--font-body);
           font-size: 15px;
           color: #5a6a7e;
           line-height: 1.65;
         }
-        .audience-cap-cards {
-          display: none;
+        @media (min-width: 960px) {
+          .audience-cap-grid--five {
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+          }
+          .audience-cap-grid--five .audience-cap-card {
+            grid-column: span 2;
+          }
+          .audience-cap-grid--five .audience-cap-card:nth-child(4) {
+            grid-column: 2 / span 2;
+          }
+          .audience-cap-grid--five .audience-cap-card:nth-child(5) {
+            grid-column: 4 / span 2;
+          }
         }
-        @media (max-width: 767px) {
-          .audience-cap-table-wrap {
-            display: none;
+        @media (max-width: 959px) {
+          .audience-cap-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
           }
-          .audience-cap-cards {
-            display: grid;
-            gap: 14px;
+        }
+        @media (max-width: 639px) {
+          .audience-cap-grid {
+            grid-template-columns: 1fr;
           }
-          .audience-cap-card {
-            background: #fff;
-            border: 1px solid rgba(10,30,61,0.08);
-            border-radius: 16px;
-            padding: 20px;
-          }
-          .audience-cap-card h3 {
-            margin: 0 0 8px;
-            font-family: var(--font-display);
-            font-size: 17px;
-            font-weight: 700;
-            color: #0a1e3d;
-          }
-          .audience-cap-card p {
-            margin: 0;
-            font-family: var(--font-body);
-            font-size: 15px;
-            color: #5a6a7e;
-            line-height: 1.65;
+          .audience-cap-grid--five .audience-cap-card:nth-child(4),
+          .audience-cap-grid--five .audience-cap-card:nth-child(5) {
+            grid-column: auto;
           }
         }
         .audience-cta-inner {
@@ -284,29 +354,44 @@ export default function AudienceLandingContent({ doc }: Props) {
         }
         .audience-proof-visual-col {
           position: relative;
-          min-height: 360px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: clamp(28px, 4vw, 40px);
           border-left: 1px solid rgba(255, 255, 255, 0.08);
         }
-        .audience-proof-visual-col img {
+        .audience-proof-visual-frame {
+          position: relative;
           width: 100%;
-          height: 100%;
+          max-width: 400px;
+          border-radius: 20px;
+          overflow: hidden;
+          border: 1px solid rgba(255, 255, 255, 0.16);
+          box-shadow: 0 18px 48px rgba(0, 0, 0, 0.22);
+          background: rgba(255, 255, 255, 0.04);
+        }
+        .audience-proof-visual-frame img {
+          width: 100%;
+          height: clamp(220px, 28vw, 300px);
           object-fit: cover;
           display: block;
         }
         .audience-proof-visual-overlay {
           position: absolute;
           inset: 0;
-          background: linear-gradient(180deg, rgba(8,24,47,0.08) 0%, rgba(8,24,47,0.55) 58%, rgba(8,24,47,0.92) 100%);
+          background: linear-gradient(180deg, rgba(8,24,47,0.04) 0%, rgba(8,24,47,0.42) 58%, rgba(8,24,47,0.78) 100%);
+          pointer-events: none;
         }
         .audience-proof-stats {
           position: absolute;
-          left: 24px;
-          right: 24px;
-          bottom: 24px;
+          left: 16px;
+          right: 16px;
+          bottom: 16px;
           display: grid;
           grid-template-columns: 1fr auto 1fr;
-          gap: 12px;
+          gap: 10px;
           align-items: center;
+          z-index: 1;
         }
         .audience-proof-stat {
           background: rgba(255, 255, 255, 0.1);
@@ -356,9 +441,12 @@ export default function AudienceLandingContent({ doc }: Props) {
             grid-template-columns: 1fr;
           }
           .audience-proof-visual-col {
-            min-height: 300px;
+            padding: 24px 28px 32px;
             border-left: none;
             border-top: 1px solid rgba(255, 255, 255, 0.08);
+          }
+          .audience-proof-visual-frame {
+            max-width: 100%;
           }
         }
         @media (max-width: 700px) {
@@ -428,7 +516,7 @@ export default function AudienceLandingContent({ doc }: Props) {
               marginBottom: 16,
             }}
           >
-            The challenge
+            The Challenge
           </span>
           <h2
             style={{
@@ -491,32 +579,20 @@ export default function AudienceLandingContent({ doc }: Props) {
                 letterSpacing: "-0.02em",
               }}
             >
-              What TRVERSE delivers for your authority
+              {doc.capabilitiesHeading}
             </h2>
           </div>
 
-          <div className="audience-cap-table-wrap">
-            <table className="audience-cap-table">
-              <thead>
-                <tr>
-                  <th scope="col">Capability</th>
-                  <th scope="col">What it means for your authority</th>
-                </tr>
-              </thead>
-              <tbody>
-                {doc.capabilities.map((row) => (
-                  <tr key={row.capability}>
-                    <th scope="row">{row.capability}</th>
-                    <td>{row.description}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          <div className="audience-cap-cards" aria-label="Capabilities">
-            {doc.capabilities.map((row) => (
-              <article key={row.capability} className="audience-cap-card">
+          <div
+            className={`audience-cap-grid${doc.capabilities.length === 5 ? " audience-cap-grid--five" : ""}`}
+            role="list"
+            aria-label="Capabilities"
+          >
+            {doc.capabilities.map((row, i) => (
+              <article key={row.capability} className="audience-cap-card" role="listitem">
+                <div className="audience-cap-card-icon" aria-hidden>
+                  <CapabilityIcon index={i} />
+                </div>
                 <h3>{row.capability}</h3>
                 <p>{row.description}</p>
               </article>
@@ -525,6 +601,7 @@ export default function AudienceLandingContent({ doc }: Props) {
         </div>
       </section>
 
+      {doc.proofQuote ? (
       <section className="audience-proof-section" aria-labelledby="audience-proof-heading">
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 40 }}>
@@ -553,7 +630,7 @@ export default function AudienceLandingContent({ doc }: Props) {
                 letterSpacing: "-0.02em",
               }}
             >
-              Results that speak for themselves
+              Results That Speak For Themselves
             </h2>
           </div>
 
@@ -579,7 +656,13 @@ export default function AudienceLandingContent({ doc }: Props) {
                 </div>
               </figcaption>
               {(() => {
-                const chips = doc.proofMetaChips ?? doc.proofMeta.split("|").map((part) => part.trim()).filter(Boolean);
+                const chips =
+                  doc.proofMetaChips ??
+                  doc.proofMeta
+                    ?.split("|")
+                    .map((part) => part.trim())
+                    .filter(Boolean) ??
+                  [];
                 if (chips.length === 0) return null;
                 return (
                   <div className="audience-proof-chips">
@@ -598,31 +681,34 @@ export default function AudienceLandingContent({ doc }: Props) {
 
             {doc.proofImage ? (
               <div className="audience-proof-visual-col">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={doc.proofImage} alt="" role="presentation" />
-                <div className="audience-proof-visual-overlay" aria-hidden />
-                {doc.proofStats ? (
-                  <div className="audience-proof-stats" aria-label="Impact metrics">
-                    <div className="audience-proof-stat">
-                      <strong>{doc.proofStats.before.value}</strong>
-                      <span>{doc.proofStats.before.label}</span>
+                <div className="audience-proof-visual-frame">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={doc.proofImage} alt="" role="presentation" />
+                  {doc.proofStats ? <div className="audience-proof-visual-overlay" aria-hidden /> : null}
+                  {doc.proofStats ? (
+                    <div className="audience-proof-stats" aria-label="Impact metrics">
+                      <div className="audience-proof-stat">
+                        <strong>{doc.proofStats.before.value}</strong>
+                        <span>{doc.proofStats.before.label}</span>
+                      </div>
+                      <div className="audience-proof-stat-arrow" aria-hidden>
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                          <path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </div>
+                      <div className="audience-proof-stat audience-proof-stat--after">
+                        <strong>{doc.proofStats.after.value}</strong>
+                        <span>{doc.proofStats.after.label}</span>
+                      </div>
                     </div>
-                    <div className="audience-proof-stat-arrow" aria-hidden>
-                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                        <path d="M4 9h10M10 5l4 4-4 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </div>
-                    <div className="audience-proof-stat audience-proof-stat--after">
-                      <strong>{doc.proofStats.after.value}</strong>
-                      <span>{doc.proofStats.after.label}</span>
-                    </div>
-                  </div>
-                ) : null}
+                  ) : null}
+                </div>
               </div>
             ) : null}
           </figure>
         </div>
       </section>
+      ) : null}
 
       <section className="audience-cta-section">
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
@@ -685,7 +771,7 @@ export default function AudienceLandingContent({ doc }: Props) {
                     lineHeight: 1.2,
                   }}
                 >
-                  Ready to modernise your network?
+                  {doc.ctaHeading}
                 </h2>
                 <p
                   style={{
@@ -696,7 +782,7 @@ export default function AudienceLandingContent({ doc }: Props) {
                     lineHeight: 1.65,
                   }}
                 >
-                  Speak with our team about AFC, real-time operations, and unified reporting for transport authorities.
+                  {doc.ctaBody}
                 </p>
               </div>
               <div className="audience-cta-group">
