@@ -4,7 +4,7 @@ import React from 'react';
 
 const System = () => {
   return (
-    <section id="products" className="home-system-section" style={{ background: '#fff', padding: '120px 48px' }}>
+    <section id="products" className="home-system-section" style={{ background: '#fff', padding: '72px 48px 96px' }}>
       <div style={{ maxWidth: 1280, margin: '0 auto' }}>
         {/* System capabilities & Stats */}
         <div style={{
@@ -47,7 +47,7 @@ const System = () => {
           <style dangerouslySetInnerHTML={{__html: `
             @media (max-width: 1024px) {
               .home-system-section {
-                padding: 96px 28px !important;
+                padding: 56px 28px 80px !important;
               }
               .home-system-shell {
                 padding: 56px 28px !important;
@@ -67,7 +67,7 @@ const System = () => {
             }
             @media (max-width: 700px) {
               .home-system-section {
-                padding: 84px 20px !important;
+                padding: 48px 20px 72px !important;
               }
               .home-system-shell {
                 padding: 40px 20px !important;

@@ -90,8 +90,8 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
       href: "/contact",
     },
     secondaryCta: {
-      label: "Read the Peshawar BRT case study",
-      href: "/case-studies/peshawar-brt",
+      label: "Contact us",
+      href: "/contact",
     },
     ctaHeading: "Ready To Modernise Your Network?",
     ctaBody:
@@ -152,8 +152,8 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
       href: "/contact",
     },
     secondaryCta: {
-      label: "Download the Masar Makkah case study",
-      href: "/case-studies/masar-makkah-electric-brt",
+      label: "Contact us",
+      href: "/contact",
     },
     ctaHeading: "Ready To Build Data-Led Urban Mobility?",
     ctaBody:
@@ -202,7 +202,7 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
       href: "/contact",
     },
     secondaryCta: {
-      label: "Download the operations efficiency brief",
+      label: "Contact us",
       href: "/contact",
     },
     ctaHeading: "Ready To Capture Every Point Of Efficiency?",
