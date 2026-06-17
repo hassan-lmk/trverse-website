@@ -311,7 +311,7 @@ const SolutionDetail = () => {
                   color: "#134f89",
                 }}
               >
-                {sol.tag} — {sol.subtitle.replace("TRVERSE ", "")}
+                {sol.subtitle.replace("TRVERSE ", "")}
               </div>
 
               <h2 style={{

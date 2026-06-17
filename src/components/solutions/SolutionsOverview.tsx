@@ -3,12 +3,12 @@
 import React from "react";
 
 const tabs = [
-  { id: "afc", label: "Automated Fare Collection", short: "AFC" },
-  { id: "its", label: "Intelligent Transport Systems", short: "ITS" },
-  { id: "scheduling", label: "Advanced Scheduling System", short: "ADV" },
-  { id: "control", label: "Fleet Management", short: "FLM" },
-  { id: "micro", label: "Micro-Mobility Integration", short: "MMI" },
-  { id: "performance", label: "AI Monitoring and Control", short: "AIC" },
+  { id: "afc", label: "Automated Fare Collection" },
+  { id: "its", label: "Intelligent Transport Systems" },
+  { id: "scheduling", label: "Advanced Scheduling System" },
+  { id: "control", label: "Fleet Management" },
+  { id: "micro", label: "Micro-Mobility Integration" },
+  { id: "performance", label: "AI Monitoring and Control" },
 ];
 
 const SolutionsOverview = () => {
@@ -28,7 +28,6 @@ const SolutionsOverview = () => {
         .sol-tab {
           display: flex;
           align-items: center;
-          gap: 10px;
           padding: 14px 24px;
           border-radius: 12px;
           border: 1.5px solid rgba(10,30,61,0.08);
@@ -52,17 +51,6 @@ const SolutionsOverview = () => {
           border-color: var(--accent);
           color: #fff;
           box-shadow: 0 8px 24px rgba(255,130,93,0.3);
-        }
-        .sol-tab .tab-badge {
-          font-size: 10px;
-          font-weight: 800;
-          padding: 2px 7px;
-          border-radius: 6px;
-          background: rgba(10,30,61,0.08);
-          letter-spacing: 0.05em;
-        }
-        .sol-tab.active .tab-badge {
-          background: rgba(255,255,255,0.2);
         }
       `}} />
 
@@ -109,7 +97,6 @@ const SolutionsOverview = () => {
               className={`sol-tab ${active === tab.id ? "active" : ""}`}
               onClick={() => setActive(tab.id)}
             >
-              <span className="tab-badge">{tab.short}</span>
               {tab.label}
             </a>
           ))}

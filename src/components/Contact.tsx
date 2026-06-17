@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import ContactForm from "@/components/contact/ContactForm";
+import DemoRequestForm from "@/components/contact/DemoRequestForm";
 import { officeFooterLabels } from "@/data/offices";
 
 const Contact = () => {
@@ -84,7 +84,9 @@ const Contact = () => {
             </div>
           </div>
 
-          <ContactForm compact title="Contact form" description="Tell us about your goals and the solution you're interested in." />
+          <div style={{ position: "relative", zIndex: 2 }}>
+            <DemoRequestForm />
+          </div>
         </div>
       </div>
     </section>

@@ -26,7 +26,7 @@ export default function ProductsPage() {
         }
         description="TRVERSE products are designed as defined systems that support payments, operations, and passenger services. Each product solves a specific part of transit operations while working as part of a connected environment."
         backgroundImageSrc="/assets/case-studies-banner.webp"
-        primaryCta={{ label: "Explore software", href: "#software-products" }}
+        primaryCta={{ label: "Explore our products", href: "#software-products" }}
         secondaryCta={{ label: "Get a Demo", href: "/get-a-demo" }}
       />
       <PageBreadcrumb items={[{ label: "Home", href: "/" }, { label: "Products" }]} />

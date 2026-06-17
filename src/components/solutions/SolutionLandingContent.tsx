@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { SolutionLandingDoc } from "@/data/solutionLandings";
+import SolutionFeatureIcon, { getSolutionFeatureIcon } from "@/components/solutions/SolutionFeatureIcon";
 
 type Props = {
   doc: SolutionLandingDoc;
@@ -33,48 +34,6 @@ function HighlightRowCheck() {
       </svg>
     </span>
   );
-}
-
-function FeatureGlyph({ variant }: { variant: number }) {
-  const common = {
-    width: 28,
-    height: 28,
-    viewBox: "0 0 28 28",
-    fill: "none" as const,
-    stroke: "currentColor",
-    strokeWidth: 1.6,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-  };
-  switch (variant % 4) {
-    case 0:
-      return (
-        <svg {...common}>
-          <rect x="4" y="7" width="20" height="14" rx="2" />
-          <path d="M4 11h20" />
-        </svg>
-      );
-    case 1:
-      return (
-        <svg {...common}>
-          <path d="M4 22V8a2 2 0 012-2h6l12 12v6H6a2 2 0 01-2-2z" />
-          <path d="M18 6v10" />
-        </svg>
-      );
-    case 2:
-      return (
-        <svg {...common}>
-          <path d="M5 22V9M14 22V5M23 22v-7" />
-        </svg>
-      );
-    default:
-      return (
-        <svg {...common}>
-          <rect x="6" y="5" width="16" height="20" rx="2" />
-          <path d="M11 18h6" />
-        </svg>
-      );
-  }
 }
 
 export default function SolutionLandingContent({ doc }: Props) {
@@ -452,7 +411,7 @@ export default function SolutionLandingContent({ doc }: Props) {
               gap: 24,
             }}
           >
-            {doc.features.map((f, i) => (
+            {doc.features.map((f) => (
               <article key={f.title} className="sol-feature-card">
                 <div
                   style={{
@@ -467,7 +426,7 @@ export default function SolutionLandingContent({ doc }: Props) {
                     marginBottom: 20,
                   }}
                 >
-                  <FeatureGlyph variant={i} />
+                  <SolutionFeatureIcon name={getSolutionFeatureIcon(f.title, doc.slug)} />
                 </div>
                 <h3
                   style={{
@@ -543,7 +502,7 @@ export default function SolutionLandingContent({ doc }: Props) {
                   }}
                 >
                   {doc.ctaBody ??
-                    "Ask about Meridian for your corridors, fleets, and digital channels."}
+                    "Talk to TRVERSE about your corridors, fleets, and digital channels."}
                 </p>
               </div>
               <div className="sol-landing-cta-group">

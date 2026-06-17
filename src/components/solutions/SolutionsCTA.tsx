@@ -183,22 +183,6 @@ const SolutionsCTA = () => {
                   <path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </a>
-              <a href="/get-a-demo" className="cta-btn-outline" style={{ color: "#fff", border: "2px solid rgba(255,255,255,0.2)" }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.background = "rgba(255,255,255,0.06)";
-                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.4)";
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.background = "transparent";
-                  e.currentTarget.style.borderColor = "rgba(255,255,255,0.2)";
-                }}
-              >
-                Request a Demo
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <circle cx="8" cy="8" r="6" stroke="currentColor" strokeWidth="1.6"/>
-                  <path d="M6 5.5l5 2.5-5 2.5V5.5z" fill="currentColor"/>
-                </svg>
-              </a>
             </div>
 
             {/* Trust signals */}

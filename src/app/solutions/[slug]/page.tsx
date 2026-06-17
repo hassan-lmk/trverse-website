@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!doc) return { title: "Solution — TRVERSE" };
 
   return {
-    title: doc.metaTitle,
+    title: `${doc.eyebrowCategory} — TRVERSE`,
     description: doc.metaDescription,
   };
 }

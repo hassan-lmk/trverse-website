@@ -20,15 +20,43 @@ const journeyMilestones = [
   },
 ];
 
+function renderJourneyYear(year: string) {
+  const decadeMatch = year.match(/^(\d{4})s$/i);
+  if (decadeMatch) {
+    return (
+      <>
+        {decadeMatch[1]}&apos;
+        <span style={{ fontSize: "0.72em", fontWeight: 600, letterSpacing: "0.04em" }}>s</span>
+      </>
+    );
+  }
+  return year;
+}
+
+const deliverableIconProps = {
+  width: 28,
+  height: 28,
+  viewBox: "0 0 28 28",
+  fill: "none" as const,
+  stroke: "currentColor",
+  strokeWidth: 1.6,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+  "aria-hidden": true,
+};
+
 const deliverables = [
   {
     title: "Connected Operations",
     description: "Unifying systems, workflows, and field operations in real time.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <rect x="3" y="14" width="5" height="11" rx="1" stroke="currentColor" strokeWidth="1.8" />
-        <rect x="11.5" y="8" width="5" height="17" rx="1" stroke="currentColor" strokeWidth="1.8" />
-        <rect x="20" y="3" width="5" height="22" rx="1" stroke="currentColor" strokeWidth="1.8" />
+      <svg {...deliverableIconProps}>
+        <circle cx="14" cy="14" r="3" />
+        <circle cx="6" cy="8" r="2.2" />
+        <circle cx="22" cy="8" r="2.2" />
+        <circle cx="6" cy="20" r="2.2" />
+        <circle cx="22" cy="20" r="2.2" />
+        <path d="M11.5 12.2 7.8 9.5M16.5 12.2l3.7-2.7M11.5 15.8l-3.7 2.7M16.5 15.8l3.7 2.7" />
       </svg>
     ),
   },
@@ -36,9 +64,11 @@ const deliverables = [
     title: "Data Intelligence",
     description: "Turning raw data into actionable insights for faster decisions.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <circle cx="14" cy="14" r="10" stroke="currentColor" strokeWidth="1.8" />
-        <path d="M14 8v6l4 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <svg {...deliverableIconProps}>
+        <path d="M5 22V13M10 22V9M15 22v-5M20 22V6" />
+        <path d="M5 17l5-4 5 2 5-7" />
+        <circle cx="20" cy="6" r="2.2" />
+        <path d="M20 8.5V11" />
       </svg>
     ),
   },
@@ -46,9 +76,13 @@ const deliverables = [
     title: "Smart Infrastructure Enablement",
     description: "Supporting cities, transport, and enterprise ecosystems.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <path d="M5 24V12l9-7 9 7v12" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
-        <path d="M11 24v-8h6v8" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+      <svg {...deliverableIconProps}>
+        <path d="M4 22h20" />
+        <path d="M8 22V13l6-5 6 5v9" />
+        <path d="M12 22v-6h4v6" />
+        <path d="M18 10h4v4" />
+        <path d="M20 8v2" />
+        <circle cx="20" cy="7" r="1.2" fill="currentColor" stroke="none" />
       </svg>
     ),
   },
@@ -56,14 +90,11 @@ const deliverables = [
     title: "Scalable Digital Platforms",
     description: "Built to grow with evolving operational needs.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden>
-        <circle cx="14" cy="14" r="3" stroke="currentColor" strokeWidth="1.8" />
-        <path
-          d="M14 4v3M14 21v3M4 14h3M21 14h3M7.05 7.05l2.12 2.12M18.83 18.83l2.12 2.12M7.05 20.95l2.12-2.12M18.83 9.17l2.12-2.12"
-          stroke="currentColor"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-        />
+      <svg {...deliverableIconProps}>
+        <rect x="5" y="16" width="18" height="6" rx="1.5" />
+        <rect x="7" y="10" width="14" height="5" rx="1.5" />
+        <rect x="9" y="5" width="10" height="4" rx="1.5" />
+        <path d="M14 3v2M11 4.5 14 2l3 2.5" />
       </svg>
     ),
   },
@@ -169,11 +200,10 @@ const AboutPageContent = () => {
                       fontWeight: 700,
                       color: "var(--accent)",
                       letterSpacing: "0.08em",
-                      textTransform: "uppercase",
                       margin: "0 0 8px",
                     }}
                   >
-                    {item.year}
+                    {renderJourneyYear(item.year)}
                   </p>
                   <h3
                     style={{
