@@ -19,7 +19,7 @@ export default function GetADemoPage() {
         badge="Get a demo"
         title={
           <>
-            See TRVERSE in operation —
+            See TRVERSE in operation,
             <br />
             <span style={{ color: "var(--accent)" }}>with your network&apos;s data.</span>
           </>

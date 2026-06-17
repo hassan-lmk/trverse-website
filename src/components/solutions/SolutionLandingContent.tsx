@@ -346,81 +346,6 @@ export default function SolutionLandingContent({ doc }: Props) {
           border-color: #fff;
           background: rgba(255,255,255,0.06);
         }
-        .sol-spec-table {
-          width: 100%;
-          border-collapse: separate;
-          border-spacing: 0;
-          border: 1px solid rgba(10,30,61,0.08);
-          border-radius: 20px;
-          overflow: hidden;
-          background: #fff;
-        }
-        .sol-spec-table th,
-        .sol-spec-table td {
-          padding: 18px 24px;
-          text-align: left;
-          vertical-align: top;
-          border-bottom: 1px solid rgba(10,30,61,0.06);
-        }
-        .sol-spec-table tr:last-child th,
-        .sol-spec-table tr:last-child td {
-          border-bottom: none;
-        }
-        .sol-spec-table thead th {
-          background: #f7f9fc;
-          font-family: var(--font-body);
-          font-size: 12px;
-          font-weight: 800;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-          color: #6a7a8e;
-        }
-        .sol-spec-table tbody th {
-          width: 36%;
-          font-family: var(--font-display);
-          font-size: 16px;
-          font-weight: 700;
-          color: #0a1e3d;
-          background: #fff;
-        }
-        .sol-spec-table tbody td {
-          font-family: var(--font-body);
-          font-size: 15px;
-          color: #5a6a7e;
-          line-height: 1.65;
-        }
-        .sol-spec-cards {
-          display: none;
-        }
-        @media (max-width: 767px) {
-          .sol-spec-table-wrap {
-            display: none;
-          }
-          .sol-spec-cards {
-            display: grid;
-            gap: 14px;
-          }
-          .sol-spec-card {
-            background: #fff;
-            border: 1px solid rgba(10,30,61,0.08);
-            border-radius: 16px;
-            padding: 18px 20px;
-          }
-          .sol-spec-card h3 {
-            margin: 0 0 8px;
-            font-family: var(--font-display);
-            font-size: 16px;
-            font-weight: 700;
-            color: #0a1e3d;
-          }
-          .sol-spec-card p {
-            margin: 0;
-            font-family: var(--font-body);
-            font-size: 15px;
-            color: #5a6a7e;
-            line-height: 1.65;
-          }
-        }
       `,
         }}
       />
@@ -429,26 +354,27 @@ export default function SolutionLandingContent({ doc }: Props) {
       <section
         style={{
           background: "#fff",
-          padding: doc.highlightsDescription ? "56px 48px 56px" : "64px 48px 96px",
+          padding:
+            doc.highlightsDescription || doc.highlights.length
+              ? "56px 48px 56px"
+              : "64px 48px 96px",
         }}
       >
         <div style={{ maxWidth: 1280, margin: "0 auto" }}>
           <div className="sol-highlights-top">
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "center" }}>
-              <span
+              <h2
                 style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: 12,
-                  fontWeight: 800,
-                  color: "var(--accent)",
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  display: "block",
-                  marginBottom: 14,
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(24px, 2.6vw, 34px)",
+                  fontWeight: 700,
+                  color: "#0a1e3d",
+                  margin: "0 0 14px",
+                  letterSpacing: "-0.02em",
                 }}
               >
                 {doc.highlightsHeading}
-              </span>
+              </h2>
               {doc.highlightsSubheading ? (
                 <h2
                   style={{
@@ -481,16 +407,16 @@ export default function SolutionLandingContent({ doc }: Props) {
             </div>
           </div>
 
-          {doc.highlightsDescription ? null : (
-          <div className="sol-highlights-cardGrid" role="list" aria-label="Key highlights">
-            {doc.highlights.slice(0, 5).map((text, i) => (
-              <article key={i} className="sol-highlight-bullet-card" role="listitem">
-                <HighlightRowCheck />
-                <p>{text}</p>
-              </article>
-            ))}
-          </div>
-          )}
+          {doc.highlights.length > 0 ? (
+            <div className="sol-highlights-cardGrid" role="list" aria-label="Key highlights">
+              {doc.highlights.slice(0, 5).map((text, i) => (
+                <article key={i} className="sol-highlight-bullet-card" role="listitem">
+                  <HighlightRowCheck />
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+          ) : null}
         </div>
       </section>
 
@@ -498,9 +424,7 @@ export default function SolutionLandingContent({ doc }: Props) {
       <section
         style={{
           background: "#f7f9fc",
-          padding: doc.specifications?.length
-            ? "96px 48px 72px"
-            : "96px 48px 120px",
+          padding: "96px 48px 120px",
           borderTopLeftRadius: 40,
           borderTopRightRadius: 40,
         }}
@@ -573,53 +497,6 @@ export default function SolutionLandingContent({ doc }: Props) {
           </div>
         </div>
       </section>
-
-      {doc.specifications && doc.specifications.length > 0 ? (
-        <section style={{ background: "#fff", padding: "0 48px 80px" }}>
-          <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-            <div style={{ textAlign: "center", marginBottom: 40 }}>
-              <h2
-                style={{
-                  fontFamily: "var(--font-display)",
-                  fontSize: "clamp(24px, 2.6vw, 34px)",
-                  fontWeight: 700,
-                  color: "#0a1e3d",
-                  margin: 0,
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                {doc.specificationsHeading ?? "Specification"}
-              </h2>
-            </div>
-            <div className="sol-spec-table-wrap">
-              <table className="sol-spec-table">
-                <thead>
-                  <tr>
-                    <th scope="col">Specification</th>
-                    <th scope="col">Detail</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {doc.specifications.map((row) => (
-                    <tr key={row.label}>
-                      <th scope="row">{row.label}</th>
-                      <td>{row.detail}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-            <div className="sol-spec-cards" aria-label="Specification">
-              {doc.specifications.map((row) => (
-                <article key={row.label} className="sol-spec-card">
-                  <h3>{row.label}</h3>
-                  <p>{row.detail}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null}
 
       {/* CTA */}
       <section style={{ background: "#fff", padding: "0 48px 120px" }}>

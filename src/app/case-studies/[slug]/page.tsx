@@ -32,6 +32,7 @@ export default async function CaseStudyDetailPage({ params }: Props) {
       <Nav />
       <InsightsHero
         badge={`Case study • ${item.location}`}
+        titleAs="p"
         title={
           item.headline ? (
             <span style={{ color: "#fff" }}>{item.headline}</span>

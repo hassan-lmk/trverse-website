@@ -29,7 +29,7 @@ export default function AboutPage() {
             <span style={{ color: "var(--accent)" }}>Innovation</span>
           </>
         }
-        description="TRVERSE is built on the deep experience and global technology foundation of LMKR — helping organizations turn complex systems into connected, intelligent ecosystems."
+        description="TRVERSE is built on the deep experience and global technology foundation of LMKR, helping organizations turn complex systems into connected, intelligent ecosystems."
         backgroundImageSrc="/assets/about-hero-banner.webp"
         backgroundImageAlt="Connected smart mobility network over a nighttime highway interchange"
       />

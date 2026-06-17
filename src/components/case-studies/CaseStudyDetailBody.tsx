@@ -172,6 +172,20 @@ const CaseStudyDetailBody = ({ item }: Props) => {
         />
 
         <div style={{ maxWidth: 1180, margin: "0 auto", position: "relative", zIndex: 1 }}>
+          <h1
+            style={{
+              fontFamily: displayFont,
+              fontSize: "clamp(32px, 3.5vw, 44px)",
+              fontWeight: 700,
+              color: "#0a1e3d",
+              lineHeight: 1.15,
+              margin: "0 0 48px",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            {item.title}
+          </h1>
+
           {/* Overview */}
           {overviewParagraphs.length ? (
           <div id="cs-overview" style={{ scrollMarginTop: 100, marginBottom: 64 }}>
@@ -191,19 +205,6 @@ const CaseStudyDetailBody = ({ item }: Props) => {
                 >
                   Overview
                 </span>
-                <h2
-                  style={{
-                    fontFamily: displayFont,
-                    fontSize: "clamp(32px, 3.5vw, 44px)",
-                    fontWeight: 700,
-                    color: "#0a1e3d",
-                    lineHeight: 1.15,
-                    margin: "0 0 24px",
-                    letterSpacing: "-0.02em",
-                  }}
-                >
-                  {item.title}
-                </h2>
                 {item.headline && !overviewParagraphs.length ? (
                   <p
                     style={{

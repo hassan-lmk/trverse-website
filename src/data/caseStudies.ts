@@ -44,10 +44,10 @@ export const caseStudies: CaseStudy[] = [
     title: "Masar Electric BRT, Makkah",
     location: "Makkah, Saudi Arabia",
     summary:
-      "LMKR and TRVERSE delivered the first electric Bus Rapid Transit network at Masar Destination — a landmark mixed-use development in Makkah — providing clean, high-capacity mobility aligned with Saudi Arabia's sustainability commitments.",
+      "LMKR and TRVERSE delivered the first electric Bus Rapid Transit network at Masar Destination, a landmark mixed-use development in Makkah, providing clean, high-capacity mobility aligned with Saudi Arabia's sustainability commitments.",
     heroImage: "/assets/masar.png",
     headline:
-      "The first electric BRT network in Makkah — where mobility meets Vision 2030.",
+      "The first electric BRT network in Makkah, where mobility meets Vision 2030.",
     factSheet: [
       {
         label: "Client",
@@ -101,7 +101,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Peshawar BRT",
     location: "Peshawar, Pakistan",
     summary:
-      "TransPeshawar and TRVERSE built a transit network that carries over 220,000 passengers daily — with fare evasion reduced from over 22% to under 4%, and real-time operational intelligence that has set a new standard for BRT in South Asia.",
+      "TransPeshawar and TRVERSE built a transit network that carries over 220,000 passengers daily, with fare evasion reduced from over 22% to under 4%, and real-time operational intelligence that has set a new standard for BRT in South Asia.",
     heroImage: "/assets/BRT-Peshawar-.webp",
     headline:
       "Transforming Pakistan's most ambitious BRT into a model for the region.",
@@ -165,7 +165,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Lahore MetroBus",
     location: "Lahore, Pakistan",
     summary:
-      "Punjab Mass Transit Authority partnered with LMKR and TRVERSE to deliver integrated security, surveillance, KPI monitoring, and helpdesk across Lahore MetroBus feeder operations — giving 180,000+ daily commuters a safer, better-managed journey.",
+      "Punjab Mass Transit Authority partnered with LMKR and TRVERSE to deliver integrated security, surveillance, KPI monitoring, and helpdesk across Lahore MetroBus feeder operations, giving 180,000+ daily commuters a safer, better-managed journey.",
     heroImage: "/assets/lahore-metro.png",
     headline:
       "Integrated security and operational monitoring for Pakistan's second city.",
@@ -220,10 +220,10 @@ export const caseStudies: CaseStudy[] = [
     title: "Lahore Orange Line Metro Train",
     location: "Lahore, Pakistan",
     summary:
-      "Pakistan's first urban mass rapid transit rail system — a 27 km electric line with 26 stations. TRVERSE delivered AFC, payment application development, and Mastercard and Visa certifications for cashless access at scale.",
+      "Pakistan's first urban mass rapid transit rail system: a 27 km electric line with 26 stations. TRVERSE delivered AFC, payment application development, and Mastercard and Visa certifications for cashless access at scale.",
     heroImage: "/assets/lahore-orange-line.jpg",
     headline:
-      "Pakistan's first urban mass rapid transit rail system — AFC and card payments at scale.",
+      "Pakistan's first urban mass rapid transit rail system. AFC and card payments at scale.",
     factSheet: [
       { label: "Client", value: "Punjab Mass Transit Authority" },
       { label: "Location", value: "Lahore, Pakistan" },
@@ -280,7 +280,7 @@ export const caseStudies: CaseStudy[] = [
     title: "Multan MetroBus",
     location: "Multan, Pakistan",
     summary:
-      "TRVERSE delivered integrated security and monitoring for Metro Bus Multan — 560 cameras, KPI tracking, and helpdesk coordination across 135 buses and 21 stations serving 100,000+ daily commuters in Southern Punjab.",
+      "TRVERSE delivered integrated security and monitoring for Metro Bus Multan, with 560 cameras, KPI tracking, and helpdesk coordination across 135 buses and 21 stations serving 100,000+ daily commuters in Southern Punjab.",
     heroImage: "/assets/multan-metro.jpg",
     headline:
       "Integrated security and monitoring for safe, reliable transit in Southern Punjab.",
@@ -339,10 +339,10 @@ export const caseStudies: CaseStudy[] = [
     title: "Islamabad–Rawalpindi MetroBus",
     location: "Islamabad & Rawalpindi, Pakistan",
     summary:
-      "Pakistan's flagship intercity BRT corridor — 22.5 km between Islamabad and Rawalpindi with 24 stations. TRVERSE delivered AFC, payment application development, and Mastercard and Visa certifications for cashless journeys at scale.",
+      "Pakistan's flagship intercity BRT corridor, 22.5 km between Islamabad and Rawalpindi with 24 stations. TRVERSE delivered AFC, payment application development, and Mastercard and Visa certifications for cashless journeys at scale.",
     heroImage: "/assets/rwl-metrobus.jpg",
     headline:
-      "Connecting Pakistan's twin cities — 22.5 km of precision transit infrastructure.",
+      "Connecting Pakistan's twin cities. 22.5 km of precision transit infrastructure.",
     factSheet: [
       {
         label: "Client",

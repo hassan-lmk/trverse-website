@@ -42,7 +42,7 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
     badge: "Who We Serve • Transport Authorities",
     heroHeadline: "Built For The Complexity Of Network-Scale Transit Operations.",
     heroSubheadline:
-      "Transport authorities face mounting pressure to modernise fare infrastructure, improve service reliability, and demonstrate value to government and passengers alike. TRVERSE gives you the tools to do all three — on a single platform.",
+      "Transport authorities face mounting pressure to modernise fare infrastructure, improve service reliability, and demonstrate value to government and passengers alike. TRVERSE gives you the tools to do all three on a single platform.",
     heroBackgroundImage: "/assets/BRT-Peshawar-.webp",
     challengeHeading: "The Systems You Rely On Were Not Built For Today's Demands.",
     challengeBody:
@@ -106,7 +106,7 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
     badge: "Who We Serve • City Governments",
     heroHeadline: "Mobility Data That Drives Smarter Urban Decisions.",
     heroSubheadline:
-      "City governments need transit networks that support broader urban goals — emissions reduction, equity, economic productivity, and livability. TRVERSE provides the data infrastructure to measure, report on, and continuously improve all of them.",
+      "City governments need transit networks that support broader urban goals, including emissions reduction, equity, economic productivity, and livability. TRVERSE provides the data infrastructure to measure, report on, and continuously improve all of them.",
     heroBackgroundImage: "/assets/masar.webp",
     challengeHeading:
       "Transit Data Is Trapped Inside Operational Systems That Were Never Designed To Serve City Strategy.",
@@ -168,7 +168,7 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
     badge: "Who We Serve • Private Operators",
     heroHeadline: "Every Percentage Point Of Efficiency, Captured.",
     heroSubheadline:
-      "Private transit operators compete on margin and operational efficiency. TRVERSE is built to maximise revenue recovery, minimise fleet downtime, and give your operations team the real-time intelligence to make faster decisions — every day.",
+      "Private transit operators compete on margin and operational efficiency. TRVERSE is built to maximise revenue recovery, minimise fleet downtime, and give your operations team the real-time intelligence to make faster decisions every day.",
     heroBackgroundImage: "/assets/control-room-maangement.webp",
     challengeHeading:
       "Operational Inefficiency Is A Revenue Problem That Compounds Over Millions Of Journeys.",

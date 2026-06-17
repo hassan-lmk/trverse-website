@@ -230,7 +230,7 @@ const Hero = () => {
           </h1>
 
           <p className="home-hero-desc" style={reveal('0.6s')}>
-            TRVERSE connects automated fare collection, intelligent transport systems, fleet management, and AI analytics into a single, integrated platform — built for the operational demands of modern mass transit.
+            TRVERSE connects automated fare collection, intelligent transport systems, fleet management, and AI analytics into a single, integrated platform, built for the operational demands of modern mass transit.
           </p>
 
           <div className="home-hero-actions" style={reveal('0.8s')}>

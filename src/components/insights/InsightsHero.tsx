@@ -8,6 +8,8 @@ type Props = {
   backgroundImageAlt?: string;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
+  /** Use when the page body provides the primary h1 (e.g. case study detail). */
+  titleAs?: "h1" | "p";
 };
 
 const InsightsHero = ({
@@ -18,6 +20,7 @@ const InsightsHero = ({
   backgroundImageAlt = "",
   primaryCta,
   secondaryCta,
+  titleAs: TitleTag = "h1",
 }: Props) => {
   return (
     <section
@@ -94,7 +97,7 @@ const InsightsHero = ({
             {badge}
           </div>
 
-          <h1
+          <TitleTag
             style={{
               fontFamily: "var(--font-display)",
               fontSize: "clamp(40px, 5vw, 68px)",
@@ -106,7 +109,7 @@ const InsightsHero = ({
             }}
           >
             {title}
-          </h1>
+          </TitleTag>
 
           {description ? (
             <p

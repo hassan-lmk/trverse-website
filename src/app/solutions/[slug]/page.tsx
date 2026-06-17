@@ -34,24 +34,11 @@ export default async function SolutionLandingPage({ params }: Props) {
   const doc = getSolutionLanding(slug);
   if (!doc) notFound();
 
-  const normalizeForIncludes = (value: string) =>
-    value
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, " ")
-      .trim();
-
-  const productLineNormalized = normalizeForIncludes(doc.productLine);
-  const eyebrowCategoryNormalized = normalizeForIncludes(doc.eyebrowCategory);
-  const badgeText =
-    productLineNormalized.includes(eyebrowCategoryNormalized)
-      ? doc.productLine
-      : `${doc.productLine} • ${doc.eyebrowCategory}`;
-
   return (
     <main>
       <Nav />
       <InsightsHero
-        badge={badgeText}
+        badge={doc.eyebrowCategory}
         title={doc.heroTagline}
         description={doc.heroIntro}
         backgroundImageSrc={doc.heroBackgroundImage}
