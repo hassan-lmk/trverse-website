@@ -642,35 +642,34 @@ export default function ProductsContent() {
         }}
       >
         <div className="products-section-inner">
-          <div style={{ textAlign: "center", marginBottom: 72, maxWidth: 680, marginLeft: "auto", marginRight: "auto" }}>
-            <span
+          <div style={{ textAlign: "center", marginBottom: 72, maxWidth: 820, marginLeft: "auto", marginRight: "auto" }}>
+            <h2
               style={{
-                fontFamily: "var(--font-body)",
-                fontSize: 11,
-                fontWeight: 800,
-                color: "var(--accent)",
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                display: "inline-block",
-                marginBottom: 20,
-                padding: "8px 16px",
-                borderRadius: 999,
-                background: "rgba(255,130,93,0.12)",
-                border: "1px solid rgba(255,130,93,0.22)",
+                fontFamily: "var(--font-display)",
+                fontSize: "clamp(28px, 3.6vw, 42px)",
+                fontWeight: 700,
+                color: "#0a1e3d",
+                margin: "0 0 18px",
+                letterSpacing: "-0.03em",
               }}
             >
-              Software Products
-            </span>
-            <div
+              TRVERSE Products
+            </h2>
+            <p
               style={{
-                width: 48,
-                height: 4,
-                borderRadius: 4,
-                background: "linear-gradient(90deg, var(--accent), #134f89)",
-                margin: "0 auto",
-                opacity: 0.9,
+                fontFamily: "var(--font-body)",
+                fontSize: 17,
+                color: "#5f6e82",
+                lineHeight: 1.75,
+                margin: 0,
               }}
-            />
+            >
+              TRVERSE delivers a full product catalog built for modern transit, software platforms and field-ready
+              hardware that work as one. From fare collection and fleet tracking to passenger information and
+              operational control, our software covers every layer of transit operations. Our hardware is engineered
+              for real-world transit environments, purpose-built for durability, ease of use, and seamless integration
+              with the TRVERSE ecosystem.
+            </p>
           </div>
 
           <div className="product-stack">

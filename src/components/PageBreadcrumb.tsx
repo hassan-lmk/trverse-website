@@ -13,7 +13,6 @@ export default function PageBreadcrumb({ items }: Props) {
   return (
     <section
       style={{
-        background: "#fff",
         padding: "28px 48px 0",
       }}
     >
