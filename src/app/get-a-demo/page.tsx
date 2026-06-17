@@ -24,7 +24,7 @@ export default function GetADemoPage() {
             <span style={{ color: "var(--accent)" }}>with your network&apos;s data.</span>
           </>
         }
-        description="Every TRVERSE demonstration is configured for your network's context. Tell us about your city and your current challenges, and we will show you exactly how the platform addresses them."
+        description="A TRVERSE demo is not a generic walkthrough. Bring your network, your ridership numbers, and your hardest operational problems, and we will show you exactly what the platform can do with them."
         backgroundImageSrc="/assets/contact-banner-v2.webp"
       />
       <PageBreadcrumb items={[{ label: "Home", href: "/" }, { label: "Get a Demo" }]} />

@@ -109,7 +109,7 @@ const ContactPageContent = () => {
                   maxWidth: 560,
                 }}
               >
-                Every TRVERSE demonstration is configured for your network&apos;s context. Tell us about your city and your current challenges, and we will show you exactly how the platform addresses them.
+                A TRVERSE demo is not a generic walkthrough. Bring your network, your ridership numbers, and your hardest operational problems, and we will show you exactly what the platform can do with them.
               </p>
 
               <div style={{ display: "grid", gap: 18 }}>

@@ -74,7 +74,7 @@ const CaseStudiesInInsights = ({ studies }: Props) => {
               lineHeight: 1.7,
             }}
           >
-            Explore how TRVERSE supports transit operators with reliable operations, secure payments, and better passenger
+            Learn how TRVERSE supports transit operators with reliable operations, secure payments, and better passenger
             experiences.
           </p>
         </div>
