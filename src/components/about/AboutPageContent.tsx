@@ -131,9 +131,9 @@ const AboutPageContent = () => {
               margin: "0 0 20px",
             }}
           >
-            TRVERSE is built on the deep experience and global technology foundation of LMKR, a company
-            with over three decades of delivering enterprise-grade software, data, and digital
-            transformation solutions across industries and geographies.
+            By combining LMKR&apos;s proven enterprise expertise with modern, AI-driven digital
+            architecture, TRVERSE enables organizations to operate smarter, respond faster, and build
+            resilient systems for the future.
           </p>
           <p
             style={{
@@ -144,8 +144,8 @@ const AboutPageContent = () => {
               margin: 0,
             }}
           >
-            From energy and infrastructure to government and transportation, LMKR has consistently
-            helped organizations turn complex systems into connected, intelligent ecosystems.
+            This is not just about digitizing operations. It is about redefining how connected
+            ecosystems think, move, and perform.
           </p>
         </div>
       </section>
