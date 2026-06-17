@@ -43,7 +43,6 @@ export default async function AudienceLandingPage({ params }: Props) {
         description={doc.heroSubheadline}
         backgroundImageSrc={doc.heroBackgroundImage}
         primaryCta={doc.primaryCta}
-        secondaryCta={doc.secondaryCta}
       />
       <PageBreadcrumb
         items={[

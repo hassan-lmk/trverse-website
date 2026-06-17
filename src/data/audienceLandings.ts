@@ -47,7 +47,7 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
     challengeHeading: "The Systems You Rely On Were Not Built For Today's Demands.",
     challengeBody:
       "Legacy AFC infrastructure limits payment choice. Siloed fleet and scheduling data means decisions are made on yesterday's information. Passenger expectations for real-time updates and seamless multimodal travel are rising faster than most networks can respond.",
-    capabilitiesHeading: "What TRVERSE Delivers For Your Authority",
+    capabilitiesHeading: "What TRVERSE Delivers for Transport Authorities",
     capabilities: [
       {
         capability: "Open-Loop AFC",
@@ -86,7 +86,7 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
       after: { value: "<4%", label: "After Year One" },
     },
     primaryCta: {
-      label: "Request a briefing for transport authorities",
+      label: "Request a briefing",
       href: "/get-a-demo",
     },
     secondaryCta: {
@@ -112,7 +112,7 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
       "Transit Data Is Trapped Inside Operational Systems That Were Never Designed To Serve City Strategy.",
     challengeBody:
       "Most transit networks generate vast data but share almost none of it with city planners, climate teams, or equity analysts. The result: transport policy is made with incomplete information, and the strategic value of transit investment goes unmeasured.",
-    capabilitiesHeading: "What It Delivers For City Government",
+    capabilitiesHeading: "What TRVERSE Delivers for City Governments",
     capabilities: [
       {
         capability: "Ridership Analytics",
@@ -148,7 +148,7 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
     proofMetaChips: ["First Electric BRT Network", "Vision 2030"],
     proofImage: "/assets/masar.webp",
     primaryCta: {
-      label: "Speak to our urban mobility team",
+      label: "Speak to our mobility team",
       href: "/get-a-demo",
     },
     secondaryCta: {
@@ -174,7 +174,7 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
       "Operational Inefficiency Is A Revenue Problem That Compounds Over Millions Of Journeys.",
     challengeBody:
       "Fare evasion, schedule deviation, unplanned maintenance, and manual reporting each erode margin at scale. Most operators manage these problems reactively — after the loss has already occurred.",
-    capabilitiesHeading: "Commercial Impact",
+    capabilitiesHeading: "What TRVERSE Delivers for Private Operators",
     capabilities: [
       {
         capability: "AFC With Fraud Detection",

@@ -243,7 +243,7 @@ const Insights = () => {
                       color: "var(--accent)",
                   }}
                 >
-                    Read on TRVERSE
+                    Read article
                   </Link>
                 </div>
               </article>

@@ -764,9 +764,6 @@ export default function AudienceLandingContent({ doc }: Props) {
                     />
                   </svg>
                 </Link>
-                <Link href={doc.secondaryCta.href} className="audience-cta-outline">
-                  {doc.secondaryCta.label}
-                </Link>
               </div>
             </div>
           </div>

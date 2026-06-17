@@ -57,11 +57,53 @@ const howWeWork = [
 ];
 
 const focusAreas = [
-  "Smart Mobility & Transportation",
-  "Smart Infrastructure & Cities",
-  "Enterprise Asset & Operations Management",
-  "Data & Integration Platforms",
-  "AI-Enabled Decision Systems",
+  {
+    title: "Smart Mobility & Transportation",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden>
+        <rect x="4" y="9" width="20" height="11" rx="2" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M8 20a2 2 0 104 0M16 20a2 2 0 104 0" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M4 14h20" stroke="currentColor" strokeWidth="1.6" />
+      </svg>
+    ),
+  },
+  {
+    title: "Smart Infrastructure & Cities",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden>
+        <path d="M4 22h20" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        <path d="M7 22V12l5-4 5 4v10M17 22V10l4-3v15" stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Enterprise Asset & Operations Management",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden>
+        <rect x="5" y="8" width="8" height="8" rx="1.5" stroke="currentColor" strokeWidth="1.6" />
+        <rect x="15" y="8" width="8" height="8" rx="1.5" stroke="currentColor" strokeWidth="1.6" />
+        <rect x="10" y="18" width="8" height="6" rx="1.5" stroke="currentColor" strokeWidth="1.6" />
+      </svg>
+    ),
+  },
+  {
+    title: "Data & Integration Platforms",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden>
+        <ellipse cx="14" cy="8" rx="8" ry="3" stroke="currentColor" strokeWidth="1.6" />
+        <path d="M6 8v6c0 1.7 3.6 3 8 3s8-1.3 8-3V8M6 14v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6" stroke="currentColor" strokeWidth="1.6" />
+      </svg>
+    ),
+  },
+  {
+    title: "AI-Enabled Decision Systems",
+    icon: (
+      <svg width="24" height="24" viewBox="0 0 28 28" fill="none" aria-hidden>
+        <path d="M5 20V11M11 20V7M17 20v-5M23 20V5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+        <path d="M5 15l6-4 6 2 6-6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
 ];
 
 const PartnersPageContent = () => {
@@ -345,23 +387,28 @@ const PartnersPageContent = () => {
             </h2>
           </div>
 
-          <ul className="partners-focus-list" style={{ listStyle: "none", margin: 0, padding: 0 }}>
-            {focusAreas.map((area) => (
-              <li key={area} className="partners-focus-item">
-                <span className="partners-focus-dot" aria-hidden />
-                <span
-                  style={{
-                    fontFamily: "var(--font-body)",
-                    fontSize: 16,
-                    fontWeight: 600,
-                    color: "#0a1e3d",
-                  }}
-                >
-                  {area}
-                </span>
-              </li>
-            ))}
-          </ul>
+          <div className="partners-focus-layout">
+            <div className="partners-focus-row">
+              {focusAreas.slice(0, 3).map((area) => (
+                <article key={area.title} className="partners-focus-card">
+                  <div className="partners-focus-card-icon" aria-hidden>
+                    {area.icon}
+                  </div>
+                  <h3 className="partners-focus-card-title">{area.title}</h3>
+                </article>
+              ))}
+            </div>
+            <div className="partners-focus-row partners-focus-row--center">
+              {focusAreas.slice(3).map((area) => (
+                <article key={area.title} className="partners-focus-card">
+                  <div className="partners-focus-card-icon" aria-hidden>
+                    {area.icon}
+                  </div>
+                  <h3 className="partners-focus-card-title">{area.title}</h3>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -471,47 +518,59 @@ const PartnersPageContent = () => {
           color: #134f89;
           margin-bottom: 18px;
         }
-        .partners-focus-list {
+        .partners-focus-layout {
           display: grid;
-          grid-template-columns: repeat(6, 1fr);
-          grid-auto-rows: 1fr;
-          align-items: stretch;
-          gap: 16px;
+          gap: 20px;
           max-width: 1080px;
           margin: 0 auto;
         }
-        .partners-focus-item {
-          grid-column: span 2;
+        .partners-focus-row {
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 20px;
+        }
+        .partners-focus-row--center {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          max-width: calc((100% - 20px) * 2 / 3);
+          margin: 0 auto;
+          width: 100%;
+        }
+        .partners-focus-card {
+          background: linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+          border: 1px solid rgba(19, 79, 137, 0.08);
+          border-radius: 18px;
+          padding: 28px 24px;
+          min-height: 148px;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 16px;
+          transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .partners-focus-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 16px 38px rgba(10, 30, 61, 0.08);
+          border-color: rgba(255, 130, 93, 0.25);
+        }
+        .partners-focus-card-icon {
+          width: 48px;
+          height: 48px;
+          border-radius: 12px;
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: 12px;
-          height: 100%;
-          text-align: center;
-          background: #f7f9fc;
-          border: 1px solid rgba(19, 79, 137, 0.08);
-          border-radius: 14px;
-          padding: 18px 20px;
-        }
-        .partners-focus-item > span:last-child {
-          line-height: 1.45;
-          min-height: calc(1.45em * 2);
-          text-align: center;
-          display: grid;
-          place-items: center;
-        }
-        .partners-focus-item:nth-child(4) {
-          grid-column: 2 / span 2;
-        }
-        .partners-focus-item:nth-child(5) {
-          grid-column: 4 / span 2;
-        }
-        .partners-focus-dot {
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          background: var(--accent);
+          background: rgba(255, 130, 93, 0.1);
+          color: #134f89;
           flex-shrink: 0;
+        }
+        .partners-focus-card-title {
+          font-family: var(--font-display);
+          font-size: 18px;
+          font-weight: 600;
+          color: #0a1e3d;
+          line-height: 1.35;
+          margin: 0;
+          letter-spacing: -0.01em;
         }
         @media (max-width: 1024px) {
           .partners-section {
@@ -522,13 +581,10 @@ const PartnersPageContent = () => {
           .partners-steps-grid {
             grid-template-columns: 1fr !important;
           }
-          .partners-focus-list {
+          .partners-focus-row,
+          .partners-focus-row--center {
             grid-template-columns: 1fr !important;
-          }
-          .partners-focus-item,
-          .partners-focus-item:nth-child(4),
-          .partners-focus-item:nth-child(5) {
-            grid-column: auto !important;
+            max-width: none !important;
           }
           .partners-closing-panel {
             padding: 48px 32px !important;

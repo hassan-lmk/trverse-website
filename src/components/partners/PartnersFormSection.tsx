@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import { countries } from "@/data/countries";
 
 const organisationTypes = [
   "Ticketing Technology",
@@ -9,20 +10,6 @@ const organisationTypes = [
   "Mobility App Developer",
   "System Integrator",
   "Consultant",
-  "Other",
-];
-
-const countries = [
-  "Pakistan",
-  "United Arab Emirates",
-  "Saudi Arabia",
-  "United States",
-  "United Kingdom",
-  "Canada",
-  "Australia",
-  "Germany",
-  "France",
-  "India",
   "Other",
 ];
 

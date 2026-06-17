@@ -11,7 +11,7 @@ const Contact = () => {
         <div style={{
           background: 'linear-gradient(135deg, #0a1e3d 0%, #134f89 100%)',
           borderRadius: 20, padding: '72px 64px', display: 'grid',
-          gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center',
+          gridTemplateColumns: 'minmax(0, 0.85fr) minmax(0, 1.25fr)', gap: 48, alignItems: 'center',
           position: 'relative', overflow: 'hidden',
         }} className="home-contact-grid">
           <style dangerouslySetInnerHTML={{ __html: `
@@ -84,7 +84,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div style={{ position: "relative", zIndex: 2 }}>
+          <div style={{ position: "relative", zIndex: 2, width: "100%", minWidth: 0 }}>
             <DemoRequestForm />
           </div>
         </div>

@@ -176,6 +176,8 @@ const DemoRequestForm = () => {
         padding: 36,
         border: "1px solid rgba(19,79,137,0.08)",
         boxShadow: "0 18px 60px rgba(10, 30, 61, 0.08)",
+        width: "100%",
+        boxSizing: "border-box",
       }}
     >
       <form onSubmit={handleSubmit}>
