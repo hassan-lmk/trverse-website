@@ -81,20 +81,20 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
       },
     ],
     proofEyebrow: "Proof In Production",
-    proofResultsHeading: "Results in Live Transit Operations",
+    proofResultsHeading: "Real Results from Live Transit Operations",
     proofHighlights: [
       {
-        value: "22%+",
+        value: "22%",
         valueTo: "<4%",
-        label: "Fare evasion reduced in the first operating year",
+        label: "Fare Evasion Reduced",
       },
       {
         value: "220,000+",
-        label: "Daily riders supported",
+        label: "Daily Riders Supported",
       },
       {
         value: "Peshawar BRT",
-        label: "Proven in a live BRT environment",
+        label: "Live BRT Deployment",
       },
     ],
     proofQuote:

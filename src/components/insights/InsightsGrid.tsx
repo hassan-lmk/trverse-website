@@ -51,7 +51,7 @@ const InsightsGrid = ({ items }: Props) => {
             }}
           >
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={item.image} alt={item.title} style={{ width: "100%", height: 260, objectFit: "cover" }} />
+            <img src={item.heroImage ?? item.image} alt={item.title} style={{ width: "100%", height: 260, objectFit: "cover" }} />
             <div style={{ padding: 24, display: "flex", flexDirection: "column", gap: 12, flex: 1 }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
                 <span

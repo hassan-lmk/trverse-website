@@ -12,6 +12,8 @@ export type InsightItem = {
   datePublishedIso: string;
   excerpt: string;
   image: string;
+  heroImage?: string;
+  showContentImage?: boolean;
   imageObjectFit?: "cover" | "contain";
   sourceUrl: string;
   intro: string;
@@ -101,6 +103,8 @@ export const insights: InsightItem[] = [
     excerpt:
       "TransPeshawar was named finalists for Best Behaviour Change & Public Engagement, recognizing BRT Peshawar's contribution to sustainable urban mobility.",
     image: "/insights/trverse-peshawar-brt-finalist-2026.webp",
+    heroImage: "/insights/trverse-peshawar-brt-finalist-2026-hero.webp",
+    showContentImage: false,
     imageObjectFit: "contain",
     sourceUrl: "https://lmkr.com/insights/trverse-peshawar-brt-finalist-2026",
     intro:
@@ -213,6 +217,7 @@ export const insights: InsightItem[] = [
     excerpt:
       "TransPeshawar and TRVERSE received the Best Smart Ticketing Programme (200K+ journeys) award at Transport Ticketing Global 2022 in London.",
     image: "/insights/zu-peshawar-best-smart-ticketing-programme.webp",
+    heroImage: "/insights/zu-peshawar-best-smart-ticketing-programme-hero.webp",
     imageObjectFit: "contain",
     sourceUrl: "https://lmkr.com/insights/zu-peshawar-best-smart-ticketing-programme",
     intro:

@@ -39,7 +39,7 @@ export default async function InsightDetailPage({ params }: Props) {
           </>
         }
         description={item.excerpt}
-        backgroundImageSrc={item.image}
+        backgroundImageSrc={item.heroImage ?? item.image}
         primaryCta={{ label: "Read story", href: "#insight-content" }}
         secondaryCta={{ label: "All insights", href: "/insights" }}
       />
@@ -86,21 +86,23 @@ export default async function InsightDetailPage({ params }: Props) {
             </p>
           </div>
 
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={item.image}
-            alt={item.title}
-            style={{
-              width: "100%",
-              height: item.imageObjectFit === "contain" ? "auto" : 420,
-              objectFit: item.imageObjectFit ?? "cover",
-              borderRadius: 18,
-              border: "1px solid rgba(19, 79, 137, 0.10)",
-              boxShadow: "0 18px 60px rgba(10, 30, 61, 0.10)",
-              marginBottom: 40,
-              background: item.imageObjectFit === "contain" ? "#f7f9fc" : undefined,
-            }}
-          />
+          {item.showContentImage !== false ? (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src={item.image}
+              alt={item.title}
+              style={{
+                width: "100%",
+                height: item.imageObjectFit === "contain" ? "auto" : 420,
+                objectFit: item.imageObjectFit ?? "cover",
+                borderRadius: 18,
+                border: "1px solid rgba(19, 79, 137, 0.10)",
+                boxShadow: "0 18px 60px rgba(10, 30, 61, 0.10)",
+                marginBottom: 40,
+                background: item.imageObjectFit === "contain" ? "#f7f9fc" : undefined,
+              }}
+            />
+          ) : null}
 
           <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
             {item.sections.map((section, idx) => (

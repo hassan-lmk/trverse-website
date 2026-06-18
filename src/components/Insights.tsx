@@ -179,7 +179,7 @@ const Insights = () => {
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={item.image}
+                  src={item.heroImage ?? item.image}
                   alt={item.title}
                   style={{ width: "100%", height: 200, objectFit: "cover" }}
                 />
