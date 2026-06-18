@@ -230,13 +230,6 @@ const hardwareCategories: HardwareCategory[] = [
         imageAlt: "Sunmi POS terminal for on-board and station transit ticketing",
       },
       {
-        label: "RTPI (Real-Time Passenger Information)",
-        description:
-          "Dynamic display hardware for both stations and buses, providing travelers with live, accurate service updates.",
-        imageSrc: "/products/devices/rtpi.webp",
-        imageAlt: "In-vehicle RTPI screens showing next station and route map inside a transit bus",
-      },
-      {
         label: "Handheld Validators",
         description:
           "Portable validation tools for mobile ticket inspection and on-board checks.",
@@ -268,7 +261,7 @@ const hardwareCategories: HardwareCategory[] = [
         description:
           "Intelligent edge-processing cameras for passenger counting, safety monitoring, and proactive incident detection.",
         imageSrc: "/products/devices/ai-camera.webp",
-        imageAlt: "AI camera monitoring passengers inside a transit bus with real-time analytics",
+        imageAlt: "Overhead AI camera mounted inside a transit bus for passenger counting and safety monitoring",
       },
       {
         label: "CCTV",
@@ -276,6 +269,13 @@ const hardwareCategories: HardwareCategory[] = [
           "High-definition video surveillance systems providing full interior and exterior fleet coverage for enhanced security.",
         imageSrc: "/products/devices/bus-cctv.webp",
         imageAlt: "Dome CCTV camera mounted inside a transit bus",
+      },
+      {
+        label: "RTPI (Real-Time Passenger Information)",
+        description:
+          "Dynamic display hardware for both stations and buses, providing travelers with live, accurate service updates.",
+        imageSrc: "/products/devices/rtpi.webp",
+        imageAlt: "In-vehicle RTPI screens showing next station and route map inside a transit bus",
       },
     ],
   },

@@ -92,12 +92,13 @@ export default async function InsightDetailPage({ params }: Props) {
             alt={item.title}
             style={{
               width: "100%",
-              height: 420,
-              objectFit: "cover",
+              height: item.imageObjectFit === "contain" ? "auto" : 420,
+              objectFit: item.imageObjectFit ?? "cover",
               borderRadius: 18,
               border: "1px solid rgba(19, 79, 137, 0.10)",
               boxShadow: "0 18px 60px rgba(10, 30, 61, 0.10)",
               marginBottom: 40,
+              background: item.imageObjectFit === "contain" ? "#f7f9fc" : undefined,
             }}
           />
 

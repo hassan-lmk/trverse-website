@@ -7,17 +7,22 @@ const HomeAwards = () => {
         dangerouslySetInnerHTML={{
           __html: `
         .home-awards-section {
-          background: #fff;
-          padding: 32px 48px 40px;
+          position: relative;
+          z-index: 1;
+          margin-top: -56px;
+          background: #f3f5f8;
+          padding: 80px 48px 44px;
+          border-bottom-left-radius: 48px;
+          border-bottom-right-radius: 48px;
         }
         .home-awards-inner {
-          max-width: 960px;
+          max-width: 1080px;
           margin: 0 auto;
           text-align: center;
         }
         .home-awards-eyebrow {
           font-family: var(--font-body);
-          font-size: 12px;
+          font-size: 11px;
           font-weight: 600;
           color: var(--accent);
           letter-spacing: 0.1em;
@@ -30,44 +35,57 @@ const HomeAwards = () => {
           flex-wrap: wrap;
           align-items: center;
           justify-content: center;
-          gap: clamp(36px, 6vw, 64px);
+          gap: 28px 40px;
         }
         .home-award-logo-wrap {
           display: flex;
           align-items: center;
           justify-content: center;
+          height: 52px;
         }
         .home-award-logo-wrap img {
-          max-width: 150px;
-          max-height: 56px;
+          max-width: 130px;
+          max-height: 48px;
           width: auto;
           height: auto;
           object-fit: contain;
           display: block;
         }
+        .home-award-logo-wrap--large {
+          height: 68px;
+        }
         .home-award-logo-wrap--large img {
-          max-width: 190px;
+          max-width: 180px;
           max-height: 68px;
         }
         @media (max-width: 1024px) {
           .home-awards-section {
-            padding: 28px 28px 36px;
+            margin-top: -44px;
+            padding: 68px 28px 40px;
+            border-bottom-left-radius: 36px;
+            border-bottom-right-radius: 36px;
           }
         }
         @media (max-width: 700px) {
           .home-awards-section {
-            padding: 24px 20px 32px;
+            margin-top: -36px;
+            padding: 60px 20px 36px;
+            border-bottom-left-radius: 28px;
+            border-bottom-right-radius: 28px;
           }
           .home-awards-logos {
-            gap: 28px 32px;
+            gap: 24px 28px;
           }
           .home-award-logo-wrap img {
-            max-width: 120px;
-            max-height: 48px;
+            max-width: 110px;
+            max-height: 44px;
+          }
+          .home-award-logo-wrap--large {
+            height: 58px;
           }
           .home-award-logo-wrap--large img {
-            max-width: 140px;
-            max-height: 56px;
+            max-width: 150px;
+            max-height: 58px;
           }
         }
       `,

@@ -12,6 +12,7 @@ export type InsightItem = {
   datePublishedIso: string;
   excerpt: string;
   image: string;
+  imageObjectFit?: "cover" | "contain";
   sourceUrl: string;
   intro: string;
   sections: InsightSection[];
@@ -93,13 +94,14 @@ export const insights: InsightItem[] = [
   },
   {
     slug: "trverse-peshawar-brt-finalist-2026",
-    title: "TRVERSE and TransPeshawar Named Finalists at Decarbonising Transport Awards 2026",
+    title: "TransPeshawar Named Finalists at Decarbonising Transport Awards 2026",
     category: "TRVERSE",
     date: "March 31, 2026",
     datePublishedIso: "2026-03-31",
     excerpt:
-      "TRVERSE and TransPeshawar were named finalists for Best Behaviour Change & Public Engagement, recognizing BRT Peshawar's contribution to sustainable urban mobility.",
+      "TransPeshawar was named finalists for Best Behaviour Change & Public Engagement, recognizing BRT Peshawar's contribution to sustainable urban mobility.",
     image: "/insights/trverse-peshawar-brt-finalist-2026.webp",
+    imageObjectFit: "contain",
     sourceUrl: "https://lmkr.com/insights/trverse-peshawar-brt-finalist-2026",
     intro:
       "TRVERSE, in collaboration with TransPeshawar, has been named a finalist at the Decarbonising Transport Awards 2026 in the category of Best Behaviour Change & Public Engagement.",
@@ -211,6 +213,7 @@ export const insights: InsightItem[] = [
     excerpt:
       "TransPeshawar and TRVERSE received the Best Smart Ticketing Programme (200K+ journeys) award at Transport Ticketing Global 2022 in London.",
     image: "/insights/zu-peshawar-best-smart-ticketing-programme.webp",
+    imageObjectFit: "contain",
     sourceUrl: "https://lmkr.com/insights/zu-peshawar-best-smart-ticketing-programme",
     intro:
       "TransPeshawar and TRVERSE received international recognition as Peshawar BRT won Best Smart Ticketing Programme (200K+ journeys) at Transport Ticketing Global 2022.",

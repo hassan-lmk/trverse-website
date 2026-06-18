@@ -14,7 +14,7 @@ export const homeAwards: HomeAward[] = [
     subtitle: "Best Smart Ticketing Programme (200K+ journeys)",
   },
   {
-    logo: "/awards/4.png",
+    logo: "/awards/3.png",
     logoAlt: "Decarbonising Transport Awards 2026",
     title: "Decarbonising Transport Awards 2026",
     subtitle: "Finalist, Best Behaviour Change & Public Engagement",

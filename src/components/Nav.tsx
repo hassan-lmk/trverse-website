@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import SiteSearch from '@/components/search/SiteSearch';
 
 const Nav = () => {
   const [scrolled, setScrolled] = React.useState(false);
@@ -364,6 +365,7 @@ const Nav = () => {
             onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.8)'}
             >{item.label}</a>
           ))}
+          <SiteSearch variant="desktop" />
           <a href="/get-a-demo" style={{
             background: 'var(--accent)', color: '#fff', padding: '10px 24px',
             borderRadius: 6, fontSize: 14, fontWeight: 600, textDecoration: 'none',
@@ -409,6 +411,9 @@ const Nav = () => {
             gap: 8,
           }}
         >
+          <div style={{ marginBottom: 4 }}>
+            <SiteSearch variant="mobile" />
+          </div>
           <a href="/solutions" style={{ color: '#fff', textDecoration: 'none', padding: '10px 0', fontFamily: 'var(--font-body)', fontWeight: 600 }}>Solutions</a>
           <a href="/solutions/Automated-fare-collection" style={{ color: 'rgba(255,255,255,0.78)', textDecoration: 'none', padding: '6px 0 6px 12px', fontFamily: 'var(--font-body)', fontSize: 14 }}>Automated Fare Collection</a>
           <a href="/solutions/Intelligent-transport-systems" style={{ color: 'rgba(255,255,255,0.78)', textDecoration: 'none', padding: '6px 0 6px 12px', fontFamily: 'var(--font-body)', fontSize: 14 }}>Intelligent Transport Systems</a>

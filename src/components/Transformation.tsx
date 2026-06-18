@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import React from "react";
-import { audiencePageExists, audienceSegments } from "@/data/audienceLandings";
+import { audienceLandingsBySlug, audienceSegments } from "@/data/audienceLandings";
+import TransformationAudiencePanel from "@/components/TransformationAudiencePanel";
 
 const audienceIcons = [
   (
@@ -51,7 +51,7 @@ const tabButtonStyle = (active: boolean): React.CSSProperties => ({
 const Transformation = () => {
   const [activeTab, setActiveTab] = React.useState(0);
   const activeSegment = audienceSegments[activeTab];
-  const activeHasPage = audiencePageExists(activeSegment.slug);
+  const activeDoc = audienceLandingsBySlug[activeSegment.slug];
 
   return (
     <section id="about-us" className="home-transformation-section" style={{ background: "#fff", padding: "120px 48px" }}>
@@ -74,6 +74,9 @@ const Transformation = () => {
             padding: 84px 20px !important;
           }
           .home-transform-description {
+            padding: 28px 22px 24px !important;
+          }
+          .home-transform-panel {
             padding: 28px 22px 24px !important;
           }
         }
@@ -136,54 +139,7 @@ const Transformation = () => {
             ))}
           </div>
 
-          <div
-            className="home-transform-description"
-            style={{
-              marginTop: 8,
-              padding: "36px 40px 32px",
-              background: "#f7f9fc",
-              borderRadius: 20,
-              border: "1px solid rgba(19,79,137,0.08)",
-              textAlign: "center",
-            }}
-          >
-            <p
-              key={activeSegment.slug}
-              style={{
-                fontFamily: "var(--font-body)",
-                fontSize: 17,
-                color: "#5a6a7e",
-                lineHeight: 1.8,
-                margin: "0 auto",
-                maxWidth: 760,
-              }}
-            >
-              {activeSegment.description}
-            </p>
-          </div>
-
-          {activeHasPage ? (
-            <div style={{ textAlign: "center", marginTop: 28 }}>
-              <Link
-                href={`/who-we-serve/${activeSegment.slug}`}
-                style={{
-                  fontFamily: "var(--font-body)",
-                  fontSize: 15,
-                  fontWeight: 700,
-                  color: "#134f89",
-                  textDecoration: "none",
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 8,
-                }}
-              >
-                Learn more about {activeSegment.label.toLowerCase()}
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
-                  <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </Link>
-            </div>
-          ) : null}
+          <TransformationAudiencePanel doc={activeDoc} />
         </div>
       </div>
     </section>
