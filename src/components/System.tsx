@@ -273,7 +273,7 @@ const System = () => {
               {[
                 { val: 'Multi-City', label: 'Global Presence', delay: '0s' },
                 { val: '500M+', label: 'Annual Ridership', delay: '1.6s' },
-                { val: '6000+', label: 'Devices', delay: '3.2s' },
+                { val: '6000+', label: 'Devices on field', delay: '3.2s' },
                 { val: 'Open Loop', label: 'Payment Architecture', delay: '4.8s' },
                 { val: 'Real-Time', label: 'System Control', delay: '6.4s' },
               ].map((s, i) => (

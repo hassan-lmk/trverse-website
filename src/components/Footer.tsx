@@ -61,11 +61,12 @@ const Footer = () => (
       .home-footer-brand-logos {
         gap: 20px 24px;
         max-width: 300px;
+        align-items: flex-start;
       }
       .home-footer-logo-item {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         height: 44px;
       }
       .home-footer-logo-item img {
@@ -81,9 +82,20 @@ const Footer = () => (
         max-height: 52px;
         max-width: 150px;
       }
+      .home-footer-logo-item--accreditation {
+        width: 100%;
+        max-width: 300px;
+        height: 40px;
+        overflow: hidden;
+      }
       .home-footer-logo-item--accreditation img {
         max-height: 40px;
-        max-width: 120px;
+        max-width: none;
+        width: auto;
+        height: 40px;
+        object-fit: cover;
+        object-position: left center;
+        margin-left: -28px;
       }
     ` }} />
     <div style={{ maxWidth: 1280, margin: '0 auto' }}>
