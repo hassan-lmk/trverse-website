@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import type { InsightItem } from "@/data/insights";
 import Pagination, { ITEMS_PER_PAGE } from "@/components/insights/Pagination";
+import InsightCardThumbnail from "@/components/insights/InsightCardThumbnail";
 
 type Props = {
   items: InsightItem[];
@@ -50,8 +51,7 @@ const InsightsGrid = ({ items }: Props) => {
               e.currentTarget.style.borderColor = "rgba(19, 79, 137, 0.08)";
             }}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={item.heroImage ?? item.image} alt={item.title} style={{ width: "100%", height: 260, objectFit: "cover" }} />
+            <InsightCardThumbnail src={item.heroImage ?? item.image} alt={item.title} height={260} />
             <div style={{ padding: 24, display: "flex", flexDirection: "column", gap: 12, flex: 1 }}>
               <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
                 <span

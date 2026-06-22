@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { insights } from "@/data/insights";
+import InsightCardThumbnail from "@/components/insights/InsightCardThumbnail";
 
 const Insights = () => {
   const [viewportWidth, setViewportWidth] = React.useState(1280);
@@ -177,12 +178,7 @@ const Insights = () => {
                   flex: `0 0 calc((100% - ${(visibleCount - 1) * 24}px) / ${visibleCount})`,
                 }}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={item.heroImage ?? item.image}
-                  alt={item.title}
-                  style={{ width: "100%", height: 200, objectFit: "cover" }}
-                />
+                <InsightCardThumbnail src={item.heroImage ?? item.image} alt={item.title} height={200} />
                 <div style={{ padding: 24, display: "flex", flexDirection: "column", gap: 12, flex: 1 }}>
                   <div
                     style={{
