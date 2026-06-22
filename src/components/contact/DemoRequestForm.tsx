@@ -44,6 +44,8 @@ const DemoRequestForm = () => {
   });
   const [focused, setFocused] = React.useState<string | null>(null);
   const [submitted, setSubmitted] = React.useState(false);
+  const [submitting, setSubmitting] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState<string | null>(null);
   const [networkTypeError, setNetworkTypeError] = React.useState(false);
 
   const inputStyle = (field: string) => ({
@@ -75,13 +77,35 @@ const DemoRequestForm = () => {
     if (field === "networkTypes") setNetworkTypeError(false);
   };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (form.networkTypes.length === 0) {
       setNetworkTypeError(true);
       return;
     }
-    setSubmitted(true);
+
+    setSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("/api/demo-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(data.error ?? "Unable to submit your demo request.");
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(error instanceof Error ? error.message : "Unable to submit your demo request.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -384,22 +408,37 @@ const DemoRequestForm = () => {
           />
         </div>
 
+        {submitError ? (
+          <p
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: 14,
+              color: "#c44a3a",
+              margin: "0 0 16px",
+              lineHeight: 1.6,
+            }}
+          >
+            {submitError}
+          </p>
+        ) : null}
+
         <button
           type="submit"
+          disabled={submitting}
           style={{
             fontFamily: "var(--font-body)",
             fontSize: 15,
             fontWeight: 700,
             padding: "15px 36px",
-            background: "var(--accent)",
+            background: submitting ? "#f0a48d" : "var(--accent)",
             color: "#fff",
             border: "none",
             borderRadius: 10,
-            cursor: "pointer",
+            cursor: submitting ? "not-allowed" : "pointer",
             width: "100%",
           }}
         >
-          Request my demo
+          {submitting ? "Submitting..." : "Request my demo"}
         </button>
       </form>
     </div>

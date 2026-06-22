@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { countries } from "@/data/countries";
 
 const organisationTypes = [
@@ -12,6 +13,14 @@ const organisationTypes = [
   "Consultant",
   "Other",
 ];
+
+const cardStyle: React.CSSProperties = {
+  background: "#fff",
+  borderRadius: 20,
+  padding: "40px 36px",
+  border: "1px solid rgba(19, 79, 137, 0.08)",
+  boxShadow: "0 18px 60px rgba(10, 30, 61, 0.08)",
+};
 
 const PartnersFormSection = () => {
   const [form, setForm] = React.useState({
@@ -26,6 +35,8 @@ const PartnersFormSection = () => {
   });
   const [focused, setFocused] = React.useState<string | null>(null);
   const [submitted, setSubmitted] = React.useState(false);
+  const [submitting, setSubmitting] = React.useState(false);
+  const [submitError, setSubmitError] = React.useState<string | null>(null);
 
   const inputStyle = (field: string) => ({
     fontFamily: "var(--font-body)",
@@ -41,9 +52,48 @@ const PartnersFormSection = () => {
     transition: "border-color 0.2s",
   });
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+
+    setSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch("/api/partner-request", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(data.error ?? "Unable to submit your partnership inquiry.");
+      }
+
+      setSubmitted(true);
+    } catch (error) {
+      setSubmitError(
+        error instanceof Error ? error.message : "Unable to submit your partnership inquiry.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  const resetForm = () => {
+    setForm({
+      firstName: "",
+      lastName: "",
+      jobTitle: "",
+      workEmail: "",
+      companyName: "",
+      organisationType: "",
+      country: "",
+      consent: false,
+    });
+    setSubmitted(false);
+    setSubmitError(null);
   };
 
   return (
@@ -65,44 +115,302 @@ const PartnersFormSection = () => {
         }}
       >
         <div>
-          <h2
-            id="partner-form-heading"
-            style={{
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(32px, 3.5vw, 44px)",
-              fontWeight: 600,
-              color: "#0a1e3d",
-              margin: "0 0 24px",
-              lineHeight: 1.15,
-            }}
-          >
-            Ready to partner with us?
-          </h2>
-          <p
-            style={{
-              fontFamily: "var(--font-body)",
-              fontSize: 17,
-              color: "#5a6a7e",
-              lineHeight: 1.8,
-              margin: 0,
-              maxWidth: 480,
-            }}
-          >
-            Fill in the form and start your journey. Whether you&apos;re looking to gain more
-            partners, collaborate on an exciting project, or leverage our expertise for a specific
-            innovation, we&apos;re here to help.
-          </p>
+          {submitted ? (
+            <>
+              <p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 13,
+                  fontWeight: 600,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  color: "var(--accent)",
+                  margin: "0 0 16px",
+                }}
+              >
+                Inquiry received
+              </p>
+              <h2
+                id="partner-form-heading"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(32px, 3.5vw, 44px)",
+                  fontWeight: 600,
+                  color: "#0a1e3d",
+                  margin: "0 0 24px",
+                  lineHeight: 1.15,
+                }}
+              >
+                Our partnerships team will be in touch soon.
+              </h2>
+              <p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 17,
+                  color: "#5a6a7e",
+                  lineHeight: 1.8,
+                  margin: "0 0 32px",
+                  maxWidth: 480,
+                }}
+              >
+                We review every partnership inquiry to understand how your organisation fits
+                within the TRVERSE ecosystem and where collaboration can create the most value.
+              </p>
+              <ol
+                style={{
+                  margin: 0,
+                  padding: 0,
+                  listStyle: "none",
+                  display: "grid",
+                  gap: 20,
+                  maxWidth: 480,
+                }}
+              >
+                {[
+                  "A partnerships specialist reviews your submission and organisation profile.",
+                  "We reach out within two business days to discuss fit, scope, and next steps.",
+                  "If there is a strong match, we schedule a discovery call to explore collaboration.",
+                ].map((step, index) => (
+                  <li
+                    key={step}
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "32px 1fr",
+                      gap: 14,
+                      alignItems: "start",
+                    }}
+                  >
+                    <span
+                      aria-hidden
+                      style={{
+                        width: 32,
+                        height: 32,
+                        borderRadius: "50%",
+                        background: "rgba(19, 79, 137, 0.08)",
+                        color: "var(--accent)",
+                        fontFamily: "var(--font-body)",
+                        fontSize: 14,
+                        fontWeight: 700,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      {index + 1}
+                    </span>
+                    <p
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: 15,
+                        color: "#5a6a7e",
+                        lineHeight: 1.7,
+                        margin: "4px 0 0",
+                      }}
+                    >
+                      {step}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            </>
+          ) : (
+            <>
+              <h2
+                id="partner-form-heading"
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(32px, 3.5vw, 44px)",
+                  fontWeight: 600,
+                  color: "#0a1e3d",
+                  margin: "0 0 24px",
+                  lineHeight: 1.15,
+                }}
+              >
+                Ready to partner with us?
+              </h2>
+              <p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 17,
+                  color: "#5a6a7e",
+                  lineHeight: 1.8,
+                  margin: 0,
+                  maxWidth: 480,
+                }}
+              >
+                Fill in the form and start your journey. Whether you&apos;re looking to gain more
+                partners, collaborate on an exciting project, or leverage our expertise for a specific
+                innovation, we&apos;re here to help.
+              </p>
+            </>
+          )}
         </div>
 
-        <div
-          style={{
-            background: "#fff",
-            borderRadius: 20,
-            padding: "40px 36px",
-            border: "1px solid rgba(19, 79, 137, 0.08)",
-            boxShadow: "0 18px 60px rgba(10, 30, 61, 0.08)",
-          }}
-        >
+        <div style={cardStyle}>
+          {submitted ? (
+            <div role="status" aria-live="polite">
+              <div
+                style={{
+                  width: 56,
+                  height: 56,
+                  borderRadius: "50%",
+                  background: "rgba(34, 160, 107, 0.12)",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  marginBottom: 24,
+                }}
+              >
+                <svg
+                  width="28"
+                  height="28"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  aria-hidden
+                  style={{ display: "block" }}
+                >
+                  <path
+                    d="M20 6L9 17l-5-5"
+                    stroke="#22a06b"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </div>
+
+              <h3
+                style={{
+                  fontFamily: "var(--font-display)",
+                  fontSize: "clamp(24px, 2.5vw, 30px)",
+                  fontWeight: 650,
+                  color: "#0a1e3d",
+                  margin: "0 0 12px",
+                  lineHeight: 1.2,
+                }}
+              >
+                Thank you{form.firstName.trim() ? `, ${form.firstName.trim()}` : ""} — your
+                partnership inquiry has been received.
+              </h3>
+
+              <p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 16,
+                  color: "#5a6a7e",
+                  lineHeight: 1.8,
+                  margin: "0 0 24px",
+                }}
+              >
+                Your inquiry is with our partnerships team. We will follow up at{" "}
+                <span style={{ color: "#0a1e3d", fontWeight: 600 }}>{form.workEmail.trim()}</span>{" "}
+                within two business days.
+              </p>
+
+              <div
+                style={{
+                  background: "#f7f9fc",
+                  borderRadius: 12,
+                  padding: "18px 20px",
+                  marginBottom: 28,
+                  border: "1px solid rgba(19, 79, 137, 0.06)",
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: 12,
+                    fontWeight: 600,
+                    letterSpacing: "0.06em",
+                    textTransform: "uppercase",
+                    color: "#8a97a8",
+                    margin: "0 0 10px",
+                  }}
+                >
+                  Submission summary
+                </p>
+                <p
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: 15,
+                    color: "#0a1e3d",
+                    lineHeight: 1.6,
+                    margin: 0,
+                  }}
+                >
+                  <strong>{form.companyName.trim()}</strong>
+                  <br />
+                  {form.organisationType}
+                  {form.country.trim() ? ` · ${form.country.trim()}` : ""}
+                </p>
+              </div>
+
+              <p
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 15,
+                  color: "#5a6a7e",
+                  lineHeight: 1.75,
+                  margin: "0 0 28px",
+                }}
+              >
+                While you wait, explore how TRVERSE partners integrate with our mobility platform
+                and the deployments we support worldwide.
+              </p>
+
+              <div style={{ display: "flex", flexWrap: "wrap", gap: 12, marginBottom: 28 }}>
+                <Link
+                  href="/solutions"
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: 14,
+                    fontWeight: 600,
+                    color: "#fff",
+                    textDecoration: "none",
+                    background: "var(--accent)",
+                    padding: "12px 22px",
+                    borderRadius: 999,
+                  }}
+                >
+                  View solutions
+                </Link>
+                <Link
+                  href="/insights#all-case-studies"
+                  style={{
+                    fontFamily: "var(--font-body)",
+                    fontSize: 14,
+                    fontWeight: 600,
+                    color: "var(--accent)",
+                    textDecoration: "none",
+                    padding: "12px 22px",
+                    borderRadius: 999,
+                    border: "1.5px solid rgba(19, 79, 137, 0.18)",
+                  }}
+                >
+                  Browse case studies
+                </Link>
+              </div>
+
+              <button
+                type="button"
+                onClick={resetForm}
+                style={{
+                  fontFamily: "var(--font-body)",
+                  fontSize: 14,
+                  fontWeight: 600,
+                  color: "#5a6a7e",
+                  background: "none",
+                  border: "none",
+                  padding: 0,
+                  cursor: "pointer",
+                  textDecoration: "underline",
+                  textUnderlineOffset: 3,
+                }}
+              >
+                Submit another inquiry
+              </button>
+            </div>
+          ) : (
           <form onSubmit={handleSubmit} noValidate={false}>
             <div
               style={{
@@ -294,6 +602,7 @@ const PartnersFormSection = () => {
             <div style={{ display: "flex", justifyContent: "flex-end" }}>
               <button
                 type="submit"
+                disabled={submitting}
                 style={{
                   fontFamily: "var(--font-body)",
                   fontSize: 15,
@@ -303,29 +612,31 @@ const PartnersFormSection = () => {
                   color: "#fff",
                   border: "none",
                   borderRadius: 999,
-                  cursor: "pointer",
+                  cursor: submitting ? "not-allowed" : "pointer",
+                  opacity: submitting ? 0.7 : 1,
                 }}
               >
-                Submit
+                {submitting ? "Submitting…" : "Submit"}
               </button>
             </div>
 
-            {submitted ? (
+            {submitError ? (
               <p
-                role="status"
+                role="alert"
                 style={{
                   margin: "16px 0 0",
                   fontFamily: "var(--font-body)",
                   fontSize: 14,
-                  color: "#134f89",
+                  color: "#b42318",
                   lineHeight: 1.6,
                   textAlign: "right",
                 }}
               >
-                Thanks. Your partnership inquiry has been received.
+                {submitError}
               </p>
             ) : null}
           </form>
+          )}
         </div>
       </div>
 
