@@ -534,6 +534,52 @@ export default function ProductsContent() {
             gap: clamp(28px, 4vw, 56px);
             align-items: center;
           }
+          .product-capabilities-card {
+            padding: clamp(14px, 2vw, 18px) clamp(16px, 2.2vw, 20px);
+            border-radius: 16px;
+            background: linear-gradient(135deg, rgba(19,79,137,0.04) 0%, rgba(255,130,93,0.04) 100%);
+            border: 1px solid rgba(19,79,137,0.08);
+          }
+          .product-capabilities-label {
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #0a1e3d;
+            margin: 0 0 12px;
+            opacity: 0.85;
+          }
+          .product-capabilities-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
+          .product-capability-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+          }
+          .product-capability-icon {
+            flex-shrink: 0;
+            width: 22px;
+            height: 22px;
+            margin-top: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #134f89;
+          }
+          .product-capability-text {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: #3d4d62;
+            line-height: 1.5;
+            font-weight: 500;
+          }
           .product-stack-card-inner {
             padding: clamp(24px, 4vw, 40px);
           }
@@ -618,6 +664,18 @@ export default function ProductsContent() {
             .product-split {
               gap: clamp(20px, 3vw, 36px);
             }
+            .product-capabilities-list {
+              gap: 8px;
+            }
+            .product-capability-text {
+              font-size: 13.5px;
+            }
+            .product-capabilities-card {
+              padding: 12px 14px;
+            }
+            .product-capabilities-label {
+              margin-bottom: 10px;
+            }
           }
           @media (max-width: 1024px) {
             .product-sticky-slot {
@@ -653,7 +711,7 @@ export default function ProductsContent() {
                 letterSpacing: "-0.03em",
               }}
             >
-              TRVERSE Products
+              Our Products
             </h2>
             <p
               style={{
@@ -664,11 +722,7 @@ export default function ProductsContent() {
                 margin: 0,
               }}
             >
-              TRVERSE delivers a full product catalog built for modern transit, software platforms and field-ready
-              hardware that work as one. From fare collection and fleet tracking to passenger information and
-              operational control, our software covers every layer of transit operations. Our hardware is engineered
-              for real-world transit environments, purpose-built for durability, ease of use, and seamless integration
-              with the TRVERSE ecosystem.
+            TRVERSE delivers a full product catalog built for modern transit, software platforms, and field-ready hardware that work as one. From fare collection and fleet tracking to passenger information and operational control, our software covers every layer of transit operations. Our hardware is engineered for real-world transit environments, purpose-built for durability, ease of use, and seamless integration with the TRVERSE ecosystem.
             </p>
           </div>
 
@@ -737,71 +791,26 @@ export default function ProductsContent() {
                         fontSize: 16,
                         color: "#5f6e82",
                         lineHeight: 1.75,
-                        margin: "0 0 32px",
+                        margin: "0 0 20px",
                         maxWidth: 520,
                       }}
                     >
                       {p.description}
                     </p>
 
-                    <p
-                      style={{
-                        fontFamily: "var(--font-body)",
-                        fontSize: 11,
-                        fontWeight: 800,
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        color: "#0a1e3d",
-                        margin: "0 0 14px",
-                        opacity: 0.85,
-                      }}
-                    >
-                      {p.listTitle}
-                    </p>
-                    <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: 12 }}>
-                      {p.capabilities.map((cap) => (
-                        <li
-                          key={cap.text}
-                          style={{
-                            display: "flex",
-                            alignItems: "flex-start",
-                            gap: 14,
-                            padding: "14px 16px",
-                            borderRadius: 14,
-                            background: "linear-gradient(135deg, rgba(19,79,137,0.04) 0%, rgba(255,130,93,0.04) 100%)",
-                            border: "1px solid rgba(19,79,137,0.08)",
-                          }}
-                        >
-                          <span
-                            style={{
-                              flexShrink: 0,
-                              width: 44,
-                              height: 44,
-                              borderRadius: 14,
-                              display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              background: "linear-gradient(155deg, #0a1e3d 0%, #1a5f9e 55%, #134f89 100%)",
-                              color: "#fff",
-                            }}
-                          >
-                            <CapabilityGlyph id={cap.icon} />
-                          </span>
-                          <span
-                            style={{
-                              fontFamily: "var(--font-body)",
-                              fontSize: 14.5,
-                              color: "#3d4d62",
-                              lineHeight: 1.55,
-                              fontWeight: 500,
-                              paddingTop: 2,
-                            }}
-                          >
-                            {cap.text}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
+                    <div className="product-capabilities-card">
+                      <p className="product-capabilities-label">{p.listTitle}</p>
+                      <ul className="product-capabilities-list">
+                        {p.capabilities.map((cap) => (
+                          <li key={cap.text} className="product-capability-item">
+                            <span className="product-capability-icon" aria-hidden>
+                              <CapabilityGlyph id={cap.icon} />
+                            </span>
+                            <span className="product-capability-text">{cap.text}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
                   <div className="product-mockup-col" style={{ minWidth: 0 }}>
