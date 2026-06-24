@@ -84,9 +84,8 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
     proofResultsHeading: "Real Results from Live Transit Operations",
     proofHighlights: [
       {
-        value: "22%",
-        valueTo: "<4%",
-        label: "Fare Evasion Reduced",
+        value: "Over 80%",
+        label: "Reduction in fare evasion",
       },
       {
         value: "220,000+",

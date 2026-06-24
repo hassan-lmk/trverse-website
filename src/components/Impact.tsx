@@ -116,7 +116,7 @@ const Impact = () => {
           <span style={{ fontFamily: 'var(--font-body)', fontSize: 13, fontWeight: 600, color: 'var(--accent)', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 16, display: 'block' }}>Real Impact</span>
           <h2 style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(32px, 3.5vw, 48px)', fontWeight: 600, color: '#0a1e3d', margin: '0 0 20px' }}>Real Systems</h2>
           <p style={{ fontFamily: 'var(--font-body)', fontSize: 17, color: '#5a6a7e', maxWidth: 520, margin: '0 auto', lineHeight: 1.7 }}>
-            Success stories from around the world. TRVERSE supports transit networks across cities.
+            Success stories from around the world.
           </p>
         </div>
 

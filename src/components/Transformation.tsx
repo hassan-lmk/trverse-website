@@ -84,9 +84,9 @@ const Transformation = () => {
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
         <div style={{ textAlign: "center", marginBottom: 64 }}>
           <span style={{ fontFamily: "var(--font-body)", fontSize: 13, fontWeight: 600, color: "var(--accent)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: 16, display: "block" }}>Who we serve</span>
-          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(32px, 3.5vw, 48px)", fontWeight: 600, color: "#0a1e3d", margin: "0 0 20px" }}>From Fragmented to Connected</h2>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(32px, 3.5vw, 48px)", fontWeight: 600, color: "#0a1e3d", margin: "0 0 20px" }}>For Cities Moving Millions</h2>
           <p style={{ fontFamily: "var(--font-body)", fontSize: 17, color: "#5a6a7e", maxWidth: 600, margin: "0 auto", lineHeight: 1.7 }}>
-            Cities are growing and demand is rising, but most transport networks still rely on separate systems. TRVERSE brings them into one connected platform.
+            Cities are growing and demand is rising. TRVERSE helps transport networks connect fare, fleet, operations, and passenger systems on one platform.
           </p>
         </div>
 
