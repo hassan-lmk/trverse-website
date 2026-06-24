@@ -33,6 +33,8 @@ const DemoRequestForm = () => {
   const [form, setForm] = React.useState({
     firstName: "",
     lastName: "",
+    email: "",
+    phone: "",
     organization: "",
     role: "",
     country: "",
@@ -211,6 +213,7 @@ const DemoRequestForm = () => {
           @media (max-width: 520px) {
             .demo-form-solutions-grid { grid-template-columns: 1fr !important; }
             .demo-form-name-grid { grid-template-columns: 1fr !important; }
+            .demo-form-contact-grid { grid-template-columns: 1fr !important; }
           }
         `,
           }}
@@ -263,6 +266,34 @@ const DemoRequestForm = () => {
             style={inputStyle("role")}
             onChange={(e) => setForm({ ...form, role: e.target.value })}
             onFocus={() => setFocused("role")}
+            onBlur={() => setFocused(null)}
+          />
+        </div>
+
+        <div className="demo-form-contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginBottom: 16 }}>
+          <input
+            id="demo-email"
+            type="email"
+            autoComplete="email"
+            placeholder="Email address"
+            aria-label="Email address"
+            value={form.email}
+            required
+            style={inputStyle("email")}
+            onChange={(e) => setForm({ ...form, email: e.target.value })}
+            onFocus={() => setFocused("email")}
+            onBlur={() => setFocused(null)}
+          />
+          <input
+            id="demo-phone"
+            type="tel"
+            autoComplete="tel"
+            placeholder="Phone number"
+            aria-label="Phone number"
+            value={form.phone}
+            style={inputStyle("phone")}
+            onChange={(e) => setForm({ ...form, phone: e.target.value })}
+            onFocus={() => setFocused("phone")}
             onBlur={() => setFocused(null)}
           />
         </div>

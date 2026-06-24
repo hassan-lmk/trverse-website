@@ -9,6 +9,10 @@ function isStringArray(value: unknown): value is string[] {
   return Array.isArray(value) && value.every((item) => typeof item === "string");
 }
 
+function isValidEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
 function parsePayload(body: unknown): DemoRequestPayload | null {
   if (!body || typeof body !== "object") return null;
 
@@ -17,6 +21,8 @@ function parsePayload(body: unknown): DemoRequestPayload | null {
   if (
     !isNonEmptyString(data.firstName) ||
     !isNonEmptyString(data.lastName) ||
+    !isNonEmptyString(data.email) ||
+    !isValidEmail(data.email.trim()) ||
     !isNonEmptyString(data.organization) ||
     !isNonEmptyString(data.country) ||
     !isStringArray(data.networkTypes) ||
@@ -28,6 +34,8 @@ function parsePayload(body: unknown): DemoRequestPayload | null {
   return {
     firstName: data.firstName,
     lastName: data.lastName,
+    email: data.email,
+    phone: isNonEmptyString(data.phone) ? data.phone : "",
     organization: data.organization,
     role: isNonEmptyString(data.role) ? data.role : "",
     country: data.country,
