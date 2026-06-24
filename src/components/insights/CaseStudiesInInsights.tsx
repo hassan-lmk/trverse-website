@@ -1,9 +1,6 @@
-"use client";
-
-import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import type { CaseStudy } from "@/data/caseStudies";
-import Pagination, { ITEMS_PER_PAGE } from "@/components/insights/Pagination";
 
 type Props = {
   studies: CaseStudy[];
@@ -22,17 +19,6 @@ const IconArrowRight = () => (
 );
 
 const CaseStudiesInInsights = ({ studies }: Props) => {
-  const gridRef = React.useRef<HTMLDivElement>(null);
-  const [currentPage, setCurrentPage] = React.useState(1);
-  const totalPages = Math.ceil(studies.length / ITEMS_PER_PAGE);
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const visibleStudies = studies.slice(startIndex, startIndex + ITEMS_PER_PAGE);
-
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-    gridRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
-
   if (!studies.length) return null;
 
   return (
@@ -79,112 +65,101 @@ const CaseStudiesInInsights = ({ studies }: Props) => {
           </p>
         </div>
 
-        <div ref={gridRef} style={{ scrollMarginTop: 120 }}>
+        <div style={{ scrollMarginTop: 120 }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(340px, 1fr))", gap: 24 }}>
-            {visibleStudies.map((item) => (
-            <Link key={item.slug} href={`/case-studies/${item.slug}`} style={{ textDecoration: "none" }}>
-              <article
-                style={{
-                  background: "#f7f9fc",
-                  borderRadius: 16,
-                  overflow: "hidden",
-                  border: "1px solid rgba(19, 79, 137, 0.08)",
-                  display: "flex",
-                  flexDirection: "column",
-                  height: "100%",
-                  transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
-                  boxShadow: "0 4px 20px rgba(0,0,0,0.02)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = "translateY(-6px)";
-                  e.currentTarget.style.boxShadow = "0 16px 38px rgba(10, 30, 61, 0.10)";
-                  e.currentTarget.style.borderColor = "rgba(255,130,93,0.35)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = "translateY(0)";
-                  e.currentTarget.style.boxShadow = "0 4px 20px rgba(0,0,0,0.02)";
-                  e.currentTarget.style.borderColor = "rgba(19, 79, 137, 0.08)";
-                }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={item.heroImage} alt={item.title} style={{ width: "100%", height: 210, objectFit: "cover" }} />
+            {studies.map((item) => (
+              <Link key={item.slug} href={`/case-studies/${item.slug}`} style={{ textDecoration: "none" }}>
+                <article
+                  style={{
+                    background: "#f7f9fc",
+                    borderRadius: 16,
+                    overflow: "hidden",
+                    border: "1px solid rgba(19, 79, 137, 0.08)",
+                    display: "flex",
+                    flexDirection: "column",
+                    height: "100%",
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.02)",
+                  }}
+                >
+                  <div style={{ position: "relative", width: "100%", height: 210 }}>
+                    <Image
+                      src={item.heroImage}
+                      alt={item.title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 400px"
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
 
-                <div style={{ padding: 24, display: "flex", flexDirection: "column", gap: 12, flex: 1 }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      gap: 12,
-                      flexWrap: "wrap",
-                    }}
-                  >
-                    <span
+                  <div style={{ padding: 24, display: "flex", flexDirection: "column", gap: 12, flex: 1 }}>
+                    <div
                       style={{
-                        fontFamily: "var(--font-body)",
-                        fontSize: 11,
-                        color: "var(--accent)",
-                        fontWeight: 700,
-                        letterSpacing: "0.08em",
-                        textTransform: "uppercase",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
+                        gap: 12,
+                        flexWrap: "wrap",
                       }}
                     >
-                      {item.location}
-                    </span>
+                      <span
+                        style={{
+                          fontFamily: "var(--font-body)",
+                          fontSize: 11,
+                          color: "var(--accent)",
+                          fontWeight: 700,
+                          letterSpacing: "0.08em",
+                          textTransform: "uppercase",
+                        }}
+                      >
+                        {item.location}
+                      </span>
+                    </div>
+
+                    <h3
+                      style={{
+                        fontFamily: "var(--font-display)",
+                        fontSize: 22,
+                        fontWeight: 600,
+                        color: "#0a1e3d",
+                        margin: 0,
+                        lineHeight: 1.35,
+                      }}
+                    >
+                      {item.title}
+                    </h3>
+
+                    <p
+                      style={{
+                        fontFamily: "var(--font-body)",
+                        fontSize: 14.5,
+                        color: "#5a6a7e",
+                        lineHeight: 1.65,
+                        margin: 0,
+                      }}
+                    >
+                      {item.summary}
+                    </p>
+
+                    <div
+                      style={{
+                        marginTop: "auto",
+                        display: "inline-flex",
+                        alignItems: "center",
+                        gap: 10,
+                        fontFamily: "var(--font-body)",
+                        fontSize: 14,
+                        fontWeight: 700,
+                        color: "var(--accent)",
+                      }}
+                    >
+                      Read full case study
+                      <IconArrowRight />
+                    </div>
                   </div>
-
-                  <h3
-                    style={{
-                      fontFamily: "var(--font-display)",
-                      fontSize: 22,
-                      fontWeight: 600,
-                      color: "#0a1e3d",
-                      margin: 0,
-                      lineHeight: 1.35,
-                    }}
-                  >
-                    {item.title}
-                  </h3>
-
-                  <p
-                    style={{
-                      fontFamily: "var(--font-body)",
-                      fontSize: 14.5,
-                      color: "#5a6a7e",
-                      lineHeight: 1.65,
-                      margin: 0,
-                    }}
-                  >
-                    {item.summary}
-                  </p>
-
-                  <div
-                    style={{
-                      marginTop: "auto",
-                      display: "inline-flex",
-                      alignItems: "center",
-                      gap: 10,
-                      fontFamily: "var(--font-body)",
-                      fontSize: 14,
-                      fontWeight: 700,
-                      color: "var(--accent)",
-                    }}
-                  >
-                    Read full case study
-                    <IconArrowRight />
-                  </div>
-                </div>
-              </article>
-            </Link>
+                </article>
+              </Link>
             ))}
           </div>
-
-          <Pagination
-            currentPage={currentPage}
-            totalPages={totalPages}
-            onPageChange={handlePageChange}
-            label="Case studies pagination"
-          />
         </div>
       </div>
     </section>

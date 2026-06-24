@@ -477,7 +477,7 @@ const PartnersPageContent = () => {
               Built on trust. Driven by outcomes. Designed for scale.
             </p>
             <a href="#partner-form" className="hero-btn-primary">
-              Become a Partner
+              Become a partner
             </a>
           </div>
         </div>

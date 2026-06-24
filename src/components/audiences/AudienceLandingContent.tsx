@@ -649,7 +649,7 @@ export default function AudienceLandingContent({ doc }: Props) {
               <div className="audience-proof-visual-col">
                 <div className="audience-proof-visual-frame">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={doc.proofImage} alt="" role="presentation" />
+                  <img src={doc.proofImage} alt={`${doc.label} deployment proof`} />
                   {doc.proofStats ? <div className="audience-proof-visual-overlay" aria-hidden /> : null}
                   {doc.proofStats ? (
                     <div className="audience-proof-stats" aria-label="Impact metrics">

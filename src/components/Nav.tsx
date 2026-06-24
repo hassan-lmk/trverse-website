@@ -374,7 +374,7 @@ const Nav = () => {
           }}
           onMouseEnter={e => e.currentTarget.style.background = '#e06d4a'}
           onMouseLeave={e => e.currentTarget.style.background = 'var(--accent)'}
-          >Get a Demo</a>
+          >Get a demo</a>
         </div>
         <button
           type="button"
@@ -426,7 +426,7 @@ const Nav = () => {
               {item.label}
             </a>
           ))}
-          <a href="/get-a-demo" style={{ marginTop: 8, background: 'var(--accent)', color: '#fff', padding: '10px 16px', borderRadius: 8, fontFamily: 'var(--font-body)', textDecoration: 'none', fontWeight: 600, width: 'fit-content' }}>Get a Demo</a>
+          <a href="/get-a-demo" style={{ marginTop: 8, background: 'var(--accent)', color: '#fff', padding: '10px 16px', borderRadius: 8, fontFamily: 'var(--font-body)', textDecoration: 'none', fontWeight: 600, width: 'fit-content' }}>Get a demo</a>
         </div>
       ) : null}
     </nav>

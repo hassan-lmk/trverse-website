@@ -88,17 +88,19 @@ const SolutionsHero = () => {
 
       <div style={{ maxWidth: 1280, margin: "0 auto", position: "relative", zIndex: 2, width: '100%' }}>
         <div style={{ maxWidth: 780 }}>
-          <h1 style={{
-            fontFamily: "var(--font-display)",
-            fontSize: "clamp(40px, 5vw, 68px)",
-            fontWeight: 700,
-            color: "#fff",
-            lineHeight: 1.08,
-            margin: "0 0 28px",
-            letterSpacing: "-0.02em",
-          }}>
+          <p
+            style={{
+              fontFamily: "var(--font-display)",
+              fontSize: "clamp(40px, 5vw, 68px)",
+              fontWeight: 700,
+              color: "#fff",
+              lineHeight: 1.08,
+              margin: "0 0 28px",
+              letterSpacing: "-0.02em",
+            }}
+          >
             <span style={{ color: "#fff" }}>Technology that powers transport better</span>
-          </h1>
+          </p>
 
           <p style={{
             fontFamily: "var(--font-body)",
@@ -113,12 +115,12 @@ const SolutionsHero = () => {
 
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <a href="/solutions#afc" className="hero-btn-primary">
-              Explore Solutions
+              Explore solutions
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </a>
-            <a href="/get-a-demo" className="hero-btn-secondary">Get a Demo</a>
+            <a href="/get-a-demo" className="hero-btn-secondary">Get a demo</a>
           </div>
         </div>
       </div>

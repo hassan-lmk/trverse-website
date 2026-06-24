@@ -60,7 +60,7 @@ const staticPages: SearchEntry[] = [
     keywords: "news blog articles events case studies",
   },
   {
-    title: "Get a Demo",
+    title: "Get a demo",
     description: "Request a tailored TRVERSE demonstration for your network.",
     href: "/get-a-demo",
     category: "Page",

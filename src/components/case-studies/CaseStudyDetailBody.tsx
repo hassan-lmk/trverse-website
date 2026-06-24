@@ -824,7 +824,7 @@ const CaseStudyDetailBody = ({ item }: Props) => {
                     boxShadow: "0 10px 28px rgba(255,130,93,0.35)",
                   }}
                 >
-                  Get a Demo
+                  Get a demo
                 </Link>
                 <Link
                   href="/insights#all-case-studies"

@@ -475,7 +475,7 @@ const AboutPageContent = () => {
               think, move, and perform.
             </p>
             <a href="/get-a-demo" className="hero-btn-primary">
-              Get a Demo
+              Get a demo
             </a>
           </div>
         </div>

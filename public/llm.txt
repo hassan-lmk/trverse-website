@@ -1,0 +1,33 @@
+# TRVERSE
+
+> TRVERSE is a mass transit platform for automated fare collection (AFC), intelligent transport systems (ITS), fleet management, advanced scheduling, micro-mobility integration, and AI monitoring. Built for transport authorities, city governments, and private operators worldwide. Backed by LMKR.
+
+## Primary pages
+
+- [Home](https://trverse.com/): Platform overview, who we serve, solutions, and proof points.
+- [Solutions](https://trverse.com/solutions): Automated fare collection, ITS, scheduling, fleet management, micro-mobility, and AI monitoring.
+- [Products](https://trverse.com/products): TRVERSE software modules and field devices.
+- [Who we serve](https://trverse.com/#about-us): Transport authorities, city governments, and private operators.
+- [Insights](https://trverse.com/insights): News, awards, and industry updates.
+- [Partners](https://trverse.com/partners): Technology and integration partnerships.
+- [About](https://trverse.com/about): Company background and LMKR heritage.
+- [Get a demo](https://trverse.com/get-a-demo): Request a tailored demonstration.
+
+## Solutions
+
+- [Automated fare collection](https://trverse.com/solutions/Automated-fare-collection)
+- [Intelligent transport systems](https://trverse.com/solutions/Intelligent-transport-systems)
+- [Advanced scheduling](https://trverse.com/solutions/advanced-scheduling-system)
+- [Fleet management](https://trverse.com/solutions/fleet-management)
+- [Micro-mobility integration](https://trverse.com/solutions/Micro-mobility-integration)
+- [AI monitoring and control](https://trverse.com/solutions/ai-monitoring-and-control)
+
+## Audience pages
+
+- [Transport authorities](https://trverse.com/who-we-serve/transport-authorities)
+- [City governments](https://trverse.com/who-we-serve/city-governments)
+- [Private operators](https://trverse.com/who-we-serve/private-operators)
+
+## Optional
+
+- [Sitemap](https://trverse.com/sitemap.xml)

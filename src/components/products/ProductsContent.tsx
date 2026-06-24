@@ -1073,7 +1073,7 @@ export default function ProductsContent() {
                   transition: "background 0.2s ease, transform 0.2s ease",
                 }}
               >
-                Get a Demo
+                Get a demo
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
                   <path
                     d="M3 8h10M9 4l4 4-4 4"

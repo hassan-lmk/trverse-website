@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type Props = {
   src: string;
   alt: string;
@@ -6,17 +8,14 @@ type Props = {
 
 export default function InsightCardThumbnail({ src, alt, height = 200 }: Props) {
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={src}
-      alt={alt}
-      style={{
-        width: "100%",
-        height,
-        objectFit: "cover",
-        objectPosition: "center",
-        display: "block",
-      }}
-    />
+    <div style={{ position: "relative", width: "100%", height }}>
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(max-width: 768px) 100vw, 400px"
+        style={{ objectFit: "cover", objectPosition: "center" }}
+      />
+    </div>
   );
 }

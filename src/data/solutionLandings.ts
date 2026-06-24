@@ -75,7 +75,7 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       solutionHeroBackgroundImages["Automated-fare-collection"],
     heroImage: "/assets/automate-fare-collection.webp",
     highlightsAsideImage: "/assets/automate-fare-collection.webp",
-    highlightsAsideImageAlt: "",
+    highlightsAsideImageAlt: "Automated fare collection system overview",
     highlightsHeading: "Automated Fare Collection",
     highlightsDescription:
       "Fare collection is the financial backbone of your network. TRVERSE is engineered for the full complexity of mass transit — from high-throughput BRT stations to multi-modal interchanges where passengers move seamlessly between bus, metro, and micro-mobility.",
@@ -90,32 +90,32 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     featuresHeading: "Key Capabilities",
     features: [
       {
-        title: "EMV open-loop acceptance",
+        title: "EMV Open-Loop Acceptance",
         description:
           "Contactless Visa, Mastercard, Amex, Apple Pay, and Google Pay.",
       },
       {
-        title: "Closed-loop transit card management",
+        title: "Closed-Loop Transit Card Management",
         description: "Top-up, blocking, and balance enquiry.",
       },
       {
-        title: "Multi-operator fare agreements",
+        title: "Multi-Operator Fare Agreements",
         description: "Revenue apportionment across operators and corridors.",
       },
       {
-        title: "Real-time transaction processing",
+        title: "Real-Time Transaction Processing",
         description: "Sub-300ms validator response time.",
       },
       {
-        title: "Offline resilience",
+        title: "Offline Resilience",
         description: "Validators continue operating during connectivity loss.",
       },
       {
-        title: "Concessionary and time-based fare rules",
+        title: "Concessionary and Time-Based Fare Rules",
         description: "Configurable without downtime.",
       },
       {
-        title: "Full audit trail",
+        title: "Full Audit Trail",
         description:
           "Every transaction recorded — compliant with financial regulators.",
       },
@@ -135,7 +135,7 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       solutionHeroBackgroundImages["Intelligent-transport-systems"],
     heroImage: "/assets/intelligent-transportation.webp",
     highlightsAsideImage: "/assets/intelligent-transportation.webp",
-    highlightsAsideImageAlt: "",
+    highlightsAsideImageAlt: "Intelligent transport systems overview",
     highlightsHeading: "Intelligent Transport Systems",
     highlightsDescription:
       "From the control centre to the last stop on the route, TRVERSE ITS puts actionable data in the hands of those who need it most. Operators gain complete network awareness while city authorities can monitor performance, compliance, and service quality; all from one place.",
@@ -150,31 +150,31 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     featuresHeading: "Key Capabilities",
     features: [
       {
-        title: "Automatic vehicle location (AVL)",
+        title: "Automatic Vehicle Location (AVL)",
         description: "GPS and dead-reckoning.",
       },
       {
-        title: "Passenger information systems",
+        title: "Passenger Information Systems",
         description: "On-board, at-stop, and digital channel feeds.",
       },
       {
-        title: "GTFS and GTFS-RT publishing",
+        title: "GTFS and GTFS-RT Publishing",
         description: "Third-party app integration.",
       },
       {
-        title: "Traffic signal priority (TSP) integration",
+        title: "Traffic Signal Priority (TSP) Integration",
         description: "NTCIP/UTMC protocols.",
       },
       {
-        title: "Passenger counting",
+        title: "Passenger Counting",
         description: "Automatic with load forecasting.",
       },
       {
-        title: "Incident management",
+        title: "Incident Management",
         description: "Automated detection, operator alerting, resolution tracking.",
       },
       {
-        title: "Control centre dashboards",
+        title: "Control Centre Dashboards",
         description: "Configurable alerting thresholds.",
       },
     ],
@@ -200,7 +200,7 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       solutionHeroBackgroundImages["advanced-scheduling-system"],
     heroImage: "/assets/ai-based-scheduling.webp",
     highlightsAsideImage: "/assets/ai-based-scheduling.webp",
-    highlightsAsideImageAlt: "",
+    highlightsAsideImageAlt: "Advanced scheduling system overview",
     highlightsHeading: "Advanced Scheduling",
     highlightsDescription:
       "Smarter scheduling starts with understanding how demand actually behaves. TRVERSE pulls together years of ridership patterns, real-time network conditions, and operational constraints to build schedules that work in practice, not just on paper, and adapts them as conditions change.",
@@ -215,31 +215,31 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     featuresHeading: "Key Capabilities",
     features: [
       {
-        title: "AI-assisted timetable generation",
+        title: "AI-Assisted Timetable Generation",
         description: "Using multi-year ridership history.",
       },
       {
-        title: "Demand forecasting",
+        title: "Demand Forecasting",
         description: "By route, time period, day type, and special event.",
       },
       {
-        title: "Real-time schedule adherence monitoring",
+        title: "Real-Time Schedule Adherence Monitoring",
         description: "With automated crew alerts.",
       },
       {
-        title: "Automated duty rostering",
+        title: "Automated Duty Rostering",
         description: "Driver assignment optimisation.",
       },
       {
-        title: "What-if scenario modelling",
+        title: "What-If Scenario Modelling",
         description: "For service change evaluation.",
       },
       {
-        title: "Integration with fleet management",
+        title: "Integration With Fleet Management",
         description: "Vehicle availability.",
       },
       {
-        title: "Compliance reporting",
+        title: "Compliance Reporting",
         description: "For contracted service level agreements.",
       },
     ],
@@ -258,7 +258,7 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       solutionHeroBackgroundImages["fleet-management"],
     heroImage: "/assets/control-room-maangement.webp",
     highlightsAsideImage: "/assets/control-room-maangement.webp",
-    highlightsAsideImageAlt: "",
+    highlightsAsideImageAlt: "Fleet management control room overview",
     highlightsHeading: "Fleet Management",
     highlightsDescription:
       "Keeping a fleet running efficiently takes more than tracking where vehicles are. TRVERSE connects vehicle health, driver behaviour, maintenance schedules, and fuel consumption into a single operational picture, so teams can act on problems before they affect service.",
@@ -273,31 +273,31 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     featuresHeading: "Key Capabilities",
     features: [
       {
-        title: "Real-time vehicle tracking",
+        title: "Real-Time Vehicle Tracking",
         description: "Geofence alerts and route deviation detection.",
       },
       {
-        title: "Driver behaviour analytics",
+        title: "Driver Behaviour Analytics",
         description: "Speeding, harsh braking, idling, and fuel consumption.",
       },
       {
-        title: "Predictive maintenance",
+        title: "Predictive Maintenance",
         description: "Fault code analysis and service interval optimisation.",
       },
       {
-        title: "Fuel management",
+        title: "Fuel Management",
         description: "Consumption monitoring and supplier integration.",
       },
       {
-        title: "Incident management",
+        title: "Incident Management",
         description: "Collision detection, breakdown response, CCTV retrieval.",
       },
       {
-        title: "Asset lifecycle management",
+        title: "Asset Lifecycle Management",
         description: "Procurement, depreciation, and disposal tracking.",
       },
       {
-        title: "Multi-depot operations support",
+        title: "Multi-Depot Operations Support",
         description: "Centralised and distributed management.",
       },
     ],
@@ -316,7 +316,7 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       solutionHeroBackgroundImages["Micro-mobility-integration"],
     heroImage: "/solutions/micro-mobility-integration.webp",
     highlightsAsideImage: "/solutions/micro-mobility-integration.webp",
-    highlightsAsideImageAlt: "",
+    highlightsAsideImageAlt: "Micro-mobility integration overview",
     highlightsHeading: "Micro-Mobility Integration",
     highlightsDescription:
       "Bridging the gap between transit stops and final destinations, TRVERSE seamlessly connects riders to e-bikes, e-scooters, and shared mobility options. Operators gain full visibility and control, from fleet management to fare integration, all within a single, unified platform.",
@@ -331,28 +331,28 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     featuresHeading: "Key Capabilities",
     features: [
       {
-        title: "Single-account payment",
+        title: "Single-Account Payment",
         description: "Across transit and micro-mobility.",
       },
       {
-        title: "Combined trip data",
+        title: "Combined Trip Data",
         description: "For journey planning and demand analytics.",
       },
       {
-        title: "Geo-fenced docking zone management",
+        title: "Geo-Fenced Docking Zone Management",
         description: "Real-time availability feeds.",
       },
       {
-        title: "Operator API integration",
+        title: "Operator API Integration",
         description:
           "Compatible with major e-bike and e-scooter platforms.",
       },
       {
-        title: "Combined ridership reporting",
+        title: "Combined Ridership Reporting",
         description: "For government and environmental compliance.",
       },
       {
-        title: "Incentive and loyalty programme integration",
+        title: "Incentive and Loyalty Programme Integration",
         description: "Unified rewards across mobility modes.",
       },
     ],
@@ -371,7 +371,7 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
       solutionHeroBackgroundImages["ai-monitoring-and-control"],
     heroImage: "/assets/perfomance-monitoring.webp",
     highlightsAsideImage: "/assets/perfomance-monitoring.webp",
-    highlightsAsideImageAlt: "",
+    highlightsAsideImageAlt: "AI monitoring and control overview",
     highlightsHeading: "AI Monitoring and Control",
     highlightsDescription:
       "Most transit problems leave a signal before they become an incident. TRVERSE continuously processes data across every layer of your network, learning what normal looks like so it can flag what isn't, and give your team the context to respond with confidence.",
@@ -386,33 +386,33 @@ export const solutionLandingsBySlug: Record<string, SolutionLandingDoc> = {
     featuresHeading: "Key Capabilities",
     features: [
       {
-        title: "Real-time network health scoring",
+        title: "Real-Time Network Health Scoring",
         description: "Composite KPI across all platform components.",
       },
       {
-        title: "Anomaly detection",
+        title: "Anomaly Detection",
         description:
           "Statistical deviation alerting across fare, fleet, and ITS data.",
       },
       {
-        title: "Revenue leakage detection",
+        title: "Revenue Leakage Detection",
         description:
           "Pattern recognition across transaction and gateline data.",
       },
       {
-        title: "Predictive maintenance alerts",
+        title: "Predictive Maintenance Alerts",
         description: "Vehicle and infrastructure fault prediction.",
       },
       {
-        title: "Automated reporting",
+        title: "Automated Reporting",
         description: "Scheduled and on-demand across all KPI dimensions.",
       },
       {
-        title: "Natural language query interface",
+        title: "Natural Language Query Interface",
         description: "Operational data exploration.",
       },
       {
-        title: "Custom alert thresholds and escalation workflows",
+        title: "Custom Alert Thresholds and Escalation Workflows",
         description: "Per operator.",
       },
     ],

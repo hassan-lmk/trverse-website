@@ -4,21 +4,32 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import InsightsHero from "@/components/insights/InsightsHero";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
+import JsonLd from "@/components/seo/JsonLd";
 import { insights } from "@/data/insights";
+import { articleJsonLd, breadcrumbJsonLd } from "@/lib/seo-jsonld";
+import { buildPageMetadata, truncateMetaTitle } from "@/lib/seo";
 
 type Props = {
   params: Promise<{ slug: string }>;
 };
 
+export function generateStaticParams() {
+  return insights.map((item) => ({ slug: item.slug }));
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const item = insights.find((x) => x.slug === slug);
-  if (!item) return { title: "Insight — TRVERSE" };
+  if (!item) return buildPageMetadata({ title: "Insight", path: "/insights" });
 
-  return {
-    title: `${item.title} — TRVERSE`,
+  return buildPageMetadata({
+    title: truncateMetaTitle(item.title),
     description: item.excerpt,
-  };
+    path: `/insights/${slug}`,
+    image: item.heroImage ?? item.image,
+    type: "article",
+    publishedTime: item.datePublishedIso,
+  });
 }
 
 export default async function InsightDetailPage({ params }: Props) {
@@ -26,11 +37,31 @@ export default async function InsightDetailPage({ params }: Props) {
   const item = insights.find((x) => x.slug === slug);
   if (!item) notFound();
 
+  const path = `/insights/${slug}`;
+  const image = item.heroImage ?? item.image;
+
   return (
     <main>
+      <JsonLd
+        data={[
+          breadcrumbJsonLd([
+            { name: "Home", path: "/" },
+            { name: "Insights", path: "/insights" },
+            { name: item.title, path },
+          ]),
+          articleJsonLd({
+            title: item.title,
+            description: item.excerpt,
+            path,
+            image,
+            datePublished: item.datePublishedIso,
+          }),
+        ]}
+      />
       <Nav />
       <InsightsHero
         badge={`${item.category} • ${item.date}`}
+        titleAs="p"
         title={
           <>
             {item.title.split(" ").slice(0, 7).join(" ")}
@@ -39,7 +70,8 @@ export default async function InsightDetailPage({ params }: Props) {
           </>
         }
         description={item.excerpt}
-        backgroundImageSrc={item.heroImage ?? item.image}
+        backgroundImageSrc={image}
+        backgroundImageAlt={item.title}
         primaryCta={{ label: "Read story", href: "#insight-content" }}
         secondaryCta={{ label: "All insights", href: "/insights" }}
       />
@@ -87,7 +119,7 @@ export default async function InsightDetailPage({ params }: Props) {
           </div>
 
           {item.showContentImage !== false ? (
-            /* eslint-disable-next-line @next/next/no-img-element */
+            // eslint-disable-next-line @next/next/no-img-element
             <img
               src={item.image}
               alt={item.title}
@@ -153,7 +185,7 @@ export default async function InsightDetailPage({ params }: Props) {
             <a
               href={item.sourceUrl}
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
               style={{
                 fontFamily: "var(--font-body)",
                 fontSize: 14,
@@ -172,4 +204,3 @@ export default async function InsightDetailPage({ params }: Props) {
     </main>
   );
 }
-

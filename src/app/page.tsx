@@ -9,15 +9,17 @@ import Impact from "@/components/Impact";
 import Insights from "@/components/Insights";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "TRVERSE | Mass Transit AFC, ITS & AI Platform | Global Leader",
-  description:
-    "TRVERSE delivers end-to-end automated fare collection, intelligent transport systems, fleet management, and AI monitoring for mass transit networks worldwide. Backed by LMKR's 30-year enterprise legacy.",
-  openGraph: {
-    title: "TRVERSE | Mass Transit AFC, ITS & AI Platform | Global Leader",
+  ...buildPageMetadata({
+    title: "TRVERSE | Mass Transit AFC, ITS & AI Platform",
     description:
       "TRVERSE delivers end-to-end automated fare collection, intelligent transport systems, fleet management, and AI monitoring for mass transit networks worldwide. Backed by LMKR's 30-year enterprise legacy.",
+    path: "/",
+  }),
+  title: {
+    absolute: "TRVERSE | Mass Transit AFC, ITS & AI Platform",
   },
 };
 

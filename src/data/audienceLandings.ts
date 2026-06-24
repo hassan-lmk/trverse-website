@@ -129,9 +129,9 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
     heroSubheadline:
       "TRVERSE helps city governments connect transit data, ridership insights, emissions reporting, equity metrics, and open APIs to support better planning and policy decisions.",
     heroBackgroundImage: "/assets/masar.webp",
-    challengeHeading: "Transit Data Is Trapped Inside Disconnected Systems",
+    challengeHeading: "Transit Data is Trapped Inside Disconnected Systems",
     challengeBody:
-      "City teams need clear data to plan routes, track emissions, improve access, and measure public value. TRVERSE brings that data together, so decisions are based on facts, not scattered reports.",
+      "City administration teams need clear data to plan routes, track emissions, improve access, and measure public value. TRVERSE brings that data together, so decisions are based on facts, not scattered reports.",
     capabilitiesHeading: "What TRVERSE Delivers",
     capabilities: [
       {
@@ -183,7 +183,7 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
     proofMetaChips: ["First Electric BRT Network", "Vision 2030"],
     proofImage: "/assets/masar.webp",
     primaryCta: {
-      label: "Speak to Our Mobility Team",
+      label: "Speak to our mobility team",
       href: "/get-a-demo",
     },
     secondaryCta: {
@@ -240,7 +240,7 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
         label: "Fare evasion reduced in the first operating year",
       },
       {
-        value: "Real-time",
+        value: "Real-time Data",
         label: "Fleet and revenue intelligence for operations teams",
       },
       {

@@ -3,27 +3,43 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import InsightsHero from "@/components/insights/InsightsHero";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
+import PageH1 from "@/components/seo/PageH1";
+import JsonLd from "@/components/seo/JsonLd";
 import { insights } from "@/data/insights";
 import InsightsGrid from "@/components/insights/InsightsGrid";
 import CaseStudiesInInsights from "@/components/insights/CaseStudiesInInsights";
 import { caseStudies } from "@/data/caseStudies";
+import { breadcrumbJsonLd } from "@/lib/seo-jsonld";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Insights — TRVERSE",
-  description: "News, updates, and case studies from TRVERSE.",
-};
+export const metadata: Metadata = buildPageMetadata({
+  title: "Insights",
+  description:
+    "TRVERSE news, awards, case studies, and updates on automated fare collection, BRT deployments, and intelligent transport systems worldwide.",
+  path: "/insights",
+  image: "/assets/case-studies-banner.webp",
+});
 
 export default function InsightsPage() {
   return (
     <main>
+      <PageH1>Insights and success stories</PageH1>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "Insights", path: "/insights" },
+        ])}
+      />
       <Nav />
       <InsightsHero
         badge="Insights Hub"
+        titleAs="p"
         title="Insights & Success Stories"
         description="Explore TRVERSE highlights, key updates, and recognition from across the mobility ecosystem."
-        backgroundImageSrc="/insights/insights-page.webp"
+        backgroundImageSrc="/assets/case-studies-banner.webp"
+        backgroundImageAlt="TRVERSE insights and industry news"
         primaryCta={{ label: "Browse articles", href: "#all-insights" }}
-        secondaryCta={{ label: "Get a Demo", href: "/get-a-demo" }}
+        secondaryCta={{ label: "Get a demo", href: "/get-a-demo" }}
       />
 
       <PageBreadcrumb items={[{ label: "Home", href: "/" }, { label: "Insights" }]} />
@@ -80,4 +96,3 @@ export default function InsightsPage() {
     </main>
   );
 }
-

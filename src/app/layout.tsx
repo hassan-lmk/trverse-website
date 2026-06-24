@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { Urbanist } from "next/font/google";
+import JsonLd from "@/components/seo/JsonLd";
+import { organizationJsonLd, websiteJsonLd } from "@/lib/seo-jsonld";
+import { DEFAULT_DESCRIPTION, DEFAULT_OG_IMAGE, absoluteUrl } from "@/lib/seo";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const urbanist = Urbanist({
@@ -10,11 +14,31 @@ const urbanist = Urbanist({
 });
 
 export const metadata: Metadata = {
-  title: "TRVERSE | Mass Transit AFC, ITS & AI Platform | Global Leader",
-  description:
-    "TRVERSE delivers end-to-end automated fare collection, intelligent transport systems, fleet management, and AI monitoring for mass transit networks worldwide. Backed by LMKR's 30-year enterprise legacy.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "TRVERSE | Mass Transit AFC, ITS & AI Platform",
+    template: "%s — TRVERSE",
+  },
+  description: DEFAULT_DESCRIPTION,
   icons: {
     icon: "/favicon.webp",
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: "TRVERSE",
+    title: "TRVERSE | Mass Transit AFC, ITS & AI Platform",
+    description: DEFAULT_DESCRIPTION,
+    images: [{ url: absoluteUrl(DEFAULT_OG_IMAGE), alt: "TRVERSE" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "TRVERSE | Mass Transit AFC, ITS & AI Platform",
+    description: DEFAULT_DESCRIPTION,
+    images: [absoluteUrl(DEFAULT_OG_IMAGE)],
   },
 };
 
@@ -29,6 +53,7 @@ export default function RootLayout({
       className={`${urbanist.variable}`}
     >
       <body>
+        <JsonLd data={[organizationJsonLd(), websiteJsonLd()]} />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-6015NQ5BW5"
           strategy="afterInteractive"

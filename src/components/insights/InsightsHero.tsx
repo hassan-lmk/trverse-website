@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 
 type Props = {
   badge?: string;
@@ -61,15 +62,13 @@ const InsightsHero = ({
       />
 
       <div style={{ position: "absolute", inset: 0, overflow: "hidden", zIndex: 0 }}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src={backgroundImageSrc}
           alt={backgroundImageAlt}
+          fill
+          priority
+          sizes="100vw"
           style={{
-            position: "absolute",
-            inset: 0,
-            width: "100%",
-            height: "100%",
             objectFit: "cover",
             transform: "scale(1.03)",
             filter: "saturate(0.95)",

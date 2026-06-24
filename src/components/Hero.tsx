@@ -234,8 +234,8 @@ const Hero = () => {
           </p>
 
           <div className="home-hero-actions" style={reveal('0.8s')}>
-            <a href="#solutions" className="hero-btn-primary">Explore Solutions</a>
-            <a href="/get-a-demo" className="hero-btn-secondary">Get a Demo</a>
+            <a href="/solutions" className="hero-btn-primary">Explore solutions</a>
+            <a href="/get-a-demo" className="hero-btn-secondary">Get a demo</a>
           </div>
         </div>
       </div>

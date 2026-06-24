@@ -3,25 +3,34 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import InsightsHero from "@/components/insights/InsightsHero";
 import PageBreadcrumb from "@/components/PageBreadcrumb";
+import PageH1 from "@/components/seo/PageH1";
+import JsonLd from "@/components/seo/JsonLd";
 import AboutPageContent from "@/components/about/AboutPageContent";
+import { breadcrumbJsonLd } from "@/lib/seo-jsonld";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Us — TRVERSE",
+export const metadata: Metadata = buildPageMetadata({
+  title: "About us",
   description:
     "Learn how TRVERSE builds on LMKR's three decades of enterprise innovation to deliver connected operations, data intelligence, and smart mobility platforms worldwide.",
-  openGraph: {
-    title: "About Us — TRVERSE",
-    description:
-      "TRVERSE transforms how organizations operate by connecting assets, people, mobility, and data into one unified digital ecosystem.",
-  },
-};
+  path: "/about",
+  image: "/assets/about-hero-banner.webp",
+});
 
 export default function AboutPage() {
   return (
     <main>
+      <PageH1>About TRVERSE</PageH1>
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Home", path: "/" },
+          { name: "About", path: "/about" },
+        ])}
+      />
       <Nav />
       <InsightsHero
         badge="About Us"
+        titleAs="p"
         title={
           <>
             Built on a Legacy of
