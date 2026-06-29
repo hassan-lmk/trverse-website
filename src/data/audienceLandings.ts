@@ -244,8 +244,8 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
         label: "Fleet and revenue intelligence for operations teams",
       },
       {
-        value: "Peshawar BRT",
-        label: "Proven in a live BRT environment",
+        value: "Active Transit Network",
+        label: "Validated in real operating conditions",
       },
     ],
     primaryCta: {
