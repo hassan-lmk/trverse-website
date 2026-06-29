@@ -687,6 +687,22 @@ export default function ProductsContent() {
             .product-sticky-slot:last-child {
               margin-bottom: 0;
             }
+            .products-software-section {
+              padding-left: 20px !important;
+              padding-right: 20px !important;
+            }
+            .product-stack-card-inner {
+              padding: clamp(20px, 4.5vw, 28px);
+            }
+          }
+          @media (max-width: 520px) {
+            .products-software-section {
+              padding-left: 16px !important;
+              padding-right: 16px !important;
+            }
+            .product-stack-card-inner {
+              padding: 18px 16px;
+            }
           }
         `,
         }}
@@ -694,6 +710,7 @@ export default function ProductsContent() {
 
       <section
         id="software-products"
+        className="products-software-section"
         style={{
           background: "linear-gradient(180deg, #fafbfd 0%, #eef2f8 42%, #f7f9fc 100%)",
           padding: "clamp(72px, 12vw, 120px) 48px",

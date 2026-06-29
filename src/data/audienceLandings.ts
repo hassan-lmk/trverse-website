@@ -92,8 +92,8 @@ export const audienceLandingsBySlug: Record<string, AudienceLandingDoc> = {
         label: "Daily Riders Supported",
       },
       {
-        value: "Peshawar BRT",
-        label: "Live BRT Deployment",
+        value: "Real-World BRT Operations",
+        label: "Proven under daily ridership demand",
       },
     ],
     proofQuote:

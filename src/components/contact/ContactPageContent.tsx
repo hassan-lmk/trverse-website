@@ -169,7 +169,7 @@ const ContactPageContent = () => {
                 margin: 0,
               }}
             >
-              Company addresses
+              Company Locations
             </h3>
           </div>
 
